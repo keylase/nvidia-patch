@@ -8,14 +8,14 @@ requirements:
 # step-by-step :
 
 Download driver: https://yadi.sk/d/yahf1Y-D3PJnzd
-```
+```bash
 chmod +x ./NVIDIA-Linux-x86_64-375.39.run
 
 ./NVIDIA-Linux-x86_64-375.39.run
 ```
 
 check driver:
-```
+```bash
 nvidia-smi
 
 mkdir ~/nvenc_backup
