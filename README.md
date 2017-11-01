@@ -33,6 +33,9 @@ chmod +x patch.sh
 reboot
 ```
 
+## See also
+
+If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, consider using this [patch](https://gist.github.com/Snawoot/70ae403716c698cb86ab015626d72bd4).
 
 
 
