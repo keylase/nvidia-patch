@@ -8,13 +8,14 @@ requirements:
 # step-by-step :
 
 Download driver: https://yadi.sk/d/yahf1Y-D3PJnzd
-
+```
 chmod +x ./NVIDIA-Linux-x86_64-375.39.run
 
 ./NVIDIA-Linux-x86_64-375.39.run
+```
 
 check driver:
-
+```
 nvidia-smi
 
 mkdir ~/nvenc_backup
@@ -30,6 +31,7 @@ chmod +x patch.sh
 ./patch.sh ~/nvenc_backup/libnvidia-encode.so.375.39 /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.375.39
 
 reboot
+```
 
 
 
