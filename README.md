@@ -5,11 +5,12 @@ requirements:
 - nvenc-compatible gpu
 - nvidia 375.39 driver
 
-# install driver nvidia 375.39 :
+# step-by-step :
 
 Download driver: https://yadi.sk/d/yahf1Y-D3PJnzd
 
 chmod +x ./NVIDIA-Linux-x86_64-375.39.run
+
 ./NVIDIA-Linux-x86_64-375.39.run
 
 check driver:
