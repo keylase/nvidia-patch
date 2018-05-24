@@ -3,6 +3,7 @@
 requirements:
 - Ubuntu 17.10
 - nvenc-compatible gpu
+- kernel - 4.4.0-101-generic
 - nvidia 378.13 driver
 
 # step-by-step :
@@ -12,7 +13,7 @@ Download driver: https://yadi.sk/d/d87mf0y03WTbb5
 chmod +x ./NVIDIA-Linux-x86_64-378.13.run
 
 ./NVIDIA-Linux-x86_64-378.13.run
-```
+```https://github.com/keylase/nvidia-patch/issues
 
 check driver:
 ```bash
