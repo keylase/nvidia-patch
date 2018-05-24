@@ -1,7 +1,7 @@
 # nvidia-patch
 
 requirements:
-- ubuntu 14.04
+- Ubuntu 17.10
 - nvenc-compatible gpu
 - nvidia 378.13 driver
 
