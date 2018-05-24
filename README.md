@@ -9,14 +9,13 @@ requirements:
 # step-by-step :
 
 Download driver: https://yadi.sk/d/d87mf0y03WTbb5
-```bash
+
 chmod +x ./NVIDIA-Linux-x86_64-378.13.run
 
 ./NVIDIA-Linux-x86_64-378.13.run
-```https://github.com/keylase/nvidia-patch/issues
 
-check driver:
-```bash
+# check driver:
+
 nvidia-smi
 
 mkdir ~/nvenc_backup
