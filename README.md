@@ -3,15 +3,15 @@
 requirements:
 - ubuntu 14.04
 - nvenc-compatible gpu
-- nvidia 375.39 driver
+- nvidia 378.13 driver
 
 # step-by-step :
 
-Download driver: https://yadi.sk/d/yahf1Y-D3PJnzd
+Download driver: https://yadi.sk/d/d87mf0y03WTbb5
 ```bash
-chmod +x ./NVIDIA-Linux-x86_64-375.39.run
+chmod +x ./NVIDIA-Linux-x86_64-378.13.run
 
-./NVIDIA-Linux-x86_64-375.39.run
+./NVIDIA-Linux-x86_64-378.13.run
 ```
 
 check driver:
@@ -22,13 +22,13 @@ mkdir ~/nvenc_backup
 
 cd ~/nvenc_backup
 
-cp /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.375.39 ~/nvenc_backup/
+cp /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.378.13 ~/nvenc_backup/
 
 wget https://raw.githubusercontent.com/keylase/nvidia-patch/master/patch.sh
 
 chmod +x patch.sh
 
-./patch.sh ~/nvenc_backup/libnvidia-encode.so.375.39 /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.375.39
+./patch.sh ~/nvenc_backup/libnvidia-encode.so.378.13 /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.378.13
 
 reboot
 ```
