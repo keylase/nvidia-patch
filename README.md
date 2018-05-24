@@ -3,7 +3,7 @@
 requirements:
 - Ubuntu 17.10
 - nvenc-compatible gpu
-- kernel - 4.4.0-101-generic
+- kernel (<4.10.0)- 4.4.0-101-generic
 - nvidia 378.13 driver
 
 # step-by-step :
