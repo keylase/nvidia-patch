@@ -1,39 +1,49 @@
 # nvidia-patch
 
-requirements:
-- ubuntu 14.04
-- nvenc-compatible gpu
-- nvidia 375.39 driver
+Requirements:
+- ubuntu (< 16.04 for 375.39 nvidia driver or kernel < 4.15)
+- nvenc-compatible gpu (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
+- nvidia driver (patch availible for 375.39 or 396.24)
 
-# step-by-step :
+Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86_64)
 
-Download driver: https://yadi.sk/d/yahf1Y-D3PJnzd
+## step-by-step :
+
+### Download driver
+http://us.download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run
+http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
+
+### Install driver 396.24
 ```bash
+mkdir /opt/nvidia && cd /opt/nvidia
+wget http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
 chmod +x ./NVIDIA-Linux-x86_64-375.39.run
-
-./NVIDIA-Linux-x86_64-375.39.run
+./NVIDIA-Linux-x86_64-396.24.run
 ```
 
-check driver:
+### Check driver
 ```bash
 nvidia-smi
+```
 
-mkdir ~/nvenc_backup
+### Patch libnvidia-encode.so (with backup)
+```bash
+bash ./patch.sh
+```
 
-cd ~/nvenc_backup
+### Silent patch libnvidia-encode.so
+```bash
+bash ./patch.sh -s
+```
 
-cp /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.375.39 ~/nvenc_backup/
-
-wget https://raw.githubusercontent.com/keylase/nvidia-patch/master/patch.sh
-
-chmod +x patch.sh
-
-./patch.sh ~/nvenc_backup/libnvidia-encode.so.375.39 /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.375.39
-
-reboot
+### Rollback libnvidia-encode.so (restore from backup)
+```bash
+bash ./patch.sh -r
 ```
 
 ## See also
+
+https://habr.com/post/262563/
 
 If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, consider using this [patch](https://gist.github.com/Snawoot/70ae403716c698cb86ab015626d72bd4).
 
