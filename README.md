@@ -19,7 +19,7 @@ http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-39
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
 wget http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
-chmod +x ./NVIDIA-Linux-x86_64-375.39.run
+chmod +x ./NVIDIA-Linux-x86_64-396.24.run
 ./NVIDIA-Linux-x86_64-396.24.run
 ```
 
