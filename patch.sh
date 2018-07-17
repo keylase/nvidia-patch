@@ -33,11 +33,12 @@ fi
 declare -A patch_list=(
     ["375.39"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
     ["396.24"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
+    ["396.26"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
     # break nvenc.c:236,layout asm,step-mode,step,break *0x00007fff89f9ba45
     # libnvidia-encode.so @ 0x15a45; test->sub, jne->nop-nop-nop-nop-nop-nop
 )
 
-driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits)
+driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1)
 if [[ ! $? -eq 0 ]]; then
     echo 'Something went wrong. Check nvidia driver'
     exit 1;
