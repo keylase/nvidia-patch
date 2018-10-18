@@ -3,6 +3,7 @@
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 rollback_flag=''
+driver_dir='/usr/lib/x86_64-linux-gnu'
 
 print_usage() { printf '
 SYNOPSIS
@@ -30,6 +31,9 @@ if [[ $silent_flag ]]; then
     exec 1> /dev/null
 fi
 
+test -d "$driver_dir" || driver_dir="/usr/lib64"  # ..centos
+test -d "$driver_dir" || { echo "ERROR: cannot detect driver directory"; exit 1; }
+
 declare -A patch_list=(
     ["375.39"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
     ["396.24"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
@@ -38,6 +42,7 @@ declare -A patch_list=(
     # break nvenc.c:236,layout asm,step-mode,step,break *0x00007fff89f9ba45
     # libnvidia-encode.so @ 0x15a45; test->sub, jne->nop-nop-nop-nop-nop-nop
     ["396.54"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
+    ["410.48"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
 )
 
 driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1)
@@ -61,8 +66,8 @@ fi
 
 if [[ $rollback_flag ]]; then
     if [[ -f $backup_path/libnvidia-encode.so.$driver_version ]]; then
-        cp $backup_path/libnvidia-encode.so.$driver_version \
-           /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.$driver_version
+        cp -p $backup_path/libnvidia-encode.so.$driver_version \
+           $driver_dir/libnvidia-encode.so.$driver_version
         echo "Restore from backup libnvidia-encode.so.$driver_version"
     else
         echo "Backup not found. Try to patch first."
@@ -72,13 +77,13 @@ else
     if [[ ! -f $backup_path/libnvidia-encode.so.$driver_version ]]; then
         echo "Attention! Backup not found. Copy current libnvidia-encode to backup."
         mkdir -p $backup_path
-        cp /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.$driver_version \
+        cp -p $driver_dir/libnvidia-encode.so.$driver_version \
            $backup_path/libnvidia-encode.so.$driver_version
     fi
     sha1sum $backup_path/libnvidia-encode.so.$driver_version
     sed "$patch" $backup_path/libnvidia-encode.so.$driver_version > \
-      /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.$driver_version
-    sha1sum /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.$driver_version
+      $driver_dir/libnvidia-encode.so.$driver_version
+    sha1sum $driver_dir/libnvidia-encode.so.$driver_version
     ldconfig
     echo "Patched!"
 fi
