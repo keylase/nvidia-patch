@@ -14,13 +14,14 @@ Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86_64)
 ### Download driver
 http://us.download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run
 http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
+http://us.download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
 
-### Install driver 396.24
+### Install driver (410.78)
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget http://us.download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
-chmod +x ./NVIDIA-Linux-x86_64-396.24.run
-./NVIDIA-Linux-x86_64-396.24.run
+wget http://us.download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
+chmod +x ./NVIDIA-Linux-x86_64-410.78.run
+./NVIDIA-Linux-x86_64-410.78.run
 ```
 
 ### Check driver
@@ -48,7 +49,5 @@ bash ./patch.sh -r
 https://habr.com/post/262563/
 
 If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, consider using this [patch](https://gist.github.com/Snawoot/70ae403716c698cb86ab015626d72bd4).
-
-
 
 
