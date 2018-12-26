@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Please provide details about your environment**
+**Please provide details about your environment (please complete the following information)**
 - Nvidia driver version: [e.g. 410.48]
 - Linux distro version: [e.g. Ubuntu 18.04]
 - [x] I'm willing to participate in testing of new patch version
