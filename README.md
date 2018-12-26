@@ -4,7 +4,17 @@
 Requirements:
 - ubuntu (< 18.04 for 375.39 nvidia driver or kernel < 4.15)
 - nvenc-compatible gpu (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
-- nvidia driver (patch availible for 375.39, 390.87, 396.24, 396.26, 396.37)
+- nvidia driver. Patch availible for: 
+  - 375.39
+  - 390.87
+  - 396.24
+  - 396.26
+  - 396.37
+  - 396.54
+  - 410.48
+  - 410.57
+  - 410.73
+  - 410.78
 
 
 Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86_64)
