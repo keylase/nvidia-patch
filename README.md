@@ -1,5 +1,6 @@
 # nvidia-patch
 
+This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
 Requirements:
 - ubuntu (< 18.04 for 375.39 nvidia driver or kernel < 4.15)
