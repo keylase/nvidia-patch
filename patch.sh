@@ -74,10 +74,10 @@ fi
 
 echo "Detected nvidia driver version: $driver_version"
 
-patch=${patch_list[$driver_version]}
-object=${object_list[$driver_version]}
+patch="${patch_list[$driver_version]}"
+object="${object_list[$driver_version]}"
 
-if [[ ! $patch ]]; then
+if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
     echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
     echo "Available patches for: " 1>&2
     for drv in "${!patch_list[@]}"; do
