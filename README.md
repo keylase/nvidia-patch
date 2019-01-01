@@ -6,16 +6,17 @@ Requirements:
 - ubuntu (< 18.04 for 375.39 nvidia driver or kernel < 4.15)
 - nvenc-compatible gpu (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - nvidia driver. Patch availible for: 
-  - 375.39 - http://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run
-  - 390.87 - http://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run
-  - 396.24 - http://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
-  - 396.26 - http://download.nvidia.com/XFree86/Linux-x86_64/396.26/NVIDIA-Linux-x86_64-396.26.run
-  - 396.37 - http://download.nvidia.com/XFree86/Linux-x86_64/396.37/NVIDIA-Linux-x86_64-396.37.run
-  - 396.54 - http://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run
-  - 410.48 - http://download.nvidia.com/XFree86/Linux-x86_64/410.48/NVIDIA-Linux-x86_64-410.48.run
-  - 410.57 - http://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run
-  - 410.73 - http://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run
-  - 410.78 - http://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
+  - 375.39 - https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run
+  - 390.87 - https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run
+  - 396.24 - https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run
+  - 396.26 - https://uk.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run
+  - 396.37 - https://uk.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run
+  - 396.54 - https://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run
+  - 410.48
+  - 410.57 - https://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run
+  - 410.73 - https://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run
+  - 410.78 - https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
+  - 410.79 - https://uk.download.nvidia.com/tesla/410.79/NVIDIA-Linux-x86_64-410.79.run
 
 
 Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86_64)
@@ -23,12 +24,12 @@ Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86_64)
 ## step-by-step :
 
 ### Download driver
-http://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
+https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
 
 ### Install driver (410.78)
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget http://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
+wget https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
 chmod +x ./NVIDIA-Linux-x86_64-410.78.run
 ./NVIDIA-Linux-x86_64-410.78.run
 ```
