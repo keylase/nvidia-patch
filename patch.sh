@@ -89,25 +89,25 @@ if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
 fi
 
 if [[ $rollback_flag ]]; then
-    if [[ -f $backup_path/"$object".$driver_version ]]; then
-        cp -p $backup_path/"$object".$driver_version \
-           $driver_dir/"$object".$driver_version
+    if [[ -f "$backup_path/$object.$driver_version" ]]; then
+        cp -p "$backup_path/$object.$driver_version" \
+           "$driver_dir/$object.$driver_version"
         echo "Restore from backup $object.$driver_version"
     else
         echo "Backup not found. Try to patch first."
         exit 1;
     fi
 else
-    if [[ ! -f $backup_path/"$object".$driver_version ]]; then
-        echo "Attention! Backup not found. Copy current libnvidia-encode to backup."
-        mkdir -p $backup_path
-        cp -p $driver_dir/"$object".$driver_version \
-           $backup_path/"$object".$driver_version
+    if [[ ! -f "$backup_path/$object.$driver_version" ]]; then
+        echo "Attention! Backup not found. Copy current $object to backup."
+        mkdir -p "$backup_path"
+        cp -p "$driver_dir/$object.$driver_version" \
+           "$backup_path/$object.$driver_version"
     fi
-    sha1sum $backup_path/"$object".$driver_version
-    sed "$patch" $backup_path/"$object".$driver_version > \
-      $driver_dir/"$object".$driver_version
-    sha1sum $driver_dir/"$object".$driver_version
+    sha1sum "$backup_path/$object.$driver_version"
+    sed "$patch" "$backup_path/$object.$driver_version" > \
+      "$driver_dir/$object.$driver_version"
+    sha1sum "$driver_dir/$object.$driver_version"
     ldconfig
     echo "Patched!"
 fi
