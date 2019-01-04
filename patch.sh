@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 rollback_flag=''
@@ -68,18 +70,15 @@ declare -A object_list=(
     ["415.25"]='libnvcuvid.so'
 )
 
-driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1)
-if [[ ! $? -eq 0 ]]; then
+
+if ! driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
     echo 'Something went wrong. Check nvidia driver'
     exit 1;
 fi
 
 echo "Detected nvidia driver version: $driver_version"
 
-patch="${patch_list[$driver_version]}"
-object="${object_list[$driver_version]}"
-
-if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
+if [[ ! -v "patch_list[$driver_version]" || ! -v "object_list[$driver_version]" ]]; then
     echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
     echo "Available patches for: " 1>&2
     for drv in "${!patch_list[@]}"; do
@@ -88,26 +87,29 @@ if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
     exit 1;
 fi
 
+patch="${patch_list[$driver_version]}"
+object="${object_list[$driver_version]}"
+
 if [[ $rollback_flag ]]; then
-    if [[ -f $backup_path/"$object".$driver_version ]]; then
-        cp -p $backup_path/"$object".$driver_version \
-           $driver_dir/"$object".$driver_version
+    if [[ -f "$backup_path/$object.$driver_version" ]]; then
+        cp -p "$backup_path/$object.$driver_version" \
+           "$driver_dir/$object.$driver_version"
         echo "Restore from backup $object.$driver_version"
     else
         echo "Backup not found. Try to patch first."
         exit 1;
     fi
 else
-    if [[ ! -f $backup_path/"$object".$driver_version ]]; then
-        echo "Attention! Backup not found. Copy current libnvidia-encode to backup."
-        mkdir -p $backup_path
-        cp -p $driver_dir/"$object".$driver_version \
-           $backup_path/"$object".$driver_version
+    if [[ ! -f "$backup_path/$object.$driver_version" ]]; then
+        echo "Attention! Backup not found. Copy current $object to backup."
+        mkdir -p "$backup_path"
+        cp -p "$driver_dir/$object.$driver_version" \
+           "$backup_path/$object.$driver_version"
     fi
-    sha1sum $backup_path/"$object".$driver_version
-    sed "$patch" $backup_path/"$object".$driver_version > \
-      $driver_dir/"$object".$driver_version
-    sha1sum $driver_dir/"$object".$driver_version
+    sha1sum "$backup_path/$object.$driver_version"
+    sed "$patch" "$backup_path/$object.$driver_version" > \
+      "$driver_dir/$object.$driver_version"
+    sha1sum "$driver_dir/$object.$driver_version"
     ldconfig
     echo "Patched!"
 fi
