@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 rollback_flag=''
@@ -68,18 +70,15 @@ declare -A object_list=(
     ["415.25"]='libnvcuvid.so'
 )
 
-driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1)
-if [[ ! $? -eq 0 ]]; then
+
+if ! driver_version=$(/usr/bin/nvidia-smi --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
     echo 'Something went wrong. Check nvidia driver'
     exit 1;
 fi
 
 echo "Detected nvidia driver version: $driver_version"
 
-patch="${patch_list[$driver_version]}"
-object="${object_list[$driver_version]}"
-
-if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
+if [[ ! -v "patch_list[$driver_version]" || ! -v "object_list[$driver_version]" ]]; then
     echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
     echo "Available patches for: " 1>&2
     for drv in "${!patch_list[@]}"; do
@@ -87,6 +86,9 @@ if [[ ( ! "$patch" ) ||  ( ! "$object" ) ]]; then
     done
     exit 1;
 fi
+
+patch="${patch_list[$driver_version]}"
+object="${object_list[$driver_version]}"
 
 if [[ $rollback_flag ]]; then
     if [[ -f "$backup_path/$object.$driver_version" ]]; then
