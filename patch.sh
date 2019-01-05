@@ -12,15 +12,16 @@ SYNOPSIS
        patch.sh [OPTION]...
 
 DESCRIPTION
-       The patch for libnvidia-encode to increase encoder sessions
+       The patch for Nvidia drivers to increase encoder sessions
 
        -s    Silent mode (No output)
        -r    Rollback to original (Restore lib from backup)
+       -h    Print this help message
 
 '
 }
 
-while getopts 'rs' flag; do
+while getopts 'rsh' flag; do
   case "${flag}" in
     r) rollback_flag='true' ;;
     s) silent_flag='true' ;;

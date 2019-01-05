@@ -23,12 +23,33 @@ Requirements:
 
 Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86\_64)
 
-## step-by-step :
+## Synopsis
+
+```
+# bash ./patch.sh -h
+
+SYNOPSIS
+       patch.sh [OPTION]...
+
+DESCRIPTION
+       The patch for Nvidia drivers to increase encoder sessions
+
+       -s    Silent mode (No output)
+       -r    Rollback to original (Restore lib from backup)
+       -h    Print this help message
+
+```
+
+## Step-by-Step guide
+
+Examples are provided for driver version 410.78. All commands are runned as root.
 
 ### Download driver
+
 [https://download.nvidia.com/XFree86/Linux-x86\_64/410.78/NVIDIA-Linux-x86\_64-410.78.run](https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run)
 
-### Install driver (410.78)
+### Install driver
+
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
 wget https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run
@@ -37,21 +58,27 @@ chmod +x ./NVIDIA-Linux-x86_64-410.78.run
 ```
 
 ### Check driver
+
 ```bash
 nvidia-smi
 ```
 
-### Patch libnvidia-encode.so (with backup)
+Output should show no errors and details about your driver and GPU.
+
+### Patch driver
+
+This patch performs backup of original file prior to making changes.
+
 ```bash
 bash ./patch.sh
 ```
 
-### Silent patch libnvidia-encode.so
-```bash
-bash ./patch.sh -s
-```
+You're all set!
 
-### Rollback libnvidia-encode.so (restore from backup)
+## Rollback
+
+If something got broken you may restore patched driver from backup:
+
 ```bash
 bash ./patch.sh -r
 ```
