@@ -18,7 +18,7 @@ Requirements:
 3. Locate in this directory and download corresponding patch for your OS and driver version.
 4. Apply patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool. File name of patched object is specified in first line of .1337 patch.
 
-E.g, for 64bit Windows 10 running driver version 417.35 use `win10\_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
+E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
 
 ## See also
 
