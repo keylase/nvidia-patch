@@ -10,6 +10,7 @@ Requirements:
 - NVENC-compatible GPU (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - Nvidia driver. Patch availible for:
   - [417.35](https://uk.download.nvidia.com/Windows/417.35/417.35-desktop-win10-64bit-international-whql-rp.exe)
+  - [417.58](https://international.download.nvidia.com/Windows/417.58hf/417.58-desktop-notebook-win10-64bit-international-whql.hf.exe)
 
 ## Step-by-Step guide
 
