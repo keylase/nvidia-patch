@@ -18,7 +18,7 @@ Requirements:
 
 1. Download and install latest Nvidia driver supported by this patch.
 2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases).
-3. Locate in this directory and download corresponding patch for your OS and driver version.
+3. Locate in this directory and download corresponding patch for your OS and driver version. Hint: if you are not familiar with git, then use Github Web UI and download entire repo as ZIP archive or right-click on Raw button and pick "Save As..." on file preview page.
 4. Apply patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool. File name of patched object is specified in first line of .1337 patch.
 
 E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
