@@ -9,5 +9,6 @@ assignees: ''
 
 **Please provide details about your environment (please complete the following information)**
 - Nvidia driver version: [e.g. 410.48]
+- GPU Model: [e.g. GTX 1070]
 - OS: [e.g. Ubuntu 18.04]
 - [x] I'm willing to participate in testing of new patch version

@@ -24,7 +24,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add output listings or screenshots to help explain your problem.
 
 **Environment (please complete the following information):**
- - Linux distro version: [e.g. Ubuntu 18.04]
+ - OS: [e.g. Ubuntu 18.04]
+ - GPU model: [e.g. GTX 1070]
  - Patch commit used: [e.g. 5b828a6d91a14e7bf4f93b31d220e7687ceb638c]
  - Nvidia driver version: [e.g. 410.73]
 
