@@ -79,7 +79,7 @@ fi
 
 echo "Detected nvidia driver version: $driver_version"
 
-if [[ ! -v "patch_list[$driver_version]" || ! -v "object_list[$driver_version]" ]]; then
+if [[ ! "${patch_list[$driver_version]+isset}" || ! "${object_list[$driver_version]+isset}" ]]; then
     echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
     echo "Available patches for: " 1>&2
     for drv in "${!patch_list[@]}"; do
