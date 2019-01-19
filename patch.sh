@@ -39,6 +39,7 @@ test -d "$driver_dir" || { echo "ERROR: cannot detect driver directory"; exit 1;
 
 declare -A patch_list=(
     ["375.39"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
+    ["390.77"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
     ["390.87"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
     ["396.24"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
     ["396.26"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
@@ -58,6 +59,7 @@ declare -A patch_list=(
 
 declare -A object_list=(
     ["375.39"]='libnvidia-encode.so'
+    ["390.77"]='libnvidia-encode.so'
     ["390.87"]='libnvidia-encode.so'
     ["396.24"]='libnvidia-encode.so'
     ["396.26"]='libnvidia-encode.so'
