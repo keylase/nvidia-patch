@@ -53,6 +53,7 @@ declare -A patch_list=(
     ["410.79"]='s/\x85\xC0\x89\xC5\x0F\x85\x96\x00\x00\x00/\x29\xC0\x89\xC5\x90\x90\x90\x90\x90\x90/g'
     ["415.18"]='s/\x00\x00\x00\x84\xc0\x0f\x84\x40\xfd\xff\xff/\x00\x00\x00\x84\xc0\x90\x90\x90\x90\x90\x90/g'
     ["415.25"]='s/\x00\x00\x00\x84\xc0\x0f\x84\x40\xfd\xff\xff/\x00\x00\x00\x84\xc0\x90\x90\x90\x90\x90\x90/g'
+    ["415.27"]='s/\x00\x00\x00\x84\xc0\x0f\x84\x40\xfd\xff\xff/\x00\x00\x00\x84\xc0\x90\x90\x90\x90\x90\x90/g'
 )
 
 declare -A object_list=(
@@ -69,11 +70,12 @@ declare -A object_list=(
     ["410.79"]='libnvidia-encode.so'
     ["415.18"]='libnvcuvid.so'
     ["415.25"]='libnvcuvid.so'
+    ["415.27"]='libnvcuvid.so'
 )
 
 NVIDIA_SMI="$(which nvidia-smi)"
 
-if ! driver_version=$($NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
+if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
     echo 'Something went wrong. Check nvidia driver'
     exit 1;
 fi
