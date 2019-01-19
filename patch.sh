@@ -75,7 +75,7 @@ declare -A object_list=(
 
 NVIDIA_SMI="$(which nvidia-smi)"
 
-if ! driver_version=$($NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
+if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
     echo 'Something went wrong. Check nvidia driver'
     exit 1;
 fi
