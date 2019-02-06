@@ -22,6 +22,11 @@ class LengthMismatchException(ByteDiffException):
     pass
 
 
+class DiffLimitException(ByteDiffException):
+    """ Throwed when difference limit hit """
+    pass
+
+
 def check_positive_int(value):
     value = int(value)
     if value <= 0:
@@ -81,19 +86,23 @@ def zip_files_bytes(left, right):
         yield a, b
 
 
-def diff(left, right):
+def diff(left, right, limit=None):
     offset = 0
+    diff_count = 0
     for a, b in zip_files_bytes(left, right):
         if a != b:
+            diff_count += 1
+            if limit is not None and diff_count > limit:
+                raise DiffLimitException()
             yield offset, a, b
         offset += 1
 
 
-def compose_diff_file(orig, patched, output, header, offset_adjustment=True):
+def compose_diff_file(orig, patched, output, header, limit=None, offset_adjustment=True):
     output.write(HEADER_FORMAT % (header.encode('latin-1'),))
-    for offset, a, b in diff(orig, patched):
-        o = offset + OFFSET_ADJUSTMENT if offset_adjustment else offset
-        output.write(LINE_FORMAT % (o, a, b))
+    adj = OFFSET_ADJUSTMENT if offset_adjustment else 0
+    for offset, a, b in diff(orig, patched, limit):
+        output.write(LINE_FORMAT % (offset + adj, a, b))
 
 
 def main():
@@ -114,9 +123,12 @@ def main():
          open(args.patched_file, 'rb') as patched,\
          open(output_filename, 'wb') as output:
         try:
-            compose_diff_file(orig, patched, output, header_filename)
+            compose_diff_file(orig, patched, output, header_filename, args.limit)
         except LengthMismatchException:
             print("Input files have inequal length. Aborting...",
+                  file=sys.stderr)
+        except DiffLimitException:
+            print("Differences limit hit. Aborting...",
                   file=sys.stderr)
 
 
