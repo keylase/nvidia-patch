@@ -22,6 +22,11 @@ class LengthMismatchException(ByteDiffException):
     pass
 
 
+class DiffLimitException(ByteDiffException):
+    """ Throwed when difference limit hit """
+    pass
+
+
 def check_positive_int(value):
     value = int(value)
     if value <= 0:
@@ -64,31 +69,43 @@ def feed_chunks(f, chunk_size=4096):
         yield buf
 
 
-def zip_files_bytes(*files):
+def zip_files_bytes(left, right):
     """ Iterate over two files, returning pair of bytes.
     Throw LengthMismatch if file sizes is uneven. """
     class EndMarker(object):
         pass
     end_marker = EndMarker()
 
-    iterators = (itertools.chain.from_iterable(feed_chunks(f)) for f in files)
-    for tup in itertools.zip_longest(*iterators, fillvalue=end_marker):
-        if any(v is end_marker for v in tup):
+    left_iter = itertools.chain.from_iterable(
+        feed_chunks(left))
+    right_iter = itertools.chain.from_iterable(
+        feed_chunks(right))
+    for a, b in itertools.zip_longest(left_iter,
+                                      right_iter,
+                                      fillvalue=end_marker):
+        if a is end_marker or b is end_marker:
             raise LengthMismatchException("Length of input files inequal.")
-        yield tup
+        yield a, b
 
 
-def diff(left, right):
-    for offset, (a, b) in enumerate(zip_files_bytes(left, right)):
+def diff(left, right, limit=None):
+    offset = 0
+    diff_count = 0
+    for a, b in zip_files_bytes(left, right):
         if a != b:
+            diff_count += 1
+            if limit is not None and diff_count > limit:
+                raise DiffLimitException()
             yield offset, a, b
+        offset += 1
 
 
-def compose_diff_file(orig, patched, output, header, offset_adjustment=True):
+def compose_diff_file(orig, patched, output, header, *,
+                      limit=None, offset_adjustment=True):
     output.write(HEADER_FORMAT % (header.encode('latin-1'),))
-    for offset, a, b in diff(orig, patched):
-        o = offset + OFFSET_ADJUSTMENT if offset_adjustment else offset
-        output.write(LINE_FORMAT % (o, a, b))
+    adj = OFFSET_ADJUSTMENT if offset_adjustment else 0
+    for offset, a, b in diff(orig, patched, limit):
+        output.write(LINE_FORMAT % (offset + adj, a, b))
 
 
 def main():
@@ -109,9 +126,13 @@ def main():
          open(args.patched_file, 'rb') as patched,\
          open(output_filename, 'wb') as output:
         try:
-            compose_diff_file(orig, patched, output, header_filename)
+            compose_diff_file(orig, patched, output, header_filename,
+                              limit=args.limit)
         except LengthMismatchException:
             print("Input files have inequal length. Aborting...",
+                  file=sys.stderr)
+        except DiffLimitException:
+            print("Differences limit hit. Aborting...",
                   file=sys.stderr)
 
 
