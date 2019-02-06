@@ -11,6 +11,7 @@ Requirements:
 - Nvidia driver. Patch availible for:
   - [Quadro 412.16](https://international.download.nvidia.com/Windows/Quadro_Certified/412.16/412.16-quadro-desktop-notebook-win10-64bit-international-whql.exe)
   - [Quadro 416.78](https://international.download.nvidia.com/Windows/Quadro_Certified/416.78/416.78-quadro-desktop-notebook-win10-64bit-international-whql.exe)
+  - [Quadro 418.81](https://international.download.nvidia.com/Windows/Quadro_Certified/418.81/418.81-quadro-desktop-notebook-win10-64bit-international-whql.exe)
   - [417.35](https://international.download.nvidia.com/Windows/417.35/417.35-desktop-win10-64bit-international-whql-rp.exe)
   - [417.58](https://international.download.nvidia.com/Windows/417.58hf/417.58-desktop-notebook-win10-64bit-international-whql.hf.exe)
   - [417.71](https://international.download.nvidia.com/Windows/417.71/417.71-desktop-win10-64bit-international-whql.exe)
