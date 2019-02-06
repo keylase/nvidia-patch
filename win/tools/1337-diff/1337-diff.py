@@ -98,7 +98,7 @@ def diff(left, right, limit=None):
         offset += 1
 
 
-def compose_diff_file(orig, patched, output, header, limit=None, offset_adjustment=True):
+def compose_diff_file(orig, patched, output, header, *, limit=None, offset_adjustment=True):
     output.write(HEADER_FORMAT % (header.encode('latin-1'),))
     adj = OFFSET_ADJUSTMENT if offset_adjustment else 0
     for offset, a, b in diff(orig, patched, limit):
@@ -123,7 +123,8 @@ def main():
          open(args.patched_file, 'rb') as patched,\
          open(output_filename, 'wb') as output:
         try:
-            compose_diff_file(orig, patched, output, header_filename, args.limit)
+            compose_diff_file(orig, patched, output, header_filename,
+                              limit=args.limit)
         except LengthMismatchException:
             print("Input files have inequal length. Aborting...",
                   file=sys.stderr)
