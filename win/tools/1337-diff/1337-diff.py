@@ -76,8 +76,10 @@ def zip_files_bytes(left, right):
         pass
     end_marker = EndMarker()
 
-    left_iter = itertools.chain.from_iterable(feed_chunks(left))
-    right_iter = itertools.chain.from_iterable(feed_chunks(right))
+    left_iter = itertools.chain.from_iterable(
+        feed_chunks(left))
+    right_iter = itertools.chain.from_iterable(
+        feed_chunks(right))
     for a, b in itertools.zip_longest(left_iter,
                                       right_iter,
                                       fillvalue=end_marker):
@@ -98,7 +100,8 @@ def diff(left, right, limit=None):
         offset += 1
 
 
-def compose_diff_file(orig, patched, output, header, *, limit=None, offset_adjustment=True):
+def compose_diff_file(orig, patched, output, header, *,
+                      limit=None, offset_adjustment=True):
     output.write(HEADER_FORMAT % (header.encode('latin-1'),))
     adj = OFFSET_ADJUSTMENT if offset_adjustment else 0
     for offset, a, b in diff(orig, patched, limit):
