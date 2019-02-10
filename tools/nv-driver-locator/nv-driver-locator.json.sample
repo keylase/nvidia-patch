@@ -1,0 +1,183 @@
+{
+    "db": {
+        "type": "file",
+        "params": {
+            "workdir": "/var/lib/nv-driver-locator"
+        }
+    },
+    "key_components": [
+        [
+            "DriverAttributes",
+            "Version"
+        ],
+        [
+            "DriverAttributes",
+            "Name"
+        ]
+    ],
+    "channels": [
+        {
+            "type": "gfe_client",
+            "name": "desktop defaults",
+            "params": {}
+        },
+        {
+            "type": "gfe_client",
+            "name": "desktop beta",
+            "params": {
+                "beta": true
+            }
+        },
+        {
+            "type": "gfe_client",
+            "name": "mobile",
+            "params": {
+                "notebook": true
+            }
+        },
+        {
+            "type": "gfe_client",
+            "name": "mobile beta",
+            "params": {
+                "notebook": true,
+                "beta": true
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux beta",
+            "params": {
+                "os": "Linux_64",
+                "product": "GeForce",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux stable",
+            "params": {
+                "os": "Linux_64",
+                "product": "GeForce",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForce",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForce",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win notebook stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForceMobile",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win notebook beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForceMobile",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux quadro beta",
+            "params": {
+                "os": "Linux_64",
+                "product": "Quadro",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux quadro stable",
+            "params": {
+                "os": "Linux_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "Quadro",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro notebook stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "QuadroMobile",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro notebook beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "QuadroMobile",
+                "certlevel": "All"
+            }
+        }
+    ],
+    "notifiers": [
+        {
+            "type": "email",
+            "name": "my email",
+            "params": {
+                "from_addr": "notify-bot@gmail.com",
+                "to_addrs": [
+                    "recepient1@domain1.tld",
+                    "recepient2@domain2.tld"
+                ],
+                "host": "smtp.google.com",
+                "use_starttls": true,
+                "login": "notify-bot",
+                "password": "MyGoodPass"
+            }
+        },
+        {
+            "type": "command",
+            "name": "sample command",
+            "params": {
+                "timeout": 10.0,
+                "cmdline": [
+                    "cat",
+                    "-"
+                ]
+            }
+        }
+    ]
+}

@@ -157,6 +157,43 @@ class GFEClientChannel(BaseChannel):
         return self._get_latest_driver(**self._kwargs)
 
 
+class NvidiaDownloadsChannel(BaseChannel):
+    def __init__(self, name, *,
+                 os="Linux_64",
+                 product="GeForce",
+                 certlevel="All",
+                 driver_type="Standard",
+                 lang="English",
+                 cuda_ver="Nothing"):
+        self.name = name
+        gnd = importlib.import_module('get_nvidia_downloads')
+        self._gnd = gnd
+        self._os = gnd.OS[os]
+        self._product = gnd.Product[product]
+        self._certlevel = gnd.CertLevel[certlevel]
+        self._driver_type = gnd.DriverType[driver_type]
+        self._lang = gnd.DriverLanguage[lang]
+        self._cuda_ver = gnd.CUDAToolkitVersion[cuda_ver]
+
+    def get_latest_driver(self):
+        drivers = self._gnd.get_drivers(os=self._os,
+                                        product=self._product,
+                                        certlevel=self._certlevel,
+                                        driver_type=self._driver_type,
+                                        lang=self._lang,
+                                        cuda_ver=self._cuda_ver)
+        if not drivers:
+            return None
+        latest = max(drivers, key=lambda d: tuple(d['version'].split('.')))
+        return {
+            'DriverAttributes': {
+                'Version': latest['version'],
+                'Name': latest['name'],
+                'NameLocalized': latest['name'],
+            }
+        }
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Watches for GeForce experience driver updates for "
@@ -182,6 +219,7 @@ class DriverLocator:
     def _construct_channels(self, channels_config):
         channel_types = {
             'gfe_client': GFEClientChannel,
+            'nvidia_downloads': NvidiaDownloadsChannel,
         }
 
         channels = []
