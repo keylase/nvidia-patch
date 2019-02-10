@@ -91,6 +91,11 @@ bash ./patch.sh -r
 
 ## See also
 
-https://habr.com/post/262563/
+* Plex Media Server: enable HW **decoding**: 
+  * [GH Issue](https://github.com/keylase/nvidia-patch/issues/51)
+  * PMS Forum:
+    1. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158)
+    2. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172)
+* [Original research behind this patch (in Russian)](https://habr.com/post/262563/)
 
 If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, see option `-surfaces` ("Number of concurrent surfaces") and try value near `-surfaces 8`.
