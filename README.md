@@ -2,7 +2,7 @@
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
-Main target operating system is GNU/Linux, but for experimental Windows support see [win](win).
+Main target operating system is **GNU/Linux**, but for **Windows** support see [**win**](win).
 
 Requirements:
 - x86\_64 system architecture
@@ -96,7 +96,7 @@ bash ./patch.sh -r
   * PMS Forum:
     1. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158)
     2. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172)
-* Unraid / Docker
+* Unraid / Docker:
   * [GH Issue](https://github.com/keylase/nvidia-patch/issues/43)
   * Unraid Nvidia plugin:
     * [Repo](https://github.com/linuxserver/Unraid-Nvidia-Plugin)
