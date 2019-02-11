@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64; rv:65.0) '\
              'Gecko/20100101 Firefox/65.0'
-TIMEOUT = 10
 
 
 @enum.unique
@@ -95,6 +94,13 @@ class CUDAToolkitVersion(enum.Enum):
 def parse_args():
     import argparse
 
+    def check_positive_float(val):
+        val = float(val)
+        if val <= 0:
+            raise ValueError("Value %s is not valid positive float" %
+                             (repr(val),))
+        return val
+
     parser = argparse.ArgumentParser(
         description="Retrieves info about latest NVIDIA drivers from "
         "downloads site",
@@ -119,14 +125,15 @@ def parse_args():
                         default=DriverType.Standard,
                         const=DriverType.DCH,
                         action="store_const")
-    parser.add_argument("-R", "--raw",
-                        help="Raw JSON output",
-                        action="store_true")
+    parser.add_argument("-T", "--timeout",
+                        type=check_positive_float,
+                        default=10.,
+                        help="timeout for network operations")
     args = parser.parse_args()
     return args
 
 
-def issue_request(query_obj):
+def issue_request(query_obj, timeout=10):
     ENDPOINT = 'https://www.nvidia.com/Download/processFind.aspx'
     url = ENDPOINT + '?' + urllib.parse.urlencode(query_obj)
     http_req = urllib.request.Request(
@@ -136,7 +143,7 @@ def issue_request(query_obj):
             'User-Agent': USER_AGENT
         }
     )
-    with urllib.request.urlopen(http_req, None, TIMEOUT) as resp:
+    with urllib.request.urlopen(http_req, None, timeout) as resp:
         coding = resp.headers.get_content_charset()
         coding = coding if coding is not None else 'utf-8-sig'
         decoder = codecs.getreader(coding)(resp)
@@ -150,7 +157,8 @@ def get_drivers(*,
                 certlevel=CertLevel.All,
                 driver_type=DriverType.Standard,
                 lang=DriverLanguage.English,
-                cuda_ver=CUDAToolkitVersion.Nothing):
+                cuda_ver=CUDAToolkitVersion.Nothing,
+                timeout=10):
     psid, pfid = product.value
     query = {
         'psid': psid,
@@ -163,7 +171,7 @@ def get_drivers(*,
     }
     if os is OS.Windows10_64:
         query['dtcid'] = driver_type.value
-    doc = issue_request(query)
+    doc = issue_request(query, timeout)
     soup = BeautifulSoup(doc, 'html.parser')
     if soup.find(class_='contentBucketMainContent') is None:
         return []
@@ -194,7 +202,8 @@ def main():
     pprint.pprint(get_drivers(os=args.os,
                               product=args.product,
                               certlevel=args.certification_level,
-                              driver_type=args.dch))
+                              driver_type=args.dch,
+                              timeout=args.timeout))
 
 
 if __name__ == '__main__':

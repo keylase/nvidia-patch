@@ -251,6 +251,7 @@ Params:
 * `language` - language. Default: `1033` (English)
 * `beta` - request Beta driver. Default: `false`
 * `dch` - request DCH driver. Default: `false` (request Standard Driver)
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
 #### NvidiaDownloadsChannel
 
@@ -268,6 +269,7 @@ Params:
 * `driver_type` - driver type. Allowed values: `Standard`, `DCH`. At this moment DCH driver appears to exists only for some product families and only for Windows 10 x64. Default: `Standard`.
 * `lang` - driver language. Allowed values: `English`. Default: `English`.
 * `cuda_ver` - verson of CUDA Toolkit bundled with driver. Currently useless for covered product families. Default: `Nothing`.
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
 ### Notifiers
 

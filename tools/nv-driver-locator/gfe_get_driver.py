@@ -7,14 +7,13 @@ import posixpath
 import codecs
 
 USER_AGENT = 'NvBackend/34.0.0.0'
-TIMEOUT = 10
 
 
 def serialize_req(obj):
     return json.dumps(obj, separators=(',', ':'))
 
 
-def getDispDrvrByDevid(query_obj):
+def getDispDrvrByDevid(query_obj, timeout=10):
     ENDPOINT = 'https://gfwsl.geforce.com/nvidia_web_services/' \
         'controller.gfeclientcontent.NG.php/' \
         'com.nvidia.services.GFEClientContent_NG.getDispDrvrByDevid'
@@ -26,7 +25,7 @@ def getDispDrvrByDevid(query_obj):
             'User-Agent': USER_AGENT
         }
     )
-    with urllib.request.urlopen(http_req, None, TIMEOUT) as resp:
+    with urllib.request.urlopen(http_req, None, timeout) as resp:
         coding = resp.headers.get_content_charset()
         coding = coding if coding is not None else 'utf-8-sig'
         decoder = codecs.getreader(coding)(resp)
@@ -41,7 +40,8 @@ def get_latest_geforce_driver(*,
                               os_build="17763",
                               language=1033,
                               beta=False,
-                              dch=False):
+                              dch=False,
+                              timeout=10):
     # GeForce GTX 1080 and GP104 HD Audio
     dt_id = ["1B80_10DE_119E_10DE"]
     # GeForce GTX 1080 Mobile
@@ -62,7 +62,7 @@ def get_latest_geforce_driver(*,
         "dch": "1" if dch else "0"        # 0 - Standard Driver, 1 - DCH Driver
     }
     try:
-        res = getDispDrvrByDevid(query_obj)
+        res = getDispDrvrByDevid(query_obj, timeout)
     except urllib.error.HTTPError as e:
         if e.code == 404:
             res = None
@@ -79,6 +79,13 @@ def parse_args():
         if not (0x0 <= lang <= 0xFFFF):
             raise ValueError("Bad language ID")
         return lang
+
+    def check_positive_float(val):
+        val = float(val)
+        if val <= 0:
+            raise ValueError("Value %s is not valid positive float" %
+                             (repr(val),))
+        return val
 
     parser = argparse.ArgumentParser(
         description="Retrieves info about latest NVIDIA drivers from GeForce "
@@ -107,6 +114,10 @@ def parse_args():
     parser.add_argument("-D", "--dch",
                         help="Query DCH driver instead of Standard driver",
                         action="store_true")
+    parser.add_argument("-T", "--timeout",
+                        type=check_positive_float,
+                        default=10.,
+                        help="timeout for network operations")
     parser.add_argument("-R", "--raw",
                         help="Raw JSON output",
                         action="store_true")
@@ -123,7 +134,8 @@ def main():
                                     notebook=args.notebook,
                                     x86_64=(not args._32bit),
                                     beta=args.beta,
-                                    dch=args.dch)
+                                    dch=args.dch,
+                                    timeout=args.timeout)
     if drv is None:
         print("NOT FOUND")
         sys.exit(3)

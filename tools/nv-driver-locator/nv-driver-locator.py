@@ -164,7 +164,8 @@ class NvidiaDownloadsChannel(BaseChannel):
                  certlevel="All",
                  driver_type="Standard",
                  lang="English",
-                 cuda_ver="Nothing"):
+                 cuda_ver="Nothing",
+                 timeout=10):
         self.name = name
         gnd = importlib.import_module('get_nvidia_downloads')
         self._gnd = gnd
@@ -174,6 +175,7 @@ class NvidiaDownloadsChannel(BaseChannel):
         self._driver_type = gnd.DriverType[driver_type]
         self._lang = gnd.DriverLanguage[lang]
         self._cuda_ver = gnd.CUDAToolkitVersion[cuda_ver]
+        self._timeout = timeout
 
     def get_latest_driver(self):
         drivers = self._gnd.get_drivers(os=self._os,
@@ -181,7 +183,8 @@ class NvidiaDownloadsChannel(BaseChannel):
                                         certlevel=self._certlevel,
                                         driver_type=self._driver_type,
                                         lang=self._lang,
-                                        cuda_ver=self._cuda_ver)
+                                        cuda_ver=self._cuda_ver,
+                                        timeout=self._timeout)
         if not drivers:
             return None
         latest = max(drivers, key=lambda d: tuple(d['version'].split('.')))
