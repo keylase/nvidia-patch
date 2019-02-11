@@ -96,6 +96,11 @@ bash ./patch.sh -r
   * PMS Forum:
     1. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158)
     2. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172)
+* Unraid / Docker
+  * [GH Issue](https://github.com/keylase/nvidia-patch/issues/43)
+  * Unraid Nvidia plugin:
+    * [Repo](https://github.com/linuxserver/Unraid-Nvidia-Plugin)
+    * [Forum page](https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/) ([archive link](https://web.archive.org/web/20190211145338/https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/))
 * [Original research behind this patch (in Russian)](https://habr.com/post/262563/)
 
 If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, see option `-surfaces` ("Number of concurrent surfaces") and try value near `-surfaces 8`.
