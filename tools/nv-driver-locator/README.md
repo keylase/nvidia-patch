@@ -11,6 +11,7 @@ nv-driver-locator is a tool for internal usage, which purpose is to notify about
 ## Requirements
 
 * Python 3.4+
+* `beautifulsoup4` package - required only when NvidiaDownloadsChannel is used.
 
 ## Overview
 
@@ -21,13 +22,14 @@ All scripts may be used both as standalone application and importable module. Fo
 * nv-driver-locator.py - main executable, intended to be run as cron job.
 * mailer.py - module with email routines and minimalistic email client for test purposes.
 * gfe\_get\_driver.py - GeForce Experience client library (and test util).
+* get\_nvidia\_downloads.py - Nvidia downloads site parser (and test util).
 
 ### Operation
 
 1. Cron job queries all configured channels.
 2. Program aggregates responses by hashing their's values covered by `key_components`. `key_components` is a list of JSON paths (represented by list too) specified in config file.
 3. Program queries DB if given hash has any match in database.
-4. If no match found and we have new instance all notifiers getting fired.
+4. If no match found and we have new instance, then all notifiers are getting fired.
 5. New record gets written into DB.
 
 ## Configuration example
@@ -44,6 +46,10 @@ All scripts may be used both as standalone application and importable module. Fo
         [
             "DriverAttributes",
             "Version"
+        ],
+        [
+            "DriverAttributes",
+            "Name"
         ]
     ],
     "channels": [
@@ -72,6 +78,114 @@ All scripts may be used both as standalone application and importable module. Fo
             "params": {
                 "notebook": true,
                 "beta": true
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux beta",
+            "params": {
+                "os": "Linux_64",
+                "product": "GeForce",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux stable",
+            "params": {
+                "os": "Linux_64",
+                "product": "GeForce",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForce",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForce",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win notebook stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForceMobile",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win notebook beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForceMobile",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux quadro beta",
+            "params": {
+                "os": "Linux_64",
+                "product": "Quadro",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "linux quadro stable",
+            "params": {
+                "os": "Linux_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "Quadro",
+                "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro notebook stable",
+            "params": {
+                "os": "Windows10_64",
+                "product": "QuadroMobile",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win quadro notebook beta",
+            "params": {
+                "os": "Windows10_64",
+                "product": "QuadroMobile",
+                "certlevel": "All"
             }
         }
     ],
@@ -137,6 +251,23 @@ Params:
 * `language` - language. Default: `1033` (English)
 * `beta` - request Beta driver. Default: `false`
 * `dch` - request DCH driver. Default: `false` (request Standard Driver)
+
+#### NvidiaDownloadsChannel
+
+Parses Nvidia downloads site.
+
+Params:
+
+Type: `nvidia_downloads`
+
+Params:
+
+* `os` - OS family, version and bitness. Allowed values: `Linux_32`, `Linux_64`, `Windows7_32`, `Windows7_64`, `Windows10_32`, `Windows10_64`. Default: `Linux_64`.
+* `product` - product kind. Allowed values: `GeForce`, `GeForceMobile`, `Quadro`, `QuadroMobile`. Default: `GeForce`.
+* `certlevel` - driver certification level. Allowed values: `All` - any certification level, `Beta` - beta drivers, `Certified` - WHQL certified in Windows case and Nvidia certified in Linux case, `ODE` - Optimal Driver for Enterprise (Quadro driver), `QNF` - Quadro New Feature (Quadro driver). Default: `All`.
+* `driver_type` - driver type. Allowed values: `Standard`, `DCH`. At this moment DCH driver appears to exists only for some product families and only for Windows 10 x64. Default: `Standard`.
+* `lang` - driver language. Allowed values: `English`. Default: `English`.
+* `cuda_ver` - verson of CUDA Toolkit bundled with driver. Currently useless for covered product families. Default: `Nothing`.
 
 ### Notifiers
 
