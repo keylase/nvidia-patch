@@ -11,7 +11,7 @@ nv-driver-locator is a tool for internal usage, which purpose is to notify about
 ## Requirements
 
 * Python 3.4+
-* `beautifulsoup4` package - required only when NvidiaDownloadsChannel is used.
+* `beautifulsoup4` package - required only when NvidiaDownloadsChannel is used. On recent Debian/Ubuntu you may install it like this: `apt-get install python3-bs4`. For other cases see [this](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup).
 
 ## Overview
 
