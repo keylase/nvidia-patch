@@ -14,6 +14,7 @@ Requirements:
   - [417.58](https://international.download.nvidia.com/Windows/417.58hf/417.58-desktop-notebook-win10-64bit-international-whql.hf.exe)
   - [417.71](https://international.download.nvidia.com/Windows/417.71/417.71-desktop-win10-64bit-international-whql.exe)
   - [418.81](https://international.download.nvidia.com/Windows/418.81/418.81-desktop-win10-64bit-international-whql.exe)
+  - [418.91](http://international.download.nvidia.com/Windows/418.91/418.91-desktop-win10-64bit-international-whql.exe)
 
 ## Step-by-Step guide
 
