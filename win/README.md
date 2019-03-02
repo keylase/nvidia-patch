@@ -37,6 +37,19 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 ## See also
 
 * Genesis in [related issue](https://github.com/keylase/nvidia-patch/issues/9)
-* Plex Media Server:
-  * [How to make Plex work with new limits](https://github.com/keylase/nvidia-patch/issues/9#issuecomment-452096166)
-  * [GH Issue about Plex, FFmpeg and NVDEC-enabling wrappers](https://github.com/keylase/nvidia-patch/issues/51)
+
+### D3D encoding sessions
+
+[Related issue](https://github.com/keylase/nvidia-patch/issues/53). Summary: this patch permanently removes limit only for CUDA NVENC sessions in 64bit apps. But once usage limit was exceeded, it persists for all apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
+
+1. Download 64bit FFmpeg for Windows: https://ffmpeg.zeranoe.com/builds/
+2. Unpack it somewhere.
+3. Get [`ffmpeg_null_10streams.cmd`](ffmpeg_null_10streams.cmd) from this repo.
+4. Edit `ffmpeg_null_10streams.cmd` and set executable path to real location of your unpacked ffmpeg.
+5. (Optional) Add `ffmpeg_null_10streams.cmd` to autostart programs.
+
+Also this script is useful to check if patch applied correctly and limit was raised. Use it when nothing works and you are in doubt.
+
+### Plex Media Server
+
+PMS for Windows currently uses dxva2 and MF for decoding and encoding, so it uses NVENC indirectly and patch probably will not work with it immediately. It is possible [D3D recipe](#d3d-encoding-sessions) will work, but it wasn't tested at this moment.
