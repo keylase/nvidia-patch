@@ -1,0 +1,1 @@
+C:\Users\user\ffmpeg\bin\ffmpeg -y -f lavfi -i nullsrc=s=256x256:d=5 -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null - -c:v h264_nvenc -f null -
