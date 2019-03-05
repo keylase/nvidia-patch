@@ -6,7 +6,7 @@ Main target operating system is **GNU/Linux**, but for **Windows** support see [
 
 Requirements:
 - x86\_64 system architecture
-- ubuntu (< 18.04 for 375.39 nvidia driver or kernel < 4.15). Also known to work on Debian and CentOS, but not tested widely.
+- GNU/Linux operating system
 - nvenc-compatible gpu (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - Nvidia driver. Patch available for: 
   - [375.39](https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run)
