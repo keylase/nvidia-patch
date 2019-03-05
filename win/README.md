@@ -38,9 +38,18 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 
 * Genesis in [related issue](https://github.com/keylase/nvidia-patch/issues/9)
 
-### D3D encoding sessions
+### D3D11 and 32-bit apps encoding sessions
 
-[Related issue](https://github.com/keylase/nvidia-patch/issues/53). Summary: this patch permanently removes limit only for CUDA NVENC sessions in 64bit apps. But once usage limit was exceeded, it persists for all apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
+[Related issue](https://github.com/keylase/nvidia-patch/issues/53). Summary: this patch permanently removes limit only for CUDA NVENC sessions in 64bit apps. But once usage limit was exceeded, it persists for all kinds of apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
+
+#### Method 1 (recommended)
+
+1. Download and run [latest release](https://github.com/jantenhove/NvencSessionLimitBump/releases) of [NvencSessionLimitBump](https://github.com/jantenhove/NvencSessionLimitBump).
+2. (Optional) Add it to autostart programs.
+
+By default this application raises limit to 32 encoding sessions. Credits to @jantenhove.
+
+#### Method 2 (alternative)
 
 1. Download 64bit FFmpeg for Windows: https://ffmpeg.zeranoe.com/builds/
 2. Unpack it somewhere.
@@ -48,8 +57,6 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 4. Edit `ffmpeg_null_10streams.cmd` and set executable path to real location of your unpacked ffmpeg.
 5. (Optional) Add `ffmpeg_null_10streams.cmd` to autostart programs.
 
-Also this script is useful to check if patch applied correctly and limit was raised. Use it when nothing works and you are in doubt.
+**Bonus**: you may use [this AutoIt script](silent_bump.au3) from @wazerstar for silent startup of console applications bumping sessions.
 
-### Plex Media Server
-
-PMS for Windows currently uses dxva2 and MF for decoding and encoding, so it uses NVENC indirectly and patch probably will not work with it immediately. It is possible [D3D recipe](#d3d-encoding-sessions) will work, but it wasn't tested at this moment.
+Also you may use these methods to check if patch applied correctly and limit was raised. Use them when nothing works and you are in doubt.
