@@ -1,6 +1,8 @@
 #!/bin/bash
-
-set -euo pipefail
+# halt on any error for safety and proper pipe handling
+set -euo pipefail ; # <- this semicolon and comment make options apply
+# even when script is corrupt by CRLF line terminators (issue #75)
+# empty line must follow this comment for immediate fail with CRLF newlines
 
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
