@@ -54,7 +54,7 @@ Examples are provided for driver version 418.43. All commands are runned as root
 
 ### Download driver
 
-[https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run](https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run)
+[https://download.nvidia.com/XFree86/Linux-x86\_64/418.43/NVIDIA-Linux-x86\_64-418.43.run](https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run)
 
 ### Install driver
 
