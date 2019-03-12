@@ -7,7 +7,6 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 rollback_flag=''
-driver_dir='/usr/lib/x86_64-linux-gnu'
 
 print_usage() { printf '
 SYNOPSIS
@@ -35,9 +34,6 @@ done
 if [[ $silent_flag ]]; then
     exec 1> /dev/null
 fi
-
-test -d "$driver_dir" || driver_dir="/usr/lib64"  # ..centos
-test -d "$driver_dir" || { echo "ERROR: cannot detect driver directory"; exit 1; }
 
 declare -A patch_list=(
     ["375.39"]='s/\x85\xC0\x89\xC5\x75\x18/\x29\xC0\x89\xC5\x90\x90/g'
@@ -105,6 +101,22 @@ fi
 
 patch="${patch_list[$driver_version]}"
 object="${object_list[$driver_version]}"
+
+declare -a driver_locations=(
+    '/usr/lib/x86_64-linux-gnu'
+    '/usr/lib64'
+    "/usr/lib/nvidia-${driver_version%%.*}"
+)
+
+dir_found=''
+for driver_dir in "${driver_locations[@]}" ; do
+    if [[ -e "$driver_dir/$object.$driver_version" ]]; then
+        dir_found='true'
+        break
+    fi
+done
+
+[[ "$dir_found" ]] || { echo "ERROR: cannot detect driver directory"; exit 1; }
 
 if [[ $rollback_flag ]]; then
     if [[ -f "$backup_path/$object.$driver_version" ]]; then
