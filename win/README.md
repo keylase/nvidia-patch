@@ -34,6 +34,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 416.78  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_416.78/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/416.78/416.78-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 418.81  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_418.81/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/418.81/418.81-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 419.17  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.17/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/419.17/419.17-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro         | 419.67  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.67/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/419.67/419.67-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 ## See also
 
