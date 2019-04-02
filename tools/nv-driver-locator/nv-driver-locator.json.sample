@@ -72,6 +72,15 @@
         },
         {
             "type": "nvidia_downloads",
+            "name": "downloads win creator ready",
+            "params": {
+                "os": "Windows10_64",
+                "product": "GeForce",
+                "certlevel": "CRD"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
             "name": "downloads win beta",
             "params": {
                 "os": "Windows10_64",
