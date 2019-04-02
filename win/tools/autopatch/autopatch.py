@@ -163,7 +163,12 @@ def main():
     else:
         version, product_type = identify_driver(args.installer_file,
                                                 sevenzip=args.sevenzip)
-        driver_name = "quadro_" + version if product_type == "100" else version
+        drv_prefix = {
+            "100": "quadro_",
+            "300": "",
+            "301": "crd_",
+        }
+        driver_name = drv_prefix[product_type] + version
         out_dir = os.path.join(
             os.path.dirname(
                 os.path.abspath(__file__)), '..', '..', 'win10_x64', driver_name)
