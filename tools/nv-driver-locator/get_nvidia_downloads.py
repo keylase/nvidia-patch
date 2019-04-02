@@ -34,6 +34,7 @@ class CertLevel(enum.Enum):
     Certified = 1
     ODE = 2
     QNF = 3
+    CRD = 4
 
     def __str__(self):
         return self.name
