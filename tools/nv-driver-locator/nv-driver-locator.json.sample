@@ -23,6 +23,13 @@
         },
         {
             "type": "gfe_client",
+            "name": "desktop CRD",
+            "params": {
+                "crd": true
+            }
+        },
+        {
+            "type": "gfe_client",
             "name": "desktop beta",
             "params": {
                 "beta": true
