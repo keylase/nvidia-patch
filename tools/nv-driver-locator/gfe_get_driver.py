@@ -6,7 +6,7 @@ import json
 import posixpath
 import codecs
 
-USER_AGENT = 'NvBackend/34.0.0.0'
+USER_AGENT = 'NvBackend/36.0.0.0'
 
 
 def serialize_req(obj):
