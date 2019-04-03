@@ -41,6 +41,7 @@ def get_latest_geforce_driver(*,
                               language=1033,
                               beta=False,
                               dch=False,
+                              crd=False,
                               timeout=10):
     # GeForce GTX 1080 and GP104 HD Audio
     dt_id = ["1B80_10DE_119E_10DE"]
@@ -57,9 +58,11 @@ def get_latest_geforce_driver(*,
         "lg": str(language),              # Language code
         "iLp": "1" if notebook else "0",  # System Is Laptop
         "prvMd": "0",                     # Private Model?
-        "gcV": "3.16.0.140",              # GeForce Experience client version
+        "gcV": "3.18.0.94",               # GeForce Experience client version
         "gIsB": "1" if beta else "0",     # Beta?
-        "dch": "1" if dch else "0"        # 0 - Standard Driver, 1 - DCH Driver
+        "dch": "1" if dch else "0",       # 0 - Standard Driver, 1 - DCH Driver
+        "upCRD": "1" if crd else "0",     # Searched driver: 0 - GameReady Driver, 1 - CreatorReady Driver
+        "isCRD": "1" if crd else "0",     # Installed driver: 0 - GameReady Driver, 1 - CreatorReady Driver
     }
     try:
         res = getDispDrvrByDevid(query_obj, timeout)
@@ -114,6 +117,10 @@ def parse_args():
     parser.add_argument("-D", "--dch",
                         help="Query DCH driver instead of Standard driver",
                         action="store_true")
+    parser.add_argument("-C", "--crd",
+                        help="Query CreatorReady driver instead of "
+                        "GameReady driver",
+                        action="store_true")
     parser.add_argument("-T", "--timeout",
                         type=check_positive_float,
                         default=10.,
@@ -135,6 +142,7 @@ def main():
                                     x86_64=(not args._32bit),
                                     beta=args.beta,
                                     dch=args.dch,
+                                    crd=args.crd,
                                     timeout=args.timeout)
     if drv is None:
         print("NOT FOUND")
