@@ -106,6 +106,7 @@ object="${object_list[$driver_version]}"
 
 declare -a driver_locations=(
     '/usr/lib/x86_64-linux-gnu'
+    '/usr/lib/x86_64-linux-gnu/nvidia/current/'
     '/usr/lib64'
     "/usr/lib/nvidia-${driver_version%%.*}"
 )
