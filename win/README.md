@@ -44,7 +44,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 
 * Genesis in [related issue](https://github.com/keylase/nvidia-patch/issues/9)
 
-### D3D11 and 32-bit apps encoding sessions
+### Plex Media Server, D3D11 and 32-bit apps encoding sessions
 
 [Related issue](https://github.com/keylase/nvidia-patch/issues/53). Summary: this patch permanently removes limit only for CUDA NVENC sessions in 64bit apps. But once usage limit was exceeded, it persists for all kinds of apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
 
