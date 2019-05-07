@@ -29,6 +29,7 @@ Requirements:
   - [418.30](https://download.nvidia.com/XFree86/Linux-x86_64/418.30/NVIDIA-Linux-x86_64-418.30.run)
   - [418.43](https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run)
   - [418.56](https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run)
+  - [418.74](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run)
   - [430.09](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run)
 
 Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86\_64)
@@ -56,15 +57,15 @@ Examples are provided for driver version 418.56. All commands are runned as root
 
 ### Download driver
 
-[https://download.nvidia.com/XFree86/Linux-x86\_64/418.56/NVIDIA-Linux-x86\_64-418.56.run](https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run)
+[https://international.download.nvidia.com/XFree86/Linux-x86\_64/418.74/NVIDIA-Linux-x86\_64-418.74.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run)
 
 ### Install driver
 
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run
-chmod +x ./NVIDIA-Linux-x86_64-418.56.run
-./NVIDIA-Linux-x86_64-418.56.run
+wget https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run
+chmod +x ./NVIDIA-Linux-x86_64-418.74.run
+./NVIDIA-Linux-x86_64-418.74.run
 ```
 
 ### Check driver
