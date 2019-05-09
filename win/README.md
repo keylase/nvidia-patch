@@ -34,6 +34,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | GeForce        | 419.67 CRD | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/crd_419.67/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/419.67/419.67-notebook-win10-64bit-international-crd-whql.exe) |
 | GeForce        | 425.31  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/425.31/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/425.31/425.31-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 430.39  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.39/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/430.39/430.39-desktop-win10-64bit-international-whql.exe) |
+| GeForce        | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/430.64/430.64-desktop-win10-64bit-international-whql.exe) |
 
 
 
