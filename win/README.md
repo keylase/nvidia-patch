@@ -5,7 +5,7 @@ This patch removes restriction on maximum number of simultaneous NVENC video enc
 
 Requirements:
 
-- Win10 x64
+- Win10 x64 or Windows Server 2012
 - NVENC-compatible GPU (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - Nvidia driver. Patch available for versions in [table below](#version-table).
 
@@ -19,6 +19,8 @@ Requirements:
 E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
 
 ## Version Table
+
+### Windows 10 drivers
 
 
 | Product series | Version | Patch | Driver link |
@@ -49,6 +51,15 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 425.31  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_425.31/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/425.31/425.31-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 430.39  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.39/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.39/430.39-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+
+
+### Windows Server 2012 drivers
+
+
+| Product series | Version | Patch | Driver link |
+|----------------|---------|-------|----------------------|
+| Quadro         | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
+
 
 ## See also
 
