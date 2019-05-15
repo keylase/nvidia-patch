@@ -5,7 +5,7 @@ This patch removes restriction on maximum number of simultaneous NVENC video enc
 
 Requirements:
 
-- Win10 x64 or Windows Server 2012
+- Win10 x64 or Windows Server 2012 x64
 - NVENC-compatible GPU (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - Nvidia driver. Patch available for versions in [table below](#version-table).
 
