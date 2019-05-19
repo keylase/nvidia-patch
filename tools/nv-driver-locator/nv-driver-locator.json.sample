@@ -166,6 +166,15 @@
                 "product": "QuadroMobile",
                 "certlevel": "All"
             }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win server quadro certified",
+            "params": {
+                "os": "WindowsServer2012R2_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
         }
     ],
     "notifiers": [
