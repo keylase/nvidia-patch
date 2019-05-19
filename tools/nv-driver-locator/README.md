@@ -263,7 +263,7 @@ Type: `nvidia_downloads`
 
 Params:
 
-* `os` - OS family, version and bitness. Allowed values: `Linux_32`, `Linux_64`, `Windows7_32`, `Windows7_64`, `Windows10_32`, `Windows10_64`. Default: `Linux_64`.
+* `os` - OS family, version and bitness. Allowed values: `Linux_32`, `Linux_64`, `Windows7_32`, `Windows7_64`, `Windows10_32`, `Windows10_64`, `WindowsServer2012R2_32`, `WindowsServer2012R2_64`. Default: `Linux_64`.
 * `product` - product kind. Allowed values: `GeForce`, `GeForceMobile`, `Quadro`, `QuadroMobile`. Default: `GeForce`.
 * `certlevel` - driver certification level. Allowed values: `All` - any certification level, `Beta` - beta drivers, `Certified` - WHQL certified in Windows case and Nvidia certified in Linux case, `ODE` - Optimal Driver for Enterprise (Quadro driver), `QNF` - Quadro New Feature (Quadro driver). Default: `All`.
 * `driver_type` - driver type. Allowed values: `Standard`, `DCH`. At this moment DCH driver appears to exists only for some product families and only for Windows 10 x64. Default: `Standard`.

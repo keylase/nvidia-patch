@@ -19,6 +19,8 @@ class OS(enum.Enum):
     Windows7_64 = 19
     Windows10_32 = 56
     Windows10_64 = 57
+    WindowsServer2012R2_32 = 32
+    WindowsServer2012R2_64 = 44
 
     def __str__(self):
         return self.name
