@@ -168,10 +168,13 @@ def main():
             "300": "",
             "301": "crd_",
         }
+        installer_basename = os.path.basename(args.installer_file)
+        os_prefix = ('ws2012_x64' if 'winserv' in installer_basename.lower()
+            else 'win10_x64')
         driver_name = drv_prefix[product_type] + version
         out_dir = os.path.join(
             os.path.dirname(
-                os.path.abspath(__file__)), '..', '..', 'win10_x64', driver_name)
+                os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
         os.mkdir(out_dir, 0o755)
         out_filename = os.path.join(out_dir,
             os.path.splitext(args.target_name)[0] + PATCH_EXT)
