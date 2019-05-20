@@ -257,8 +257,6 @@ Params:
 
 Parses Nvidia downloads site.
 
-Params:
-
 Type: `nvidia_downloads`
 
 Params:
@@ -274,8 +272,6 @@ Params:
 #### CudaToolkitDownloadsChannel
 
 Parses CUDA Toolkit downloads archive and extracts kit name instead of driver name.
-
-Params:
 
 Type: `cuda_downloads`
 
