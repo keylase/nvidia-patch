@@ -197,6 +197,27 @@ class NvidiaDownloadsChannel(BaseChannel):
         }
 
 
+class CudaToolkitDownloadsChannel(BaseChannel):
+    def __init__(self, name, *,
+                 timeout=10):
+        self.name = name
+        gcd = importlib.import_module('get_cuda_downloads')
+        self._gcd = gcd
+        self._timeout = timeout
+
+    def get_latest_driver(self):
+        latest = self._gcd.get_latest_cuda_tk(timeout=self._timeout)
+        if not latest:
+            return None
+        return {
+            'DriverAttributes': {
+                'Version': '???',
+                'Name': latest,
+                'NameLocalized': latest,
+            }
+        }
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Watches for GeForce experience driver updates for "
@@ -223,6 +244,7 @@ class DriverLocator:
         channel_types = {
             'gfe_client': GFEClientChannel,
             'nvidia_downloads': NvidiaDownloadsChannel,
+            'cuda_downloads': CudaToolkitDownloadsChannel,
         }
 
         channels = []
