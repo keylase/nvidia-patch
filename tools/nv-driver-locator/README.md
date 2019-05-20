@@ -271,6 +271,18 @@ Params:
 * `cuda_ver` - verson of CUDA Toolkit bundled with driver. Currently useless for covered product families. Default: `Nothing`.
 * `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
+#### CudaToolkitDownloadsChannel
+
+Parses CUDA Toolkit downloads archive and extracts kit name instead of driver name.
+
+Params:
+
+Type: `cuda_downloads`
+
+Params:
+
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
+
 ### Notifiers
 
 #### CommandNotifier
