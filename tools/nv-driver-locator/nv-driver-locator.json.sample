@@ -175,6 +175,11 @@
                 "product": "Quadro",
                 "certlevel": "Certified"
             }
+        },
+        {
+            "type": "cuda_downloads",
+            "name": "cuda toolkit tracker",
+            "params": {}
         }
     ],
     "notifiers": [

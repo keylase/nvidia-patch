@@ -257,8 +257,6 @@ Params:
 
 Parses Nvidia downloads site.
 
-Params:
-
 Type: `nvidia_downloads`
 
 Params:
@@ -269,6 +267,16 @@ Params:
 * `driver_type` - driver type. Allowed values: `Standard`, `DCH`. At this moment DCH driver appears to exists only for some product families and only for Windows 10 x64. Default: `Standard`.
 * `lang` - driver language. Allowed values: `English`. Default: `English`.
 * `cuda_ver` - verson of CUDA Toolkit bundled with driver. Currently useless for covered product families. Default: `Nothing`.
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
+
+#### CudaToolkitDownloadsChannel
+
+Parses CUDA Toolkit downloads archive and extracts kit name instead of driver name.
+
+Type: `cuda_downloads`
+
+Params:
+
 * `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
 ### Notifiers
