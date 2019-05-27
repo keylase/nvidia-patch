@@ -38,7 +38,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | GeForce        | 430.39  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.39/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/430.39/430.39-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/430.64/430.64-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-whql.exe) |
-| GeForce        | 430.86 CRD | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/crd_430.86/nvcuvid.1337) | [Direct link](https://international-gfe.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-nsd-whql-g.exe) |
+| GeForce        | 430.86 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/crd_430.86/nvcuvid.1337) | [Direct link](https://international-gfe.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-nsd-whql-g.exe) |
 
 
 
