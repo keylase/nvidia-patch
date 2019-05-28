@@ -166,7 +166,7 @@ def main():
         drv_prefix = {
             "100": "quadro_",
             "300": "",
-            "301": "crd_",
+            "301": "nsd_",
         }
         installer_basename = os.path.basename(args.installer_file)
         os_prefix = ('ws2012_x64' if 'winserv' in installer_basename.lower()
