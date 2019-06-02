@@ -1,6 +1,8 @@
 Nvidia drivers patch for Windows
 ================================
 
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20verson-435.27-brightgreen.svg)
+
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
 Requirements:
