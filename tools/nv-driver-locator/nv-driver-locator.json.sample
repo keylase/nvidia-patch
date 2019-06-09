@@ -13,6 +13,10 @@
         [
             "DriverAttributes",
             "Name"
+        ],
+        [
+            "ChannelAttributes",
+            "OS"
         ]
     ],
     "channels": [
@@ -172,6 +176,15 @@
             "name": "downloads win server quadro certified",
             "params": {
                 "os": "WindowsServer2012R2_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win server 2019 quadro certified",
+            "params": {
+                "os": "WindowsServer2019",
                 "product": "Quadro",
                 "certlevel": "Certified"
             }

@@ -54,6 +54,9 @@ class ExtractException(Exception):
 class PatternNotFoundException(Exception):
     pass
 
+class UnknownPlatformException(Exception):
+    pass
+
 
 class ExtractedTarget:
     name = None
@@ -168,9 +171,16 @@ def main():
             "300": "",
             "301": "nsd_",
         }
-        installer_basename = os.path.basename(args.installer_file)
-        os_prefix = ('ws2012_x64' if 'winserv' in installer_basename.lower()
-            else 'win10_x64')
+        installer_name = os.path.basename(args.installer_file).lower()
+        if 'winserv2008' in installer_name:
+            os_prefix = 'ws2012_x64'
+        elif 'winserv-2016' in installer_name:
+            os_prefix = 'ws2016_x64'
+        elif 'win10' in installer_name:
+            os_prefix = 'win10_x64'
+        else:
+            raise UnknownPlatformException("Can't infer platform from filename %s"
+                                           % (repr(installer_name),))
         driver_name = drv_prefix[product_type] + version
         out_dir = os.path.join(
             os.path.dirname(

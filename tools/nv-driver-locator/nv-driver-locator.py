@@ -58,8 +58,11 @@ class Hasher:
 
     def _eval_key_component(self, obj, component_path):
         res = obj
-        for path_component in component_path:
-            res = res[path_component]
+        try:
+            for path_component in component_path:
+                res = res[path_component]
+        except (KeyError, IndexError):
+            return b''
         return str(res).encode('utf-8')
 
     def hash_object(self, obj):
@@ -147,14 +150,53 @@ class BaseChannel(ABC):
 
 
 class GFEClientChannel(BaseChannel):
-    def __init__(self, name, **kwargs):
+    def __init__(self, name, notebook=False,
+                             x86_64=True,
+                             os_version="10.0",
+                             os_build="17763",
+                             language=1033,
+                             beta=False,
+                             dch=False,
+                             crd=False,
+                             timeout=10):
         self.name = name
-        self._kwargs = kwargs
+        self._notebook = notebook
+        self._x86_64 = x86_64
+        self._os_version = os_version
+        self._os_build = os_build
+        self._language = language
+        self._beta = beta
+        self._dch = dch
+        self._crd = crd
+        self._timeout = timeout
         gfe_get_driver = importlib.import_module('gfe_get_driver')
         self._get_latest_driver = gfe_get_driver.get_latest_geforce_driver
 
     def get_latest_driver(self):
-        return self._get_latest_driver(**self._kwargs)
+        res = self._get_latest_driver(notebook=self._notebook,
+                                      x86_64=self._x86_64,
+                                      os_version=self._os_version,
+                                      os_build=self._os_build,
+                                      language=self._language,
+                                      beta=self._beta,
+                                      dch=self._dch,
+                                      crd=self._crd,
+                                      timeout=self._timeout)
+        res.update({
+            'ChannelAttributes': {
+                'Name': self.name,
+                'Type': self.__class__.__name__,
+                'OS': 'Windows%d_%d' % (float(self._os_version),
+                                        64 if self._x86_64 else 32),
+                'OSBuild': self._os_build,
+                'Language': self._language,
+                'Beta': self._beta,
+                'DCH': self._dch,
+                'CRD': self._crd,
+                'Mobile': self._notebook,
+            }
+        })
+        return res
 
 
 class NvidiaDownloadsChannel(BaseChannel):
@@ -193,6 +235,16 @@ class NvidiaDownloadsChannel(BaseChannel):
                 'Version': latest['version'],
                 'Name': latest['name'],
                 'NameLocalized': latest['name'],
+            },
+            'ChannelAttributes': {
+                'Name': self.name,
+                'Type': self.__class__.__name__,
+                'OS': self._os.name,
+                'Product': self._product.name,
+                'CertLevel': self._certlevel.name,
+                'DriverType': self._driver_type.name,
+                'Lang': self._lang.name,
+                'CudaVer': self._cuda_ver.name,
             }
         }
 
