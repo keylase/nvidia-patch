@@ -50,6 +50,10 @@ All scripts may be used both as standalone application and importable module. Fo
         [
             "DriverAttributes",
             "Name"
+        ],
+        [
+            "ChannelAttributes",
+            "OS"
         ]
     ],
     "channels": [
