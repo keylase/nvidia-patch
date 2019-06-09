@@ -187,6 +187,29 @@ All scripts may be used both as standalone application and importable module. Fo
                 "product": "QuadroMobile",
                 "certlevel": "All"
             }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win server quadro certified",
+            "params": {
+                "os": "WindowsServer2012R2_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win server 2019 quadro certified",
+            "params": {
+                "os": "WindowsServer2019",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "cuda_downloads",
+            "name": "cuda toolkit tracker",
+            "params": {}
         }
     ],
     "notifiers": [
@@ -261,7 +284,7 @@ Type: `nvidia_downloads`
 
 Params:
 
-* `os` - OS family, version and bitness. Allowed values: `Linux_32`, `Linux_64`, `Windows7_32`, `Windows7_64`, `Windows10_32`, `Windows10_64`, `WindowsServer2012R2_32`, `WindowsServer2012R2_64`. Default: `Linux_64`.
+* `os` - OS family, version and bitness. Allowed values: `Linux_32`, `Linux_64`, `Windows7_32`, `Windows7_64`, `Windows10_32`, `Windows10_64`, `WindowsServer2012R2_32`, `WindowsServer2012R2_64`, `WindowsServer2016`, `WindowsServer2019`. Default: `Linux_64`.
 * `product` - product kind. Allowed values: `GeForce`, `GeForceMobile`, `Quadro`, `QuadroMobile`. Default: `GeForce`.
 * `certlevel` - driver certification level. Allowed values: `All` - any certification level, `Beta` - beta drivers, `Certified` - WHQL certified in Windows case and Nvidia certified in Linux case, `ODE` - Optimal Driver for Enterprise (Quadro driver), `QNF` - Quadro New Feature (Quadro driver). Default: `All`.
 * `driver_type` - driver type. Allowed values: `Standard`, `DCH`. At this moment DCH driver appears to exists only for some product families and only for Windows 10 x64. Default: `Standard`.

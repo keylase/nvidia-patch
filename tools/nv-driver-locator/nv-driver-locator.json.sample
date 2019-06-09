@@ -177,6 +177,15 @@
             }
         },
         {
+            "type": "nvidia_downloads",
+            "name": "downloads win server 2019 quadro certified",
+            "params": {
+                "os": "WindowsServer2019",
+                "product": "Quadro",
+                "certlevel": "Certified"
+            }
+        },
+        {
             "type": "cuda_downloads",
             "name": "cuda toolkit tracker",
             "params": {}
