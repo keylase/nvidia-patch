@@ -57,6 +57,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 430.39  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.39/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.39/430.39-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 
 ### Windows Server 2008R2, 2012, 2012R2 drivers
@@ -66,6 +67,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 |----------------|---------|-------|----------------------|
 | Quadro         | 430.64  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.64/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
+| Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 
 
 ### Windows Server 2016, 2019 drivers
@@ -74,6 +76,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Product series | Version | Patch | Driver link |
 |----------------|---------|-------|----------------------|
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv-2016-2019-64bit-international-whql.exe) |
+| Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 
 
 ## See also
