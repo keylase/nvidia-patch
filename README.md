@@ -62,15 +62,15 @@ Examples are provided for driver version 430.14. All commands are runned as root
 
 ### Download driver
 
-[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.14/NVIDIA-Linux-x86\_64-430.14.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run)
+[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.26/NVIDIA-Linux-x86\_64-430.26.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run)
 
 ### Install driver
 
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run
-chmod +x ./NVIDIA-Linux-x86_64-430.14.run
-./NVIDIA-Linux-x86_64-430.14.run
+wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run
+chmod +x ./NVIDIA-Linux-x86_64-430.26.run
+./NVIDIA-Linux-x86_64-430.26.run
 ```
 
 ### Check driver
