@@ -111,6 +111,8 @@ bash ./patch.sh -r
   * Unraid Nvidia plugin:
     * [Repo](https://github.com/linuxserver/Unraid-Nvidia-Plugin)
     * [Forum page](https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/) ([archive link](https://web.archive.org/web/20190211145338/https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/))
-* [Original research behind this patch (in Russian)](https://habr.com/post/262563/)
+* Original research behind this patch
+  * [Original post in Russian](https://habr.com/post/262563/)
+  * [3rd party English translation](https://weekly-geekly.github.io/articles/262563/index.html)
 
 If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, see option `-surfaces` ("Number of concurrent surfaces") and try value near `-surfaces 8`.
