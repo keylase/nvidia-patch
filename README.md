@@ -1,6 +1,6 @@
 # nvidia-patch
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20verson-430.26-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20verson-430.34-brightgreen.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -36,6 +36,7 @@ Requirements:
   - [430.09](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run)
   - [430.14](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run)
   - [430.26](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run)
+  - [430.34](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run)
 
 Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86\_64)
 
@@ -58,19 +59,19 @@ DESCRIPTION
 
 ## Step-by-Step guide
 
-Examples are provided for driver version 430.26. All commands are runned as root.
+Examples are provided for driver version 430.34. All commands are runned as root.
 
 ### Download driver
 
-[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.26/NVIDIA-Linux-x86\_64-430.26.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run)
+[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.34/NVIDIA-Linux-x86\_64-430.34.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run)
 
 ### Install driver
 
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run
-chmod +x ./NVIDIA-Linux-x86_64-430.26.run
-./NVIDIA-Linux-x86_64-430.26.run
+wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run
+chmod +x ./NVIDIA-Linux-x86_64-430.34.run
+./NVIDIA-Linux-x86_64-430.34.run
 ```
 
 ### Check driver
