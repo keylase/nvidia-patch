@@ -95,7 +95,7 @@ declare -A object_list=(
     ["430.34"]='libnvcuvid.so'
 )
 
-NVIDIA_SMI="$(which nvidia-smi)"
+NVIDIA_SMI="$(command -v nvidia-smi)"
 
 if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
     echo 'Something went wrong. Check nvidia driver'
@@ -151,8 +151,8 @@ else
     fi
     sha1sum "$backup_path/$object.$driver_version"
     sed "$patch" "$backup_path/$object.$driver_version" > \
-      "$driver_dir/$object.$driver_version"
-    sha1sum "$driver_dir/$object.$driver_version"
+      "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
+    sha1sum "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     ldconfig
     echo "Patched!"
 fi
