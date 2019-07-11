@@ -100,6 +100,17 @@ If something got broken you may restore patched driver from backup:
 bash ./patch.sh -r
 ```
 
+## Docker support
+
+It is possible to use this patch with nvidia-docker containers, even if host machine hasn't patched drivers. See `Dockerfile` for example.
+
+Essentially all you need to do during build is:
+
+* `COPY` the `patch.sh` and `docker-entrypoint.sh` files into your container.
+* Make sure `docker-entrypoint.sh` is invoked on container start.
+
+`docker-entrypoint.sh` script does on-the-fly patching by means of manipulating dynamic linker to workaround read-only mount of Nvidia runtime. Finally it passes original docker command to shell, like if entrypoint was not restricted by `ENTRYPOINT` directive. So `docker run --runtime=nvidia -it mycontainer echo 123` will print `123`. Also it can be just invoked from your entrypoint script, if you have any.
+
 ## See also
 
 * Plex Media Server: enable HW **decoding**: 
