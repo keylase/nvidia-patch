@@ -6,8 +6,8 @@ cd /patched-lib && \
 for f in * ; do
     suffix="${f##*.so}"
     name="$(basename "$f" "$suffix")"
-    ln -s "$f" "$name"
-    ln -s "$f" "$name.1"
+    [ -h "$name" ] || ln -sf "$f" "$name"
+    [ -h "$name" ] || ln -sf "$f" "$name.1"
 done && \
 ldconfig
 [ "$OLDPWD" ] && cd -
