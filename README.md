@@ -67,6 +67,8 @@ Examples are provided for driver version 430.34. All commands are runned as root
 
 ### Install driver
 
+Make sure you have kernel headers and compiler installed before running Nvidia driver installer. Kernel headers and compiler are required to build nvidia kernel module. Recommended way to do this is to install `dkms` package, if it is available in your distro. This way `dkms` package will pull all required dependencies to allow building kernel modules and kernel module builds will be automated in a reliable fashion.
+
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
 wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run
