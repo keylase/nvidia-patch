@@ -178,6 +178,8 @@ def main():
             os_prefix = 'ws2016_x64'
         elif 'win10' in installer_name:
             os_prefix = 'win10_x64'
+        elif 'win7' in installer_name:
+            os_prefix = 'win7_x64'
         else:
             raise UnknownPlatformException("Can't infer platform from filename %s"
                                            % (repr(installer_name),))
@@ -185,10 +187,10 @@ def main():
         out_dir = os.path.join(
             os.path.dirname(
                 os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
-        os.mkdir(out_dir, 0o755)
+        os.makedirs(out_dir, 0o755, True)
         out_filename = os.path.join(out_dir,
             os.path.splitext(args.target_name)[0] + PATCH_EXT)
-        with open(out_filename, 'wb') as out:
+        with open(out_filename, 'xb') as out:
             out.write(patch_content)
 
 
