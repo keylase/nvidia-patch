@@ -64,9 +64,16 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 
 ### Windows 7, Windows 8, Windows 8.1 drivers
 
+
 | Product series | Version | Patch | Driver link |
 |----------------|---------|-------|----------------------|
 | GeForce        | 431.60  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/431.60/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win8-win7-64bit-international-whql.exe) |
+
+
+
+| Product series | Version | Patch | Driver link |
+|----------------|---------|-------|----------------------|
+| Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 
 
 ### Windows Server 2008R2, 2012, 2012R2 drivers
