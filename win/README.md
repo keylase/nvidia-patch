@@ -43,8 +43,8 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | GeForce        | 430.86 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_430.86/nvcuvid.1337) | [Direct link](https://international-gfe.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-nsd-whql-g.exe) |
 | GeForce        | 431.36  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.36/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.36/431.36-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 431.60  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.60/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win10-64bit-international-whql.exe) |
-| GeForce        | 435.27  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/435.27/nvcuvid.1337) | [Direct link (non-official)](https://github.com/CHEF-KOCH/nVidia-modded-Inf/releases/download/435.27/Nvidia.435.27.rar) |
 | GeForce        | 431.70 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.70/431.70-notebook-win10-64bit-international-nsd-whql.exe) |
+| GeForce        | 435.27  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/435.27/nvcuvid.1337) | [Direct link (non-official)](https://github.com/CHEF-KOCH/nVidia-modded-Inf/releases/download/435.27/Nvidia.435.27.rar) |
 
 
 
