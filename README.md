@@ -39,8 +39,6 @@ Requirements:
   - [430.34](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run)
   - [430.40](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run)
 
-Tested on Ubuntu 18.04 LTS (GNU/Linux 4.15.0-23-generic x86\_64)
-
 ## Synopsis
 
 ```
