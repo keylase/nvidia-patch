@@ -195,7 +195,7 @@
             "params": {
                 "os": "Windows7_64",
                 "product": "GeForce",
-                "certlevel": "Certified"
+                "certlevel": "All"
             }
         },
         {
@@ -204,7 +204,7 @@
             "params": {
                 "os": "Windows7_64",
                 "product": "Quadro",
-                "certlevel": "Certified"
+                "certlevel": "All"
             }
         },
         {
