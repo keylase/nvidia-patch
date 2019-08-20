@@ -97,6 +97,7 @@ class EmailNotifier(BaseNotifier):
             'email.mime.multipart').MIMEMultipart
         self._MIMEBase = importlib.import_module('email.mime.base').MIMEBase
         self._encoders = importlib.import_module('email.encoders')
+        self._mimeheader = importlib.import_module('email.header').Header
         self._m = self._Mailer(from_addr=from_addr,
                                host=host,
                                port=port,
@@ -110,13 +111,16 @@ class EmailNotifier(BaseNotifier):
 
     def notify(self, obj):
         msg = self._MIMEMult()
-        msg['Subject'] = "New Nvidia driver available!"
+        msg['Subject'] = self._mimeheader("New Nvidia driver available!", "utf-8")
         msg['From'] = self._from_addr
         msg['To'] = ', '.join(self._to_addrs)
-        body = "See attached JSON"
-        msg.attach(self._MIMEText(body, 'plain'))
+        obj_text = json.dumps(obj, indent=4, ensure_ascii=False)
+        msg_text = json.dumps(obj, indent=4, ensure_ascii=True)
+        body = "See attached JSON or message body below:\n"
+        body += msg_text
+        msg.attach(self._MIMEText(body, 'plain', 'utf-8'))
         p = self._MIMEBase('application', 'octet-stream')
-        p.set_payload(json.dumps(obj, indent=4).encode('utf-8'))
+        p.set_payload(obj_text.encode('ascii'))
         self._encoders.encode_base64(p)
         p.add_header('Content-Disposition', "attachment; filename=obj.json")
         msg.attach(p)
