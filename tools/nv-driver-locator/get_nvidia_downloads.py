@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 
+import sys
 import urllib.request
 import urllib.error
 import urllib.parse
 import codecs
 import enum
+import re
 from bs4 import BeautifulSoup
 
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64; rv:65.0) '\
              'Gecko/20100101 Firefox/65.0'
+DOWNLOAD_URL_RE = re.compile('.*download\.nvidia\.com.*', re.A | re.I)
 
 
 @enum.unique
@@ -138,9 +141,7 @@ def parse_args():
     return args
 
 
-def issue_request(query_obj, timeout=10):
-    ENDPOINT = 'https://www.nvidia.com/Download/processFind.aspx'
-    url = ENDPOINT + '?' + urllib.parse.urlencode(query_obj)
+def fetch_url(url, timeout=10):
     http_req = urllib.request.Request(
         url,
         data=None,
@@ -154,6 +155,47 @@ def issue_request(query_obj, timeout=10):
         decoder = codecs.getreader(coding)(resp)
         res = decoder.read()
     return res
+
+
+def issue_request(query_obj, timeout=10):
+    ENDPOINT = 'https://www.nvidia.com/Download/processFind.aspx'
+    url = ENDPOINT + '?' + urllib.parse.urlencode(query_obj)
+    return fetch_url(url, timeout)
+
+
+def parse_download_page(url):
+    try:
+        body = fetch_url(url)
+        soup = BeautifulSoup(body, 'html.parser')
+    except Exception as exc:
+        print('parse_download_page error: %s' % (str(exc),), file=sys.stderr)
+        return None
+    download_div = soup.find('div', id='dnldBttns')
+    if download_div is None:
+        download_div = soup.find('div', id='mainContent')
+    if download_div is None:
+        print('parse_download_page error: download div not found', file=sys.stderr)
+        return None
+    download_anchor = download_div.find('a', attrs={'href': DOWNLOAD_URL_RE})
+    if download_anchor is not None:
+        return {
+            'download_url': download_anchor['href']
+        }
+    return None
+
+
+def parse_product_page(url):
+    try:
+        body = fetch_url(url)
+        soup = BeautifulSoup(body, 'html.parser')
+    except Exception as exc:
+        print('parse_product_page error: %s' % (str(exc),), file=sys.stderr)
+        return None
+    download_anchor = soup.find('a', attrs={'href': True}, id='lnkDwnldBtn')
+    if download_anchor is None:
+        return None
+    download_page_url = download_anchor['href']
+    return parse_download_page(urllib.parse.urljoin(url, download_page_url))
 
 
 def get_drivers(*,
@@ -196,9 +238,25 @@ def get_drivers(*,
         s = list(td.strings)
         return max(s, key=len).strip() if s else ''
 
-    res = [dict(zip(label_tuple, (parse_content_td(td) for td in tr('td'))
-                    )) for tr in driverlistrows]
-    return res
+    def parse_version(row):
+        return tuple(parse_content_td(row['version']).split('.'))
+
+    def normalize_product_url(url):
+        res = urllib.parse.urlparse(url, scheme='https', allow_fragments=False)
+        return urllib.parse.urlunparse(res)
+
+    labeled_rows = [dict(zip(label_tuple, tr('td'))) for tr in driverlistrows]
+    latest_driver_row = max(labeled_rows, key=parse_version)
+    obj = dict((k, parse_content_td(v)) for k, v in latest_driver_row.items())
+    product_td = latest_driver_row['name']
+    product_anchor = product_td.find('a', attrs={"href": True})
+    if product_anchor is not None:
+        product_page = normalize_product_url(product_anchor['href'])
+        obj['product_page'] = product_page
+        pp_parse_res = parse_product_page(product_page)
+        if pp_parse_res is not None:
+            obj.update(pp_parse_res)
+    return obj
 
 
 def main():

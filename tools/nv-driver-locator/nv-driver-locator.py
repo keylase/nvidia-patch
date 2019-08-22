@@ -224,17 +224,16 @@ class NvidiaDownloadsChannel(BaseChannel):
         self._timeout = timeout
 
     def get_latest_driver(self):
-        drivers = self._gnd.get_drivers(os=self._os,
-                                        product=self._product,
-                                        certlevel=self._certlevel,
-                                        driver_type=self._driver_type,
-                                        lang=self._lang,
-                                        cuda_ver=self._cuda_ver,
-                                        timeout=self._timeout)
-        if not drivers:
+        latest = self._gnd.get_drivers(os=self._os,
+                                       product=self._product,
+                                       certlevel=self._certlevel,
+                                       driver_type=self._driver_type,
+                                       lang=self._lang,
+                                       cuda_ver=self._cuda_ver,
+                                       timeout=self._timeout)
+        if not latest:
             return None
-        latest = max(drivers, key=lambda d: tuple(d['version'].split('.')))
-        return {
+        res = {
             'DriverAttributes': {
                 'Version': latest['version'],
                 'Name': latest['name'],
@@ -251,6 +250,9 @@ class NvidiaDownloadsChannel(BaseChannel):
                 'CudaVer': self._cuda_ver.name,
             }
         }
+        if 'download_url' in latest:
+            res['DriverAttributes']['DownloadURL'] = latest['download_url']
+        return res
 
 
 class CudaToolkitDownloadsChannel(BaseChannel):
