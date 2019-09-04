@@ -191,7 +191,7 @@
         },
         {
             "type": "nvidia_downloads",
-            "name": "downloads win7 stable",
+            "name": "downloads win7 stable all",
             "params": {
                 "os": "Windows7_64",
                 "product": "GeForce",
@@ -200,11 +200,29 @@
         },
         {
             "type": "nvidia_downloads",
-            "name": "downloads win7 quadro stable",
+            "name": "downloads win7 stable certified",
+            "params": {
+                "os": "Windows7_64",
+                "product": "GeForce",
+                "certlevel": "Certified"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win7 quadro all",
             "params": {
                 "os": "Windows7_64",
                 "product": "Quadro",
                 "certlevel": "All"
+            }
+        },
+        {
+            "type": "nvidia_downloads",
+            "name": "downloads win7 quadro certified",
+            "params": {
+                "os": "Windows7_64",
+                "product": "Quadro",
+                "certlevel": "Certified"
             }
         },
         {
