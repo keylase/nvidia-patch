@@ -53,6 +53,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | GeForce        | 431.36  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.36/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.36/431.36-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 431.60  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.60/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 431.70 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.70/431.70-notebook-win10-64bit-international-nsd-whql.exe) |
+| GeForce        | 431.86 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.86/431.86-notebook-win10-64bit-international-nsd-whql.exe) |
 | GeForce        | 435.27  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/435.27/nvcuvid.1337) | [Direct link (non-official)](https://github.com/CHEF-KOCH/nVidia-modded-Inf/releases/download/435.27/Nvidia.435.27.rar) |
 | GeForce        | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 436.15  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.15/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win10-64bit-international-whql.exe) |
@@ -73,6 +74,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 
@@ -91,6 +93,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 |----------------|---------|-------|----------------------|
 | Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
+| Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 
 
@@ -103,6 +106,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 | Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
+| Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 
 
 ### Windows Server 2016, 2019 drivers
@@ -113,6 +117,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 430.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_430.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro         | 431.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv-2016-2019-64bit-international-whql.exe) |
+| Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 
 
 ## See also
