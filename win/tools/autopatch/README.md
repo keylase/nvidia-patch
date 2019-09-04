@@ -16,12 +16,12 @@ This script accepts path to Nvidia Drivers installer, makes .1337 patch and save
 $ ./autopatch.py --help
 usage: autopatch.py [-h] [-7 SEVENZIP] [-T TARGET] [-N TARGET_NAME]
                     [-S SEARCH] [-R REPLACEMENT] [-o]
-                    installer_file
+                    installer_file [installer_file ...]
 
 Generates .1337 patch for Nvidia drivers for Windows
 
 positional arguments:
-  installer_file        location of installer executable
+  installer_file        location of installer executable(s)
 
 optional arguments:
   -h, --help            show this help message and exit
