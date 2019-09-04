@@ -22,7 +22,8 @@ def parse_args():
         description="Generates .1337 patch for Nvidia drivers for Windows",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("installer_file",
-                        help="location of installer executable")
+                        nargs="+",
+                        help="location of installer executable(s)")
     parser.add_argument("-7", "--7zip",
                         default="7z",
                         dest="sevenzip",
@@ -154,44 +155,45 @@ def main():
     replacement = unhexlify(args.replacement)
     assert len(search) == len(replacement), "len() of search and replacement"\
         " is not equal"
-    patch = make_patch(args.installer_file,
-                       arch_tgt=args.target,
-                       search=search,
-                       replacement=replacement,
-                       sevenzip=args.sevenzip)
-    patch_content = format_patch(patch, args.target_name)
-    if args.stdout:
-        with open(sys.stdout.fileno(), mode='wb', closefd=False) as out:
-            out.write(patch_content)
-    else:
-        version, product_type = identify_driver(args.installer_file,
-                                                sevenzip=args.sevenzip)
-        drv_prefix = {
-            "100": "quadro_",
-            "300": "",
-            "301": "nsd_",
-        }
-        installer_name = os.path.basename(args.installer_file).lower()
-        if 'winserv2008' in installer_name:
-            os_prefix = 'ws2012_x64'
-        elif 'winserv-2016' in installer_name:
-            os_prefix = 'ws2016_x64'
-        elif 'win10' in installer_name:
-            os_prefix = 'win10_x64'
-        elif 'win7' in installer_name:
-            os_prefix = 'win7_x64'
+    for installer_file in args.installer_file:
+        patch = make_patch(installer_file,
+                           arch_tgt=args.target,
+                           search=search,
+                           replacement=replacement,
+                           sevenzip=args.sevenzip)
+        patch_content = format_patch(patch, args.target_name)
+        if args.stdout:
+            with open(sys.stdout.fileno(), mode='wb', closefd=False) as out:
+                out.write(patch_content)
         else:
-            raise UnknownPlatformException("Can't infer platform from filename %s"
-                                           % (repr(installer_name),))
-        driver_name = drv_prefix[product_type] + version
-        out_dir = os.path.join(
-            os.path.dirname(
-                os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
-        os.makedirs(out_dir, 0o755, True)
-        out_filename = os.path.join(out_dir,
-            os.path.splitext(args.target_name)[0] + PATCH_EXT)
-        with open(out_filename, 'xb') as out:
-            out.write(patch_content)
+            version, product_type = identify_driver(installer_file,
+                                                    sevenzip=args.sevenzip)
+            drv_prefix = {
+                "100": "quadro_",
+                "300": "",
+                "301": "nsd_",
+            }
+            installer_name = os.path.basename(installer_file).lower()
+            if 'winserv2008' in installer_name:
+                os_prefix = 'ws2012_x64'
+            elif 'winserv-2016' in installer_name:
+                os_prefix = 'ws2016_x64'
+            elif 'win10' in installer_name:
+                os_prefix = 'win10_x64'
+            elif 'win7' in installer_name:
+                os_prefix = 'win7_x64'
+            else:
+                raise UnknownPlatformException("Can't infer platform from filename %s"
+                                               % (repr(installer_name),))
+            driver_name = drv_prefix[product_type] + version
+            out_dir = os.path.join(
+                os.path.dirname(
+                    os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
+            os.makedirs(out_dir, 0o755, True)
+            out_filename = os.path.join(out_dir,
+                os.path.splitext(args.target_name)[0] + PATCH_EXT)
+            with open(out_filename, 'xb') as out:
+                out.write(patch_content)
 
 
 if __name__ == '__main__':
