@@ -115,6 +115,10 @@ Essentially all you need to do during build is:
 
 `docker-entrypoint.sh` script does on-the-fly patching by means of manipulating dynamic linker to workaround read-only mount of Nvidia runtime. Finally it passes original docker command to shell, like if entrypoint was not restricted by `ENTRYPOINT` directive. So `docker run --runtime=nvidia -it mycontainer echo 123` will print `123`. Also it can be just invoked from your entrypoint script, if you have any.
 
+## Benchmarks
+
+* [Plex Media Server: nVidia Hardware Transcoding Calculator for Plex Estimates](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding) - useful benchmark of achieved simultaneous transcodes with various stream quality and hardware with patched drivers.
+
 ## See also
 
 * Plex Media Server: enable HW **decoding**: 
