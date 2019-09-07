@@ -61,7 +61,7 @@ DESCRIPTION
 
 ## Step-by-Step guide
 
-Examples are provided for driver version 430.40. All commands are runned as root.
+Examples are provided for driver version 430.40. All commands executed as root.
 
 ### Download driver
 
