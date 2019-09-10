@@ -1,7 +1,7 @@
 Nvidia drivers patch for Windows
 ================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-436.30-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-436.02-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-436.30-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-436.30-blue.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -77,6 +77,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro         | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 
 ### Windows 7, Windows 8, Windows 8.1 drivers
@@ -87,6 +88,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | GeForce        | 431.60  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/431.60/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 436.15  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.15/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win8-win7-64bit-international-whql.exe) |
+| GeForce        | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win8-win7-64bit-international-whql.exe) |
 
 
 
@@ -96,6 +98,7 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
+| Quadro         | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 
 
 ### Windows Server 2008R2, 2012, 2012R2 drivers
