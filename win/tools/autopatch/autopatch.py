@@ -44,6 +44,10 @@ def parse_args():
     parser.add_argument("-o", "--stdout",
                         action="store_true",
                         help="output into stdout")
+    parser.add_argument("-D", "--direct",
+                        action="store_true",
+                        help="supply patched library directly instead of "
+                        "installer file. Implies --stdout option.")
     args = parser.parse_args()
     return args
 
@@ -113,13 +117,18 @@ def make_patch(archive, *,
                arch_tgt,
                search,
                replacement,
-               sevenzip="7z"):
-    with tempfile.TemporaryDirectory() as tmpdir:
-        with ExtractedTarget(archive,
-                             tmpdir,
-                             arch_tgt,
-                             sevenzip=sevenzip) as tgt:
-            f = expand(tgt, sevenzip=sevenzip)
+               sevenzip="7z",
+               direct=False):
+    if direct:
+        with open(archive, 'rb') as fo:
+            f = fo.read()
+    else:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with ExtractedTarget(archive,
+                                 tmpdir,
+                                 arch_tgt,
+                                 sevenzip=sevenzip) as tgt:
+                f = expand(tgt, sevenzip=sevenzip)
     offset = f.find(search)
     del f
     if offset == -1:
@@ -160,9 +169,10 @@ def main():
                            arch_tgt=args.target,
                            search=search,
                            replacement=replacement,
-                           sevenzip=args.sevenzip)
+                           sevenzip=args.sevenzip,
+                           direct=args.direct)
         patch_content = format_patch(patch, args.target_name)
-        if args.stdout:
+        if args.stdout or args.direct:
             with open(sys.stdout.fileno(), mode='wb', closefd=False) as out:
                 out.write(patch_content)
         else:
