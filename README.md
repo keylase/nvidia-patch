@@ -39,6 +39,7 @@ Requirements:
   - [430.26](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run)
   - [430.34](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run)
   - [430.40](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run)
+  - [430.50](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run)
   - [435.17](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.17/NVIDIA-Linux-x86_64-435.17.run)
   - [435.21](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run)
 
@@ -61,11 +62,11 @@ DESCRIPTION
 
 ## Step-by-Step guide
 
-Examples are provided for driver version 430.40. All commands executed as root.
+Examples are provided for driver version 430.50. All commands executed as root.
 
 ### Download driver
 
-[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.40/NVIDIA-Linux-x86\_64-430.40.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run)
+[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.50/NVIDIA-Linux-x86\_64-430.50.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run)
 
 ### Install driver
 
@@ -73,9 +74,9 @@ Make sure you have kernel headers and compiler installed before running Nvidia d
 
 ```bash
 mkdir /opt/nvidia && cd /opt/nvidia
-wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run
-chmod +x ./NVIDIA-Linux-x86_64-430.40.run
-./NVIDIA-Linux-x86_64-430.40.run
+wget https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run
+chmod +x ./NVIDIA-Linux-x86_64-430.50.run
+./NVIDIA-Linux-x86_64-430.50.run
 ```
 
 ### Check driver
