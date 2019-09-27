@@ -49,14 +49,17 @@ Requirements:
 # bash ./patch.sh -h
 
 SYNOPSIS
-       patch.sh [OPTION]...
+       patch.sh [-s] [-r|-h|-c VERSION|-l]
 
 DESCRIPTION
-       The patch for Nvidia drivers to increase encoder sessions
+       The patch for Nvidia drivers to remove NVENC session limit
 
-       -s    Silent mode (No output)
-       -r    Rollback to original (Restore lib from backup)
-       -h    Print this help message
+       -s             Silent mode (No output)
+       -r             Rollback to original (Restore lib from backup)
+       -h             Print this help message
+       -c VERSION     Check if version VERSION supported by this patch.
+                      Returns true exit code (0) if version is supported.
+       -l             List supported driver versions
 
 ```
 
