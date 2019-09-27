@@ -28,14 +28,14 @@ DESCRIPTION
 opmode="patch"
 
 while getopts 'rshc:l' flag; do
-  case "${flag}" in
-    r) opmode="${opmode}rollback" ;;
-    s) silent_flag='true' ;;
-    h) opmode="${opmode}help" ;;
-    c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
-    l) opmode="${opmode}listversions" ;;
-    *) echo "Incorrect option specified in command line" ; exit 2 ;;
-  esac
+    case "${flag}" in
+        r) opmode="${opmode}rollback" ;;
+        s) silent_flag='true' ;;
+        h) opmode="${opmode}help" ;;
+        c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
+        l) opmode="${opmode}listversions" ;;
+        *) echo "Incorrect option specified in command line" ; exit 2 ;;
+    esac
 done
 
 if [[ $silent_flag ]]; then
@@ -181,8 +181,15 @@ rollback () {
 
 patch () {
     patch_common
-    if [[ ! -f "$backup_path/$object.$driver_version" ]]; then
-        echo "Attention! Backup not found. Copy current $object to backup."
+    if [[ -f "$backup_path/$object.$driver_version" ]]; then
+        bkp_hash="$(sha1sum "$backup_path/$object.$driver_version" | cut -f1 -d\ )"
+        drv_hash="$(sha1sum "$driver_dir/$object.$driver_version" | cut -f1 -d\ )"
+        if [[ "$bkp_hash" != "$drv_hash" ]] ; then
+            echo "Backup exists and driver file differ from backup. Skipping patch."
+            return 0
+        fi
+    else
+        echo "Attention! Backup not found. Copying current $object to backup."
         mkdir -p "$backup_path"
         cp -p "$driver_dir/$object.$driver_version" \
            "$backup_path/$object.$driver_version"
