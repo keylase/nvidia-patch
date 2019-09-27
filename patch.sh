@@ -9,7 +9,7 @@ silent_flag=''
 
 print_usage() { printf '
 SYNOPSIS
-       patch.sh [-s] [-r|-h|-c VERSION]
+       patch.sh [-s] [-r|-h|-c VERSION|-l]
 
 DESCRIPTION
        The patch for Nvidia drivers to remove NVENC session limit
@@ -19,6 +19,7 @@ DESCRIPTION
        -h             Print this help message
        -c VERSION     Check if version VERSION supported by this patch.
                       Returns true exit code (0) if version is supported.
+       -l             List supported driver versions
 
 '
 }
@@ -26,12 +27,13 @@ DESCRIPTION
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rshc:' flag; do
+while getopts 'rshc:l' flag; do
   case "${flag}" in
     r) opmode="${opmode}rollback" ;;
     s) silent_flag='true' ;;
     h) opmode="${opmode}help" ;;
     c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
+    l) opmode="${opmode}listversions" ;;
     *) echo "Incorrect option specified in command line" ; exit 2 ;;
   esac
 done
@@ -115,6 +117,13 @@ check_version_supported () {
     [[ "${patch_list[$ver]+isset}" && "${object_list[$ver]+isset}" ]]
 }
 
+get_supported_versions () {
+    for drv in "${!patch_list[@]}"; do
+        [[ "${object_list[$drv]+isset}" ]] && echo "$drv"
+    done | sort -t. -n
+    return 0
+}
+
 patch_common () {
     NVIDIA_SMI="$(command -v nvidia-smi || true)"
     if [[ ! "$NVIDIA_SMI" ]] ; then
@@ -130,11 +139,9 @@ patch_common () {
     echo "Detected nvidia driver version: $driver_version"
 
     if ! check_version_supported "$driver_version" ; then
-        echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
-        echo "Available patches for: " 1>&2
-        for drv in "${!patch_list[@]}"; do
-            echo "$drv" 1>&2
-        done
+        echo "Patch for this ($driver_version) nvidia driver not found."
+        echo "Patch is available for versions: "
+        get_supported_versions
         exit 1
     fi
 
@@ -198,10 +205,16 @@ query_version_support () {
     fi
 }
 
+list_supported_versions () {
+    get_supported_versions
+}
+
 case "${opmode}" in
     patch) patch ;;
     patchrollback) rollback ;;
     patchhelp) print_usage ; exit 2 ;;
     patchcheckversion) query_version_support ;;
-    *) echo "Incorrect combination of flags"; exit 2 ;;
+    patchlistversions) list_supported_versions ;;
+    *) echo "Incorrect combination of flags. Use option -h to get help."
+       exit 2 ;;
 esac
