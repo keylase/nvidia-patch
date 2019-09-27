@@ -6,11 +6,10 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
-rollback_flag=''
 
 print_usage() { printf '
 SYNOPSIS
-       patch.sh [OPTION]...
+       patch.sh [-s] [-r|-h]
 
 DESCRIPTION
        The patch for Nvidia drivers to increase encoder sessions
@@ -22,12 +21,15 @@ DESCRIPTION
 '
 }
 
+# shellcheck disable=SC2209
+opmode="patch"
+
 while getopts 'rsh' flag; do
   case "${flag}" in
-    r) rollback_flag='true' ;;
+    r) opmode="${opmode}rollback" ;;
     s) silent_flag='true' ;;
-    *) print_usage
-       exit 1 ;;
+    h) opmode="${opmode}help" ;;
+    *) echo "Incorrect option specified in command line" ; exit 2 ;;
   esac
 done
 
@@ -105,54 +107,65 @@ declare -A object_list=(
     ["435.21"]='libnvcuvid.so'
 )
 
-NVIDIA_SMI="$(command -v nvidia-smi)"
-
-if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
-    echo 'Something went wrong. Check nvidia driver'
-    exit 1;
-fi
-
-echo "Detected nvidia driver version: $driver_version"
-
-if [[ ! "${patch_list[$driver_version]+isset}" || ! "${object_list[$driver_version]+isset}" ]]; then
-    echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
-    echo "Available patches for: " 1>&2
-    for drv in "${!patch_list[@]}"; do
-        echo "$drv" 1>&2
-    done
-    exit 1;
-fi
-
-patch="${patch_list[$driver_version]}"
-object="${object_list[$driver_version]}"
-
-declare -a driver_locations=(
-    '/usr/lib/x86_64-linux-gnu'
-    '/usr/lib/x86_64-linux-gnu/nvidia/current/'
-    '/usr/lib64'
-    "/usr/lib/nvidia-${driver_version%%.*}"
-)
-
-dir_found=''
-for driver_dir in "${driver_locations[@]}" ; do
-    if [[ -e "$driver_dir/$object.$driver_version" ]]; then
-        dir_found='true'
-        break
+patch_common () {
+    NVIDIA_SMI="$(command -v nvidia-smi || true)"
+    if [[ ! "$NVIDIA_SMI" ]] ; then
+        echo 'nvidia-smi utility not found. Probably driver is not installed.'
+        exit 1
     fi
-done
 
-[[ "$dir_found" ]] || { echo "ERROR: cannot detect driver directory"; exit 1; }
+    if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
+        echo 'Something went wrong. Check nvidia driver'
+        exit 1
+    fi
 
-if [[ $rollback_flag ]]; then
+    echo "Detected nvidia driver version: $driver_version"
+
+    if [[ ! "${patch_list[$driver_version]+isset}" || ! "${object_list[$driver_version]+isset}" ]]; then
+        echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
+        echo "Available patches for: " 1>&2
+        for drv in "${!patch_list[@]}"; do
+            echo "$drv" 1>&2
+        done
+        exit 1
+    fi
+
+    patch="${patch_list[$driver_version]}"
+    object="${object_list[$driver_version]}"
+
+    declare -a driver_locations=(
+        '/usr/lib/x86_64-linux-gnu'
+        '/usr/lib/x86_64-linux-gnu/nvidia/current/'
+        '/usr/lib64'
+        "/usr/lib/nvidia-${driver_version%%.*}"
+    )
+
+    dir_found=''
+    for driver_dir in "${driver_locations[@]}" ; do
+        if [[ -e "$driver_dir/$object.$driver_version" ]]; then
+            dir_found='true'
+            break
+        fi
+    done
+
+    [[ "$dir_found" ]] || { echo "ERROR: cannot detect driver directory"; exit 1; }
+
+}
+
+rollback () {
+    patch_common
     if [[ -f "$backup_path/$object.$driver_version" ]]; then
         cp -p "$backup_path/$object.$driver_version" \
            "$driver_dir/$object.$driver_version"
         echo "Restore from backup $object.$driver_version"
     else
         echo "Backup not found. Try to patch first."
-        exit 1;
+        exit 1
     fi
-else
+}
+
+patch () {
+    patch_common
     if [[ ! -f "$backup_path/$object.$driver_version" ]]; then
         echo "Attention! Backup not found. Copy current $object to backup."
         mkdir -p "$backup_path"
@@ -165,4 +178,11 @@ else
     sha1sum "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     ldconfig
     echo "Patched!"
-fi
+}
+
+case "${opmode}" in
+    patch) patch ;;
+    patchrollback) rollback ;;
+    patchhelp) print_usage ; exit 2 ;;
+    *) echo "Incorrect combination of flags"; exit 2 ;;
+esac
