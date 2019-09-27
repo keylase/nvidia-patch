@@ -9,14 +9,16 @@ silent_flag=''
 
 print_usage() { printf '
 SYNOPSIS
-       patch.sh [-s] [-r|-h]
+       patch.sh [-s] [-r|-h|-c VERSION]
 
 DESCRIPTION
-       The patch for Nvidia drivers to increase encoder sessions
+       The patch for Nvidia drivers to remove NVENC session limit
 
-       -s    Silent mode (No output)
-       -r    Rollback to original (Restore lib from backup)
-       -h    Print this help message
+       -s             Silent mode (No output)
+       -r             Rollback to original (Restore lib from backup)
+       -h             Print this help message
+       -c VERSION     Check if version VERSION supported by this patch.
+                      Returns true exit code (0) if version is supported.
 
 '
 }
@@ -24,11 +26,12 @@ DESCRIPTION
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rsh' flag; do
+while getopts 'rshc:' flag; do
   case "${flag}" in
     r) opmode="${opmode}rollback" ;;
     s) silent_flag='true' ;;
     h) opmode="${opmode}help" ;;
+    c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
     *) echo "Incorrect option specified in command line" ; exit 2 ;;
   esac
 done
@@ -107,6 +110,11 @@ declare -A object_list=(
     ["435.21"]='libnvcuvid.so'
 )
 
+check_version_supported () {
+    local ver="$1"
+    [[ "${patch_list[$ver]+isset}" && "${object_list[$ver]+isset}" ]]
+}
+
 patch_common () {
     NVIDIA_SMI="$(command -v nvidia-smi || true)"
     if [[ ! "$NVIDIA_SMI" ]] ; then
@@ -121,7 +129,7 @@ patch_common () {
 
     echo "Detected nvidia driver version: $driver_version"
 
-    if [[ ! "${patch_list[$driver_version]+isset}" || ! "${object_list[$driver_version]+isset}" ]]; then
+    if ! check_version_supported "$driver_version" ; then
         echo "Patch for this ($driver_version) nvidia driver not found." 1>&2
         echo "Available patches for: " 1>&2
         for drv in "${!patch_list[@]}"; do
@@ -180,9 +188,20 @@ patch () {
     echo "Patched!"
 }
 
+query_version_support () {
+    if check_version_supported "$checked_version" ; then
+        echo "SUPPORTED"
+        exit 0
+    else
+        echo "NOT SUPPORTED"
+        exit 1
+    fi
+}
+
 case "${opmode}" in
     patch) patch ;;
     patchrollback) rollback ;;
     patchhelp) print_usage ; exit 2 ;;
+    patchcheckversion) query_version_support ;;
     *) echo "Incorrect combination of flags"; exit 2 ;;
 esac
