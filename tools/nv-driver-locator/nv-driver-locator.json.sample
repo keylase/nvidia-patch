@@ -226,6 +226,15 @@
             }
         },
         {
+            "type": "nvidia_downloads",
+            "name": "downloads linux tesla all",
+            "params": {
+                "os": "Linux_64",
+                "product": "Tesla",
+                "certlevel": "All"
+            }
+        },
+        {
             "type": "cuda_downloads",
             "name": "cuda toolkit tracker",
             "params": {}

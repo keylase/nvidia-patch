@@ -56,6 +56,7 @@ class Product(enum.Enum):
     GeForceMobile = (111, 890)
     Quadro = (73, 844)
     QuadroMobile = (74, 875)
+    Tesla = (110, 883)
 
     def __str__(self):
         return self.name
@@ -91,6 +92,7 @@ class DriverLanguage(enum.Enum):
 class CUDAToolkitVersion(enum.Enum):
     Nothing = 0
     v10_0 = 20
+    v10_1 = 21
 
     def __str__(self):
         return self.name
