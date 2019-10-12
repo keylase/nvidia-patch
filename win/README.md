@@ -29,6 +29,8 @@ Requirements:
 
 E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
 
+There are additional steps may be required for Plex and 32bit apps users. See [corresponding section below](#plex-media-server-d3d11-and-32-bit-apps-encoding-sessions).
+
 ## Version Table
 
 ### Windows 10 drivers
