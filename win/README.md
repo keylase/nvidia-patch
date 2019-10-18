@@ -31,6 +31,10 @@ E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nv
 
 There are additional steps may be required for Plex and 32bit apps users. See [corresponding section below](#plex-media-server-d3d11-and-32-bit-apps-encoding-sessions).
 
+A video tutorial is also available. Credits to designator2009.
+
+[![Video Tutorial](https://gist.githubusercontent.com/Snawoot/de26b6ccfe67c7bc89ea4347d7c2ecde/raw/50cd87a72c4e13214e6c609dc5291037bed9db8d/ss.jpg)](https://www.youtube.com/watch?v=y7TRfRsJR-w)
+
 ## Version Table
 
 ### Windows 10 drivers
