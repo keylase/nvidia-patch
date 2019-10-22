@@ -1,7 +1,7 @@
 Nvidia drivers patch for Windows
 ================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-436.48-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-436.30-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-440.97-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-440.97-blue.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -65,6 +65,7 @@ A video tutorial is also available. Credits to designator2009.
 | GeForce        | 436.15  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.15/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 436.48  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.48/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win10-64bit-international-whql.exe) |
+| GeForce        | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win10-64bit-international-whql.exe) |
 
 
 
@@ -86,6 +87,7 @@ A video tutorial is also available. Credits to designator2009.
 | Quadro         | 431.94  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.94/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro         | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro         | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 
 ### Windows 7, Windows 8, Windows 8.1 drivers
@@ -98,6 +100,7 @@ A video tutorial is also available. Credits to designator2009.
 | GeForce        | 436.15  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.15/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 436.48  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.48/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win8-win7-64bit-international-whql.exe) |
+| GeForce        | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win8-win7-64bit-international-whql.exe) |
 
 
 
@@ -109,6 +112,7 @@ A video tutorial is also available. Credits to designator2009.
 | Quadro         | 431.94  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.94/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 436.02  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.02/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro         | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.30/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
+| Quadro         | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 
 
 ### Windows Server 2008R2, 2012, 2012R2 drivers
@@ -122,6 +126,7 @@ A video tutorial is also available. Credits to designator2009.
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 | Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 | Quadro         | 431.94  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.94/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
+| Quadro         | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe) |
 
 
 ### Windows Server 2016, 2019 drivers
@@ -134,6 +139,7 @@ A video tutorial is also available. Credits to designator2009.
 | Quadro         | 431.70  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.70/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro         | 431.86  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.86/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro         | 431.94  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.94/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-winserv-2016-2019-64bit-international-whql.exe) |
+| Quadro         | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_440.97/nvcuvid.1337) | [Direct link](https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 
 ## Benchmarks
 

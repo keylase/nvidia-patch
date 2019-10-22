@@ -36,10 +36,10 @@ def parse_args():
                         help="name of installed target file. Used for patch "
                         "header")
     parser.add_argument("-S", "--search",
-                        default="FF908000000084C07408",
+                        default="FF909800000084C075",
                         help="representation of search pattern binary string")
     parser.add_argument("-R", "--replacement",
-                        default="FF908000000084C09090",
+                        default="FF90980000000C0175",
                         help="representation of replacement binary string")
     parser.add_argument("-o", "--stdout",
                         action="store_true",
@@ -57,6 +57,9 @@ class ExtractException(Exception):
 
 
 class PatternNotFoundException(Exception):
+    pass
+
+class MultipleOccurencesException(Exception):
     pass
 
 class UnknownPlatformException(Exception):
@@ -130,9 +133,11 @@ def make_patch(archive, *,
                                  sevenzip=sevenzip) as tgt:
                 f = expand(tgt, sevenzip=sevenzip)
     offset = f.find(search)
-    del f
     if offset == -1:
         raise PatternNotFoundException("Pattern not found.")
+    if f[offset+len(search):].find(search) != -1:
+        raise MultipleOccurencesException("Multiple occurences of pattern found!")
+    del f
     print("Pattern found @ %016X" % (offset,), file=sys.stderr)
 
     res = []
