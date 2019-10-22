@@ -36,10 +36,10 @@ def parse_args():
                         help="name of installed target file. Used for patch "
                         "header")
     parser.add_argument("-S", "--search",
-                        default="FF908000000084C07408",
+                        default="FF909800000084C075",
                         help="representation of search pattern binary string")
     parser.add_argument("-R", "--replacement",
-                        default="FF908000000084C09090",
+                        default="FF90980000000C0175",
                         help="representation of replacement binary string")
     parser.add_argument("-o", "--stdout",
                         action="store_true",
