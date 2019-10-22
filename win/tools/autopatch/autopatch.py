@@ -59,6 +59,9 @@ class ExtractException(Exception):
 class PatternNotFoundException(Exception):
     pass
 
+class MultipleOccurencesException(Exception):
+    pass
+
 class UnknownPlatformException(Exception):
     pass
 
@@ -130,9 +133,11 @@ def make_patch(archive, *,
                                  sevenzip=sevenzip) as tgt:
                 f = expand(tgt, sevenzip=sevenzip)
     offset = f.find(search)
-    del f
     if offset == -1:
         raise PatternNotFoundException("Pattern not found.")
+    if f[offset+len(search):].find(search) != -1:
+        raise MultipleOccurencesException("Multiple occurences of pattern found!")
+    del f
     print("Pattern found @ %016X" % (offset,), file=sys.stderr)
 
     res = []
