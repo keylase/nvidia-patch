@@ -27,7 +27,7 @@ Requirements:
 3. Save appropriate patch(es) from [Version Table](#version-table) using direct link to the patch (Right Click -> Save as...). Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.
 4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool. File name of patched object is specified in first line of .1337 patch. If x86 (32 bit) library patch is also available, apply it to same file in `%WINDIR%\SysWOW64\`.
 
-E.g, for 64bit Windows 10 running driver version 417.35 use `win10_x64/417.35/nvcuvid.1337` against `C:\WINDOWS\system32\nvcuvid.dll`.
+E.g, for 64bit Windows 10 running driver version 440.97 use `win10_x64/440.97/nvcuvid64.1337` against `C:\WINDOWS\system32\nvcuvid.dll` and `win10_x64/440.97/nvcuvid32.1337` against `C:\WINDOWS\SysWOW64\nvcuvid.dll`.
 
 ~~There are additional steps may be required for Plex and 32bit apps users. See [corresponding section below](#plex-media-server-d3d11-and-32-bit-apps-encoding-sessions).~~ We hope this is obsoleted by new additional x86 (32bit) library patch.
 
