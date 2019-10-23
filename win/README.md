@@ -29,7 +29,7 @@ Requirements:
 
 E.g, for 64bit Windows 10 running driver version 440.97 use `win10_x64/440.97/nvcuvid64.1337` against `C:\WINDOWS\system32\nvcuvid.dll` and `win10_x64/440.97/nvcuvid32.1337` against `C:\WINDOWS\SysWOW64\nvcuvid.dll`.
 
-~~There are additional steps may be required for Plex and 32bit apps users. See [corresponding section below](#plex-media-server-d3d11-and-32-bit-apps-encoding-sessions).~~ We hope this is obsoleted by new additional x86 (32bit) library patch.
+~~There are additional steps may be required for Plex and 32bit apps users. See [corresponding section below](#d3d11-and-32-bit-apps-encoding-sessions).~~ We hope this is obsoleted by new additional x86 (32bit) library patch.
 
 A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 patches. Now we probably don't need to autorun executable if x86 library patch applied*)
 
@@ -150,9 +150,11 @@ A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 
 
 * Genesis in [related issue](https://github.com/keylase/nvidia-patch/issues/9)
 
-### Plex Media Server, D3D11 and 32-bit apps encoding sessions
+### D3D11 and 32-bit apps encoding sessions
 
-[Related issue](https://github.com/keylase/nvidia-patch/issues/53). Summary: this patch permanently removes limit only for CUDA NVENC sessions in 64bit apps. But once usage limit was exceeded, it persists for all kinds of apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
+This section is actual only for D3D11 encoders and earlier driver versions (before 440.97).
+
+This patch for earlier driver versions (those which do not have additional 32bit library patch) wasn't covering 32bit driver libraries and for this reason 32bit applications were limited unless limit is not raised by some 64bit applications. But once usage limit was exceeded, it persists for all kinds of apps until system reboot. So, for example, you may once open 10 sessions with 64bit version of `ffmpeg` and limit will get raised to 10 for all rest types of apps until reboot. You may follow these steps to achieve this automatically and have all limits raised (assuming patch above already applied):
 
 #### Method 1 (recommended)
 
