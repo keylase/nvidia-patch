@@ -8,6 +8,7 @@ import os.path
 from binascii import unhexlify
 import xml.etree.ElementTree as ET
 import itertools
+import functools
 
 
 CRLF = b"\x0d\x0a"
@@ -170,6 +171,7 @@ def make_patch(archive, *,
     return res
 
 
+@functools.lru_cache(maxsize=None)
 def identify_driver(archive, *, sevenzip="7z"):
     manifest = extract_single_file(archive, "setup.cfg", sevenzip=sevenzip)
     root = ET.fromstring(manifest)
