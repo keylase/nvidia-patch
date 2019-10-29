@@ -1,7 +1,7 @@
 Nvidia drivers patch for Windows
 ================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-440.97-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-440.97-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-441.08-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-440.97-blue.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -66,6 +66,7 @@ A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 
 | GeForce        | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.30/nvcuvid.1337) |  | [Direct link](https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 436.48  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.48/nvcuvid.1337) |  | [Direct link](https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/440.97/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/440.97/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win10-64bit-international-whql.exe) |
+| GeForce        | 441.08  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win10-64bit-international-whql.exe) |
 
 
 
@@ -101,6 +102,7 @@ A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 
 | GeForce        | 436.30  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.30/nvcuvid.1337) |  | [Direct link](https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 436.48  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.48/nvcuvid.1337) |  | [Direct link](https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win8-win7-64bit-international-whql.exe) |
+| GeForce        | 441.08  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win8-win7-64bit-international-whql.exe) |
 
 
 
