@@ -70,11 +70,9 @@ DESCRIPTION
 
 Examples are provided for driver version 430.50. All commands executed as root.
 
-### Download driver
+### Download and install driver
 
-[https://international.download.nvidia.com/XFree86/Linux-x86\_64/430.50/NVIDIA-Linux-x86\_64-430.50.run](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run)
-
-### Install driver
+Skip this step if you already have installed driver with version supported by this patch (from distro packages, for example).
 
 Make sure you have kernel headers and compiler installed before running Nvidia driver installer. Kernel headers and compiler are required to build nvidia kernel module. Recommended way to do this is to install `dkms` package, if it is available in your distro. This way `dkms` package will pull all required dependencies to allow building kernel modules and kernel module builds will be automated in a reliable fashion.
 
