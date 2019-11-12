@@ -1,7 +1,7 @@
 Nvidia drivers patch for Windows
 ================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-441.12-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-441.12-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-441.20-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-441.12-blue.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -69,6 +69,7 @@ A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 
 | GeForce        | 441.08  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 441.12  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.12/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.12/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win10-64bit-international-whql.exe) |
 | GeForce        | 441.12 Studio Driver | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.12/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.12/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win10-64bit-international-nsd-whql.exe) |
+| GeForce        | 441.20  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.20/441.20-desktop-win10-64bit-international-whql.exe) |
 
 
 
@@ -107,6 +108,7 @@ A video tutorial is also available. Credits to designator2009. (*Covers pre-x86 
 | GeForce        | 440.97  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 441.08  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce        | 441.12  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.12/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.12/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win8-win7-64bit-international-whql.exe) |
+| GeForce        | 441.20  | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.20/nvcuvid64.1337) | [Direct link](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.20/nvcuvid32.1337) | [Direct link](https://international.download.nvidia.com/Windows/441.20/441.20-desktop-win8-win7-64bit-international-whql.exe) |
 
 
 
