@@ -1,0 +1,142 @@
+{
+    "linux": {
+        "x86_64": [
+            {
+                "version": "375.39",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run"
+            },
+            {
+                "version": "390.77",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run"
+            },
+            {
+                "version": "390.87",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run"
+            },
+            {
+                "version": "396.24",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run"
+            },
+            {
+                "version": "396.26",
+                "driver_url": "https://international.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run"
+            },
+            {
+                "version": "396.37",
+                "driver_url": "https://international.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run"
+            },
+            {
+                "version": "396.54",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run"
+            },
+            {
+                "version": "410.48"
+            },
+            {
+                "version": "410.57",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run"
+            },
+            {
+                "version": "410.73",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run"
+            },
+            {
+                "version": "410.78",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run"
+            },
+            {
+                "version": "410.79",
+                "driver_url": "https://international.download.nvidia.com/tesla/410.79/NVIDIA-Linux-x86_64-410.79.run"
+            },
+            {
+                "version": "410.93",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.93/NVIDIA-Linux-x86_64-410.93.run"
+            },
+            {
+                "version": "410.104",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/410.104/NVIDIA-Linux-x86_64-410.104.run"
+            },
+            {
+                "version": "415.18",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.18/NVIDIA-Linux-x86_64-415.18.run"
+            },
+            {
+                "version": "415.25",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.25/NVIDIA-Linux-x86_64-415.25.run"
+            },
+            {
+                "version": "415.27",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.27/NVIDIA-Linux-x86_64-415.27.run"
+            },
+            {
+                "version": "418.30",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.30/NVIDIA-Linux-x86_64-418.30.run"
+            },
+            {
+                "version": "418.43",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run"
+            },
+            {
+                "version": "418.56",
+                "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run"
+            },
+            {
+                "version": "418.67"
+            },
+            {
+                "version": "418.74",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run"
+            },
+            {
+                "version": "418.87.00"
+            },
+            {
+                "version": "418.87.01"
+            },
+            {
+                "version": "418.88",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.88/NVIDIA-Linux-x86_64-418.88.run"
+            },
+            {
+                "version": "430.09",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run"
+            },
+            {
+                "version": "430.14",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run"
+            },
+            {
+                "version": "430.26",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run"
+            },
+            {
+                "version": "430.34",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run"
+            },
+            {
+                "version": "430.40",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run"
+            },
+            {
+                "version": "430.50",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run"
+            },
+            {
+                "version": "435.17",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/435.17/NVIDIA-Linux-x86_64-435.17.run"
+            },
+            {
+                "version": "435.21",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run"
+            },
+            {
+                "version": "440.26",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.26/NVIDIA-Linux-x86_64-440.26.run"
+            },
+            {
+                "version": "440.31",
+                "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31.run"
+            }
+        ]
+    }
+}
