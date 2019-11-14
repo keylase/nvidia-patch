@@ -1,0 +1,110 @@
+# nvidia-patch
+
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-${latest_version}-brightgreen.svg)
+
+This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
+
+Main target operating system is **GNU/Linux**, but for **Windows** support see [**win**](win).
+
+Requirements:
+- x86\_64 system architecture
+- GNU/Linux operating system
+- nvenc-compatible gpu (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
+- Nvidia driver. Patch available for: 
+$version_list
+
+## Synopsis
+
+```
+# bash ./patch.sh -h
+
+SYNOPSIS
+       patch.sh [-s] [-r|-h|-c VERSION|-l]
+
+DESCRIPTION
+       The patch for Nvidia drivers to remove NVENC session limit
+
+       -s             Silent mode (No output)
+       -r             Rollback to original (Restore lib from backup)
+       -h             Print this help message
+       -c VERSION     Check if version VERSION supported by this patch.
+                      Returns true exit code (0) if version is supported.
+       -l             List supported driver versions
+
+```
+
+## Step-by-Step guide
+
+Examples are provided for driver version ${example_driver_version}. All commands executed as root.
+
+### Download and install driver
+
+Skip this step if you already have installed driver with version supported by this patch (from distro packages, for example).
+
+Make sure you have kernel headers and compiler installed before running Nvidia driver installer. Kernel headers and compiler are required to build nvidia kernel module. Recommended way to do this is to install `dkms` package, if it is available in your distro. This way `dkms` package will pull all required dependencies to allow building kernel modules and kernel module builds will be automated in a reliable fashion.
+
+```bash
+mkdir /opt/nvidia && cd /opt/nvidia
+wget ${example_driver_url}
+chmod +x ./${example_driver_file}
+./${example_driver_file}
+```
+
+### Check driver
+
+```bash
+nvidia-smi
+```
+
+Output should show no errors and details about your driver and GPU.
+
+### Patch driver
+
+This patch performs backup of original file prior to making changes.
+
+```bash
+bash ./patch.sh
+```
+
+You're all set!
+
+## Rollback
+
+If something got broken you may restore patched driver from backup:
+
+```bash
+bash ./patch.sh -r
+```
+
+## Docker support
+
+It is possible to use this patch with nvidia-docker containers, even if host machine hasn't patched drivers. See `Dockerfile` for example.
+
+Essentially all you need to do during build is:
+
+* `COPY` the `patch.sh` and `docker-entrypoint.sh` files into your container.
+* Make sure `docker-entrypoint.sh` is invoked on container start.
+
+`docker-entrypoint.sh` script does on-the-fly patching by means of manipulating dynamic linker to workaround read-only mount of Nvidia runtime. Finally it passes original docker command to shell, like if entrypoint was not restricted by `ENTRYPOINT` directive. So `docker run --runtime=nvidia -it mycontainer echo 123` will print `123`. Also it can be just invoked from your entrypoint script, if you have any.
+
+## Benchmarks
+
+* [Plex Media Server: nVidia Hardware Transcoding Calculator for Plex Estimates](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding) - useful benchmark of achieved simultaneous transcodes with various stream quality and hardware with patched drivers.
+
+## See also
+
+* Plex Media Server: enable HW **decoding**: 
+  * [GH Issue](https://github.com/keylase/nvidia-patch/issues/51)
+  * PMS Forum:
+    1. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158)
+    2. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/172)
+* Unraid / Docker:
+  * [GH Issue](https://github.com/keylase/nvidia-patch/issues/43)
+  * Unraid Nvidia plugin:
+    * [Repo](https://github.com/linuxserver/Unraid-Nvidia-Plugin)
+    * [Forum page](https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/) ([archive link](https://web.archive.org/web/20190211145338/https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/))
+* Original research behind this patch
+  * [Original post in Russian](https://habr.com/post/262563/)
+  * [3rd party English translation](https://weekly-geekly.github.io/articles/262563/index.html)
+
+If you experience `CreateBitstreamBuffer failed: out of memory (10)`, then you have to lower buffers number used for every encoding session. If you are using `ffmpeg`, see option `-surfaces` ("Number of concurrent surfaces") and try value near `-surfaces 8`.
