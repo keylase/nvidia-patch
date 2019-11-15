@@ -3,7 +3,7 @@ readme-autogen
 
 readme-autogen is a tool for internal usage, which purpose is to simplify maintenance of fresh and correct README files for this project.
 
-It rebuilds REAME files from templates in `template` directory and driver data specified in `drivers.json` file.
+It rebuilds REAME files from templates located in `templates` directory and driver data specified in `drivers.json` file.
 
 ## Requirements
 
