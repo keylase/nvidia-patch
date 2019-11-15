@@ -106,11 +106,11 @@ def windows_driver_rows(drivers):
             patch64_url = d.get('patch64_url')
             patch32_url = d.get('patch32_url')
             driver_url = d.get('driver_url')
-            patch64_link = markdown_link_tmpl.substitute(text="Direct link",
+            patch64_link = markdown_link_tmpl.substitute(text="x64 library patch",
                                                          url=patch64_url) if patch64_url else ''
-            patch32_link = markdown_link_tmpl.substitute(text="Direct link",
+            patch32_link = markdown_link_tmpl.substitute(text="x86 library patch",
                                                          url=patch32_url) if patch32_url else ''
-            driver_link = markdown_link_tmpl.substitute(text="Direct link",
+            driver_link = markdown_link_tmpl.substitute(text="Driver link",
                                                         url=driver_url) if driver_url else ''
             yield driver_row_tmpl.substitute(product=product,
                                              version_variant=version_variant,
