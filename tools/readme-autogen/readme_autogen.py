@@ -2,31 +2,12 @@
 
 import json
 import os.path
-from string import Template
-from enum import IntEnum
 from itertools import groupby
-from functools import lru_cache
 
-BASE_PATH = os.path.dirname(os.path.abspath(__file__))
-TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             "templates")
-DATAFILE_PATH = os.path.join(BASE_PATH,
-                             "..", "..", "drivers.json")
-LINUX_README_PATH = os.path.join(BASE_PATH,
-                                 "..", "..", "README.md")
-WINDOWS_README_PATH = os.path.join(BASE_PATH,
-                                 "..", "..", "win", "README.md")
-ENCODING="utf-8"
-
-class Product(IntEnum):
-    GeForce = 10
-    Quadro = 20
-
-class WinSeries(IntEnum):
-    win10 = 10
-    win7 = 20
-    ws2012 = 30
-    ws2016 = 40
+from constants import Product, WinSeries, DATAFILE_PATH, LINUX_README_PATH, \
+    WINDOWS_README_PATH, ENCODING
+from utils import template, find_driver, linux_driver_key, windows_driver_key, \
+    version_key_fun
 
 PRODUCT_LABELS = {
     Product.GeForce: "GeForce",
@@ -40,44 +21,11 @@ WIN_SERIES_LABELS = {
     WinSeries.ws2016: "Windows Server 2016, 2019",
 }
 
-@lru_cache(maxsize=None)
-def template(filename, strip_newlines=False):
-    filename = os.path.join(TEMPLATE_PATH, filename)
-    with open(filename, encoding=ENCODING) as f:
-        text = f.read()
-        if strip_newlines:
-            text = text.rstrip('\r\n')
-        t = Template(text)
-    return t
-
-def version_key_fun(ver):
-    return tuple(map(int, ver.split('.')))
-
-def find_driver(drivers, version, low=0, hi=None):
-    """ Bisect search on sorted linux drivers list """
-    if hi is None:
-        hi = len(drivers)
-    L = hi - low
-    if L == 0:
-        return None
-    elif L == 1:
-        return drivers[low] if drivers[low]['version'] == version else None
-    else:
-        vkf_left = version_key_fun(drivers[low + L // 2]['version'])
-        vkf_right = version_key_fun(version)
-        if vkf_left < vkf_right:
-            return find_driver(drivers, version, low + L // 2, hi)
-        elif vkf_left > vkf_right:
-            return find_driver(drivers, version, low, low + L // 2)
-        else:
-            return drivers[low + L // 2]
-
 def linux_readme(data):
     master_tmpl = template('linux_readme_master.tmpl')
     nolink_row_tmpl = template('linux_nolink_row.tmpl', True)
     link_row_tmpl = template('linux_link_row.tmpl', True)
-    drivers = sorted(data['drivers'],
-                     key=lambda d: version_key_fun(d['version']))
+    drivers = sorted(data['drivers'], key=linux_driver_key)
     def row_gen():
         for drv in drivers:
             driver_url = drv.get('driver_url')
@@ -86,7 +34,9 @@ def linux_readme(data):
                                driver_url=driver_url)
     version_list = "\n".join(row_gen())
     latest_version = drivers[-1]['version']
-    example_driver = find_driver(drivers, data['example']['version'])
+    example_driver = find_driver(drivers,
+                                 linux_driver_key(data['example']),
+                                 linux_driver_key)
     example_driver_url = example_driver['driver_url']
     return master_tmpl.substitute(version_list=version_list,
                                   latest_version=latest_version,
@@ -139,13 +89,8 @@ def windows_driver_table(drivers):
 
 def windows_readme(data):
     master_tmpl = template('windows_readme_master.tmpl')
-    def driver_key_fun(d):
-        return ((WinSeries[d['os']], Product[d['product']]) +
-                version_key_fun(d['version']) +
-                (d.get('variant'),))
-    drivers = sorted(data['drivers'], key=driver_key_fun)
+    drivers = sorted(data['drivers'], key=windows_driver_key)
     version_table = windows_driver_table(drivers)
-
     geforce_drivers = filter(lambda d: Product[d['product']] is Product.GeForce, drivers)
     quadro_drivers = filter(lambda d: Product[d['product']] is Product.Quadro, drivers)
     latest_geforce_version = max(geforce_drivers, default='xxx.xx',
