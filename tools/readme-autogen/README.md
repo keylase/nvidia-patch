@@ -26,6 +26,18 @@ add\_driver is a tool for internal usage, which purpose is to simplify proper in
 
 Just run script. It will update files in your repo working copy.
 
+## Examples
+
+Here is real commands used for Windows driver 441.28 series:
+
+```bash
+./add_driver.py -W --variant "Studio Driver" 441.28
+./add_driver.py -W -P Quadro -w win10 441.28
+./add_driver.py -W -P Quadro -w win7 441.28
+./add_driver.py -W -P Quadro -w ws2012 441.28
+./add_driver.py -W -P Quadro -w ws2016 441.28
+```
+
 ## Synopsis
 
 ```
