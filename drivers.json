@@ -82,17 +82,20 @@
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run"
                 },
                 {
-                    "version": "418.67"
+                    "version": "418.67",
+                    "driver_url": "https://international.download.nvidia.com/tesla/418.67/NVIDIA-Linux-x86_64-418.67.run"
                 },
                 {
                     "version": "418.74",
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run"
                 },
                 {
-                    "version": "418.87.00"
+                    "version": "418.87.00",
+                    "driver_url": "https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.00.run"
                 },
                 {
-                    "version": "418.87.01"
+                    "version": "418.87.01",
+                    "driver_url": "https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.01.run"
                 },
                 {
                     "version": "418.88",
