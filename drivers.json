@@ -215,7 +215,7 @@
                     "variant": "",
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.35/nvcuvid.1337",
                     "patch32_url": "",
-                    "driver_url": "https://international.download.nvidia.com/Windows/419.35/419.35-desktop-win10-64bit-international-whql.exe"
+                    "driver_url": "https://international.download.nvidia.com/Windows/419.35/419.35-desktop-win10-64bit-international-whql-rp.exe"
                 },
                 {
                     "os": "win10",
@@ -332,7 +332,7 @@
                     "variant": "",
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.02/nvcuvid.1337",
                     "patch32_url": "",
-                    "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win10-64bit-international-whql.exe"
+                    "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win10-64bit-international-whql-rp.exe"
                 },
                 {
                     "os": "win10",
@@ -584,7 +584,7 @@
                     "variant": "",
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.02/nvcuvid.1337",
                     "patch32_url": "",
-                    "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win8-win7-64bit-international-whql.exe"
+                    "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win8-win7-64bit-international-whql-rp.exe"
                 },
                 {
                     "os": "win7",
