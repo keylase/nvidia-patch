@@ -54,15 +54,15 @@ def parse_args():
     parser.add_argument("-S", "--search",
                         nargs="+",
                         default=[
-                            "8BF085C0750549892FEB21",
-                            "89450885C075048937EB22",
+                            "8BF085C0750549892FEB",
+                            "89450885C075048937EB",
                         ],
                         help="representation of search pattern(s) binary string")
     parser.add_argument("-R", "--replacement",
                         nargs="+",
                         default=[
-                            "33C08BF0750549892FEB21",
-                            "33C089450875048937EB22",
+                            "33C08BF0750549892FEB",
+                            "33C089450875048937EB",
                         ],
                         help="representation of replacement(s) binary string")
     parser.add_argument("-o", "--stdout",
