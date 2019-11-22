@@ -319,15 +319,6 @@
                 {
                     "os": "win10",
                     "product": "GeForce",
-                    "version": "435.27",
-                    "variant": "non-official",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/435.27/nvcuvid.1337",
-                    "patch32_url": "",
-                    "driver_url": "https://github.com/CHEF-KOCH/nVidia-modded-Inf/releases/download/435.27/Nvidia.435.27.rar"
-                },
-                {
-                    "os": "win10",
-                    "product": "GeForce",
                     "version": "436.02",
                     "variant": "",
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.02/nvcuvid.1337",
@@ -405,24 +396,6 @@
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvcuvid64.1337",
                     "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvcuvid32.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.20/441.20-desktop-win10-64bit-international-whql.exe"
-                },
-                {
-                    "os": "win10",
-                    "product": "Quadro",
-                    "version": "412.16",
-                    "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_412.16/nvcuvid.1337",
-                    "patch32_url": "",
-                    "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/412.16/412.16-quadro-desktop-notebook-win10-64bit-international-whql.exe"
-                },
-                {
-                    "os": "win10",
-                    "product": "Quadro",
-                    "version": "412.29",
-                    "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_412.29/nvcuvid.1337",
-                    "patch32_url": "",
-                    "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/412.29/412.29-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
                     "os": "win10",
