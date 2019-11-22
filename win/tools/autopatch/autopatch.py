@@ -32,37 +32,37 @@ def parse_args():
     parser.add_argument("-T", "--target",
                         nargs="+",
                         default=[
-                            "Display.Driver/nvcuvid64.dl_",
-                            "Display.Driver/nvcuvid32.dl_",
+                            "Display.Driver/nvencodeapi64.dl_",
+                            "Display.Driver/nvencodeapi.dl_",
                         ],
                         help="target location(s) in archive")
     parser.add_argument("-N", "--target-name",
                         nargs="+",
                         default=[
-                            "nvcuvid.dll",
-                            "nvcuvid.dll",
+                            "nvencodeapi64.dll",
+                            "nvencodeapi.dll",
                         ],
                         help="name(s) of installed target file. Used for patch "
                         "header")
     parser.add_argument("-P", "--patch-name",
                         nargs="+",
                         default=[
-                            "nvcuvid64.1337",
-                            "nvcuvid32.1337",
+                            "nvencodeapi64.1337",
+                            "nvencodeapi.1337",
                         ],
                         help="relative filename(s) of generated patch(es)")
     parser.add_argument("-S", "--search",
                         nargs="+",
                         default=[
-                            "FF909800000084C075",
-                            "8B404CFFD084C075",
+                            "8BF085C0750549892FEB",
+                            "89450885C075048937EB",
                         ],
                         help="representation of search pattern(s) binary string")
     parser.add_argument("-R", "--replacement",
                         nargs="+",
                         default=[
-                            "FF90980000000C0175",
-                            "8B404CFFD00C0175",
+                            "33C08BF0750549892FEB",
+                            "33C089450875048937EB",
                         ],
                         help="representation of replacement(s) binary string")
     parser.add_argument("-o", "--stdout",
