@@ -56,12 +56,12 @@ def parse_args():
     win_opts.add_argument("--patch32",
                           default="https://raw.githubusercontent.com/keylase/"
                           "nvidia-patch/master/win/${winseries}_x64/"
-                          "${drvprefix}${version}/nvcuvid32.1337",
+                          "${drvprefix}${version}/nvencodeapi.1337",
                           help="template for Windows 32bit patch URL")
     win_opts.add_argument("--patch64",
                           default="https://raw.githubusercontent.com/keylase/"
                           "nvidia-patch/master/win/${winseries}_x64/"
-                          "${drvprefix}${version}/nvcuvid64.1337",
+                          "${drvprefix}${version}/nvencodeapi64.1337",
                           help="template for Windows 64bit patch URL")
     win_opts.add_argument("--skip-patch-check",
                           action="store_true",
