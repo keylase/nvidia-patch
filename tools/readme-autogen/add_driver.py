@@ -187,6 +187,8 @@ def main():
     else:
         new_driver = {
             "version": args.version,
+            "nvenc_patch": True,
+            "nvfbc_patch": True,
             "driver_url": url,
         }
         key_fun = linux_driver_key
