@@ -15,7 +15,7 @@ Requirements:
 ## Version Table
 
 | Version | NVENC patch | NVFBC patch | Driver link |
-|---------|-------------|-------------|-------------|
+| :---    |    :---:    |    :---:    |        ---: |
 | 375.39 | :heavy_check_mark: | :x: | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run) |
 | 390.77 | :heavy_check_mark: | :x: | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run) |
 | 390.87 | :heavy_check_mark: | :x: | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run) |
