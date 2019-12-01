@@ -139,7 +139,7 @@ def main():
         url = url_tmpl.substitute(version=args.version)
     else:
         url = args.url
-    if not args.skip_url_check:
+    if url and not args.skip_url_check:
         try:
             validate_url(url)
         except KeyboardInterrupt:
@@ -189,8 +189,9 @@ def main():
             "version": args.version,
             "nvenc_patch": True,
             "nvfbc_patch": True,
-            "driver_url": url,
         }
+        if url:
+            new_driver["driver_url"] = url
         key_fun = linux_driver_key
     drivers = sorted(drivers, key=key_fun)
     try:
