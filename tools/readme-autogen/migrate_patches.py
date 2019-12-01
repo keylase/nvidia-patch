@@ -59,15 +59,14 @@ def main():
     with open(DATAFILE_PATH) as data_file:
         data = json.load(data_file)
 
-    drivers = data[OSKind.Windows.value]['x86_64']['drivers']
+    drivers = data[OSKind.Linux.value]['x86_64']['drivers']
     for d in drivers:
-        base, sep, tail = d['patch64_url'].rpartition('/')
-        assert sep
-        assert tail
-        d['patch64_url'] = base + '/' + 'nvencodeapi64.1337'
-        d['patch32_url'] = base + '/' + 'nvencodeapi.1337'
-        d['driver_url'] = d['driver_url']
-        validate_patch(d['patch64_url'], d['patch32_url'])
+        d['nvenc_patch'] = True
+        d['nvfbc_patch'] = False
+        if 'driver_url' in d:
+            driver_url = d['driver_url']
+            del d['driver_url']
+            d['driver_url'] = driver_url
     with open(DATAFILE_PATH, 'w') as data_file:
         json.dump(data, data_file, indent=4)
 
