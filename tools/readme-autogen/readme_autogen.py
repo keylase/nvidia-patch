@@ -23,15 +23,24 @@ WIN_SERIES_LABELS = {
 
 def linux_readme(data):
     master_tmpl = template('linux_readme_master.tmpl')
-    nolink_row_tmpl = template('linux_nolink_row.tmpl', True)
-    link_row_tmpl = template('linux_link_row.tmpl', True)
+    row_tmpl = template('linux_driver_row.tmpl', True)
+    link_tmpl = template('markdown_link.tmpl', True)
+    md_true = template('markdown_true.tmpl', True).substitute()
+    md_false = template('markdown_false.tmpl', True).substitute()
     drivers = sorted(data['drivers'], key=linux_driver_key)
     def row_gen():
         for drv in drivers:
             driver_url = drv.get('driver_url')
-            t = nolink_row_tmpl if driver_url is None else link_row_tmpl
-            yield t.substitute(driver_version=drv['version'],
-                               driver_url=driver_url)
+            if driver_url:
+                driver_link = link_tmpl.substitute(text="Driver link", url=driver_url)
+            else:
+                driver_link = ''
+            nvenc_patch = md_true if drv['nvenc_patch'] else md_false
+            nvfbc_patch = md_true if drv['nvfbc_patch'] else md_false
+            yield row_tmpl.substitute(version=drv['version'],
+                                      nvenc_patch=nvenc_patch,
+                                      nvfbc_patch=nvfbc_patch,
+                                      driver_link=driver_link)
     version_list = "\n".join(row_gen())
     latest_version = drivers[-1]['version']
     example_driver = find_driver(drivers,
