@@ -5,6 +5,8 @@ Nvidia drivers patch for Windows
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
+Also there is available NvFBC wrapper which allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
+
 Requirements:
 
 - Any of following 64bit operating systems:

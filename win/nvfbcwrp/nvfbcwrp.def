@@ -1,0 +1,10 @@
+LIBRARY nvfbcwrp
+EXPORTS
+	NvFBC_Create=PROXY_NvFBC_Create @1
+	NvFBC_CreateEx=PROXY_NvFBC_CreateEx @2
+	NvFBC_Enable=PROXY_NvFBC_Enable @3
+	NvFBC_GetSDKVersion=PROXY_NvFBC_GetSDKVersion @4
+	NvFBC_GetStatus=PROXY_NvFBC_GetStatus @5
+	NvFBC_GetStatusEx=PROXY_NvFBC_GetStatusEx @6
+	NvFBC_SetGlobalFlags=PROXY_NvFBC_SetGlobalFlags @7
+	NvOptimusEnablement=PROXY_NvOptimusEnablement @8
