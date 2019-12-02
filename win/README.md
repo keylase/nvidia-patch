@@ -3,7 +3,9 @@ Nvidia drivers patch for Windows
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-441.41-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-441.28-blue.svg)
 
-This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs. Also there is available NvFBC wrapper which allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
+This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
+
+Also there is available NvFBC wrapper which allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
 
 Requirements:
 
