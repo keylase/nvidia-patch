@@ -4,7 +4,7 @@
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
-Also there is experimental NvFBC patch available which allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
+Also there is available experimental NvFBC patch which allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
 
 Main target operating system is **GNU/Linux**, but for **Windows** support see [**win**](win).
 
