@@ -2,6 +2,12 @@
 #include "nvfbcdefs.h"
 #include <windows.h>
 
+#ifdef _WIN64
+#define LIBNAME ".\\NvFBC64_.dll"
+#else
+#define LIBNAME ".\\NvFBC_.dll"
+#endif
+
 HINSTANCE hLThis = 0;
 extern "C" {
 	FARPROC ORIG_NvFBC_Create, ORIG_NvFBC_Enable, ORIG_NvFBC_GetSDKVersion,
@@ -16,7 +22,7 @@ BOOL WINAPI DllMain(HINSTANCE hInst,DWORD reason,LPVOID)
 	if (reason == DLL_PROCESS_ATTACH)
 	{
 		//hLThis = hInst;
-		hL = LoadLibrary(".\\NvFBC64_.dll");
+		hL = LoadLibrary(LIBNAME);
 		if (!hL) return false;
 		ORIG_NvFBC_Create = GetProcAddress(hL, "NvFBC_Create");
 		if (!ORIG_NvFBC_Create) return false;
