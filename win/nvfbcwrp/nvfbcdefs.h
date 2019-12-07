@@ -1,8 +1,5 @@
 #pragma once
 
-// Magic code which is passed as pPrivateData and enables NvFBC to work on GeForce
-int magic[] = { 0x0D7BC620, 0x4C17E142, 0x5E6B5997, 0x4B5A855B };
-
 typedef unsigned long      NvU32; /* 0 to 4294967295                         */
 
 /**
