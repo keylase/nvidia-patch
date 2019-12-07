@@ -14,3 +14,16 @@ Wrapper for `NvFBC64.dll` library which injects private keys into `NvFBC_CreateE
 7. Restart any applications using this library. That's it.
 
 This procedure has to be repeated after any driver reinstall/update, so keep your copies of `nvfbcwrp64.dll` and `nvfbcwrp32.dll` files.
+
+## Advanced Usage
+
+`nvfbcwrp` allows user to capture and replay `privateData` used by other NvFBC applications (like GeForce Experience, Shadow Play and so on). It may be useful if built-in `privateData` will render invalid for some reason. Wrapper recognizes two environment variables:
+
+* `NVFBCWRP_DUMP_DIR` - output directory for dumps of `privateData` sent by applications.
+* `NVFBCWRP_PRIVDATA_FILE` - name of file with `privateData` which should be used instead of default built-in vector. These files can be produced as output of `NVFBCWRP_DUMP_DIR` option. If file is not found or can't be loaded, default magic vector is used.
+
+Hence, if default magic baked into nvfbcwrp doesn't work for you, you have to:
+
+1. Specify environment variable `NVFBCWRP_DUMP_DIR` in your configuration with path to existing writable directory. Here is a [guide](http://web.archive.org/web/20191207221102/https://docs.oracle.com/en/database/oracle/r-enterprise/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html) about environment variables edit. It's sufficient to add "user" environment variable.
+2. Run some NvFBC application with valid `privateData` keys and initiate recording session.
+3. Grab some output file and specify it's path in `NVFBCWRP_PRIVDATA_FILE`. At this point you can unset `NVFBCWRP_DUMP_DIR` to stop `privateData` capture.
