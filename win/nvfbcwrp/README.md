@@ -5,7 +5,7 @@ Wrapper for `NvFBC64.dll` library which injects private keys into `NvFBC_CreateE
 
 ## Usage
 
-1. Obtain `nvfbcwrp64.dll` and `nvfbcwrp32.dll` files. You may build them yourself with MSVS 2019 or download latest release here: [nvfbcwrp64.dll](https://gist.github.com/Snawoot/2d78c569b5ffb29080cf9bfca401adfa/raw/166c5e10f8301000c171d5f59cc2ae0b551cd1b3/nvfbcwrp64.dll), [nvfbcwrp32.dll](https://gist.github.com/Snawoot/2d78c569b5ffb29080cf9bfca401adfa/raw/166c5e10f8301000c171d5f59cc2ae0b551cd1b3/nvfbcwrp32.dll).
+1. Obtain `nvfbcwrp64.dll` and `nvfbcwrp32.dll` files. You may build them yourself with MSVS 2019 or download latest release here: [nvfbcwrp64.dll](https://gist.github.com/Snawoot/17b14e7ce0f7412b91587c2723719eff/raw/e8e9658fd20751ad875477f37b49ea158ece896d/nvfbcwrp64.dll), [nvfbcwrp32.dll](https://gist.github.com/Snawoot/17b14e7ce0f7412b91587c2723719eff/raw/e8e9658fd20751ad875477f37b49ea158ece896d/nvfbcwrp32.dll).
 2. Backup your `%WINDIR\system32\NvFBC64.dll` and `%WINDIR\SysWOW64\NvFBC.dll` files.
 3. Rename file `%WINDIR\system32\NvFBC64.dll` to `%WINDIR\system32\NvFBC64_.dll`
 4. Rename file `%WINDIR\SysWOW64\NvFBC.dll` to `%WINDIR\SysWOW64\NvFBC_.dll`
