@@ -7,6 +7,7 @@ import hashlib
 import importlib
 import logging
 from abc import ABC, abstractmethod
+import functools
 
 
 HASH_DELIM = b'\x00'
@@ -275,6 +276,33 @@ class CudaToolkitDownloadsChannel(BaseChannel):
             }
         }
 
+@functools.lru_cache(maxsize=0)
+def vulkan_downloads(*, timeout=10):
+    gvd = importlib.import_module('get_vulkan_downloads')
+    return gvd.get_drivers(timeout=timeout)
+
+class VulkanBetaDownloadsChannel(BaseChannel):
+    def __init__(self, name, *,
+                 os="Linux",
+                 timeout=10):
+        self.name = name
+        self._os = os
+        self._timeout = timeout
+
+    def get_latest_driver(self):
+        drivers = vulkan_downloads(timeout=self._timeout)
+        for drv in drivers:
+            if drv["os"] == self._os:
+                return {
+                    'DriverAttributes': {
+                        'Version': drv['version'],
+                        'Name': drv['name'],
+                        'NameLocalized': drv['name'],
+                    }
+                }
+        else:
+            return None
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -303,6 +331,7 @@ class DriverLocator:
             'gfe_client': GFEClientChannel,
             'nvidia_downloads': NvidiaDownloadsChannel,
             'cuda_downloads': CudaToolkitDownloadsChannel,
+            'vulkan_beta': VulkanBetaDownloadsChannel,
         }
 
         channels = []

@@ -238,6 +238,20 @@
             "type": "cuda_downloads",
             "name": "cuda toolkit tracker",
             "params": {}
+        },
+        {
+            "type": "vulkan_beta",
+            "name": "vulkan beta windows",
+            "params": {
+                "os": "Windows"
+            }
+        },
+        {
+            "type": "vulkan_beta",
+            "name": "vulkan beta linux",
+            "params": {
+                "os": "Linux"
+            }
         }
     ],
     "notifiers": [
