@@ -23,6 +23,7 @@ All scripts may be used both as standalone application and importable module. Fo
 * mailer.py - module with email routines and minimalistic email client for test purposes.
 * gfe\_get\_driver.py - GeForce Experience client library (and test util).
 * get\_nvidia\_downloads.py - Nvidia downloads site parser (and test util).
+* get\_vulkan\_downloads.py - Nvidia Developer downloads site parser (and test util). Used for Vulkan Beta Drivers.
 
 ### Operation
 
@@ -214,6 +215,20 @@ All scripts may be used both as standalone application and importable module. Fo
             "type": "cuda_downloads",
             "name": "cuda toolkit tracker",
             "params": {}
+        },
+        {
+            "type": "vulkan_beta",
+            "name": "vulkan beta windows",
+            "params": {
+                "os": "Windows"
+            }
+        },
+        {
+            "type": "vulkan_beta",
+            "name": "vulkan beta linux",
+            "params": {
+                "os": "Linux"
+            }
         }
     ],
     "notifiers": [
@@ -304,6 +319,17 @@ Type: `cuda_downloads`
 
 Params:
 
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
+
+#### VulkanBetaDownloadsChannel
+
+Parses Nvidia Developer downloads site for latest Vulkan Beta Drivers.
+
+Type: `vulkan_beta`
+
+Params:
+
+* `os` - OS family. Allowed values: `Linux`, `Windows`. Default: `Linux`.
 * `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
 ### Notifiers
