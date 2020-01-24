@@ -31,6 +31,8 @@ Requirements:
 
 E.g, for 64bit Windows 10 running driver version $latest_geforce_version use `win10_x64/$latest_geforce_version/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` and `win10_x64/$latest_geforce_version/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
+If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip_sig_check** (clickable)](skip_sig_check) directory for instructions.
+
 A video tutorial is also available. Credits to designator2009. (*Covers older patches. Now we probably don't need to autorun executable if x86 library patch applied*)
 
 [![Video Tutorial](https://gist.githubusercontent.com/Snawoot/de26b6ccfe67c7bc89ea4347d7c2ecde/raw/50cd87a72c4e13214e6c609dc5291037bed9db8d/ss.jpg)](https://www.youtube.com/watch?v=y7TRfRsJR-w)
