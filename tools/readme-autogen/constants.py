@@ -45,7 +45,7 @@ DRIVER_URL_TEMPLATE = {
     (OSKind.Windows, Product.GeForce, WinSeries.win7, ''):                  "https://international.download.nvidia.com/Windows/$version/$version-desktop-win8-win7-64bit-international-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win7, 'Vulkan Beta'):       "",
     (OSKind.Windows, Product.Quadro, WinSeries.win7, ''):                   "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe",
-    (OSKind.Windows, Product.Quadro, WinSeries.ws2012, ''):                 "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe",
+    (OSKind.Windows, Product.Quadro, WinSeries.ws2012, ''):                 "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-winserv-2012r2-64bit-international-whql.exe",
     (OSKind.Windows, Product.Quadro, WinSeries.ws2016, ''):                 "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-winserv-2016-2019-64bit-international-whql.exe",
 }
 
