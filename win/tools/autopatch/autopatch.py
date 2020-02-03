@@ -214,6 +214,8 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
         installer_name = os.path.basename(installer_file).lower()
         if 'winserv2008' in installer_name:
             os_prefix = 'ws2012_x64'
+        elif 'winserv-2012' in installer_name:
+            os_prefix = 'ws2012_x64'
         elif 'winserv-2016' in installer_name:
             os_prefix = 'ws2016_x64'
         elif 'win10' in installer_name:
