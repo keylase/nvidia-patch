@@ -3,7 +3,7 @@ name: Request for driver version support
 about: Ask maintainers for support of yet another Nvidia driver
 title: New driver support (version XXX.XX)
 labels: enhancement
-assignees: Snawoot
+assignees: ''
 
 ---
 
