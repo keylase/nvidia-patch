@@ -61,6 +61,7 @@ Requirements:
 | 440.44 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.44/NVIDIA-Linux-x86_64-440.44.run) |
 | 440.48.02 | :heavy_check_mark: | :heavy_check_mark: |  |
 | 440.58.01 | :heavy_check_mark: | :heavy_check_mark: |  |
+| 440.58.02 | :heavy_check_mark: | :heavy_check_mark: |  |
 | 440.59 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.59/NVIDIA-Linux-x86_64-440.59.run) |
 
 ## Synopsis
