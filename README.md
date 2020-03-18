@@ -1,6 +1,6 @@
 # nvidia-patch
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-440.64.00-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-440.66.02-brightgreen.svg)
 
 This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -65,6 +65,7 @@ Requirements:
 | 440.59 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.59/NVIDIA-Linux-x86_64-440.59.run) |
 | 440.64 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.64/NVIDIA-Linux-x86_64-440.64.run) |
 | 440.64.00 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run) |
+| 440.66.02 | :heavy_check_mark: | :heavy_check_mark: |  |
 
 ## Synopsis
 
