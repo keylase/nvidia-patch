@@ -1363,6 +1363,24 @@
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.75/nvencodeapi64.1337",
                     "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.75/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/445.75/445.75-desktop-win8-win7-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "442.81",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.81/nvencodeapi64.1337",
+                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.81/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "442.81",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.81/nvencodeapi64.1337",
+                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.81/nvencodeapi.1337",
+                    "driver_url": ""
                 }
             ]
         }
