@@ -29,9 +29,11 @@ Requirements:
 3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> Save as...).
    - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
 4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool.
+   - *If patching fails, close all applications using nvencodeapi64.dll, such as OBS Studio or Plex.*
 5. Apply x86 library patch to corresponding file in `%WINDIR%\SysWOW64\` in the same way as previous one.
+   - *If patching fails, close all applications using nvencodeapi.dll, such as OBS Studio or Plex.*
 
-**Example:** for 64bit Windows 10 running driver version 445.87, use `win10_x64/445.87/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/445.87/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`. *If patching fails, close all applications using nvencodeapi(64).dll, such as OBS Studio.*
+**Example:** for 64bit Windows 10 running driver version 445.87, use `win10_x64/445.87/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/445.87/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
 If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip_sig_check** (clickable)](skip_sig_check) directory for instructions.
 
