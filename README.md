@@ -7,7 +7,7 @@ NVENC patch (`patch.sh`) removes restriction on maximum number of simultaneous N
 
 NvFBC patch (`patch-fbc.sh`) allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
 
-Main target operating system is **GNU/Linux**, but for **Windows** support see [**win**](win).
+Main target operating system is **GNU/Linux**, but for **Windows** support see [**win** (clickable)](win).
 
 Requirements:
 - x86\_64 system architecture
@@ -95,7 +95,7 @@ DESCRIPTION
 
 ## Step-by-Step guide
 
-Examples are provided for driver version 430.50. All commands executed as root.
+Examples are provided for driver version 430.50. All commands are executed as root.
 
 ### Download and install driver
 
