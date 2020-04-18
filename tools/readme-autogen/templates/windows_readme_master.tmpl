@@ -5,7 +5,7 @@ NVENC and NvFBC patches for Windows Nvidia drivers
 
 NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
-NvFBC patch (wrapper) allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
+NvFBC patch (wrapper) allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp** (clickable)](nvfbcwrp) directory for details.
 
 Requirements:
 
