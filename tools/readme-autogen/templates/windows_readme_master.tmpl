@@ -1,11 +1,11 @@
-Nvidia drivers patch for Windows
-================================
+NVENC and NvFBC patches for Windows Nvidia drivers
+==================================================
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-${latest_geforce_version}-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-${latest_quadro_version}-blue.svg)
 
-This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
+NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
-Also there is available NvFBC wrapper which allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
+NvFBC patch (wrapper) allows to use NvFBC on consumer-grade GPUs. See [**nvfbcwrp**](nvfbcwrp) directory for details.
 
 Requirements:
 
@@ -22,7 +22,7 @@ Requirements:
 - NVENC-compatible GPU (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
 - Nvidia driver. Patch available for versions in [table below](#version-table).
 
-## Step-by-Step Guide
+## NVENC Patch Step-by-Step Guide
 
 1. Download and install latest Nvidia driver supported by this patch.
 2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest).

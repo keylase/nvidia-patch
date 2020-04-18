@@ -1,10 +1,11 @@
-# nvidia-patch
+NVENC and NvFBC patches for Nvidia drivers
+==========================================
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-440.82-brightgreen.svg)
 
-This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
+NVENC patch (`patch.sh`) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
-Also there is available experimental NvFBC patch which allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
+NvFBC patch (`patch-fbc.sh`) allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
 
 Main target operating system is **GNU/Linux**, but for **Windows** support see [**win**](win).
 
