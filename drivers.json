@@ -319,6 +319,11 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.113/NVIDIA-Linux-x86_64-418.113.run"
+                },
+                {
+                    "version": "440.66.12",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
@@ -1497,6 +1502,24 @@
                     "variant": "Vulkan Beta",
                     "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.98/nvencodeapi64.1337",
                     "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.98/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "443.09",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.09/nvencodeapi64.1337",
+                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.09/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "443.09",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.09/nvencodeapi64.1337",
+                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.09/nvencodeapi.1337",
                     "driver_url": ""
                 }
             ]
