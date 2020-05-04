@@ -319,6 +319,11 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.113/NVIDIA-Linux-x86_64-418.113.run"
+                },
+                {
+                    "version": "440.66.12",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
