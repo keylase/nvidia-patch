@@ -187,7 +187,7 @@ patch_common () {
     driver_versions_list=$($cmd)
     ret_code=$?
     driver_version=$(echo "$driver_versions_list" | head -n 1)
-    if [ $ret_code -ne 0 ] && [ -nz driver_version ] ; then
+    if [[ $ret_code -ne 0 ]] ; then
         echo "Can not detect nvidia driver version."
         echo "CMD: \"$cmd\""
         echo "Result: \"$driver_versions_list\""
