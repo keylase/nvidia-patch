@@ -111,8 +111,15 @@ patch_common () {
         exit 1
     fi
 
-    if ! driver_version=$("$NVIDIA_SMI" --query-gpu=driver_version --format=csv,noheader,nounits | head -n 1) ; then
-        echo 'Something went wrong. Check nvidia driver'
+    cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
+    driver_versions_list=$($cmd)
+    ret_code=$?
+    driver_version=$(echo "$driver_versions_list" | head -n 1)
+    if [[ $ret_code -ne 0 ]] ; then
+        echo "Can not detect nvidia driver version."
+        echo "CMD: \"$cmd\""
+        echo "Result: \"$driver_versions_list\""
+        echo "nvidia-smi retcode: $ret_code"
         exit 1
     fi
 
