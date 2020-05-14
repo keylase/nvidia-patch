@@ -192,6 +192,7 @@ patch_common () {
         echo "CMD: \"$cmd\""
         echo "Result: \"$driver_versions_list\""
         echo "nvidia-smi retcode: $ret_code"
+        exit 1
     fi
 
     echo "Detected nvidia driver version: $driver_version"
