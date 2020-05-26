@@ -75,6 +75,7 @@ Requirements:
 | 440.66.11 | :heavy_check_mark: | :heavy_check_mark: |  |
 | 440.66.12 | :heavy_check_mark: | :heavy_check_mark: |  |
 | 440.66.14 | :heavy_check_mark: | :heavy_check_mark: |  |
+| 440.66.15 | :heavy_check_mark: | :heavy_check_mark: |  |
 | 440.82 | :heavy_check_mark: | :heavy_check_mark: | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run) |
 
 ## Synopsis
