@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
+import argparse
 import json
 import os.path
 from itertools import groupby
 
 from constants import Product, WinSeries, DATAFILE_PATH, LINUX_README_PATH, \
-    WINDOWS_README_PATH, ENCODING
+    WINDOWS_README_PATH, ENCODING, REPO_BASE
 from utils import template, find_driver, linux_driver_key, windows_driver_key, \
     version_key_fun
 
@@ -53,7 +54,7 @@ def linux_readme(data):
                                   example_driver_version=example_driver['version'],
                                   example_driver_file=os.path.basename(example_driver_url))
 
-def windows_driver_rows(drivers):
+def windows_driver_rows(drivers, repo_base):
     driver_row_tmpl = template('windows_driver_row.tmpl', True)
     markdown_link_tmpl = template('markdown_link.tmpl', True)
     def row_gen():
@@ -62,8 +63,8 @@ def windows_driver_rows(drivers):
             variant = d.get('variant')
             version_variant = d['version']
             version_variant += (" " + variant) if variant else ''
-            patch64_url = d.get('patch64_url')
-            patch32_url = d.get('patch32_url')
+            patch64_url = repo_base + d.get('patch64_url')
+            patch32_url = repo_base + d.get('patch32_url')
             driver_url = d.get('driver_url')
             patch64_link = markdown_link_tmpl.substitute(text="x64 library patch",
                                                          url=patch64_url) if patch64_url else ''
@@ -78,28 +79,28 @@ def windows_driver_rows(drivers):
                                              driver_link=driver_link)
     return "\n".join(row_gen())
 
-def windows_product_sections(drivers):
+def windows_product_sections(drivers, repo_base):
     product_section_tmpl = template('windows_product_section.tmpl')
     def section_gen():
         for k, g in groupby(drivers, lambda d: Product[d['product']]):
-            driver_rows = windows_driver_rows(g)
+            driver_rows = windows_driver_rows(g, repo_base)
             yield product_section_tmpl.substitute(driver_rows=driver_rows)
     return '\n\n'.join(section_gen())
 
-def windows_driver_table(drivers):
+def windows_driver_table(drivers, repo_base):
     os_section_tmpl = template('windows_os_section.tmpl', True)
     def section_gen():
         for k, g in groupby(drivers, lambda d: WinSeries[d['os']]):
             os = WIN_SERIES_LABELS[k]
-            product_sections = windows_product_sections(g)
+            product_sections = windows_product_sections(g, repo_base)
             yield os_section_tmpl.substitute(os=os,
                                              product_sections=product_sections)
     return '\n\n'.join(section_gen())
 
-def windows_readme(data):
+def windows_readme(data, repo_base):
     master_tmpl = template('windows_readme_master.tmpl')
     drivers = sorted(data['drivers'], key=windows_driver_key)
-    version_table = windows_driver_table(drivers)
+    version_table = windows_driver_table(drivers, repo_base)
     geforce_drivers = filter(lambda d: Product[d['product']] is Product.GeForce, drivers)
     quadro_drivers = filter(lambda d: Product[d['product']] is Product.Quadro, drivers)
     latest_geforce_version = max(geforce_drivers, default='xxx.xx',
@@ -110,13 +111,25 @@ def windows_readme(data):
                                   latest_geforce_version=latest_geforce_version,
                                   latest_quadro_version=latest_quadro_version)
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generates markdown pages from repo data",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("-R", "--repo-root",
+                        help="repository web root URL",
+                        default=REPO_BASE)
+    args = parser.parse_args()
+    return args
+
 def main():
+    args = parse_args()
+
     with open(DATAFILE_PATH) as data_file:
         data = json.load(data_file)
     res = linux_readme(data['linux']['x86_64'])
     with open(LINUX_README_PATH, 'w', encoding=ENCODING) as out:
         out.write(res)
-    res = windows_readme(data['win']['x86_64'])
+    res = windows_readme(data['win']['x86_64'], args.repo_root)
     with open(WINDOWS_README_PATH, 'w', encoding=ENCODING) as out:
         out.write(res)
 

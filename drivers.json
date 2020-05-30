@@ -349,8 +349,8 @@
                     "product": "GeForce",
                     "version": "417.35",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.35/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.35/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/417.35/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/417.35/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/417.35/417.35-desktop-win10-64bit-international-whql-rp.exe"
                 },
                 {
@@ -358,8 +358,8 @@
                     "product": "GeForce",
                     "version": "417.58",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.58/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.58/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/417.58/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/417.58/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/417.58hf/417.58-desktop-notebook-win10-64bit-international-whql.hf.exe"
                 },
                 {
@@ -367,8 +367,8 @@
                     "product": "GeForce",
                     "version": "417.71",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.71/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/417.71/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/417.71/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/417.71/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/417.71/417.71-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -376,8 +376,8 @@
                     "product": "GeForce",
                     "version": "418.81",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/418.81/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/418.81/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/418.81/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/418.81/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/418.81/418.81-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -385,8 +385,8 @@
                     "product": "GeForce",
                     "version": "418.91",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/418.91/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/418.91/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/418.91/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/418.91/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/418.91/418.91-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -394,8 +394,8 @@
                     "product": "GeForce",
                     "version": "419.17",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.17/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.17/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/419.17/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/419.17/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/419.17/419.17-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -403,8 +403,8 @@
                     "product": "GeForce",
                     "version": "419.35",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.35/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.35/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/419.35/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/419.35/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/419.35/419.35-desktop-win10-64bit-international-whql-rp.exe"
                 },
                 {
@@ -412,8 +412,8 @@
                     "product": "GeForce",
                     "version": "419.67",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.67/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/419.67/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/419.67/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/419.67/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/419.67/419.67-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -421,8 +421,8 @@
                     "product": "GeForce",
                     "version": "419.67",
                     "variant": "CRD",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_419.67/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_419.67/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_419.67/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_419.67/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/419.67/419.67-notebook-win10-64bit-international-crd-whql.exe"
                 },
                 {
@@ -430,8 +430,8 @@
                     "product": "GeForce",
                     "version": "425.31",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/425.31/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/425.31/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/425.31/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/425.31/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/425.31/425.31-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -439,8 +439,8 @@
                     "product": "GeForce",
                     "version": "430.39",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.39/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.39/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/430.39/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/430.39/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/430.39/430.39-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -448,8 +448,8 @@
                     "product": "GeForce",
                     "version": "430.64",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.64/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.64/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/430.64/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/430.64/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/430.64/430.64-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -457,8 +457,8 @@
                     "product": "GeForce",
                     "version": "430.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/430.86/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/430.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/430.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -466,8 +466,8 @@
                     "product": "GeForce",
                     "version": "430.86",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_430.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_430.86/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_430.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_430.86/nvencodeapi.1337",
                     "driver_url": "https://international-gfe.download.nvidia.com/Windows/430.86/430.86-desktop-win10-64bit-international-nsd-whql-g.exe"
                 },
                 {
@@ -475,8 +475,8 @@
                     "product": "GeForce",
                     "version": "431.36",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.36/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.36/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/431.36/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/431.36/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/431.36/431.36-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -484,8 +484,8 @@
                     "product": "GeForce",
                     "version": "431.60",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.60/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/431.60/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/431.60/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/431.60/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -493,8 +493,8 @@
                     "product": "GeForce",
                     "version": "431.70",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.70/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.70/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_431.70/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_431.70/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/431.70/431.70-notebook-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -502,8 +502,8 @@
                     "product": "GeForce",
                     "version": "431.86",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_431.86/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_431.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_431.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/431.86/431.86-notebook-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -511,8 +511,8 @@
                     "product": "GeForce",
                     "version": "436.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.02/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/436.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/436.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win10-64bit-international-whql-rp.exe"
                 },
                 {
@@ -520,8 +520,8 @@
                     "product": "GeForce",
                     "version": "436.15",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.15/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.15/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/436.15/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/436.15/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -529,8 +529,8 @@
                     "product": "GeForce",
                     "version": "436.30",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.30/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.30/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/436.30/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/436.30/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -538,8 +538,8 @@
                     "product": "GeForce",
                     "version": "436.48",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.48/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/436.48/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/436.48/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/436.48/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -547,8 +547,8 @@
                     "product": "GeForce",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/440.97/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -556,8 +556,8 @@
                     "product": "GeForce",
                     "version": "441.08",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.08/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.08/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.08/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -565,8 +565,8 @@
                     "product": "GeForce",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.12/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -574,8 +574,8 @@
                     "product": "GeForce",
                     "version": "441.12",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.12/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -583,8 +583,8 @@
                     "product": "GeForce",
                     "version": "441.20",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.20/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.20/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.20/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.20/441.20-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -592,8 +592,8 @@
                     "product": "Quadro",
                     "version": "416.78",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_416.78/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_416.78/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_416.78/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_416.78/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/416.78/416.78-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -601,8 +601,8 @@
                     "product": "Quadro",
                     "version": "418.81",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_418.81/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_418.81/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_418.81/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_418.81/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/418.81/418.81-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -610,8 +610,8 @@
                     "product": "Quadro",
                     "version": "419.17",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.17/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.17/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_419.17/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_419.17/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/419.17/419.17-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -619,8 +619,8 @@
                     "product": "Quadro",
                     "version": "419.67",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.67/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_419.67/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_419.67/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_419.67/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/419.67/419.67-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -628,8 +628,8 @@
                     "product": "Quadro",
                     "version": "425.31",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_425.31/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_425.31/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_425.31/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_425.31/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/425.31/425.31-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -637,8 +637,8 @@
                     "product": "Quadro",
                     "version": "430.39",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.39/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.39/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_430.39/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_430.39/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.39/430.39-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -646,8 +646,8 @@
                     "product": "Quadro",
                     "version": "430.64",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.64/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.64/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_430.64/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_430.64/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -655,8 +655,8 @@
                     "product": "Quadro",
                     "version": "430.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_430.86/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_430.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_430.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -664,8 +664,8 @@
                     "product": "Quadro",
                     "version": "431.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.02/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_431.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_431.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -673,8 +673,8 @@
                     "product": "Quadro",
                     "version": "431.70",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.70/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.70/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_431.70/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_431.70/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -682,8 +682,8 @@
                     "product": "Quadro",
                     "version": "431.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.86/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_431.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_431.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -691,8 +691,8 @@
                     "product": "Quadro",
                     "version": "431.94",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.94/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_431.94/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_431.94/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_431.94/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -700,8 +700,8 @@
                     "product": "Quadro",
                     "version": "436.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.02/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_436.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_436.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -709,8 +709,8 @@
                     "product": "Quadro",
                     "version": "436.30",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.30/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_436.30/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_436.30/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_436.30/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -718,8 +718,8 @@
                     "product": "Quadro",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_440.97/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -727,8 +727,8 @@
                     "product": "Quadro",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.12/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.12/441.12-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -736,8 +736,8 @@
                     "product": "GeForce",
                     "version": "431.60",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/431.60/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/431.60/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/431.60/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/431.60/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/431.60/431.60-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -745,8 +745,8 @@
                     "product": "GeForce",
                     "version": "436.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.02/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/436.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/436.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.02/436.02-desktop-win8-win7-64bit-international-whql-rp.exe"
                 },
                 {
@@ -754,8 +754,8 @@
                     "product": "GeForce",
                     "version": "436.15",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.15/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.15/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/436.15/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/436.15/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.15/436.15-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -763,8 +763,8 @@
                     "product": "GeForce",
                     "version": "436.30",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.30/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.30/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/436.30/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/436.30/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.30/436.30-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -772,8 +772,8 @@
                     "product": "GeForce",
                     "version": "436.48",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.48/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/436.48/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/436.48/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/436.48/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/436.48/436.48-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -781,8 +781,8 @@
                     "product": "GeForce",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/440.97/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/440.97/440.97-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -790,8 +790,8 @@
                     "product": "GeForce",
                     "version": "441.08",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.08/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.08/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.08/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.08/441.08-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -799,8 +799,8 @@
                     "product": "GeForce",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.12/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.12/441.12-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -808,8 +808,8 @@
                     "product": "GeForce",
                     "version": "441.20",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.20/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.20/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.20/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.20/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.20/441.20-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -817,8 +817,8 @@
                     "product": "Quadro",
                     "version": "431.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_431.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_431.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -826,8 +826,8 @@
                     "product": "Quadro",
                     "version": "431.70",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.70/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.70/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_431.70/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_431.70/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -835,8 +835,8 @@
                     "product": "Quadro",
                     "version": "431.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.86/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_431.86/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_431.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -844,8 +844,8 @@
                     "product": "Quadro",
                     "version": "431.94",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.94/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.94/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_431.94/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_431.94/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -853,8 +853,8 @@
                     "product": "Quadro",
                     "version": "436.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.02/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_436.02/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_436.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/436.02/436.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -862,8 +862,8 @@
                     "product": "Quadro",
                     "version": "436.30",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.30/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_436.30/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_436.30/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_436.30/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/436.30/436.30-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -871,8 +871,8 @@
                     "product": "Quadro",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_440.97/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -880,8 +880,8 @@
                     "product": "Quadro",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.12/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.12/441.12-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -889,8 +889,8 @@
                     "product": "Quadro",
                     "version": "430.64",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.64/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.64/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_430.64/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_430.64/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.64/430.64-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -898,8 +898,8 @@
                     "product": "Quadro",
                     "version": "430.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_430.86/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_430.86/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_430.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -907,8 +907,8 @@
                     "product": "Quadro",
                     "version": "431.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.02/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_431.02/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_431.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -916,8 +916,8 @@
                     "product": "Quadro",
                     "version": "431.70",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.70/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.70/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_431.70/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_431.70/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -925,8 +925,8 @@
                     "product": "Quadro",
                     "version": "431.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.86/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_431.86/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_431.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -934,8 +934,8 @@
                     "product": "Quadro",
                     "version": "431.94",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.94/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_431.94/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_431.94/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_431.94/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -943,8 +943,8 @@
                     "product": "Quadro",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_440.97/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -952,8 +952,8 @@
                     "product": "Quadro",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.12/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.12/441.12-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -961,8 +961,8 @@
                     "product": "Quadro",
                     "version": "430.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_430.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_430.86/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_430.86/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_430.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/430.86/430.86-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -970,8 +970,8 @@
                     "product": "Quadro",
                     "version": "431.02",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.02/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.02/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_431.02/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_431.02/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -979,8 +979,8 @@
                     "product": "Quadro",
                     "version": "431.70",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.70/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.70/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_431.70/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_431.70/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.70/431.70-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -988,8 +988,8 @@
                     "product": "Quadro",
                     "version": "431.86",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.86/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.86/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_431.86/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_431.86/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.86/431.86-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -997,8 +997,8 @@
                     "product": "Quadro",
                     "version": "431.94",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.94/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_431.94/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_431.94/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_431.94/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/431.94/431.94-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1006,8 +1006,8 @@
                     "product": "Quadro",
                     "version": "440.97",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_440.97/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_440.97/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_440.97/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_440.97/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/440.97/440.97-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1015,8 +1015,8 @@
                     "product": "Quadro",
                     "version": "441.12",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.12/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.12/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_441.12/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_441.12/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.12/441.12-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1024,8 +1024,8 @@
                     "product": "GeForce",
                     "version": "441.28",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.28/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.28/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_441.28/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_441.28/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.28/441.28-desktop-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -1033,8 +1033,8 @@
                     "product": "Quadro",
                     "version": "441.28",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.28/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.28/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_441.28/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_441.28/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.28/441.28-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1042,8 +1042,8 @@
                     "product": "Quadro",
                     "version": "441.28",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.28/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.28/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_441.28/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_441.28/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.28/441.28-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1051,8 +1051,8 @@
                     "product": "Quadro",
                     "version": "441.28",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.28/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.28/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_441.28/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_441.28/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.28/441.28-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1060,8 +1060,8 @@
                     "product": "Quadro",
                     "version": "441.28",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.28/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.28/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_441.28/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_441.28/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.28/441.28-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1069,8 +1069,8 @@
                     "product": "GeForce",
                     "version": "441.41",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.41/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.41/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.41/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.41/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.41/441.41-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1078,8 +1078,8 @@
                     "product": "GeForce",
                     "version": "441.41",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.41/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.41/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.41/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.41/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.41/441.41-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1087,8 +1087,8 @@
                     "product": "GeForce",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.66/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.66/441.66-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1096,8 +1096,8 @@
                     "product": "GeForce",
                     "version": "441.66",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_441.66/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.66/441.66-desktop-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -1105,8 +1105,8 @@
                     "product": "Quadro",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_441.66/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.66/441.66-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1114,8 +1114,8 @@
                     "product": "Quadro",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_441.66/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.66/441.66-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1123,8 +1123,8 @@
                     "product": "Quadro",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_441.66/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.66/441.66-quadro-winserv2008r2-2012-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1132,8 +1132,8 @@
                     "product": "Quadro",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.66/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/quadro_441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/quadro_441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/441.66/441.66-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1141,8 +1141,8 @@
                     "product": "GeForce",
                     "version": "441.66",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.66/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.66/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.66/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.66/441.66-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1150,8 +1150,8 @@
                     "product": "GeForce",
                     "version": "441.87",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.87/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.87/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.87/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.87/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.87/441.87-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1159,8 +1159,8 @@
                     "product": "GeForce",
                     "version": "441.87",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.87/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.87/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.87/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.87/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/441.87/441.87-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1168,8 +1168,8 @@
                     "product": "GeForce",
                     "version": "441.99",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.99/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/441.99/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/441.99/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/441.99/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1177,8 +1177,8 @@
                     "product": "GeForce",
                     "version": "441.99",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.99/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/441.99/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/441.99/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/441.99/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1186,8 +1186,8 @@
                     "product": "GeForce",
                     "version": "442.19",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.19/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.19/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.19/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.19/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.19/442.19-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1195,8 +1195,8 @@
                     "product": "GeForce",
                     "version": "442.19",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_442.19/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_442.19/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_442.19/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_442.19/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.19/442.19-desktop-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -1204,8 +1204,8 @@
                     "product": "Quadro",
                     "version": "442.19",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.19/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.19/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_442.19/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_442.19/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.19/442.19-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1213,8 +1213,8 @@
                     "product": "Quadro",
                     "version": "442.19",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.19/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.19/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_442.19/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_442.19/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.19/442.19-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1222,8 +1222,8 @@
                     "product": "Quadro",
                     "version": "442.19",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.19/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.19/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_442.19/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_442.19/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.19/442.19-quadro-winserv-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1231,8 +1231,8 @@
                     "product": "GeForce",
                     "version": "442.36",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.36/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.36/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.36/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.36/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1240,8 +1240,8 @@
                     "product": "GeForce",
                     "version": "442.36",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.36/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.36/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.36/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.36/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1249,8 +1249,8 @@
                     "product": "GeForce",
                     "version": "442.50",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.50/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.50/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.50/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.50/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.50/442.50-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1258,8 +1258,8 @@
                     "product": "GeForce",
                     "version": "442.50",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.50/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.50/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.50/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.50/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.50/442.50-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1267,8 +1267,8 @@
                     "product": "Quadro",
                     "version": "442.50",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.50/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.50/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_442.50/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_442.50/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.50/442.50-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1276,8 +1276,8 @@
                     "product": "Quadro",
                     "version": "442.50",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.50/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.50/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_442.50/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_442.50/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.50/442.50-quadro-winserv-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1285,8 +1285,8 @@
                     "product": "Quadro",
                     "version": "442.50",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.50/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.50/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_442.50/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_442.50/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.50/442.50-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1294,8 +1294,8 @@
                     "product": "GeForce",
                     "version": "442.59",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.59/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.59/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.59/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.59/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.59/442.59-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1303,8 +1303,8 @@
                     "product": "GeForce",
                     "version": "442.59",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.59/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.59/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.59/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.59/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.59/442.59-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1312,8 +1312,8 @@
                     "product": "GeForce",
                     "version": "442.75",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.75/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.75/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.75/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.75/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1321,8 +1321,8 @@
                     "product": "GeForce",
                     "version": "442.75",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.75/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.75/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.75/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.75/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1330,8 +1330,8 @@
                     "product": "GeForce",
                     "version": "442.77",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.77/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.77/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.77/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.77/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1339,8 +1339,8 @@
                     "product": "GeForce",
                     "version": "442.77",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.77/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.77/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.77/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.77/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1348,8 +1348,8 @@
                     "product": "Quadro",
                     "version": "442.74",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.74/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.74/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_442.74/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_442.74/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.74/442.74-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1357,8 +1357,8 @@
                     "product": "Quadro",
                     "version": "442.74",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.74/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.74/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_442.74/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_442.74/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.74/442.74-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1366,8 +1366,8 @@
                     "product": "Quadro",
                     "version": "442.74",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.74/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.74/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_442.74/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_442.74/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.74/442.74-quadro-winserv-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1375,8 +1375,8 @@
                     "product": "GeForce",
                     "version": "442.74",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.74/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.74/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.74/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.74/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.74/442.74-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1384,8 +1384,8 @@
                     "product": "GeForce",
                     "version": "442.74",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.74/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.74/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.74/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.74/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.74/442.74-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1393,8 +1393,8 @@
                     "product": "GeForce",
                     "version": "445.75",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/445.75/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/445.75/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/445.75/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/445.75/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/445.75/445.75-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1402,8 +1402,8 @@
                     "product": "GeForce",
                     "version": "445.75",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.75/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.75/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/445.75/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/445.75/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/445.75/445.75-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1411,8 +1411,8 @@
                     "product": "GeForce",
                     "version": "442.81",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.81/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.81/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.81/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.81/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1420,8 +1420,8 @@
                     "product": "GeForce",
                     "version": "442.81",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.81/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.81/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.81/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.81/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1429,8 +1429,8 @@
                     "product": "GeForce",
                     "version": "442.88",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.88/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.88/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.88/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.88/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1438,8 +1438,8 @@
                     "product": "GeForce",
                     "version": "442.88",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.88/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.88/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.88/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.88/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1447,8 +1447,8 @@
                     "product": "GeForce",
                     "version": "445.87",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/445.87/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/445.87/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/445.87/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/445.87/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/445.87/445.87-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1456,8 +1456,8 @@
                     "product": "GeForce",
                     "version": "445.87",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.87/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/445.87/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/445.87/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/445.87/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/445.87/445.87-desktop-win8-win7-64bit-international-whql.exe"
                 },
                 {
@@ -1465,8 +1465,8 @@
                     "product": "GeForce",
                     "version": "442.92",
                     "variant": "Studio Driver",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_442.92/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_442.92/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/nsd_442.92/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/nsd_442.92/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/442.92/442.92-desktop-win10-64bit-international-nsd-whql.exe"
                 },
                 {
@@ -1474,8 +1474,8 @@
                     "product": "Quadro",
                     "version": "442.92",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.92/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_442.92/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/quadro_442.92/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/quadro_442.92/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.92/442.92-quadro-desktop-notebook-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1483,8 +1483,8 @@
                     "product": "Quadro",
                     "version": "442.92",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.92/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.92/nvencodeapi.1337",
+                    "patch64_url": "win/ws2012_x64/quadro_442.92/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2012_x64/quadro_442.92/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.92/442.92-quadro-winserv-2012r2-64bit-international-whql.exe"
                 },
                 {
@@ -1492,8 +1492,8 @@
                     "product": "Quadro",
                     "version": "442.92",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.92/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.92/nvencodeapi.1337",
+                    "patch64_url": "win/ws2016_x64/quadro_442.92/nvencodeapi64.1337",
+                    "patch32_url": "win/ws2016_x64/quadro_442.92/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/442.92/442.92-quadro-winserv-2016-2019-64bit-international-whql.exe"
                 },
                 {
@@ -1501,8 +1501,8 @@
                     "product": "GeForce",
                     "version": "442.98",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.98/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/442.98/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/442.98/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/442.98/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1510,8 +1510,8 @@
                     "product": "GeForce",
                     "version": "442.98",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.98/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/442.98/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/442.98/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/442.98/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1519,8 +1519,8 @@
                     "product": "GeForce",
                     "version": "443.09",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.09/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.09/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/443.09/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/443.09/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1528,8 +1528,8 @@
                     "product": "GeForce",
                     "version": "443.09",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.09/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.09/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/443.09/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/443.09/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1537,8 +1537,8 @@
                     "product": "GeForce",
                     "version": "443.15",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.15/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.15/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/443.15/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/443.15/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1546,8 +1546,8 @@
                     "product": "GeForce",
                     "version": "443.15",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.15/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.15/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/443.15/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/443.15/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1555,8 +1555,8 @@
                     "product": "GeForce",
                     "version": "443.24",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.24/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/443.24/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/443.24/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/443.24/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1564,8 +1564,8 @@
                     "product": "GeForce",
                     "version": "443.24",
                     "variant": "Vulkan Beta",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.24/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/443.24/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/443.24/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/443.24/nvencodeapi.1337",
                     "driver_url": ""
                 },
                 {
@@ -1573,8 +1573,8 @@
                     "product": "GeForce",
                     "version": "446.14",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/446.14/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/446.14/nvencodeapi.1337",
+                    "patch64_url": "win/win10_x64/446.14/nvencodeapi64.1337",
+                    "patch32_url": "win/win10_x64/446.14/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/446.14/446.14-desktop-win10-64bit-international-whql.exe"
                 },
                 {
@@ -1582,8 +1582,8 @@
                     "product": "GeForce",
                     "version": "446.14",
                     "variant": "",
-                    "patch64_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/446.14/nvencodeapi64.1337",
-                    "patch32_url": "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/446.14/nvencodeapi.1337",
+                    "patch64_url": "win/win7_x64/446.14/nvencodeapi64.1337",
+                    "patch32_url": "win/win7_x64/446.14/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/446.14/446.14-desktop-win8-win7-64bit-international-whql.exe"
                 }
             ]
