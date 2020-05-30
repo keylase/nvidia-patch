@@ -56,4 +56,4 @@ DRIVER_DIR_PREFIX = {
     (Product.Quadro, ''): 'quadro_',
 }
 
-REPO_BASE = "https://raw.githubusercontent.com/keylase/nvidia-patch/master"
+REPO_BASE = "https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/"
