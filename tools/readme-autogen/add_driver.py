@@ -53,11 +53,11 @@ def parse_args():
                           default=WinSeries.win10,
                           help="Windows series")
     win_opts.add_argument("--patch32",
-                          default="win/${winseries}_x64/"
+                          default="${winseries}_x64/"
                           "${drvprefix}${version}/nvencodeapi.1337",
                           help="template for Windows 32bit patch URL")
     win_opts.add_argument("--patch64",
-                          default="win/${winseries}_x64/"
+                          default="${winseries}_x64/"
                           "${drvprefix}${version}/nvencodeapi64.1337",
                           help="template for Windows 64bit patch URL")
     win_opts.add_argument("--skip-patch-check",
