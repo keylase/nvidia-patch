@@ -25,7 +25,7 @@ Requirements:
 ## NVENC Patch Step-by-Step Guide
 
 1. Download and install latest Nvidia driver supported by this patch.
-2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest).
+2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest) ([IPFS mirror](https://ipfs.io/ipfs/QmXHqNBPtmoX8g5rzg6vNJ9yd275kQtDWuDtVoU4QPfWbu/Win_1337_Apply_Patch_v1.9_By_DFoX.rar)).
 3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> Save as...).
    - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
 4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool.
