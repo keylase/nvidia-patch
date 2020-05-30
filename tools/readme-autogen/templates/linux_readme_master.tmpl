@@ -5,7 +5,13 @@ NVENC and NvFBC patches for Nvidia drivers
 
 ---
 
-IPFS mirror: [https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/](https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/)
+IPFS site mirror: [https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/](https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/)
+
+IPFS git mirror:
+
+```
+git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nvidia-patch
+```
 
 ---
 
