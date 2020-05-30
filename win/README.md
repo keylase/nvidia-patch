@@ -32,7 +32,7 @@ Requirements:
 
 1. Download and install latest Nvidia driver supported by this patch.
 2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest) ([IPFS mirror](https://ipfs.io/ipfs/QmXHqNBPtmoX8g5rzg6vNJ9yd275kQtDWuDtVoU4QPfWbu/Win_1337_Apply_Patch_v1.9_By_DFoX.rar)).
-3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> Save as...).
+3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> "Save as...")
    - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
 4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool.
    - *If patching fails, close all applications using nvencodeapi64.dll, such as OBS Studio, Plex or Discord.*
@@ -41,7 +41,7 @@ Requirements:
 
 **Example:** for 64bit Windows 10 running driver version 446.14, use `win10_x64/446.14/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/446.14/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
-If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip_sig_check** (clickable)](skip_sig_check) directory for instructions.
+If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip\_sig\_check** (clickable)](skip_sig_check) directory for instructions.
 
 A video tutorial is also available. Credits to designator2009. (*Covers older patches. Now we probably don't need to autorun executable if x86 library patch applied*)
 
