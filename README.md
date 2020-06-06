@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-440.82-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-450.36.06-brightgreen.svg)
 
 ---
 
@@ -89,6 +89,7 @@ Requirements:
 | 440.66.14 | YES | YES |  |
 | 440.66.15 | YES | YES |  |
 | 440.82 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run) |
+| 450.36.06 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run) |
 
 ## Synopsis
 
