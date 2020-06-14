@@ -49,9 +49,13 @@ Requirements:
 
 If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip\_sig\_check** (clickable)](skip_sig_check) directory for instructions.
 
-A video tutorial is also available. Credits to designator2009. (*Covers older patches. Now we probably don't need to autorun executable if x86 library patch applied*)
+A video guide is also available:
 
-[![Video Tutorial](https://gist.githubusercontent.com/Snawoot/de26b6ccfe67c7bc89ea4347d7c2ecde/raw/50cd87a72c4e13214e6c609dc5291037bed9db8d/ss.jpg)](https://www.youtube.com/watch?v=y7TRfRsJR-w)
+[![Video Guide](https://user-images.githubusercontent.com/3524671/84598317-82ab7180-ae72-11ea-8c1b-04842ff589f1.jpg)](https://www.youtube.com/watch?v=0fxu7zbhmrs)
+
+[(IPFS mirror)](https://ipfs.io/ipfs/QmakoWuecX397t7fF8MnTyqG4UC2DrteHrGRmTnwYYKbCK/Nvidia%20-%20Removing%20NVENC%20stream%20limit%20_%20Unlock%20NVENC%20sessions-0fxu7zbhmrs.mkv)
+
+Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEpVwE-U7kmHw/).
 
 ## Version Table
 
