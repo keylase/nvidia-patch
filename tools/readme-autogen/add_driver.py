@@ -93,17 +93,17 @@ def validate_url(url):
             raise Exception("Bad driver length: %s" % resp.headers['Content-Length'])
 
 def validate_patch(patch64, patch32):
-    wc_base = os.path.abspath(os.path.join(BASE_PATH, "..", ".."))
+    wc_base = os.path.abspath(os.path.join(BASE_PATH, "..", "..", "win"))
     p64_filepath = os.path.join(wc_base, patch64)
     p32_filepath = os.path.join(wc_base, patch32)
     if not os.path.exists(p64_filepath):
-        raise Exception("File %s not found!" % patch64_filepath)
+        raise Exception("File %s not found!" % p64_filepath)
     if not os.path.exists(p32_filepath):
-        raise Exception("File %s not found!" % patch32_filepath)
+        raise Exception("File %s not found!" % p32_filepath)
     if os.path.getsize(p64_filepath) == 0:
-        raise Exception("File %s empty!" % patch64_filepath)
+        raise Exception("File %s empty!" % p64_filepath)
     if os.path.exists(p32_filepath) == 0:
-        raise Exception("File %s empty!" % patch32_filepath)
+        raise Exception("File %s empty!" % p32_filepath)
 
 def validate_unique(drivers, new_driver, kf):
     if find_driver(drivers, kf(new_driver), kf) is not None:
