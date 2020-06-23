@@ -340,6 +340,11 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run"
+                },
+                {
+                    "version": "440.66.17",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
