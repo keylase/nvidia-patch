@@ -345,6 +345,12 @@
                     "version": "440.66.17",
                     "nvenc_patch": true,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "440.95.01",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://international.download.nvidia.com/tesla/440.95.01/NVIDIA-Linux-x86_64-440.95.01.run"
                 }
             ],
             "example": {
