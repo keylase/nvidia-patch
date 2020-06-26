@@ -91,6 +91,7 @@ Requirements:
 | 440.66.17 | YES | YES |  |
 | 440.82 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run) |
 | 440.95.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/440.95.01/NVIDIA-Linux-x86_64-440.95.01.run) |
+| 440.100 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run) |
 | 450.36.06 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run) |
 | 450.51 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.51/NVIDIA-Linux-x86_64-450.51.run) |
 
