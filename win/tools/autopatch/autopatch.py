@@ -71,7 +71,7 @@ def parse_args():
     parser.add_argument("-D", "--direct",
                         action="store_true",
                         help="supply patched library directly instead of "
-                        "installer file. Implies --stdout option.")
+                        "installer file")
     args = parser.parse_args()
     return args
 
@@ -200,8 +200,11 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
                        sevenzip=sevenzip,
                        direct=direct)
     patch_content = format_patch(patch, target_name)
-    if stdout or direct:
+    if stdout:
         with open(sys.stdout.fileno(), mode='wb', closefd=False) as out:
+            out.write(patch_content)
+    elif direct:
+        with open(patch_name, mode='wb') as out:
             out.write(patch_content)
     else:
         version, product_type = identify_driver(installer_file,
