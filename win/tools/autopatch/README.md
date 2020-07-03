@@ -17,10 +17,7 @@ Note: when command line options with multiple possible arguments supplied (like 
 ## Synopsys
 
 ```
-usage: autopatch.py [-h] [-7 SEVENZIP] [-T TARGET [TARGET ...]]
-                    [-N TARGET_NAME [TARGET_NAME ...]]
-                    [-P PATCH_NAME [PATCH_NAME ...]] [-S SEARCH [SEARCH ...]]
-                    [-R REPLACEMENT [REPLACEMENT ...]] [-o] [-D]
+usage: autopatch.py [-h] [-7 SEVENZIP] [-T TARGET [TARGET ...]] [-N TARGET_NAME [TARGET_NAME ...]] [-P PATCH_NAME [PATCH_NAME ...]] [-S SEARCH [SEARCH ...]] [-R REPLACEMENT [REPLACEMENT ...]] [-o] [-D]
                     installer_file [installer_file ...]
 
 Generates .1337 patch for Nvidia drivers for Windows
@@ -33,22 +30,15 @@ optional arguments:
   -7 SEVENZIP, --7zip SEVENZIP
                         location of 7-zip `7z` executable (default: 7z)
   -T TARGET [TARGET ...], --target TARGET [TARGET ...]
-                        target location(s) in archive (default:
-                        ['Display.Driver/nvcuvid64.dl_',
-                        'Display.Driver/nvcuvid32.dl_'])
+                        target location(s) in archive (default: ['Display.Driver/nvencodeapi64.dl_', 'Display.Driver/nvencodeapi.dl_'])
   -N TARGET_NAME [TARGET_NAME ...], --target-name TARGET_NAME [TARGET_NAME ...]
-                        name(s) of installed target file. Used for patch
-                        header (default: ['nvcuvid.dll', 'nvcuvid.dll'])
+                        name(s) of installed target file. Used for patch header (default: ['nvencodeapi64.dll', 'nvencodeapi.dll'])
   -P PATCH_NAME [PATCH_NAME ...], --patch-name PATCH_NAME [PATCH_NAME ...]
-                        relative filename(s) of generated patch(es) (default:
-                        ['nvcuvid64.1337', 'nvcuvid32.1337'])
+                        relative filename(s) of generated patch(es) (default: ['nvencodeapi64.1337', 'nvencodeapi.1337'])
   -S SEARCH [SEARCH ...], --search SEARCH [SEARCH ...]
-                        representation of search pattern(s) binary string
-                        (default: ['FF909800000084C075', '8B404CFFD084C075'])
+                        representation of search pattern(s) binary string (default: ['8BF085C0750549892FEB', '89450885C075048937EB'])
   -R REPLACEMENT [REPLACEMENT ...], --replacement REPLACEMENT [REPLACEMENT ...]
-                        representation of replacement(s) binary string
-                        (default: ['FF90980000000C0175', '8B404CFFD00C0175'])
+                        representation of replacement(s) binary string (default: ['33C08BF0750549892FEB', '33C089450875048937EB'])
   -o, --stdout          output into stdout (default: False)
-  -D, --direct          supply patched library directly instead of installer
-                        file. Implies --stdout option. (default: False)
+  -D, --direct          supply patched library directly instead of installer file (default: False)
 ```
