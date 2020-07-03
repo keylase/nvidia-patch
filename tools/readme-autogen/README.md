@@ -42,11 +42,7 @@ Here is real commands used for Windows driver 441.28 series:
 
 ```
 $ ./add_driver.py --help
-usage: add_driver.py [-h] (-L | -W) [--variant VARIANT] [-P {GeForce,Quadro}]
-                     [-w {win10,win7,ws2012,ws2016}] [--patch32 PATCH32]
-                     [--patch64 PATCH64] [--skip-patch-check] [-U URL]
-                     [--skip-url-check]
-                     version
+usage: add_driver.py [-h] (-L | -W) [--variant VARIANT] [-P {GeForce,Quadro}] [-w {win10,win7,ws2012,ws2016}] [--patch32 PATCH32] [--patch64 PATCH64] [--skip-patch-check] [-U URL] [--skip-url-check] version
 
 Adds new Nvidia driver into drivers.json file of in your repo working copy
 
@@ -63,19 +59,12 @@ OS options:
   -W, --win             add Windows driver (default: None)
 
 Windows-specific options:
-  --variant VARIANT     driver variant (use for special cases like "Studio
-                        Driver") (default: )
+  --variant VARIANT     driver variant (use for special cases like "Studio Driver") (default: )
   -P {GeForce,Quadro}, --product {GeForce,Quadro}
                         product type (default: GeForce)
   -w {win10,win7,ws2012,ws2016}, --winseries {win10,win7,ws2012,ws2016}
                         Windows series (default: win10)
-  --patch32 PATCH32     template for Windows 32bit patch URL (default:
-                        https://raw.githubusercontent.com/keylase/nvidia-patch
-                        /master/win/${winseries}_x64/${drvprefix}${version}/nv
-                        cuvid32.1337)
-  --patch64 PATCH64     template for Windows 64bit patch URL (default:
-                        https://raw.githubusercontent.com/keylase/nvidia-patch
-                        /master/win/${winseries}_x64/${drvprefix}${version}/nv
-                        cuvid64.1337)
+  --patch32 PATCH32     template for Windows 32bit patch URL (default: ${winseries}_x64/${drvprefix}${version}/nvencodeapi.1337)
+  --patch64 PATCH64     template for Windows 64bit patch URL (default: ${winseries}_x64/${drvprefix}${version}/nvencodeapi64.1337)
   --skip-patch-check    skip patch files presense test (default: False)
 ```
