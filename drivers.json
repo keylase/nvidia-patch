@@ -1686,6 +1686,15 @@
                     "patch64_url": "ws2016_x64/quadro_451.48/nvencodeapi64.1337",
                     "patch32_url": "ws2016_x64/quadro_451.48/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/451.48/451.48-quadro-winserv-2016-2019-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "451.52",
+                    "variant": "",
+                    "patch64_url": "win10_x64/451.52/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/451.52/nvencodeapi.1337",
+                    "driver_url": ""
                 }
             ]
         }
