@@ -1,6 +1,3 @@
-[submodule "win/NvencSessionLimitBump"]
-	path = win/NvencSessionLimitBump
-	url = https://github.com/jantenhove/NvencSessionLimitBump.git
 [submodule "win/Win_1337_Apply_Patch"]
 	path = win/Win_1337_Apply_Patch
 	url = https://github.com/Deltafox79/Win_1337_Apply_Patch.git
