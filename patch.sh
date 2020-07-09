@@ -109,6 +109,7 @@ declare -A patch_list=(
     ["450.36.06"]='s/\x85\xc0\x41\x89\xc4\x75\x1f/\x31\xc0\x41\x89\xc4\x75\x1f/g'
     ["450.51"]='s/\x85\xc0\x41\x89\xc4\x75\x1f/\x31\xc0\x41\x89\xc4\x75\x1f/g'
     ["450.51.05"]='s/\x85\xc0\x41\x89\xc4\x75\x1f/\x31\xc0\x41\x89\xc4\x75\x1f/g'
+    ["450.57"]='s/\x85\xc0\x41\x89\xc4\x75\x1f/\x31\xc0\x41\x89\xc4\x75\x1f/g'
 )
 
 declare -A object_list=(
@@ -176,6 +177,7 @@ declare -A object_list=(
     ["450.36.06"]='libnvidia-encode.so'
     ["450.51"]='libnvidia-encode.so'
     ["450.51.05"]='libnvidia-encode.so'
+    ["450.57"]='libnvidia-encode.so'
 )
 
 check_version_supported () {
