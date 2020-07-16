@@ -213,6 +213,7 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
             "100": "quadro_",
             "300": "",
             "301": "nsd_",
+            "303": "", # DCH
         }
         installer_name = os.path.basename(installer_file).lower()
         if 'winserv2008' in installer_name:
