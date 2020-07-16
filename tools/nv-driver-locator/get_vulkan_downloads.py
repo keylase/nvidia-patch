@@ -55,10 +55,10 @@ def get_drivers(*, timeout=10):
     body = fetch_url(URL)
     soup = BeautifulSoup(body, 'html.parser')
     result = []
-    for sibling in soup.find('h4',
-                             string=re.compile(r'Vulkan .* Developer Beta Driver Downloads', re.I)
-                             ).next_siblings:
-        if sibling.name == 'h4':
+    section_start = soup.find('h4', string=re.compile(r'Vulkan Beta Driver Downloads', re.I))
+    section_end = section_start.find_next("h4")
+    for sibling in section_start.find_all_next():
+        if sibling is section_end:
             break
         if sibling.name == 'p' and sibling.b is not None:
             m = re.match(r'(Windows|Linux)\s+((\d+\.){1,2}\d+)', sibling.b.string)
