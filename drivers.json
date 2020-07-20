@@ -380,6 +380,11 @@
                     "version": "450.56.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "450.56.02",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
@@ -1766,6 +1771,24 @@
                     "patch64_url": "win10_x64/quadro_451.77/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/quadro_451.77/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/451.77/451.77-quadro-desktop-notebook-win10-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "451.79",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win10_x64/451.79/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/451.79/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "451.79",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win7_x64/451.79/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/451.79/nvencodeapi.1337",
+                    "driver_url": ""
                 }
             ]
         }
