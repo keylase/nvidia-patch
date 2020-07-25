@@ -385,6 +385,12 @@
                     "version": "450.56.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "450.51.06",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run"
                 }
             ],
             "example": {
