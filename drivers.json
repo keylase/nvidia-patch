@@ -391,6 +391,11 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run"
+                },
+                {
+                    "version": "450.56.06",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
@@ -1794,6 +1799,24 @@
                     "variant": "Vulkan Beta",
                     "patch64_url": "win7_x64/451.79/nvencodeapi64.1337",
                     "patch32_url": "win7_x64/451.79/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "451.98",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win10_x64/451.98/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/451.98/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "451.98",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win7_x64/451.98/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/451.98/nvencodeapi.1337",
                     "driver_url": ""
                 }
             ]

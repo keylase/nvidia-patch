@@ -98,6 +98,7 @@ Requirements:
 | 450.51.06 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run) |
 | 450.56.01 | YES | YES |  |
 | 450.56.02 | YES | YES |  |
+| 450.56.06 | YES | YES |  |
 | 450.57 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.57/NVIDIA-Linux-x86_64-450.57.run) |
 
 ## Synopsis
