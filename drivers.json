@@ -1939,6 +1939,24 @@
                     "patch64_url": "win7_x64/456.38/nvencodeapi64.1337",
                     "patch32_url": "win7_x64/456.38/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/456.38/456.38-desktop-win8-win7-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "456.55",
+                    "variant": "",
+                    "patch64_url": "win10_x64/456.55/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/456.55/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/456.55/456.55-desktop-win10-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "456.55",
+                    "variant": "",
+                    "patch64_url": "win7_x64/456.55/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/456.55/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/456.55/456.55-desktop-win8-win7-64bit-international-whql.exe"
                 }
             ]
         }

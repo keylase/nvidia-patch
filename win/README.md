@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Windows Nvidia drivers
 ==================================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-456.38-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-452.06-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-456.55-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-452.06-blue.svg)
 
 NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -54,7 +54,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 5. Apply x86 library patch to corresponding file in `%WINDIR%\SysWOW64\` in the same way as previous one.
    - *If patching fails, close all applications using nvencodeapi.dll, such as OBS Studio, Plex or Discord.*
 
-**Example:** for 64bit Windows 10 running driver version 456.38, use `win10_x64/456.38/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/456.38/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
+**Example:** for 64bit Windows 10 running driver version 456.55, use `win10_x64/456.55/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/456.55/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
 If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip\_sig\_check** (clickable)](skip_sig_check) directory for instructions.
 
@@ -138,6 +138,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 452.28 Vulkan Beta | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/452.28/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/452.28/nvencodeapi.1337) |  |
 | GeForce | 456.38 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/456.38/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/456.38/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/456.38/456.38-desktop-win10-64bit-international-whql.exe) |
 | GeForce | 456.38 Studio Driver | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_456.38/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/nsd_456.38/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/456.38/456.38-desktop-win10-64bit-international-nsd-whql.exe) |
+| GeForce | 456.55 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/456.55/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/456.55/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/456.55/456.55-desktop-win10-64bit-international-whql.exe) |
 
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
@@ -211,6 +212,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 452.06 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/452.06/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/452.06/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/452.06/452.06-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce | 452.28 Vulkan Beta | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/452.28/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/452.28/nvencodeapi.1337) |  |
 | GeForce | 456.38 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/456.38/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/456.38/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/456.38/456.38-desktop-win8-win7-64bit-international-whql.exe) |
+| GeForce | 456.55 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/456.55/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/456.55/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/456.55/456.55-desktop-win8-win7-64bit-international-whql.exe) |
 
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
