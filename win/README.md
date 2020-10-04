@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Windows Nvidia drivers
 ==================================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-456.55-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-452.06-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-456.55-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-452.39-blue.svg)
 
 NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -168,6 +168,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 451.48 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_451.48/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_451.48/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/451.48/451.48-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro | 451.77 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_451.77/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_451.77/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/451.77/451.77-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 | Quadro | 452.06 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_452.06/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_452.06/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.06/452.06-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
+| Quadro | 452.39 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_452.39/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_452.39/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.39/452.39-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
 
 
 ### Windows 7, Windows 8, Windows 8.1 drivers
@@ -250,6 +251,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 442.92 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.92/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_442.92/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/442.92/442.92-quadro-winserv-2012r2-64bit-international-whql.exe) |
 | Quadro | 451.48 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_451.48/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_451.48/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/451.48/451.48-quadro-winserv-2012r2-64bit-international-whql.exe) |
 | Quadro | 452.06 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_452.06/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_452.06/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.06/452.06-quadro-winserv-2012r2-64bit-international-whql.exe) |
+| Quadro | 452.39 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_452.39/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_452.39/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.39/452.39-quadro-winserv-2012r2-64bit-international-whql.exe) |
 
 
 ### Windows Server 2016, 2019 drivers
@@ -272,6 +274,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 442.92 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.92/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_442.92/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/442.92/442.92-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro | 451.48 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_451.48/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_451.48/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/451.48/451.48-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro | 452.06 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_452.06/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_452.06/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.06/452.06-quadro-winserv-2016-2019-64bit-international-whql.exe) |
+| Quadro | 452.39 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_452.39/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_452.39/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/452.39/452.39-quadro-winserv-2016-2019-64bit-international-whql.exe) |
 
 
 ## Benchmarks
