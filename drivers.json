@@ -440,6 +440,11 @@
                     "version": "455.26.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "455.26.02",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {

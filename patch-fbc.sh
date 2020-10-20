@@ -83,6 +83,7 @@ declare -A patch_list=(
     ["455.23.04"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
     ["455.23.05"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
     ["455.26.01"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
+    ["455.26.02"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
     ["455.28"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
 )
 
@@ -127,6 +128,7 @@ declare -A object_list=(
     ["455.23.04"]='libnvidia-fbc.so'
     ["455.23.05"]='libnvidia-fbc.so'
     ["455.26.01"]='libnvidia-fbc.so'
+    ["455.26.02"]='libnvidia-fbc.so'
     ["455.28"]='libnvidia-fbc.so'
 )
 
