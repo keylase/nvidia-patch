@@ -2078,6 +2078,15 @@
                     "patch64_url": "win10_x64/391.35/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/391.35/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/391.35/391.35-desktop-win10-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "456.71",
+                    "variant": "Studio Driver",
+                    "patch64_url": "win10_x64/nsd_456.71/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/nsd_456.71/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/456.71/456.71-desktop-win10-64bit-international-nsd-whql.exe"
                 }
             ]
         }
