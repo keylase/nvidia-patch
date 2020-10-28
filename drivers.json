@@ -367,7 +367,8 @@
                 {
                     "version": "440.118.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": false
+                    "nvfbc_patch": true,
+                    "driver_url": "https://international.download.nvidia.com/tesla/440.118.02/NVIDIA-Linux-x86_64-440.118.02.run"
                 },
                 {
                     "version": "450.51.05",
