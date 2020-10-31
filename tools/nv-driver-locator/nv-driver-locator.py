@@ -179,14 +179,14 @@ class GFEClientChannel(BaseChannel):
 
     def get_latest_drivers(self):
         res = self._get_latest_drivers(notebook=self._notebook,
-                                      x86_64=self._x86_64,
-                                      os_version=self._os_version,
-                                      os_build=self._os_build,
-                                      language=self._language,
-                                      beta=self._beta,
-                                      dch=self._dch,
-                                      crd=self._crd,
-                                      timeout=self._timeout)
+                                       x86_64=self._x86_64,
+                                       os_version=self._os_version,
+                                       os_build=self._os_build,
+                                       language=self._language,
+                                       beta=self._beta,
+                                       dch=self._dch,
+                                       crd=self._crd,
+                                       timeout=self._timeout)
         if res is None:
             return
         res.update({
@@ -275,36 +275,72 @@ class CudaToolkitDownloadsChannel(BaseChannel):
                 'Version': '???',
                 'Name': latest,
                 'NameLocalized': latest,
+            },
+            'ChannelAttributes': {
+                'Name': self.name,
+                'Type': self.__class__.__name__,
             }
         }
 
-@functools.lru_cache(maxsize=0)
-def vulkan_downloads(*, timeout=10):
-    gvd = importlib.import_module('get_vulkan_downloads')
-    return gvd.get_drivers(timeout=timeout)
-
 class VulkanBetaDownloadsChannel(BaseChannel):
     def __init__(self, name, *,
-                 os="Linux",
                  timeout=10):
         self.name = name
-        self._os = os
+        self._timeout = timeout
+        self._gvd = importlib.import_module('get_vulkan_downloads')
+
+    def get_latest_drivers(self):
+        drivers = self._gvd.get_drivers(timeout=self._timeout)
+        if drivers is None:
+            return
+        for drv in drivers:
+            yield {
+                'DriverAttributes': {
+                    'Version': drv['version'],
+                    'Name': drv['name'],
+                    'NameLocalized': drv['name'],
+                },
+                'ChannelAttributes': {
+                    'Name': self.name,
+                    'Type': self.__class__.__name__,
+                    'OS': drv['os'],
+                }
+            }
+
+class DebRepoChannel(BaseChannel):
+    def __init__(self, name, *,
+                 url,
+                 pkg_pattern,
+                 driver_name="Linux x64 (AMD64/EM64T) Display Driver",
+                 timeout=10):
+        self.name = name
+        self._gdd = importlib.import_module('get_deb_drivers')
+        self._url = url
+        self._pkg_pattern = pkg_pattern
+        self._driver_name = driver_name
         self._timeout = timeout
 
     def get_latest_drivers(self):
-        drivers = vulkan_downloads(timeout=self._timeout)
-        for drv in drivers:
-            if drv["os"] == self._os:
-                yield {
-                    'DriverAttributes': {
-                        'Version': drv['version'],
-                        'Name': drv['name'],
-                        'NameLocalized': drv['name'],
-                    }
-                }
-        else:
+        drivers = self._gdd.get_deb_versions(url=self._url,
+                                             name=self._pkg_pattern,
+                                             timeout=self._timeout)
+        if drivers is None:
             return
-
+        for drv in drivers:
+            yield {
+                'DriverAttributes': {
+                    'Version': drv.version,
+                    'DebPkgName': drv.name,
+                    'Name': self._driver_name,
+                    'NameLocalized': self._driver_name,
+                },
+                'ChannelAttributes': {
+                    'Name': self.name,
+                    'Type': self.__class__.__name__,
+                    'OS': 'Linux_64',
+                    'PkgPattern': self._pkg_pattern,
+                }
+            }
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -334,6 +370,7 @@ class DriverLocator:
             'nvidia_downloads': NvidiaDownloadsChannel,
             'cuda_downloads': CudaToolkitDownloadsChannel,
             'vulkan_beta': VulkanBetaDownloadsChannel,
+            'deb_packages': DebRepoChannel,
         }
 
         channels = []
