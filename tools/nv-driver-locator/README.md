@@ -35,232 +35,7 @@ All scripts may be used both as standalone application and importable module. Fo
 
 ## Configuration example
 
-```json
-{
-    "db": {
-        "type": "file",
-        "params": {
-            "workdir": "/var/lib/nv-driver-locator"
-        }
-    },
-    "key_components": [
-        [
-            "DriverAttributes",
-            "Version"
-        ],
-        [
-            "DriverAttributes",
-            "Name"
-        ],
-        [
-            "ChannelAttributes",
-            "OS"
-        ]
-    ],
-    "channels": [
-        {
-            "type": "gfe_client",
-            "name": "desktop defaults",
-            "params": {}
-        },
-        {
-            "type": "gfe_client",
-            "name": "desktop beta",
-            "params": {
-                "beta": true
-            }
-        },
-        {
-            "type": "gfe_client",
-            "name": "mobile",
-            "params": {
-                "notebook": true
-            }
-        },
-        {
-            "type": "gfe_client",
-            "name": "mobile beta",
-            "params": {
-                "notebook": true,
-                "beta": true
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "linux beta",
-            "params": {
-                "os": "Linux_64",
-                "product": "GeForce",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "linux stable",
-            "params": {
-                "os": "Linux_64",
-                "product": "GeForce",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win stable",
-            "params": {
-                "os": "Windows10_64",
-                "product": "GeForce",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win beta",
-            "params": {
-                "os": "Windows10_64",
-                "product": "GeForce",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win notebook stable",
-            "params": {
-                "os": "Windows10_64",
-                "product": "GeForceMobile",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win notebook beta",
-            "params": {
-                "os": "Windows10_64",
-                "product": "GeForceMobile",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "linux quadro beta",
-            "params": {
-                "os": "Linux_64",
-                "product": "Quadro",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "linux quadro stable",
-            "params": {
-                "os": "Linux_64",
-                "product": "Quadro",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win quadro stable",
-            "params": {
-                "os": "Windows10_64",
-                "product": "Quadro",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win quadro beta",
-            "params": {
-                "os": "Windows10_64",
-                "product": "Quadro",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win quadro notebook stable",
-            "params": {
-                "os": "Windows10_64",
-                "product": "QuadroMobile",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win quadro notebook beta",
-            "params": {
-                "os": "Windows10_64",
-                "product": "QuadroMobile",
-                "certlevel": "All"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win server quadro certified",
-            "params": {
-                "os": "WindowsServer2012R2_64",
-                "product": "Quadro",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "nvidia_downloads",
-            "name": "downloads win server 2019 quadro certified",
-            "params": {
-                "os": "WindowsServer2019",
-                "product": "Quadro",
-                "certlevel": "Certified"
-            }
-        },
-        {
-            "type": "cuda_downloads",
-            "name": "cuda toolkit tracker",
-            "params": {}
-        },
-        {
-            "type": "vulkan_beta",
-            "name": "vulkan beta windows",
-            "params": {
-                "os": "Windows"
-            }
-        },
-        {
-            "type": "vulkan_beta",
-            "name": "vulkan beta linux",
-            "params": {
-                "os": "Linux"
-            }
-        }
-    ],
-    "notifiers": [
-        {
-            "type": "email",
-            "name": "my email",
-            "params": {
-                "from_addr": "notify-bot@gmail.com",
-                "to_addrs": [
-                    "recepient1@domain1.tld",
-                    "recepient2@domain2.tld"
-                ],
-                "host": "smtp.google.com",
-                "use_starttls": true,
-                "login": "notify-bot",
-                "password": "MyGoodPass"
-            }
-        },
-        {
-            "type": "command",
-            "name": "sample command",
-            "params": {
-                "timeout": 10.0,
-                "cmdline": [
-                    "cat",
-                    "-"
-                ]
-            }
-        }
-    ]
-}
-```
+See [nv-driver-locator.json.sample](nv-driver-locator.json.sample).
 
 ## Components Reference
 
@@ -329,7 +104,19 @@ Type: `vulkan_beta`
 
 Params:
 
-* `os` - OS family. Allowed values: `Linux`, `Windows`. Default: `Linux`.
+* `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
+
+#### DebRepoChannel
+
+Parses Packages or Packages.gz file of deb package repository and extracts versions information.
+
+Type: `deb_packages`
+
+Params:
+
+* `url` - Location of `Packages` or `Packages.gz` file.
+* `pkg_pattern` - regexp which defines package name pattern.
+* `driver_name` - value returned as `DriverAttributes.Name` for proper aggregation by Hasher. Default: `"Linux x64 (AMD64/EM64T) Display Driver"`
 * `timeout` - allowed delay in seconds for each network operation. Default: `10.0`
 
 ### Notifiers

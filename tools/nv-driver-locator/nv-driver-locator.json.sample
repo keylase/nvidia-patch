@@ -242,15 +242,70 @@
         {
             "type": "vulkan_beta",
             "name": "vulkan beta windows",
+            "params": {}
+        },
+        {
+            "type": "deb_packages",
+            "name": "nvidia cuda drivers deb repo for ubuntu 18.04",
             "params": {
-                "os": "Windows"
+                "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/Packages.gz",
+                "pkg_pattern": "^cuda-drivers$"
             }
         },
         {
-            "type": "vulkan_beta",
-            "name": "vulkan beta linux",
+            "type": "deb_packages",
+            "name": "nvidia cuda drivers deb repo for ubuntu 20.04",
             "params": {
-                "os": "Linux"
+                "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/Packages.gz",
+                "pkg_pattern": "^cuda-drivers$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 18.04 official repos",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/bionic/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 18.04 official repos (updates)",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/bionic-updates/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 18.04 official repos (security)",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/bionic-security/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 20.04 official repos",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/focal/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 20.04 official repos (updates)",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/focal-updates/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
+            }
+        },
+        {
+            "type": "deb_packages",
+            "name": "ubuntu 20.04 official repos (security)",
+            "params": {
+                "url": "http://security.ubuntu.com/ubuntu/dists/focal-security/restricted/binary-amd64/Packages.gz",
+                "pkg_pattern": "^nvidia-driver-\\d+$"
             }
         }
     ],
