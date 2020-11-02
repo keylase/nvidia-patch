@@ -6,6 +6,7 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
+manual_driver_version=''
 
 print_usage() { printf '
 SYNOPSIS
@@ -20,20 +21,22 @@ DESCRIPTION
        -c VERSION     Check if version VERSION supported by this patch.
                       Returns true exit code (0) if version is supported.
        -l             List supported driver versions
-
+       -d VERSION     Use VERSION driver version when looking for libraries
+                      instead of using nvidia-smi to detect it.
 '
 }
 
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rshc:l' flag; do
+while getopts 'rshc:ld:' flag; do
     case "${flag}" in
         r) opmode="${opmode}rollback" ;;
         s) silent_flag='true' ;;
         h) opmode="${opmode}help" ;;
         c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
         l) opmode="${opmode}listversions" ;;
+        d) manual_driver_version="$OPTARG" ;;
         *) echo "Incorrect option specified in command line" ; exit 2 ;;
     esac
 done
@@ -231,19 +234,25 @@ patch_common () {
         exit 1
     fi
 
-    cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
-    driver_versions_list=$($cmd)
-    ret_code=$?
-    driver_version=$(echo "$driver_versions_list" | head -n 1)
-    if [[ $ret_code -ne 0 ]] ; then
-        echo "Can not detect nvidia driver version."
-        echo "CMD: \"$cmd\""
-        echo "Result: \"$driver_versions_list\""
-        echo "nvidia-smi retcode: $ret_code"
-        exit 1
-    fi
+    if [[ "$manual_driver_version" ]]; then
+        driver_version="$manual_driver_version"
 
-    echo "Detected nvidia driver version: $driver_version"
+        echo "Using manually entered nvidia driver version: $driver_version"
+    else
+        cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
+        driver_versions_list=$($cmd)
+        ret_code=$?
+        driver_version=$(echo "$driver_versions_list" | head -n 1)
+        if [[ $ret_code -ne 0 ]] ; then
+            echo "Can not detect nvidia driver version."
+            echo "CMD: \"$cmd\""
+            echo "Result: \"$driver_versions_list\""
+            echo "nvidia-smi retcode: $ret_code"
+            exit 1
+        fi
+
+        echo "Detected nvidia driver version: $driver_version"
+    fi
 
     if ! check_version_supported "$driver_version" ; then
         echo "Patch for this ($driver_version) nvidia driver not found."

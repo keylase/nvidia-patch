@@ -128,10 +128,10 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 # bash ./patch.sh -h
 
 SYNOPSIS
-       patch.sh [-s] [-r|-h|-c VERSION|-l]
+       patch-fbc.sh [-s] [-r|-h|-c VERSION|-l]
 
 DESCRIPTION
-       The patch for Nvidia drivers to remove NVENC session limit
+       The patch for Nvidia drivers to allow FBC on consumer devices
 
        -s             Silent mode (No output)
        -r             Rollback to original (Restore lib from backup)
@@ -139,6 +139,8 @@ DESCRIPTION
        -c VERSION     Check if version VERSION supported by this patch.
                       Returns true exit code (0) if version is supported.
        -l             List supported driver versions
+       -d VERSION     Use VERSION driver version when looking for libraries
+                      instead of using nvidia-smi to detect it.
 
 ```
 
