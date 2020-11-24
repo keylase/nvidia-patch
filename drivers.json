@@ -2228,6 +2228,24 @@
                     "patch64_url": "win7_x64/457.33/nvencodeapi64.1337",
                     "patch32_url": "win7_x64/457.33/nvencodeapi.1337",
                     "driver_url": ""
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "457.44",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win10_x64/457.44/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/457.44/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "457.44",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win7_x64/457.44/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/457.44/nvencodeapi.1337",
+                    "driver_url": ""
                 }
             ]
         }
