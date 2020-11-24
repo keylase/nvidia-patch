@@ -68,6 +68,10 @@ def parse_args():
     parser.add_argument("--skip-url-check",
                         action="store_true",
                         help="skip driver URL check")
+    parser.add_argument("--no-fbc",
+                        dest="fbc",
+                        action="store_false",
+                        help="add driver w/o NvFBC patch")
     parser.add_argument("version",
                         help="driver version")
     args = parser.parse_args()
@@ -171,7 +175,7 @@ def main():
         new_driver = {
             "version": args.version,
             "nvenc_patch": True,
-            "nvfbc_patch": True,
+            "nvfbc_patch": args.fbc,
         }
         if url:
             new_driver["driver_url"] = url
