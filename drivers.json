@@ -473,6 +473,11 @@
                     "version": "455.46.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "455.46.02",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": false
                 }
             ],
             "example": {
