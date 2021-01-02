@@ -173,16 +173,15 @@ patch_common () {
         echo "Using manually entered nvidia driver version: $driver_version"
     else
         cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
-        driver_versions_list=$($cmd)
-        ret_code=$?
-        driver_version=$(echo "$driver_versions_list" | head -n 1)
-        if [[ $ret_code -ne 0 ]] ; then
+        driver_versions_list=$($cmd) || (
+            ret_code=$?
             echo "Can not detect nvidia driver version."
             echo "CMD: \"$cmd\""
             echo "Result: \"$driver_versions_list\""
             echo "nvidia-smi retcode: $ret_code"
             exit 1
-        fi
+        )
+        driver_version=$(echo "$driver_versions_list" | head -n 1)
 
         echo "Detected nvidia driver version: $driver_version"
     fi
