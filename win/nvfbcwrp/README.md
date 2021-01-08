@@ -27,3 +27,11 @@ Hence, if default magic baked into nvfbcwrp doesn't work for you, you have to:
 1. Specify environment variable `NVFBCWRP_DUMP_DIR` in your configuration with path to existing writable directory. Here is a [guide](http://web.archive.org/web/20191207221102/https://docs.oracle.com/en/database/oracle/r-enterprise/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html) about environment variables edit. It's sufficient to add "user" environment variable.
 2. Run some NvFBC application with valid `privateData` keys and initiate recording session.
 3. Grab some output file and specify it's path in `NVFBCWRP_PRIVDATA_FILE`. At this point you can unset `NVFBCWRP_DUMP_DIR` to stop `privateData` capture.
+
+## 3rd-party software
+
+For some software (e.g Steam) it is also needed to add registry value to use NvFBC, which you can do by running:
+```batch
+reg add "HKEY_LOCAL_MACHINE\SSYSTEM\CurrentControlSet\Services\nvlddmkm" /v NVFBCEnable /d 1 /t REG_DWORD /f
+```
+(reboot / driver restart required to take effect)
