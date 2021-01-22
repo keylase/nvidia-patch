@@ -191,6 +191,7 @@ def main():
     data[args.os.value]['x86_64']['drivers'].append(new_driver)
     with open(DATAFILE_PATH, 'w') as data_file:
         json.dump(data, data_file, indent=4)
+        data_file.write('\n')
 
 if __name__ == '__main__':
     main()
