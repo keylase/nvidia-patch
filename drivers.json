@@ -481,7 +481,7 @@
                 },
                 {
                     "version": "455.46.04",
-                    "nvenc_patch": false,
+                    "nvenc_patch": true,
                     "nvfbc_patch": true
                 },
                 {
