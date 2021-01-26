@@ -97,8 +97,10 @@ declare -A patch_list=(
     ["455.46.02"]='s/\x83\xf8\x01\x0f\x84\x83/\x83\xf8\x69\x0f\x84\x83/'
     ["455.46.04"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
     ["455.50.02"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
+    ["455.50.03"]='s/\x83\xf8\x01\x0f\x84\x85/\x83\xf8\x69\x0f\x84\x85/'
     ["460.27.04"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["460.32.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
+    ["460.39"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
 )
 
 declare -A object_list=(
@@ -152,8 +154,10 @@ declare -A object_list=(
     ["455.46.02"]='libnvidia-fbc.so'
     ["455.46.04"]='libnvidia-fbc.so'
     ["455.50.02"]='libnvidia-fbc.so'
+    ["455.50.03"]='libnvidia-fbc.so'
     ["460.27.04"]='libnvidia-fbc.so'
     ["460.32.03"]='libnvidia-fbc.so'
+    ["460.39"]='libnvidia-fbc.so'
 )
 
 check_version_supported () {
