@@ -72,6 +72,10 @@ def parse_args():
                         dest="fbc",
                         action="store_false",
                         help="add driver w/o NvFBC patch")
+    parser.add_argument("--no-enc",
+                        dest="enc",
+                        action="store_false",
+                        help="add driver w/o NVENC patch")
     parser.add_argument("version",
                         help="driver version")
     args = parser.parse_args()
@@ -174,7 +178,7 @@ def main():
     else:
         new_driver = {
             "version": args.version,
-            "nvenc_patch": True,
+            "nvenc_patch": args.enc,
             "nvfbc_patch": args.fbc,
         }
         if url:
