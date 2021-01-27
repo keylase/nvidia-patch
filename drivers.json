@@ -2484,7 +2484,7 @@
                     "os": "win10",
                     "product": "GeForce",
                     "version": "465.21",
-                    "variant": "",
+                    "variant": "Drivers for CUDA on WSL",
                     "patch64_url": "win10_x64/465.21/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/465.21/nvencodeapi.1337",
                     "driver_url": ""
