@@ -517,6 +517,11 @@
                     "version": "455.50.03",
                     "nvenc_patch": false,
                     "nvfbc_patch": true
+                },
+                {
+                    "version": "455.50.04",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
@@ -2487,6 +2492,24 @@
                     "variant": "Drivers for CUDA on WSL",
                     "patch64_url": "win10_x64/465.21/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/465.21/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "457.88",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win10_x64/457.88/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/457.88/nvencodeapi.1337",
+                    "driver_url": ""
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "457.88",
+                    "variant": "Vulkan Beta",
+                    "patch64_url": "win7_x64/457.88/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/457.88/nvencodeapi.1337",
                     "driver_url": ""
                 }
             ]
