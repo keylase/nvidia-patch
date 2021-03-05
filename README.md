@@ -131,6 +131,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 455.50.04 | YES | YES |  |
 | 455.50.05 | YES | YES |  |
 | 455.50.07 | YES | YES |  |
+| 455.50.10 | YES | YES |  |
 | 460.27.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.27.04/NVIDIA-Linux-x86_64-460.27.04.run) |
 | 460.32.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.32.03/NVIDIA-Linux-x86_64-460.32.03.run) |
 | 460.39 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.39/NVIDIA-Linux-x86_64-460.39.run) |
