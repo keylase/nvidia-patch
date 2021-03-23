@@ -32,6 +32,6 @@ Hence, if default magic baked into nvfbcwrp doesn't work for you, you have to:
 
 For some software (e.g Steam) it is also needed to add registry value to use NvFBC, which you can do by running:
 ```batch
-reg add "HKEY_LOCAL_MACHINE\SSYSTEM\CurrentControlSet\Services\nvlddmkm" /v NVFBCEnable /d 1 /t REG_DWORD /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm" /v NVFBCEnable /d 1 /t REG_DWORD /f
 ```
 (reboot / driver restart required to take effect)
