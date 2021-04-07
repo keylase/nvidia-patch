@@ -2715,6 +2715,15 @@
                     "patch64_url": "win7_x64/465.89/nvencodeapi64.1337",
                     "patch32_url": "win7_x64/465.89/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/465.89/465.89-desktop-win8-win7-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "Quadro",
+                    "version": "465.89",
+                    "variant": "",
+                    "patch64_url": "win10_x64/quadro_465.89/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/quadro_465.89/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/465.89/465.89-quadro-rtx-desktop-notebook-win10-64bit-international-whql.exe"
                 }
             ]
         }
