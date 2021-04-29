@@ -567,6 +567,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run"
+                },
+                {
+                    "version": "465.27",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run"
                 }
             ],
             "example": {
@@ -2790,6 +2796,24 @@
                     "patch64_url": "win7_x64/466.11/nvencodeapi64.1337",
                     "patch32_url": "win7_x64/466.11/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/466.11/466.11-desktop-win8-win7-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "466.27",
+                    "variant": "",
+                    "patch64_url": "win10_x64/466.27/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/466.27/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/466.27/466.27-desktop-win10-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "466.27",
+                    "variant": "",
+                    "patch64_url": "win7_x64/466.27/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/466.27/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/466.27/466.27-desktop-win8-win7-64bit-international-whql.exe"
                 }
             ]
         }
