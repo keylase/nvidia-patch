@@ -138,6 +138,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 460.56 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.56/NVIDIA-Linux-x86_64-460.56.run) |
 | 460.67 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.67/NVIDIA-Linux-x86_64-460.67.run) |
 | 460.73.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run) |
+| 460.80 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.80/NVIDIA-Linux-x86_64-460.80.run) |
 | 465.19.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.19.01/NVIDIA-Linux-x86_64-465.19.01.run) |
 | 465.24.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.24.02/NVIDIA-Linux-x86_64-465.24.02.run) |
 | 465.27 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run) |
