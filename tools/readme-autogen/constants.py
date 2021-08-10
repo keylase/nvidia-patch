@@ -38,10 +38,10 @@ ENCODING='utf-8'
 
 DRIVER_URL_TEMPLATE = {
     (OSKind.Linux, None, None, None):                                       "https://international.download.nvidia.com/XFree86/Linux-x86_64/$version/NVIDIA-Linux-x86_64-$version.run",
-    (OSKind.Windows, Product.GeForce, WinSeries.win10, ''):                 "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-64bit-international-whql.exe",
-    (OSKind.Windows, Product.GeForce, WinSeries.win10, 'Studio Driver'):    "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-64bit-international-nsd-whql.exe",
+    (OSKind.Windows, Product.GeForce, WinSeries.win10, ''):                 "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-win11-64bit-international-whql.exe",
+    (OSKind.Windows, Product.GeForce, WinSeries.win10, 'Studio Driver'):    "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-win11-64bit-international-nsd-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win10, 'Vulkan Beta'):      "",
-    (OSKind.Windows, Product.Quadro, WinSeries.win10, ''):                  "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-rtx-desktop-notebook-win10-64bit-international-whql.exe",
+    (OSKind.Windows, Product.Quadro, WinSeries.win10, ''):                  "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-rtx-desktop-notebook-win10-win11-64bit-international-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win7, ''):                  "https://international.download.nvidia.com/Windows/$version/$version-desktop-win8-win7-64bit-international-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win7, 'Vulkan Beta'):       "",
     (OSKind.Windows, Product.Quadro, WinSeries.win7, ''):                   "https://international.download.nvidia.com/Windows/Quadro_Certified/$version/$version-quadro-rtx-desktop-notebook-win8-win7-64bit-international-whql.exe",
