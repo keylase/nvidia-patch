@@ -3126,6 +3126,24 @@
                     "patch64_url": "ws2012_x64/quadro_471.68/nvencodeapi64.1337",
                     "patch32_url": "ws2012_x64/quadro_471.68/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/471.68/471.68-quadro-rtx-winserv-2012r2-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "471.96",
+                    "variant": "",
+                    "patch64_url": "win10_x64/471.96/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/471.96/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/471.96/471.96-desktop-win10-win11-64bit-international-whql.exe"
+                },
+                {
+                    "os": "win7",
+                    "product": "GeForce",
+                    "version": "471.96",
+                    "variant": "",
+                    "patch64_url": "win7_x64/471.96/nvencodeapi64.1337",
+                    "patch32_url": "win7_x64/471.96/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/471.96/471.96-desktop-win8-win7-64bit-international-whql.exe"
                 }
             ]
         }
