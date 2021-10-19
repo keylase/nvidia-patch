@@ -7,10 +7,12 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 manual_driver_version=''
+flatpak_flag=''
+backup_suffix=''
 
 print_usage() { printf '
 SYNOPSIS
-       patch.sh [-s] [-r|-h|-c VERSION|-l]
+       patch.sh [-s] [-r|-h|-c VERSION|-l|-f]
 
 DESCRIPTION
        The patch for Nvidia drivers to remove NVENC session limit
@@ -23,13 +25,14 @@ DESCRIPTION
        -l             List supported driver versions
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
+       -f             Enable support for Flatpak NVIDIA drivers.
 '
 }
 
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rshc:ld:' flag; do
+while getopts 'rshc:ld:f' flag; do
     case "${flag}" in
         r) opmode="${opmode}rollback" ;;
         s) silent_flag='true' ;;
@@ -37,12 +40,18 @@ while getopts 'rshc:ld:' flag; do
         c) opmode="${opmode}checkversion" ; checked_version="$OPTARG" ;;
         l) opmode="${opmode}listversions" ;;
         d) manual_driver_version="$OPTARG" ;;
+        f) flatpak_flag='true' ;;
         *) echo "Incorrect option specified in command line" ; exit 2 ;;
     esac
 done
 
 if [[ $silent_flag ]]; then
     exec 1> /dev/null
+fi
+
+if [[ $flatpak_flag ]]; then
+    backup_suffix='.flatpak'
+    echo "WARNING: Flatpak flag enabled (-f), modifying ONLY the Flatpak driver."
 fi
 
 declare -A patch_list=(
@@ -156,6 +165,7 @@ declare -A patch_list=(
     ["470.57.02"]='s/\xe8\x25\x1C\xff\xff\x85\xc0\x41\x89\xc4/\xe8\x25\x1C\xff\xff\x29\xc0\x41\x89\xc4/g'
     ["470.62.02"]='s/\xe8\x25\x1C\xff\xff\x85\xc0\x41\x89\xc4/\xe8\x25\x1C\xff\xff\x29\xc0\x41\x89\xc4/g'
     ["470.63.01"]='s/\xe8\x25\x1C\xff\xff\x85\xc0\x41\x89\xc4/\xe8\x25\x1C\xff\xff\x29\xc0\x41\x89\xc4/g'
+    ["470.74"]='s/\xe8\x25\x1C\xff\xff\x85\xc0\x41\x89\xc4/\xe8\x25\x1C\xff\xff\x29\xc0\x41\x89\xc4/g'
 )
 
 declare -A object_list=(
@@ -267,11 +277,20 @@ declare -A object_list=(
     ["470.57.02"]='libnvidia-encode.so'
     ["470.62.02"]='libnvidia-encode.so'
     ["470.63.01"]='libnvidia-encode.so'
+    ["470.74"]='libnvidia-encode.so'
 )
 
 check_version_supported () {
     local ver="$1"
     [[ "${patch_list[$ver]+isset}" && "${object_list[$ver]+isset}" ]]
+}
+
+get_flatpak_driver_path () {
+    # Flatpak's package versioning replaces '.' by '-'
+    version="$(echo "$1" | tr '.' '-')"
+    if path=$(flatpak info --show-location "org.freedesktop.Platform.GL.nvidia-${version}" 2>/dev/null); then
+        echo "$path/files/lib"
+    fi
 }
 
 get_supported_versions () {
@@ -317,6 +336,17 @@ patch_common () {
     patch="${patch_list[$driver_version]}"
     object="${object_list[$driver_version]}"
 
+    if [[ $flatpak_flag ]]; then
+        driver_dir=$(get_flatpak_driver_path "$driver_version")
+        if [ -z "$driver_dir" ]; then
+            echo "ERROR: Flatpak package for driver $driver_version does not appear to be installed."
+            echo "Try rebooting your computer and/or running 'flatpak update'."
+            exit 1
+        fi
+        # return early because the code below is out of scope for the Flatpak driver
+        return 0
+    fi
+
     declare -a driver_locations=(
         '/usr/lib/x86_64-linux-gnu'
         '/usr/lib/x86_64-linux-gnu/nvidia/current/'
@@ -338,10 +368,10 @@ patch_common () {
 
 rollback () {
     patch_common
-    if [[ -f "$backup_path/$object.$driver_version" ]]; then
-        cp -p "$backup_path/$object.$driver_version" \
+    if [[ -f "$backup_path/$object.$driver_version$backup_suffix" ]]; then
+        cp -p "$backup_path/$object.$driver_version$backup_suffix" \
            "$driver_dir/$object.$driver_version"
-        echo "Restore from backup $object.$driver_version"
+        echo "Restore from backup $object.$driver_version$backup_suffix"
     else
         echo "Backup not found. Try to patch first."
         exit 1
@@ -350,8 +380,8 @@ rollback () {
 
 patch () {
     patch_common
-    if [[ -f "$backup_path/$object.$driver_version" ]]; then
-        bkp_hash="$(sha1sum "$backup_path/$object.$driver_version" | cut -f1 -d\ )"
+    if [[ -f "$backup_path/$object.$driver_version$backup_suffix" ]]; then
+        bkp_hash="$(sha1sum "$backup_path/$object.$driver_version$backup_suffix" | cut -f1 -d\ )"
         drv_hash="$(sha1sum "$driver_dir/$object.$driver_version" | cut -f1 -d\ )"
         if [[ "$bkp_hash" != "$drv_hash" ]] ; then
             echo "Backup exists and driver file differ from backup. Skipping patch."
@@ -361,10 +391,10 @@ patch () {
         echo "Attention! Backup not found. Copying current $object to backup."
         mkdir -p "$backup_path"
         cp -p "$driver_dir/$object.$driver_version" \
-           "$backup_path/$object.$driver_version"
+           "$backup_path/$object.$driver_version$backup_suffix"
     fi
-    sha1sum "$backup_path/$object.$driver_version"
-    sed "$patch" "$backup_path/$object.$driver_version" > \
+    sha1sum "$backup_path/$object.$driver_version$backup_suffix"
+    sed "$patch" "$backup_path/$object.$driver_version$backup_suffix" > \
       "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     sha1sum "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     ldconfig
