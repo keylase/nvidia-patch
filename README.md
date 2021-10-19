@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-470.63.01-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-470.74-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -148,7 +148,9 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 470.42.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.42.01/NVIDIA-Linux-x86_64-470.42.01.run) |
 | 470.57.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run) |
 | 470.62.02 | YES | YES |  |
+| 470.62.05 | YES | YES |  |
 | 470.63.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run) |
+| 470.74 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run) |
 
 ## Synopsis
 
@@ -156,7 +158,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 # bash ./patch.sh -h
 
 SYNOPSIS
-       patch.sh [-s] [-r|-h|-c VERSION|-l]
+       patch.sh [-s] [-r|-h|-c VERSION|-l|-f]
 
 DESCRIPTION
        The patch for Nvidia drivers to remove NVENC session limit
@@ -169,6 +171,7 @@ DESCRIPTION
        -l             List supported driver versions
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
+       -f             Enable support for Flatpak NVIDIA drivers.
 
 ```
 
@@ -176,7 +179,7 @@ DESCRIPTION
 # bash ./patch-fbc.sh -h
 
 SYNOPSIS
-       patch-fbc.sh [-s] [-r|-h|-c VERSION|-l]
+       patch-fbc.sh [-s] [-r|-h|-c VERSION|-l|-f]
 
 DESCRIPTION
        The patch for Nvidia drivers to allow FBC on consumer devices
@@ -189,7 +192,7 @@ DESCRIPTION
        -l             List supported driver versions
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
-
+       -f             Enable support for Flatpak NVIDIA drivers.
 
 ```
 
@@ -246,6 +249,22 @@ Essentially all you need to do during build is:
 * Make sure `docker-entrypoint.sh` is invoked on container start.
 
 `docker-entrypoint.sh` script does on-the-fly patching by means of manipulating dynamic linker to workaround read-only mount of Nvidia runtime. Finally it passes original docker command to shell, like if entrypoint was not restricted by `ENTRYPOINT` directive. So `docker run --runtime=nvidia -it mycontainer echo 123` will print `123`. Also it can be just invoked from your entrypoint script, if you have any.
+
+## Flatpak support
+
+If you use a Flatpak app that uses NVENC/NvFBC (e.g. OBS Studio, Kdenlive), it's recommended that you patch the NVIDIA drivers for Flatpak as well. To do so, just pass the `-f` parameter to either `patch.sh` or `patch-fbc.sh`, like so:
+
+```bash
+bash ./patch.sh -f
+bash ./patch-fbc.sh -f
+```
+
+In case something goes wrong, you can restore the original Flatpak drivers by adding the `-r` paramater:
+
+```
+bash ./patch.sh -f -r
+bash ./patch-fbc.sh -f -r
+```
 
 ## Benchmarks
 
