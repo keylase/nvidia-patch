@@ -11,12 +11,7 @@ Main target operating system is **GNU/Linux**, but for **Windows** support see [
 
 ---
 
-:heart: :heart: :heart:
-
-You can say thanks to the author and support ongoing efforts with donations to these wallets:
-
-- BTC: `1Q9uQAFNviHZEW7yT5sNsi4MJnxaL2tvvK`
-- ETH: `0xE55e48b116D0dd4d26adafB65B92e74F0ac73636`
+Project is looking for a maintainer
 
 ---
 
