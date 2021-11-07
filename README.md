@@ -11,7 +11,7 @@ Main target operating system is **GNU/Linux**, but for **Windows** support see [
 
 ---
 
-Project is looking for a maintainer
+**Project is looking for a maintainer.**
 
 ---
 
