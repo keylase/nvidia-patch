@@ -134,7 +134,6 @@ declare -A patch_list=(
     ["495.44"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
 )
 
-
 declare -A object_list=(
     ["435.27.08"]='libnvidia-fbc.so'
     ["440.26"]='libnvidia-fbc.so'
