@@ -283,7 +283,7 @@ declare -A object_list=(
     ["470.62.05"]='libnvidia-encode.so'
     ["470.63.01"]='libnvidia-encode.so'
     ["470.74"]='libnvidia-encode.so'
-    ["470.82.00"]='libnvidia-fbc.so'
+    ["470.82.00"]='libnvidia-encode.so'
     ["495.29.05"]='libnvidia-encode.so'
     ["495.44"]='libnvidia-encode.so'
 )
