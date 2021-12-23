@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-495.29.05-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-495.46-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -147,6 +147,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 470.63.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run) |
 | 470.74 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run) |
 | 470.82.00 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.82.00/NVIDIA-Linux-x86_64-470.82.00.run) |
+| 470.82.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/470.82.01/NVIDIA-Linux-x86_64-470.82.01.run) |
 | 470.86 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.86/NVIDIA-Linux-x86_64-470.86.run) |
 | 495.29.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run) |
 | 495.44 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run) |
