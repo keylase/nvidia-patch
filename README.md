@@ -225,6 +225,7 @@ nvidia-smi
 ```
 
 Output should show no errors and details about your driver and GPU.
+You can also check if [ffmpeg can encode without limit](https://github.com/keylase/nvidia-patch/wiki/Verify-NVENC-patch), and check NVFBC via OBS.
 
 ### Patch driver
 
