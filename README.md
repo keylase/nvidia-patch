@@ -11,7 +11,9 @@ Main target operating system is **GNU/Linux**, but for **Windows** support see [
 
 ---
 
-**Project is looking for a maintainer.**
+If you like this project, best way to contribute is by sending PRs and fixing documentation.
+
+If you want to donate, please send it to your favorite open source organizations, for example [FFmpeg](https://www.ffmpeg.org/donations.html), [VideoLAN](http://www.videolan.org/contribute.html#money)
 
 ---
 
@@ -147,8 +149,10 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 470.63.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run) |
 | 470.74 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run) |
 | 470.82.00 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.82.00/NVIDIA-Linux-x86_64-470.82.00.run) |
+| 470.82.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/470.82.01/NVIDIA-Linux-x86_64-470.82.01.run) |
 | 470.86 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.86/NVIDIA-Linux-x86_64-470.86.run) |
 | 470.94 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.94/NVIDIA-Linux-x86_64-470.94.run) |
+| 470.103.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.103.01/NVIDIA-Linux-x86_64-470.103.01.run) |
 | 495.29.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run) |
 | 495.44 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run) |
 | 495.46 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run) |
@@ -222,6 +226,7 @@ nvidia-smi
 ```
 
 Output should show no errors and details about your driver and GPU.
+You can also check if [ffmpeg can encode without limit](https://github.com/keylase/nvidia-patch/wiki/Verify-NVENC-patch), and check NVFBC via OBS.
 
 ### Patch driver
 
