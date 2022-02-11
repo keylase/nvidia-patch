@@ -11,7 +11,9 @@ Main target operating system is **GNU/Linux**, but for **Windows** support see [
 
 ---
 
-**Project is looking for a maintainer.**
+If you like this project, best way to contribute is by sending PRs and fixing documentation.
+
+If you want to donate, please send it to your favorite open source organizations, for example [FFmpeg](https://www.ffmpeg.org/donations.html), [VideoLAN](http://www.videolan.org/contribute.html#money)
 
 ---
 
