@@ -158,6 +158,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 495.46 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run) |
 | 510.39.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run) |
 | 510.47.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.47.03/NVIDIA-Linux-x86_64-510.47.03.run) |
+| 510.54 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.54/NVIDIA-Linux-x86_64-510.54.run) |
 
 ## Synopsis
 
