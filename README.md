@@ -40,6 +40,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 | 375.39 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run) |
 | 390.77 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run) |
 | 390.87 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run) |
+| 390.147 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/390.147/NVIDIA-Linux-x86_64-390.147.run) |
 | 396.24 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run) |
 | 396.26 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run) |
 | 396.37 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run) |

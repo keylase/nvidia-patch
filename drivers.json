@@ -697,6 +697,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.54/NVIDIA-Linux-x86_64-510.54.run"
+                },
+                {
+                    "version": "390.147",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": false,
+                    "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/390.147/NVIDIA-Linux-x86_64-390.147.run"
                 }
             ],
             "example": {
