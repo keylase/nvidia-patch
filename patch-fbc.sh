@@ -349,7 +349,7 @@ patch () {
     sed "$patch" "$backup_path/$object.$driver_version$backup_suffix" > \
       "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     sha1sum "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
-    ldconfig
+    sudo ldconfig
     echo "Patched!"
 }
 
