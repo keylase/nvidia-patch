@@ -13,6 +13,14 @@ Note: when command line options with multiple possible arguments supplied (like 
 
 * Python 3.2+
 * 7zip CLI utility
+  * 7z.exe and 7z.dll are required, next to autopatch.py or set path with parameter
+
+## Examples
+```
+python.exe autopatch.py temp/512.95-desktop-win10-win11-64bit-international-dch-whql.exe
+python.exe autopatch.py https://international.download.nvidia.com/Windows/512.95/512.95-desktop-win10-win11-64bit-international-dch-whql.exe
+python.exe autopatch.py 512.95
+```
 
 ## Synopsys
 
