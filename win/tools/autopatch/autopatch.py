@@ -9,6 +9,7 @@ from binascii import unhexlify
 import xml.etree.ElementTree as ET
 import itertools
 import functools
+import urllib.request
 
 
 CRLF = b"\x0d\x0a"
@@ -193,6 +194,21 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
     replacement = unhexlify(replacement)
     assert len(search) == len(replacement), "len() of search and replacement"\
         " is not equal"
+
+    # check if installer file exists or try to download
+    if not os.path.isfile(installer_file):  #installer file does not exists, get url for download
+        if not installer_file.startswith("http"):  #installer_file is a version, parse to url
+            filename = installer_file+"-desktop-win10-win11-64bit-international-dch-whql.exe"
+            installer_file = "https://international.download.nvidia.com/Windows/"+installer_file+"/"+filename
+        else:  # installer_file is an url
+            filename = os.path.basename(installer_file)
+        # download installer and save in .temp
+        print(f"Downloading... ( {installer_file} TO {os.path.join('temp', filename)} )")
+        print("This may take a while (~800MB)")
+        urllib.request.urlretrieve(installer_file, os.path.join('temp', filename))
+        installer_file = os.path.join('temp', filename)
+
+
     patch = make_patch(installer_file,
                        arch_tgt=target,
                        search=search,
