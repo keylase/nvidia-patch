@@ -28,7 +28,7 @@ Just run script. It will update files in your repo working copy.
 
 ## Examples
 
-Here is real commands used for Windows driver 441.28 series:
+Here is real commands used for Windows driver 441.28 and 512.95 series:
 
 ```bash
 ./add_driver.py -W --variant "Studio Driver" 441.28
@@ -36,7 +36,10 @@ Here is real commands used for Windows driver 441.28 series:
 ./add_driver.py -W -P Quadro -w win7 441.28
 ./add_driver.py -W -P Quadro -w ws2012 441.28
 ./add_driver.py -W -P Quadro -w ws2016 441.28
+./add_driver.py -W -P GeForce --variant "DCH" -w win10 512.95
 ```
+
+> Variant DCH: Microsoft DCH (Declarative Componentized Hardware supported apps) drivers refers to a new universal Windows 10 driver package. [NVIDIA FAQ](https://nvidia.custhelp.com/app/answers/detail/a_id/4777/~/nvidia-dch%2Fstandard-display-drivers-for-windows-10-faq)
 
 ## Synopsis
 
