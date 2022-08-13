@@ -687,6 +687,12 @@
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.129.06/NVIDIA-Linux-x86_64-470.129.06.run"
                 },
                 {
+                    "version": "470.141.03",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run"
+                },
+                {
                     "version": "510.39.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
@@ -745,6 +751,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.08/NVIDIA-Linux-x86_64-510.73.08.run"
+                },
+                {
+                    "version": "510.85.02",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.85.02/NVIDIA-Linux-x86_64-510.85.02.run"
                 },
                 {
                     "version": "515.57",
@@ -3493,6 +3505,15 @@
                     "patch64_url": "win10_x64/nsd_516.93/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/nsd_516.93/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/516.93/516.93-notebook-win10-win11-64bit-international-nsd-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "516.94",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/516.94/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/516.94/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/516.94/516.94-desktop-win10-win11-64bit-international-dch-whql.exe"
                 }
             ]
         }
