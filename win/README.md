@@ -30,6 +30,7 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
   - Windows 8
   - Windows 8.1
   - Windows 10
+  - Windows 11
   - Windows Server 2008 R2
   - Windows Server 2012
   - Windows Server 2012 R2
@@ -63,7 +64,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 
 ## Version Table
 
-### Windows 10 drivers
+### Windows 10, Windows 11 drivers
 
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
