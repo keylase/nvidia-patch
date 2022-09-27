@@ -137,6 +137,7 @@ def main():
             raise
         except Exception as exc:
             print("Driver URL validation failed with error: %s" % str(exc), file=sys.stderr)
+            print("Driver URL: %s" % str(url), file=sys.stderr)
             print("Please use option -U to override driver link manually", file=sys.stderr)
             print("or use option --skip-url-check to submit incorrect URL.", file=sys.stderr)
             return
