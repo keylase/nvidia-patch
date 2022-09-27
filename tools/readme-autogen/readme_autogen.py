@@ -16,7 +16,7 @@ PRODUCT_LABELS = {
 }
 
 WIN_SERIES_LABELS = {
-    WinSeries.win10: "Windows 10",
+    WinSeries.win10: "Windows 10, Windows 11",
     WinSeries.win7: "Windows 7, Windows 8, Windows 8.1",
     WinSeries.ws2012: "Windows Server 2008R2, 2012, 2012R2",
     WinSeries.ws2016: "Windows Server 2016, 2019",
