@@ -781,6 +781,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/520.56.06/NVIDIA-Linux-x86_64-520.56.06.run"
+                },
+                {
+                    "version": "520.61.05",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run"
                 }
             ],
             "example": {
