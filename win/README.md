@@ -52,6 +52,8 @@ git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nv
 
 **Example:** for 64bit Windows 10 running driver version 522.25, use `win10_x64/522.25/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/522.25/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
+You can also use FFmpeg to [verify that NVENC session limit is removed](https://github.com/keylase/nvidia-patch/wiki/Verify-NVENC-patch).
+
 If you experience issues with streaming software based on Nvidia streaming facilities (Nvidia Shield TV, Moonlight), you also have to import few registry values in order to workaround binary signature mismatch. See [**skip\_sig\_check** (clickable)](skip_sig_check) directory for instructions.
 
 A video guide is also available:
