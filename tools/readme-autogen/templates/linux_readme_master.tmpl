@@ -17,16 +17,6 @@ If you want to donate, please send it to your favorite open source organizations
 
 ---
 
-## Mirrors
-
-IPFS site mirror: [https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/](https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/)
-
-IPFS git mirror:
-
-```
-git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nvidia-patch
-```
-
 ## Requirements
 - x86\_64 system architecture
 - GNU/Linux operating system

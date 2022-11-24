@@ -13,16 +13,6 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 
 ---
 
-## Mirrors
-
-IPFS site mirror: [https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/win/](https://ipfs.io/ipns/QmYTEwv2GjQhtdN9bDfpLfQrVD7YLb1Sbh8igX8cEe9hHF/win/)
-
-IPFS git mirror:
-
-```
-git clone https://ipfs.io/ipns/Qmed4r8yrBP162WK1ybd1DJWhLUi4t6mGuBoB9fLtjxR7u nvidia-patch
-```
-
 ## Requirements
 
 - Any of following 64bit operating systems:
