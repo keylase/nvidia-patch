@@ -227,6 +227,7 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
                                                 sevenzip=sevenzip)
         drv_prefix = {
             "100": "quadro_",
+            "103": "quadro_",
             "300": "",
             "301": "nsd_",
             "303": "", # DCH
