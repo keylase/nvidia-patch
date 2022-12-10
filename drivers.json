@@ -805,6 +805,11 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run"
+                },
+                {
+                    "version": "525.60.13",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true
                 }
             ],
             "example": {
