@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.60.11-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.60.13-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -167,6 +167,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 520.56.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/520.56.06/NVIDIA-Linux-x86_64-520.56.06.run) |
 | 520.61.05 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run) |
 | 525.60.11 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run) |
+| 525.60.13 | YES | YES |  |
 
 ## Synopsis
 
