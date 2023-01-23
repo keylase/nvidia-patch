@@ -222,7 +222,7 @@ Examples are provided for driver version 430.50. All commands are executed as ro
 
 ### Download and install driver
 
-Skip this step if you already have installed driver with version supported by this patch (from distro packages, for example).
+Skip this step if you already have installed driver with version supported by this patch.
 
 Make sure you have kernel headers and compiler installed before running Nvidia driver installer. Kernel headers and compiler are required to build nvidia kernel module. Recommended way to do this is to install `dkms` package, if it is available in your distro. This way `dkms` package will pull all required dependencies to allow building kernel modules and kernel module builds will be automated in a reliable fashion.
 
@@ -251,6 +251,8 @@ bash ./patch.sh
 ```
 
 You're all set!
+
+**Note:** Sometimes distribution installed drivers are not found by the patch script. In that case, please uninstall the nvidia driver using your distribution package manager, and install it using the steps [above](#download-and-install-driver).
 
 ## Rollback
 
