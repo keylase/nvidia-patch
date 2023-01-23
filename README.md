@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.78.01-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.85.05-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -170,6 +170,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 525.60.11 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run) |
 | 525.60.13 | YES | YES |  |
 | 525.78.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.78.01/NVIDIA-Linux-x86_64-525.78.01.run) |
+| 525.85.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.85.05/NVIDIA-Linux-x86_64-525.85.05.run) |
 
 ## Synopsis
 
@@ -221,7 +222,7 @@ Examples are provided for driver version 430.50. All commands are executed as ro
 
 ### Download and install driver
 
-Skip this step if you already have installed driver with version supported by this patch.
+Skip this step if you already have installed driver with version supported by this patch (from distro packages, for example).
 
 Make sure you have kernel headers and compiler installed before running Nvidia driver installer. Kernel headers and compiler are required to build nvidia kernel module. Recommended way to do this is to install `dkms` package, if it is available in your distro. This way `dkms` package will pull all required dependencies to allow building kernel modules and kernel module builds will be automated in a reliable fashion.
 
@@ -250,8 +251,6 @@ bash ./patch.sh
 ```
 
 You're all set!
-
-**Note:** Sometimes distribution installed drivers are not found by the patch script. In that case, please uninstall the nvidia driver using your distribution package manager, and install it using the steps [above](#download-and-install-driver).
 
 ## Rollback
 
