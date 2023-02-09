@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.85.12-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-525.89.02-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -172,6 +172,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 525.78.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.78.01/NVIDIA-Linux-x86_64-525.78.01.run) |
 | 525.85.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.85.05/NVIDIA-Linux-x86_64-525.85.05.run) |
 | 525.85.12 | YES | YES |  |
+| 525.89.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/NVIDIA-Linux-x86_64-525.89.02.run) |
 
 ## Synopsis
 
@@ -296,7 +297,7 @@ bash ./patch-fbc.sh -f -r
 
 ## See also
 
-* Plex Media Server: enable HW **decoding**: 
+* Plex Media Server: enable HW **decoding**:
   * [GH Issue](https://github.com/keylase/nvidia-patch/issues/51)
   * PMS Forum:
     1. [https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158](https://forums.plex.tv/t/hardware-accelerated-decode-nvidia-for-linux/233510/158)
