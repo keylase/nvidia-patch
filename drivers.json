@@ -3782,6 +3782,15 @@
                     "patch64_url": "win10_x64/531.41/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/531.41/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/531.41/531.41-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "531.58",
+                    "variant": "",
+                    "patch64_url": "win10_x64/531.58/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/531.58/nvencodeapi.1337",
+                    "driver_url": "https://international-gfe.download.nvidia.com/Windows/531.58hf/531.58-desktop-notebook-win10-win11-64bit-international-dch.hf.exe"
                 }
             ]
         }
