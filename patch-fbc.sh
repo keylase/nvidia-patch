@@ -169,6 +169,7 @@ declare -A patch_list=(
     ["525.116.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["530.30.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
     ["530.41.03"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
+    ["535.43.02"]='s/\x83\xfe\x01\x73\x08\x48/\x83\xfe\x00\x72\x08\x48/'
 )
 
 declare -A object_list=(
@@ -286,6 +287,7 @@ declare -A object_list=(
     ["525.116.03"]='libnvidia-fbc.so'
     ["530.30.02"]='libnvidia-fbc.so'
     ["530.41.03"]='libnvidia-fbc.so'
+    ["535.43.02"]='libnvidia-fbc.so'
 )
 
 check_version_supported () {
