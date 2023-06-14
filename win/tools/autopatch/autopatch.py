@@ -33,8 +33,8 @@ def parse_args():
     parser.add_argument("-T", "--target",
                         nargs="+",
                         default=[
-                            "Display.Driver/nvencodeapi64.dl_",
-                            "Display.Driver/nvencodeapi.dl_",
+                            "Display.Driver/nvencodeapi64.dll",
+                            "Display.Driver/nvencodeapi.dll",
                         ],
                         help="target location(s) in archive")
     parser.add_argument("-N", "--target-name",
