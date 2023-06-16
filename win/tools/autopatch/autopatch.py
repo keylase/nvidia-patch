@@ -156,8 +156,11 @@ def make_patch(archive, *,
                                  tmpdir,
                                  arch_tgt,
                                  sevenzip=sevenzip) as tgt:
-                 with open(tgt, 'rb') as fo:
-                    f = fo.read()
+                if tgt.endswith(".dll"):
+                    with open(tgt, 'rb') as fo:
+                        f = fo.read()
+                else:
+                    f = expand(tgt, sevenzip=sevenzip)
     offset = f.find(search)
     if offset == -1:
         raise PatternNotFoundException("Pattern not found.")
