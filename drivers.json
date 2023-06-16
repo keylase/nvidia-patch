@@ -3881,6 +3881,15 @@
                     "patch64_url": "win10_x64/536.23/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/536.23/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/536.23/536.23-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "536.09",
+                    "variant": "DCH (Hotfix)",
+                    "patch64_url": "win10_x64/536.09/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/536.09/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/536.09hf/536.09-desktop-notebook-win10-win11-64bit-international-dch.hf.exe"
                 }
             ]
         }
