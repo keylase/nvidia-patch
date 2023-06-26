@@ -381,6 +381,20 @@ patch_common () {
 
 }
 
+ensure_bytes_are_valid () {
+    driver_file="$driver_dir/$object.$driver_version"
+    original_bytes=$(awk -F / '$2 { print $2 }' <<< "$patch")
+    patched_bytes=$(awk -F / '$3 { print $3 }' <<< "$patch")
+    if LC_ALL=C grep -qaP "$original_bytes" "$driver_file"; then
+        return 0 # file is ready to be patched
+    fi
+    if LC_ALL=C grep -qaP "$patched_bytes" "$driver_file"; then
+        return 0 # file is likely patched already
+    fi
+    echo "Error: Could not find bytes '$original_bytes' to patch in '$driver_file'."
+    exit 1
+}
+
 rollback () {
     patch_common
     if [[ -f "$backup_path/$object.$driver_version$backup_suffix" ]]; then
@@ -395,6 +409,7 @@ rollback () {
 
 patch () {
     patch_common
+    ensure_bytes_are_valid
     if [[ -f "$backup_path/$object.$driver_version$backup_suffix" ]]; then
         bkp_hash="$(sha1sum "$backup_path/$object.$driver_version$backup_suffix" | cut -f1 -d\ )"
         drv_hash="$(sha1sum "$driver_dir/$object.$driver_version" | cut -f1 -d\ )"
