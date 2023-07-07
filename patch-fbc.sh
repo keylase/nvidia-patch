@@ -368,6 +368,8 @@ patch_common () {
     declare -a driver_locations=(
         '/usr/lib/x86_64-linux-gnu'
         '/usr/lib/x86_64-linux-gnu/nvidia/current/'
+        '/usr/lib/x86_64-linux-gnu/nvidia/tesla/'
+        "/usr/lib/x86_64-linux-gnu/nvidia/tesla-${driver_version%%.*}/"
         '/usr/lib64'
         '/usr/lib'
         "/usr/lib/nvidia-${driver_version%%.*}"
