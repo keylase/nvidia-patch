@@ -1,0 +1,104 @@
+name: Generate Windows patches
+
+on:
+  release:
+    types:
+      - created
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check release name and OS
+        id: check_release
+        run: |
+          release_name="${{ github.event.release.tag_name }}"
+          echo "Release Name: $release_name"
+          if [[ $release_name =~ (win)-(dch|studio)-([0-9]+\.[0-9]+)(-.+)? ]]; then
+            os="${BASH_REMATCH[1]}"
+            variant="${BASH_REMATCH[2]}"
+            version="${BASH_REMATCH[3]}"
+            echo "Operating System: $os"
+            echo "Variant: $variant"
+            echo "Version: $version"
+
+            if [ "$os" != "win" ]; then
+              echo "Not a Windows release. Stopping the CI workflow."
+              exit 0
+            fi
+
+            if [ "$variant" == "dch" ]; then
+              variant="DCH"
+            fi
+
+            echo "OS=$os" >> $GITHUB_ENV
+            echo "VARIANT=$variant" >> $GITHUB_ENV
+            echo "VERSION=$version" >> $GITHUB_ENV
+          else
+            echo "Invalid release name format. Must be in the format 'win-dch-123.45' or 'win-studio-123.45'"
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Delete Existing Files
+        run: |
+          echo "Deleting existing files if they exist"
+          rm -f "${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi64.1337"
+          rm -f "${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi.1337"
+          echo "Existing files deleted successfully"
+
+      - name: Run autopatch.py
+        run: |
+          echo "Running autopatch.py with version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/win/tools/autopatch"
+          python autopatch.py ${{ env.VERSION }}
+          echo "autopatch.py executed successfully"
+
+      - name: Run add_driver.py
+        run: |
+          echo "Running add_driver.py with variant ${{ env.VARIANT }} and version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python add_driver.py -W -P GeForce --variant ${{ env.VARIANT }} -w win10 ${{ env.VERSION }}
+          echo "add_driver.py executed successfully"
+
+      - name: Run readme_autogen.py
+        run: |
+          echo "Running readme_autogen.py"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python readme_autogen.py
+          echo "readme_autogen.py executed successfully"
+
+      - name: Commit and push changes
+        run: |
+          echo "Committing and pushing changes"
+          cd "${{ github.workspace }}"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}"
+          git push origin master
+          echo "Committed and pushed changes"
+
+      - name: Upload Patch Files
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi64.1337
+            ${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi.1337
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
