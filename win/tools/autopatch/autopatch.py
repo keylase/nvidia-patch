@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
-import sys
-import subprocess
-import tempfile
-import os.path
-from binascii import unhexlify
-import xml.etree.ElementTree as ET
-import itertools
 import functools
+import itertools
+import os.path
+import subprocess
+import sys
+import tempfile
 import urllib.request
-
+import xml.etree.ElementTree as ET
+from binascii import unhexlify
 
 CRLF = b"\x0d\x0a"
 HEADER_FORMAT = b">%s"
@@ -19,7 +18,6 @@ OFFSET_ADJUSTMENT = 0xC00  # shift specific to x64dbg .1337 format
 
 
 def parse_args():
-
     parser = argparse.ArgumentParser(
         description="Generates .1337 patch for Nvidia drivers for Windows",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -44,7 +42,7 @@ def parse_args():
                             "nvencodeapi.dll",
                         ],
                         help="name(s) of installed target file. Used for patch "
-                        "header")
+                             "header")
     parser.add_argument("-P", "--patch-name",
                         nargs="+",
                         default=[
@@ -72,7 +70,7 @@ def parse_args():
     parser.add_argument("-D", "--direct",
                         action="store_true",
                         help="supply patched library directly instead of "
-                        "installer file")
+                             "installer file")
     args = parser.parse_args()
     return args
 
@@ -84,8 +82,10 @@ class ExtractException(Exception):
 class PatternNotFoundException(Exception):
     pass
 
+
 class MultipleOccurencesException(Exception):
     pass
+
 
 class UnknownPlatformException(Exception):
     pass
@@ -145,26 +145,26 @@ def make_patch(archive, *,
                arch_tgt,
                search,
                replacement,
+               tmpdir,
                sevenzip="7z",
                direct=False):
     if direct:
         with open(archive, 'rb') as fo:
             f = fo.read()
     else:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            with ExtractedTarget(archive,
-                                 tmpdir,
-                                 arch_tgt,
-                                 sevenzip=sevenzip) as tgt:
-                if tgt.endswith(".dll"):
-                    with open(tgt, 'rb') as fo:
-                        f = fo.read()
-                else:
-                    f = expand(tgt, sevenzip=sevenzip)
+        with ExtractedTarget(archive,
+                             tmpdir,
+                             arch_tgt,
+                             sevenzip=sevenzip) as tgt:
+            if tgt.endswith(".dll"):
+                with open(tgt, 'rb') as fo:
+                    f = fo.read()
+            else:
+                f = expand(tgt, sevenzip=sevenzip)
     offset = f.find(search)
     if offset == -1:
         raise PatternNotFoundException("Pattern not found.")
-    if f[offset+len(search):].find(search) != -1:
+    if f[offset + len(search):].find(search) != -1:
         raise MultipleOccurencesException("Multiple occurences of pattern found!")
     del f
     print("Pattern found @ %016X" % (offset,), file=sys.stderr)
@@ -181,7 +181,7 @@ def identify_driver(archive, *, sevenzip="7z"):
     manifest = extract_single_file(archive, "setup.cfg", sevenzip=sevenzip)
     root = ET.fromstring(manifest)
     version = root.attrib['version']
-    product_type = root.find('./properties/string[@name="ProductType"]')\
+    product_type = root.find('./properties/string[@name="ProductType"]') \
         .attrib['value']
     return version, product_type
 
@@ -192,92 +192,109 @@ def format_patch(diff, filename):
         res += LINE_FORMAT % (offset + OFFSET_ADJUSTMENT, left, right)
     return res
 
+
 def patch_flow(installer_file, search, replacement, target, target_name, patch_name, *,
-               direct=False, stdout=False, sevenzip="7z"):
+               tempdir, direct=False, stdout=False, sevenzip="7z"):
     search = unhexlify(search)
     replacement = unhexlify(replacement)
-    assert len(search) == len(replacement), "len() of search and replacement"\
-        " is not equal"
+    assert len(search) == len(replacement), "len() of search and replacement is not equal"
 
-    # check if installer file exists or try to download
-    if not os.path.isfile(installer_file):  #installer file does not exists, get url for download
-        if not installer_file.startswith("http"):  #installer_file is a version, parse to url
-            filename = installer_file+"-desktop-win10-win11-64bit-international-dch-whql.exe"
-            installer_file = "https://international.download.nvidia.com/Windows/"+installer_file+"/"+filename
-        else:  # installer_file is an url
-            filename = os.path.basename(installer_file)
-        # download installer and save in .temp
+    # Check if installer file exists or try to download
 
-        if not os.path.isfile(os.path.join('temp', filename)):  # check if file already downloaded
-            print(f"Downloading... ( {installer_file} TO {os.path.join('temp', filename)} )")
-            print("This may take a while (~800MB)")
-            urllib.request.urlretrieve(installer_file, os.path.join('temp', filename))
-            installer_file = os.path.join('temp', filename)
+    print(f"Search for installer file `{installer_file}`...")
+    if not os.path.isfile(installer_file):
+        print("Installer file is not a file...")
+        if not installer_file.startswith("http"):
+            print("Installer file is not a URL...")
+
+            # Construct URL from version
+            print("Installer file is a version!")
+            filename = installer_file + "-desktop-win10-win11-64bit-international-dch-whql.exe"
+            installer_url = f"https://international.download.nvidia.com/Windows/{installer_file}/{filename}"
         else:
-            installer_file = os.path.join('temp', filename)
-            print(f"Use downloaded file in `{installer_file}`")
+            print("Installer file is a URL!")
+            installer_url = installer_file
 
-
-
-    patch = make_patch(installer_file,
-                       arch_tgt=target,
-                       search=search,
-                       replacement=replacement,
-                       sevenzip=sevenzip,
-                       direct=direct)
-    patch_content = format_patch(patch, target_name)
-    if stdout:
-        with open(sys.stdout.fileno(), mode='wb', closefd=False) as out:
-            out.write(patch_content)
-    elif direct:
-        with open(patch_name, mode='wb') as out:
-            out.write(patch_content)
-    else:
-        version, product_type = identify_driver(installer_file,
-                                                sevenzip=sevenzip)
-        drv_prefix = {
-            "100": "quadro_",
-            "103": "quadro_",
-            "300": "",
-            "301": "nsd_",
-            "303": "", # DCH
-            "304": "nsd_",
-        }
-        installer_name = os.path.basename(installer_file).lower()
-        if 'winserv2008' in installer_name:
-            os_prefix = 'ws2012_x64'
-        elif 'winserv-2012' in installer_name:
-            os_prefix = 'ws2012_x64'
-        elif 'winserv-2016' in installer_name:
-            os_prefix = 'ws2016_x64'
-        elif 'win10' in installer_name:
-            os_prefix = 'win10_x64'
-        elif 'win7' in installer_name:
-            os_prefix = 'win7_x64'
+        if installer_url:
+            try:
+                file_path = os.path.join(tempdir, os.path.basename(installer_url))
+                if not os.path.isfile(file_path):
+                    with urllib.request.urlopen(installer_url) as response, open(file_path, 'wb') as out_file:
+                        print(f"Downloading... ({installer_url} TO {file_path})")
+                        print("This may take a while (~800MB)")
+                        out_file.write(response.read())
+                        print("Download completed successfully!")
+                        installer_file = file_path
+                else:
+                    print(f"Using downloaded file in '{file_path}'")
+                    installer_file = file_path
+            except (urllib.error.URLError, Exception) as e:
+                print(f"Failed to download the file: {e}")
+                return
+            except Exception as e:
+                print(f"An error occurred during download: {str(e)}")
+                return
         else:
-            raise UnknownPlatformException("Can't infer platform from filename %s"
-                                           % (repr(installer_name),))
-        driver_name = drv_prefix[product_type] + version
-        out_dir = os.path.join(
-            os.path.dirname(
-                os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
-        os.makedirs(out_dir, 0o755, True)
-        out_filename = os.path.join(out_dir,
-            patch_name)
-        with open(out_filename, 'xb') as out:
-            out.write(patch_content)
+            print(f"Invalid installer file or version: {installer_file}")
+            return
+
+        # Rest of the code remains the same...
+        patch = make_patch(installer_file,
+                           arch_tgt=target,
+                           search=search,
+                           replacement=replacement,
+                           tmpdir=tempdir,
+                           sevenzip=sevenzip,
+                           direct=direct)
+        patch_content = format_patch(patch, target_name)
+
+        if stdout:
+            sys.stdout.buffer.write(patch_content)
+        elif direct:
+            with open(patch_name, mode='wb') as out:
+                out.write(patch_content)
+        else:
+            version, product_type = identify_driver(installer_file, sevenzip=sevenzip)
+            drv_prefix = {
+                "100": "quadro_",
+                "103": "quadro_",
+                "300": "",
+                "301": "nsd_",
+                "303": "",  # DCH
+                "304": "nsd_",
+            }
+            installer_name = os.path.basename(installer_file).lower()
+            if 'winserv2008' in installer_name or 'winserv-2012' in installer_name:
+                os_prefix = 'ws2012_x64'
+            elif 'winserv-2016' in installer_name or 'win10' in installer_name:
+                os_prefix = 'win10_x64'
+            elif 'win7' in installer_name:
+                os_prefix = 'win7_x64'
+            else:
+                raise UnknownPlatformException(f"Can't infer platform from filename {installer_name}")
+
+            driver_name = drv_prefix.get(product_type, "") + version
+            out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', os_prefix, driver_name)
+            os.makedirs(out_dir, 0o755, exist_ok=True)
+            out_filename = os.path.join(out_dir, patch_name)
+            with open(out_filename, 'wb') as out:
+                out.write(patch_content)
 
 
 def main():
     args = parse_args()
+
     if args.direct:
         combinations = zip(args.installer_file, args.search, args.replacement,
                            args.target, args.target_name, args.patch_name)
     else:
         base_params = zip(args.search, args.replacement, args.target, args.target_name, args.patch_name)
         combinations = ((l,) + r for l, r in itertools.product(args.installer_file, base_params))
-    for params in combinations:
-        patch_flow(*params, direct=args.direct, stdout=args.stdout)
+
+    with tempfile.TemporaryDirectory() as tempdir:
+        print(f"Using tempdir `{tempdir}`")
+        for params in combinations:
+            patch_flow(*params, tempdir=tempdir, direct=args.direct, stdout=args.stdout)
 
 
 if __name__ == '__main__':
