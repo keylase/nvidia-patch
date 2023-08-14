@@ -19,7 +19,7 @@ jobs:
         run: |
           release_name="${{ github.event.release.tag_name }}"
           echo "Release Name: $release_name"
-          if [[ $release_name =~ (win)-(dch|studio)-([0-9]+\.[0-9]+)(-.+)? ]]; then
+          if [[ $release_name =~ (win)-(dch|studio)-([0-9]+\.[0-9]+(-[a-zA-Z]+)?)(-.+)? ]]; then
             os="${BASH_REMATCH[1]}"
             variant="${BASH_REMATCH[2]}"
             version="${BASH_REMATCH[3]}"
