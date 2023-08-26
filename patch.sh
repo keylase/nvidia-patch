@@ -388,7 +388,11 @@ check_version_supported () {
 get_flatpak_driver_path () {
     # Flatpak's package versioning replaces '.' by '-'
     version="$(echo "$1" | tr '.' '-')"
+    # Attempts to patch system flatpak
     if path=$(flatpak info --show-location "org.freedesktop.Platform.GL.nvidia-${version}" 2>/dev/null); then
+        echo "$path/files/lib"
+    # If it isn't found will login as the user that envoked sudo & patch this version
+    elif path=$(su -c - ${SUDO_USER} 'flatpak info --show-location "org.freedesktop.Platform.GL.nvidia-'${version}'"'); then
         echo "$path/files/lib"
     fi
 }
