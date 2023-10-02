@@ -6,12 +6,11 @@ import json
 import os.path
 import posixpath
 from string import Template
-from itertools import groupby
 from functools import partial
 import urllib.request
 
 from constants import OSKind, Product, WinSeries, DATAFILE_PATH, \
-    DRIVER_URL_TEMPLATE, DRIVER_DIR_PREFIX, BASE_PATH, REPO_BASE
+    DRIVER_URL_TEMPLATE, DRIVER_DIR_PREFIX, BASE_PATH
 from utils import find_driver, linux_driver_key, windows_driver_key
 
 def parse_args():
@@ -119,25 +118,33 @@ def validate_unique(drivers, new_driver, kf):
 
 def main():
     args = parse_args()
-    if args.url is None:
+    if not args.url:
         if args.os is OSKind.Linux:
-            url_tmpl = Template(DRIVER_URL_TEMPLATE[(args.os, None, None, None)])
+            url_tmpl = DRIVER_URL_TEMPLATE[(args.os, None, None, None)]
         else:
-            url_tmpl = Template(DRIVER_URL_TEMPLATE[(args.os,
-                                                     args.product,
-                                                     args.winseries,
-                                                     args.variant)])
-        url = url_tmpl.substitute(version=args.version)
+            url_tmpl = DRIVER_URL_TEMPLATE[(args.os,
+                                            args.product,
+                                            args.winseries,
+                                            args.variant)]
+        if isinstance(url_tmpl, str):
+            url_tmpl = [url_tmpl]
+        urls = [Template(i).substitute(version=args.version) for i in url_tmpl if i]
     else:
-        url = args.url
-    if url and not args.skip_url_check:
-        try:
-            validate_url(url)
-        except KeyboardInterrupt:
-            raise
-        except Exception as exc:
-            print("Driver URL validation failed with error: %s" % str(exc), file=sys.stderr)
-            print("Driver URL: %s" % str(url), file=sys.stderr)
+        urls = [args.url]
+    url = ""
+    if urls and not args.skip_url_check:
+        last_exc = None
+        for url in urls:
+            try:
+                validate_url(url)
+                break
+            except KeyboardInterrupt:
+                raise
+            except Exception as exc:
+                last_exc = exc
+        else:
+            print("Driver URL validation failed with error: %s" % str(last_exc), file=sys.stderr)
+            print("Driver URL: %s" % ", ".join(urls), file=sys.stderr)
             print("Please use option -U to override driver link manually", file=sys.stderr)
             print("or use option --skip-url-check to submit incorrect URL.", file=sys.stderr)
             return
