@@ -111,5 +111,4 @@ venv.bak/
 # dont commit 7zip files 7z.dll 7z.exe
 7z.*
 
-temp/*
 !.gitempty
