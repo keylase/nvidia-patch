@@ -3,7 +3,7 @@ readme-autogen
 
 readme-autogen is a tool for internal usage, which purpose is to simplify maintenance of fresh and correct README files for this project.
 
-It rebuilds REAME files from templates located in `templates` directory and driver data specified in `drivers.json` file.
+It rebuilds README files from templates located in `templates` directory and driver data specified in `drivers.json` file.
 
 ## Requirements
 
@@ -45,17 +45,21 @@ Here is real commands used for Windows driver 441.28 and 512.95 series:
 
 ```
 $ ./add_driver.py --help
-usage: add_driver.py [-h] (-L | -W) [--variant VARIANT] [-P {GeForce,Quadro}] [-w {win10,win7,ws2012,ws2016}] [--patch32 PATCH32] [--patch64 PATCH64] [--skip-patch-check] [-U URL] [--skip-url-check] version
+usage: add_driver.py [-h] (-L | -W) [--variant VARIANT] [-P {GeForce,Quadro}] [-w {win10,win7,ws2012,ws2016}] [--patch32 PATCH32] [--patch64 PATCH64] [--skip-patch-check] [-U URL]
+                     [--skip-url-check] [--no-fbc] [--no-enc]
+                     version
 
 Adds new Nvidia driver into drivers.json file of in your repo working copy
 
 positional arguments:
   version               driver version
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -U URL, --url URL     override driver link (default: None)
   --skip-url-check      skip driver URL check (default: False)
+  --no-fbc              add driver w/o NvFBC patch (default: True)
+  --no-enc              add driver w/o NVENC patch (default: True)
 
 OS options:
   -L, --linux           add Linux driver (default: None)
