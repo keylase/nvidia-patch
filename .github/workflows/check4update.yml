@@ -1,0 +1,96 @@
+name: Generate Windows patches (Automatically)
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * *
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Set up Python and install dependencies
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+        run: python -m pip install bs4 requests lxml
+
+      - name: Check for driver updates
+        run:  |
+          echo "running updatechecker.py"
+          cd "${{ github.workspace }}/win/tools/updatechecker"
+          version=$(python updatechecker.py)
+          echo "updatechecker.py ran successfully"
+          echo "VERSION=$version" >> $GITHUB_ENV
+
+          if [ "$version" == "SAME_VER" ]; then
+            echo "No new releases yet. Skipping rest."
+            exit 0
+          fi
+          
+          release="win-dch-${version}"
+          echo "RELEASE=$release" >> $GITHUB_ENV
+
+      - name: Delete Existing Files
+        if: (env.VERSION!='SAME_VER')
+        run: |
+          echo "Deleting existing files if they exist"
+          dir=${{ env.VERSION }}
+
+          rm -f "${{ github.workspace }}/win/win10_x64/$dir/nvencodeapi64.1337"
+          rm -f "${{ github.workspace }}/win/win10_x64/$dir/nvencodeapi.1337"
+          echo "Existing files deleted successfully"
+
+      - name: Run autopatch.py
+        if: (env.VERSION!='SAME_VER')
+        run:  |
+          echo "Running autopatch.py with version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/win/tools/autopatch"
+          python autopatch.py ${{ env.VERSION }}
+          echo "autopatch.py executed successfully"
+
+      - name: Run add_driver.py
+        if: (env.VERSION!='SAME_VER')
+        run: |
+          echo "Running add_driver.py with version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python add_driver.py -W -P GeForce --variant "dch" -w win10 ${{ env.VERSION }}
+          echo "add_driver.py executed successfully"
+
+      - name: Run readme_autogen.py
+        if: (env.VERSION!='SAME_VER')
+        run: |
+          echo "Running readme_autogen.py"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python readme_autogen.py
+          echo "readme_autogen.py executed successfully"
+
+      - name: Commit and push changes
+        if: (env.VERSION!='SAME_VER')
+        run: |
+          echo "Committing and pushing changes"
+          cd "${{ github.workspace }}"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for dch driver ${{ env.VERSION }}"
+          git push origin master
+          echo "Committed and pushed changes"
+
+      - uses: ncipollo/release-action@v1
+        if: (env.VERSION!='SAME_VER')
+        with:
+          name: ${{ env.RELEASE }}
+          tag: ${{ env.RELEASE }}
+          body: "win: add support for DCH driver ${{ env.VERSION }}"
+          artifacts: "${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi64.1337,${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi.1337"
