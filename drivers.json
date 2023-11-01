@@ -224,11 +224,6 @@
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.36/NVIDIA-Linux-x86_64-440.36.run"
                 },
                 {
-                    "version": "435.27.08",
-                    "nvenc_patch": true,
-                    "nvfbc_patch": true
-                },
-                {
                     "version": "440.44",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
