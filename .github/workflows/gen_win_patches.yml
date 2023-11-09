@@ -23,6 +23,10 @@ on:
           - DCH
           - Studio Driver
           - DCH (Hotfix)
+      description:
+        description: 'Commit description'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -117,6 +121,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}"
+          git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}" -m "${{ inputs.description }}"
           git push origin master
           echo "Committed and pushed changes"
