@@ -1,9 +1,28 @@
 name: Generate Windows patches
 
 on:
-  release:
-    types:
-      - created
+  workflow_dispatch:
+    inputs:
+      os:
+        description: 'Operating System'
+        required: true
+        default: 'win'
+        type: choice
+        options:
+          - win
+          - linux
+      version:
+        description: 'Driver Version'
+        required: true
+        type: string
+      variant:
+        description: 'Driver Variant'
+        required: false
+        type: choice
+        options:
+          - DCH
+          - Studio Driver
+          - DCH (Hotfix)
 
 permissions:
   contents: write
@@ -14,35 +33,28 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Check release name and OS
-        id: check_release
+      - name: Check OS and variant
+        id: check_input
         run: |
-          release_name="${{ github.event.release.tag_name }}"
-          echo "Release Name: $release_name"
-          if [[ $release_name =~ (win)-(dch|studio)-([0-9]+\.[0-9]+(-[a-zA-Z]+)?)(-.+)? ]]; then
-            os="${BASH_REMATCH[1]}"
-            variant="${BASH_REMATCH[2]}"
-            version="${BASH_REMATCH[3]}"
-            echo "Operating System: $os"
-            echo "Variant: $variant"
-            echo "Version: $version"
+          os="${{ inputs.os }}"
+          variant="${{ inputs.variant }}"
+          version="${{ inputs.version }}"
+          echo "Operating System: $os"
+          echo "Variant: $variant"
+          echo "Version: $version"
 
+          if [[ $version =~ ([0-9]+\.[0-9]+(-[a-zA-Z]+)?)(-.+)? ]]; then
             if [ "$os" != "win" ]; then
               echo "Not a Windows release. Stopping the CI workflow."
               exit 0
             fi
 
-            if [ "$variant" == "dch" ]; then
-              variant="DCH"
-            elif [ "$variant" == "studio" ]; then
-              variant="Studio Driver"
-            fi
-
             echo "OS=$os" >> $GITHUB_ENV
             echo "VARIANT=$variant" >> $GITHUB_ENV
             echo "VERSION=$version" >> $GITHUB_ENV
+
           else
-            echo "Invalid release name format. Must be in the format 'win-dch-123.45' or 'win-studio-123.45'"
+            echo "Invalid driver version."
             exit 1
           fi
 
@@ -78,6 +90,8 @@ jobs:
             python autopatch.py ${{ env.VERSION }}
           elif [ "${{ env.VARIANT }}" == "Studio Driver" ]; then
             python autopatch.py https://international.download.nvidia.com/Windows/${{ env.VERSION }}/${{ env.VERSION }}-desktop-win10-win11-64bit-international-nsd-dch-whql.exe
+          elif [ "${{ env.VARIANT }}" == "DCH (Hotfix)" ]; then
+            python autopatch.py https://international.download.nvidia.com/Windows/${{ env.VERSION }}hf/${{ env.VERSION }}-desktop-notebook-win10-win11-64bit-international-dch.hf.exe
           fi
 
           echo "autopatch.py executed successfully"
@@ -106,13 +120,3 @@ jobs:
           git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}"
           git push origin master
           echo "Committed and pushed changes"
-
-      - name: Upload Patch Files
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            ${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi64.1337
-            ${{ github.workspace }}/win/win10_x64/${{ env.VERSION }}/nvencodeapi.1337
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG_NAME: ${{ github.event.release.tag_name }}
