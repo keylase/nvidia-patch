@@ -90,6 +90,8 @@ class MultipleOccurencesException(Exception):
 class UnknownPlatformException(Exception):
     pass
 
+class InstallerNotFoundException(Exception):
+    pass
 
 class ExtractedTarget:
     name = None
@@ -229,14 +231,11 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
                     print(f"Using downloaded file in '{file_path}'")
                     installer_file = file_path
             except (urllib.error.URLError, Exception) as e:
-                print(f"Failed to download the file: {e}")
-                return
+                raise InstallerNotFoundException(f"Failed to download the file: {e}")
             except Exception as e:
-                print(f"An error occurred during download: {str(e)}")
-                return
+                raise InstallerNotFoundException(f"An error occurred during download: {str(e)}")
         else:
-            print(f"Invalid installer file or version: {installer_file}")
-            return
+            raise InstallerNotFoundException(f"Invalid installer file or version: {installer_file}")
 
     # Rest of the code remains the same...
     patch = make_patch(installer_file,
