@@ -961,6 +961,12 @@
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run"
                 },
                 {
+                    "version": "545.23.08",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": ""
+                },
+                {
                     "version": "545.29.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
