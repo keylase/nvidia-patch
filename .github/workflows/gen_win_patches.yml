@@ -3,14 +3,6 @@ name: Generate Windows patches
 on:
   workflow_dispatch:
     inputs:
-      os:
-        description: 'Operating System'
-        required: true
-        default: 'win'
-        type: choice
-        options:
-          - win
-          - linux
       version:
         description: 'Driver Version'
         required: true
@@ -37,10 +29,9 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Check OS and variant
+      - name: Check variant
         id: check_input
         run: |
-          os="${{ inputs.os }}"
           variant="${{ inputs.variant }}"
           version="${{ inputs.version }}"
           echo "Operating System: $os"
@@ -48,12 +39,6 @@ jobs:
           echo "Version: $version"
 
           if [[ $version =~ ([0-9]+\.[0-9]+(-[a-zA-Z]+)?)(-.+)? ]]; then
-            if [ "$os" != "win" ]; then
-              echo "Not a Windows release. Stopping the CI workflow."
-              exit 0
-            fi
-
-            echo "OS=$os" >> $GITHUB_ENV
             echo "VARIANT=$variant" >> $GITHUB_ENV
             echo "VERSION=$version" >> $GITHUB_ENV
 
@@ -120,7 +105,8 @@ jobs:
           cd "${{ github.workspace }}"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git checkout -b ${{ env.VERSION }}
           git add -A
-          git diff --quiet --exit-code --cached || git commit -m "${{ env.OS }}: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}" -m "${{ inputs.description }}"
-          git push origin master
+          git diff --quiet --exit-code --cached || git commit -m "win: add support for ${{ env.VARIANT }} driver ${{ env.VERSION }}" -m "${{ inputs.description }}"
+          git push origin ${{ env.VERSION }}
           echo "Committed and pushed changes"
