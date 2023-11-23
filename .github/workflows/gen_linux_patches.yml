@@ -1,0 +1,153 @@
+name: Generate Linux patches
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Driver Version'
+        required: true
+        type: string
+      old_version:
+        description: 'Old Driver Version'
+        required: false
+        type: string
+      driver_url:
+        description: 'Driver URL'
+        required: false
+        type: string
+      mode:
+        description: 'Mode'
+        required: true
+        type: choice
+        default: search
+        options:
+          - copy
+          - search
+      description:
+        description: 'Commit description'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check Input
+        id: check_input
+        run: |
+          version="${{ inputs.version }}"
+          mode="${{ inputs.mode }}"
+          driver_url="${{ inputs.driver_url }}"
+
+          echo "Version: $version"
+          echo "Mode: $mode"
+
+          if [[ $version =~ ([0-9]+\.[0-9]+(-[a-zA-Z]+)?)(-.+)? ]]; then
+            echo "Valid version"
+          else
+            echo "Invalid driver version."
+            exit 1
+          fi
+
+          if [[ ! -n $driver_url ]]; then
+            driver_url="http://international.download.nvidia.com/XFree86/Linux-x86_64/$version/NVIDIA-Linux-x86_64-$version.run"
+          fi
+          echo "Driver URL: $driver_url"
+
+          echo "DRIVER_URL=$driver_url" >> $GITHUB_ENV
+          echo "VERSION=$version" >> $GITHUB_ENV
+
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Find Bytecode
+        if: ${{ inputs.mode == 'search' }}
+        run: |
+
+          echo "Running find_bytecode.sh for version ${{ env.VERSION }}"
+
+          cd "${{ github.workspace }}/tools/autopatch"
+          ./find_bytecode.sh ${{ env.VERSION }} ${{ env.DRIVER_URL }}
+
+          echo "find_bytecode.sh executed successfully"
+
+      - name: Update NVENC
+        run: |
+
+          echo "Running update_patch.sh for version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/tools/autopatch"
+
+          old_version="${{ inputs.old_version }}"
+
+          case "${{ inputs.mode }}" in
+            search)
+              if [[ -z $old_version ]]; then
+                ./update_patch.sh -f ../../patch.sh -b $(./find_bytecode.sh ${{ env.VERSION }} ${{ env.DRIVER_URL }})
+              else
+                ./update_patch.sh -f ../../patch.sh -b $(./find_bytecode.sh ${{ env.VERSION }} ${{ env.DRIVER_URL }}) -o $old_version
+              fi
+              ;;
+            copy)
+              if [[ -z $old_version ]]; then
+                ./update_patch.sh -f ../../patch.sh -v ${{ env.VERSION }}
+              else
+                ./update_patch.sh -f ../../patch.sh -v ${{ env.VERSION }} -o $old_version
+              fi
+              ;;
+            *)
+              echo "ERROR: Wrong mode"
+              ;;
+          esac
+
+          echo "update_patch.sh executed successfully"
+
+      - name: Update NVFBC
+        run: |
+
+          echo "Running update_patch.sh for FBC for version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/tools/autopatch"
+
+          old_version="${{ inputs.old_version }}"
+
+          if [[ -z $old_version ]]; then
+            ./update_patch.sh -f ../../patch-fbc.sh -v ${{ env.VERSION }}
+          else
+            ./update_patch.sh -f ../../patch-fbc.sh -v ${{ env.VERSION }} -o $old_version
+          fi
+
+          echo "update_patch.sh for FBC executed successfully"
+
+      - name: Run add_driver.py
+        run: |
+          echo "Running add_driver.py with version ${{ env.VERSION }}"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python add_driver.py -L -U ${{ env.DRIVER_URL }} ${{ env.VERSION }}
+          echo "add_driver.py executed successfully"
+
+      - name: Run readme_autogen.py
+        run: |
+          echo "Running readme_autogen.py"
+          cd "${{ github.workspace }}/tools/readme-autogen"
+          python readme_autogen.py
+          echo "readme_autogen.py executed successfully"
+
+      - name: Commit and push changes
+        run: |
+          echo "Committing and pushing changes"
+          branch=autopatch_${{ env.VERSION }}
+          cd "${{ github.workspace }}"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -b $branch
+          git add -A
+          git diff --quiet --exit-code --cached || git commit -m "linux: add support for driver ${{ env.VERSION }}" -m "${{ inputs.description }}"
+          git push origin $branch
+          echo "Committed and pushed changes"
