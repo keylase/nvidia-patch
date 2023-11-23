@@ -13,19 +13,22 @@ driver_url=$2
 driver_file=NVIDIA-Linux-x86_64-$driver_version.run
 
 download_driver() {
-    wget -c $driver_url -O $driver_file 1>&2
+    wget -nv -c $driver_url -O $driver_file 1>&2
     chmod +x $driver_file
+    >&2 echo "Successfully Downloaded Driver $driver_file"
 }
 
 extract_driver() {
     if [[ ! -e ${driver_file%".run"} ]]; then
         ./$driver_file -x
     fi
+    >&2 echo "Successfully Extracted Driver $driver_file"
 }
 
 search_bytecode() {
     nvenc_file=${driver_file%".run"}/libnvidia-encode.so.$driver_version
-    bytecode=$(xxd -c0 -ps $nvenc_file | grep -oP ".{0,6}$MATCH_STR")
+    bytecode=$(xxd -c10000000 -ps $nvenc_file | grep -oP ".{0,6}$MATCH_STR")
+    >&2 echo "Found bytecode $bytecode"
     echo $bytecode
 }
 
