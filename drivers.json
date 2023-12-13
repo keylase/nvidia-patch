@@ -4129,7 +4129,7 @@
                     "os": "win10",
                     "product": "GeForce",
                     "version": "546.33",
-                    "variant": "DCH",
+                    "variant": "DCH / Studio Driver",
                     "patch64_url": "win10_x64/546.33/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/546.33/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/546.33/546.33-desktop-win10-win11-64bit-international-dch-whql.exe"
