@@ -26,13 +26,14 @@ DESCRIPTION
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
        -f             Enable support for Flatpak NVIDIA drivers.
+       -j             Output the patch list to stdout as JSON
 '
 }
 
 # shellcheck disable=SC2209
 opmode="patch"
 
-while getopts 'rshc:ld:f' flag; do
+while getopts 'rshjc:ld:f' flag; do
     case "${flag}" in
         r) opmode="${opmode}rollback" ;;
         s) silent_flag='true' ;;
@@ -41,6 +42,7 @@ while getopts 'rshc:ld:f' flag; do
         l) opmode="${opmode}listversions" ;;
         d) manual_driver_version="$OPTARG" ;;
         f) flatpak_flag='true' ;;
+        j) opmode="dump" ;;
         *) echo "Incorrect option specified in command line" ; exit 2 ;;
     esac
 done
@@ -399,12 +401,22 @@ list_supported_versions () {
     get_supported_versions
 }
 
+dump_patches () {
+    for i in "${!patch_list[@]}"
+    do
+        echo "$i"
+        echo "${patch_list[$i]}"
+    done |
+    jq --sort-keys -n -R 'reduce inputs as $i ({}; . + { ($i): (input|(tonumber? // .)) })'
+}
+
 case "${opmode}" in
     patch) patch ;;
     patchrollback) rollback ;;
     patchhelp) print_usage ; exit 2 ;;
     patchcheckversion) query_version_support ;;
     patchlistversions) list_supported_versions ;;
+    dump) dump_patches ;;
     *) echo "Incorrect combination of flags. Use option -h to get help."
        exit 2 ;;
 esac
