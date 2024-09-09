@@ -1081,6 +1081,12 @@
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run"
                 },
                 {
+                    "version": "535.183.06",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/tesla/535.183.06/NVIDIA-Linux-x86_64-535.183.06.run"
+                },
+                {
                     "version": "555.58",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
