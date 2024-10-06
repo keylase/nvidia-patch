@@ -31,14 +31,16 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 
 ## NVENC Patch Step-by-Step Guide
 
-1. Download and install latest Nvidia driver supported by this patch.
-2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest) ([IPFS mirror](https://ipfs.io/ipfs/QmXHqNBPtmoX8g5rzg6vNJ9yd275kQtDWuDtVoU4QPfWbu/Win_1337_Apply_Patch_v1.9_By_DFoX.rar)).
-3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> "Save as\.\.\.")
-   - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
-4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool.
-   - *If patching fails, close all applications using nvencodeapi64.dll, such as OBS Studio, Plex or Discord.*
-5. Apply x86 library patch to corresponding file in `%WINDIR%\SysWOW64\` in the same way as previous one.
-   - *If patching fails, close all applications using nvencodeapi.dll, such as OBS Studio, Plex or Discord.*
+1. Download and install the latest Nvidia driver supported by this patch.
+2. Download the latest patching tool:
+   - You can use the updated fork of the Win_1337_Apply_Patch tool from [Win_1337_Apply_Patch](https://github.com/ramhaidar/Win_1337_Apply_Patch/releases/latest) ([pCloud Mirror](https://u.pcloud.link/publink/show?code=KS2rtalK)).
+   - Alternatively, you can use the PowerShell script version available at [Win_1337_Apply_Patch_Powershell](https://raw.githubusercontent.com/ramhaidar/Win_1337_Apply_Patch_Powershell/refs/heads/main/Win_1337_Apply.ps1) ([pCloud Mirror](https://u.pcloud.link/publink/show?code=B62)). For instructions on how to use it, see the [README.md](https://github.com/ramhaidar/Win_1337_Apply_Patch_Powershell/blob/main/README.md) file.
+3. Save the patch(es) corresponding to your system, driver, and product version from the [Version Table](#version-table) using the direct link to the patch (Right Click -> "Save as...").
+   - *Alternatively, you may checkout the repo using git or download it as a ZIP archive and then locate the corresponding `.1337` patch file in the `win` directory.*
+4. Apply the x64 library patch to the corresponding file in `%WINDIR%\system32\` using the patch tool or PowerShell script.
+   - *If patching fails, close all applications using `nvencodeapi64.dll`, such as OBS Studio, Plex, or Discord.*
+5. Apply the x86 library patch to the corresponding file in `%WINDIR%\SysWOW64\` in the same way as the previous one.
+   - *If patching fails, close all applications using `nvencodeapi.dll`, such as OBS Studio, Plex, or Discord.*
 
 **Example:** for 64bit Windows 10 running driver version 565.90, use `win10_x64/565.90/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/565.90/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
