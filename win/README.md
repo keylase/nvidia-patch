@@ -31,8 +31,10 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 
 ## NVENC Patch Step-by-Step Guide
 
-1. Download and install latest Nvidia driver supported by this patch.
-2. Download latest [Win\_1337\_Apply\_Patch tool](https://github.com/Deltafox79/Win_1337_Apply_Patch/releases/latest) ([IPFS mirror](https://ipfs.io/ipfs/QmXHqNBPtmoX8g5rzg6vNJ9yd275kQtDWuDtVoU4QPfWbu/Win_1337_Apply_Patch_v1.9_By_DFoX.rar)).
+1. Download and install the latest Nvidia driver supported by this patch.
+2. Download the latest patching tool:
+   - You can use the updated fork of the Win\_1337\_Apply\_Patch tool from [Win\_1337\_Apply\_Patch](https://github.com/ramhaidar/Win_1337_Apply_Patch/releases/latest) \([pCloud Mirror](https://u.pcloud.link/publink/show?code=KS2rtalK)\).
+   - Alternatively, you can use the PowerShell script version available at [Win\_1337\_Apply\_Patch\_Powershell](https://raw.githubusercontent.com/ramhaidar/Win_1337_Apply_Patch_Powershell/refs/heads/main/Win_1337_Apply.ps1) \([pCloud Mirror](https://u.pcloud.link/publink/show?code=B62)\). For instructions on how to use it, see the [README.md](https://github.com/ramhaidar/Win_1337_Apply_Patch_Powershell/blob/main/README.md) file.
 3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> "Save as\.\.\.")
    - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
 4. Apply x64 library patch to corresponding file in `%WINDIR%\system32\` with the Win\_1337\_Apply\_Patch tool.
