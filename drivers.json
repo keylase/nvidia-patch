@@ -4514,6 +4514,15 @@
                     "patch64_url": "win10_x64/566.03/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/566.03/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/566.03/566.03-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+				{
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "566.14",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/566.14/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/566.14/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/566.14/566.14-desktop-win10-win11-64bit-international-dch-whql.exe"
                 }
             ]
         }
