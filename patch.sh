@@ -4,6 +4,15 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 # even when script is corrupt by CRLF line terminators (issue #75)
 # empty line must follow this comment for immediate fail with CRLF newlines
 
+# root check
+if [ "$(id -u)" -ne 0 ]; then
+  echo
+  echo -e "Please run as root!"
+  echo
+  exit 1
+fi
+
+
 backup_path="/opt/nvidia/libnvidia-encode-backup"
 silent_flag=''
 manual_driver_version=''
