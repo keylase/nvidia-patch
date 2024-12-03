@@ -38,9 +38,11 @@ def linux_readme(data):
                 driver_link = ''
             nvenc_patch = md_true if drv['nvenc_patch'] else md_false
             nvfbc_patch = md_true if drv['nvfbc_patch'] else md_false
+            nvvk_patch = md_true if drv['nvvk_patch'] else md_false
             yield row_tmpl.substitute(version=drv['version'],
                                       nvenc_patch=nvenc_patch,
                                       nvfbc_patch=nvfbc_patch,
+                                      nvvk_patch=nvvk_patch,
                                       driver_link=driver_link)
     version_list = "\n".join(row_gen())
     latest_version = drivers[-1]['version']

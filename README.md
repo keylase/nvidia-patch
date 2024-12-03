@@ -7,6 +7,8 @@ NVENC and NvFBC patches for Nvidia drivers
 
 [NvFBC patch](patch-fbc.sh) allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
 
+[Vulkan Patch](patch-vk.sh) removes restriction on maximum number of simultaneous Vulkan video encoding sessions imposed by Nvidia to consumer-grade GPUs, this is similar to [NVENC patch](patch.sh) but for Vulkan API.
+
 Main target operating system is **GNU/Linux**, but for **Windows** support see [**win** (clickable)](win).
 
 ---
@@ -25,205 +27,205 @@ If you want to donate, please send it to your favorite open source organizations
 
 ## Version Table
 
-| Version | NVENC patch | NVFBC patch | Driver link |
-| :---    |    :---:    |    :---:    |        ---: |
-| 375.39 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run) |
-| 390.77 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run) |
-| 390.87 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run) |
-| 390.147 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/390.147/NVIDIA-Linux-x86_64-390.147.run) |
-| 396.24 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run) |
-| 396.26 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run) |
-| 396.37 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run) |
-| 396.54 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run) |
-| 410.48 | YES | NO |  |
-| 410.57 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run) |
-| 410.73 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run) |
-| 410.78 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run) |
-| 410.79 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/410.79/NVIDIA-Linux-x86_64-410.79.run) |
-| 410.93 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.93/NVIDIA-Linux-x86_64-410.93.run) |
-| 410.104 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/410.104/NVIDIA-Linux-x86_64-410.104.run) |
-| 415.18 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.18/NVIDIA-Linux-x86_64-415.18.run) |
-| 415.25 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.25/NVIDIA-Linux-x86_64-415.25.run) |
-| 415.27 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.27/NVIDIA-Linux-x86_64-415.27.run) |
-| 418.30 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.30/NVIDIA-Linux-x86_64-418.30.run) |
-| 418.43 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run) |
-| 418.56 | YES | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run) |
-| 418.67 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/418.67/NVIDIA-Linux-x86_64-418.67.run) |
-| 418.74 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run) |
-| 418.87.00 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.00.run) |
-| 418.87.01 | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.01.run) |
-| 418.88 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.88/NVIDIA-Linux-x86_64-418.88.run) |
-| 418.113 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.113/NVIDIA-Linux-x86_64-418.113.run) |
-| 430.09 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run) |
-| 430.14 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run) |
-| 430.26 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run) |
-| 430.34 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run) |
-| 430.40 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run) |
-| 430.50 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run) |
-| 430.64 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.64/NVIDIA-Linux-x86_64-430.64.run) |
-| 435.17 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.17/NVIDIA-Linux-x86_64-435.17.run) |
-| 435.21 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run) |
-| 440.26 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.26/NVIDIA-Linux-x86_64-440.26.run) |
-| 440.31 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31.run) |
-| 440.33.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/440.33.01/NVIDIA-Linux-x86_64-440.33.01.run) |
-| 440.36 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.36/NVIDIA-Linux-x86_64-440.36.run) |
-| 440.43.01 | YES | YES |  |
-| 440.44 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.44/NVIDIA-Linux-x86_64-440.44.run) |
-| 440.48.02 | YES | YES |  |
-| 440.58.01 | YES | YES |  |
-| 440.58.02 | YES | YES |  |
-| 440.59 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.59/NVIDIA-Linux-x86_64-440.59.run) |
-| 440.64 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.64/NVIDIA-Linux-x86_64-440.64.run) |
-| 440.64.00 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run) |
-| 440.66.02 | YES | YES |  |
-| 440.66.03 | YES | YES |  |
-| 440.66.04 | YES | YES |  |
-| 440.66.08 | YES | YES |  |
-| 440.66.09 | YES | YES |  |
-| 440.66.11 | YES | YES |  |
-| 440.66.12 | YES | YES |  |
-| 440.66.14 | YES | YES |  |
-| 440.66.15 | YES | YES |  |
-| 440.66.17 | YES | YES |  |
-| 440.82 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run) |
-| 440.95.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/440.95.01/NVIDIA-Linux-x86_64-440.95.01.run) |
-| 440.100 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run) |
-| 440.118.02 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/440.118.02/NVIDIA-Linux-x86_64-440.118.02.run) |
-| 450.36.06 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run) |
-| 450.51 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.51/NVIDIA-Linux-x86_64-450.51.run) |
-| 450.51.05 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/450.51.05/NVIDIA-Linux-x86_64-450.51.05.run) |
-| 450.51.06 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run) |
-| 450.56.01 | YES | YES |  |
-| 450.56.02 | YES | YES |  |
-| 450.56.06 | YES | YES |  |
-| 450.56.11 | YES | YES |  |
-| 450.57 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.57/NVIDIA-Linux-x86_64-450.57.run) |
-| 450.66 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.66/NVIDIA-Linux-x86_64-450.66.run) |
-| 450.80.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.80.02/NVIDIA-Linux-x86_64-450.80.02.run) |
-| 450.102.04 | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.102.04/NVIDIA-Linux-x86_64-450.102.04.run) |
-| 455.22.04 | YES | NO |  |
-| 455.23.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.23.04/NVIDIA-Linux-x86_64-455.23.04.run) |
-| 455.23.05 | YES | YES |  |
-| 455.26.01 | YES | YES |  |
-| 455.26.02 | YES | YES |  |
-| 455.28 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.28/NVIDIA-Linux-x86_64-455.28.run) |
-| 455.32.00 | YES | YES |  |
-| 455.38 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.38/NVIDIA-Linux-x86_64-455.38.run) |
-| 455.45.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run) |
-| 455.46.01 | YES | YES |  |
-| 455.46.02 | YES | YES |  |
-| 455.46.04 | YES | YES |  |
-| 455.50.02 | YES | YES |  |
-| 455.50.03 | NO | YES |  |
-| 455.50.04 | YES | YES |  |
-| 455.50.05 | YES | YES |  |
-| 455.50.07 | YES | YES |  |
-| 455.50.10 | YES | YES |  |
-| 460.27.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.27.04/NVIDIA-Linux-x86_64-460.27.04.run) |
-| 460.32.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.32.03/NVIDIA-Linux-x86_64-460.32.03.run) |
-| 460.39 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.39/NVIDIA-Linux-x86_64-460.39.run) |
-| 460.56 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.56/NVIDIA-Linux-x86_64-460.56.run) |
-| 460.67 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.67/NVIDIA-Linux-x86_64-460.67.run) |
-| 460.73.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run) |
-| 460.80 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.80/NVIDIA-Linux-x86_64-460.80.run) |
-| 460.84 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run) |
-| 460.91.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run) |
-| 465.19.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.19.01/NVIDIA-Linux-x86_64-465.19.01.run) |
-| 465.24.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.24.02/NVIDIA-Linux-x86_64-465.24.02.run) |
-| 465.27 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run) |
-| 465.31 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.31/NVIDIA-Linux-x86_64-465.31.run) |
-| 470.42.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.42.01/NVIDIA-Linux-x86_64-470.42.01.run) |
-| 470.57.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run) |
-| 470.62.02 | YES | YES |  |
-| 470.62.05 | YES | YES |  |
-| 470.63.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run) |
-| 470.74 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run) |
-| 470.82.00 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.82.00/NVIDIA-Linux-x86_64-470.82.00.run) |
-| 470.82.01 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/470.82.01/NVIDIA-Linux-x86_64-470.82.01.run) |
-| 470.86 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.86/NVIDIA-Linux-x86_64-470.86.run) |
-| 470.94 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.94/NVIDIA-Linux-x86_64-470.94.run) |
-| 470.103.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.103.01/NVIDIA-Linux-x86_64-470.103.01.run) |
-| 470.129.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.129.06/NVIDIA-Linux-x86_64-470.129.06.run) |
-| 470.141.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run) |
-| 470.161.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.161.03/NVIDIA-Linux-x86_64-470.161.03.run) |
-| 470.182.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.182.03/NVIDIA-Linux-x86_64-470.182.03.run) |
-| 470.199.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.199.02/NVIDIA-Linux-x86_64-470.199.02.run) |
-| 470.223.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.223.02/NVIDIA-Linux-x86_64-470.223.02.run) |
-| 470.239.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.239.06/NVIDIA-Linux-x86_64-470.239.06.run) |
-| 470.256.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/470.256.02/NVIDIA-Linux-x86_64-470.256.02.run) |
-| 495.29.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run) |
-| 495.44 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run) |
-| 495.46 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run) |
-| 510.39.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run) |
-| 510.47.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.47.03/NVIDIA-Linux-x86_64-510.47.03.run) |
-| 510.54 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.54/NVIDIA-Linux-x86_64-510.54.run) |
-| 510.60.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.60.02/NVIDIA-Linux-x86_64-510.60.02.run) |
-| 510.68.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.68.02/NVIDIA-Linux-x86_64-510.68.02.run) |
-| 510.73.05 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.05/NVIDIA-Linux-x86_64-510.73.05.run) |
-| 510.73.08 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.08/NVIDIA-Linux-x86_64-510.73.08.run) |
-| 510.85.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.85.02/NVIDIA-Linux-x86_64-510.85.02.run) |
-| 510.108.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.108.03/NVIDIA-Linux-x86_64-510.108.03.run) |
-| 515.43.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.43.04/NVIDIA-Linux-x86_64-515.43.04.run) |
-| 515.48.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run) |
-| 515.57 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.57/NVIDIA-Linux-x86_64-515.57.run) |
-| 515.65.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.65.01/NVIDIA-Linux-x86_64-515.65.01.run) |
-| 515.76 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run) |
-| 515.86.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.86.01/NVIDIA-Linux-x86_64-515.86.01.run) |
-| 515.105.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.105.01/NVIDIA-Linux-x86_64-515.105.01.run) |
-| 520.56.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/520.56.06/NVIDIA-Linux-x86_64-520.56.06.run) |
-| 520.61.05 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run) |
-| 525.60.11 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run) |
-| 525.60.13 | YES | YES |  |
-| 525.78.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.78.01/NVIDIA-Linux-x86_64-525.78.01.run) |
-| 525.85.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.85.05/NVIDIA-Linux-x86_64-525.85.05.run) |
-| 525.85.12 | YES | YES |  |
-| 525.89.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/NVIDIA-Linux-x86_64-525.89.02.run) |
-| 525.105.17 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.105.17/NVIDIA-Linux-x86_64-525.105.17.run) |
-| 525.116.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.03/NVIDIA-Linux-x86_64-525.116.03.run) |
-| 525.116.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.04/NVIDIA-Linux-x86_64-525.116.04.run) |
-| 525.125.06 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run) |
-| 525.147.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.147.05/NVIDIA-Linux-x86_64-525.147.05.run) |
-| 530.30.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/530.30.02/NVIDIA-Linux-x86_64-530.30.02.run) |
-| 530.41.03 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/530.41.03/NVIDIA-Linux-x86_64-530.41.03.run) |
-| 535.43.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/NVIDIA-Linux-x86_64-535.43.02.run) |
-| 535.43.25 | YES | YES | [Driver link](https://developer.nvidia.com/downloads/vulkan-beta-5354325-linux) |
-| 535.54.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.54.03/NVIDIA-Linux-x86_64-535.54.03.run) |
-| 535.86.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.86.05/NVIDIA-Linux-x86_64-535.86.05.run) |
-| 535.86.10 | YES | YES |  |
-| 535.98 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.98/NVIDIA-Linux-x86_64-535.98.run) |
-| 535.104.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.104.05/NVIDIA-Linux-x86_64-535.104.05.run) |
-| 535.104.12 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/535.104.12/NVIDIA-Linux-x86_64-535.104.12.run) |
-| 535.113.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run) |
-| 535.129.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run) |
-| 535.146.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.146.02/NVIDIA-Linux-x86_64-535.146.02.run) |
-| 535.154.05 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.154.05/NVIDIA-Linux-x86_64-535.154.05.run) |
-| 535.161.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.161.07/NVIDIA-Linux-x86_64-535.161.07.run) |
-| 535.161.08 | YES | YES |  |
-| 535.171.04 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.171.04/NVIDIA-Linux-x86_64-535.171.04.run) |
-| 535.183.01 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run) |
-| 535.183.06 | YES | YES | [Driver link](http://international.download.nvidia.com/tesla/535.183.06/NVIDIA-Linux-x86_64-535.183.06.run) |
-| 545.23.06 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run) |
-| 545.23.08 | YES | YES |  |
-| 545.29.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run) |
-| 545.29.06 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.06/NVIDIA-Linux-x86_64-545.29.06.run) |
-| 550.40.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.40.07/NVIDIA-Linux-x86_64-550.40.07.run) |
-| 550.54.14 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run) |
-| 550.54.15 | YES | YES |  |
-| 550.67 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.67/NVIDIA-Linux-x86_64-550.67.run) |
-| 550.76 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.76/NVIDIA-Linux-x86_64-550.76.run) |
-| 550.78 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.78/NVIDIA-Linux-x86_64-550.78.run) |
-| 550.90.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.90.07/NVIDIA-Linux-x86_64-550.90.07.run) |
-| 550.100 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.100/NVIDIA-Linux-x86_64-550.100.run) |
-| 550.107.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.107.02/NVIDIA-Linux-x86_64-550.107.02.run) |
-| 550.120 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.120/NVIDIA-Linux-x86_64-550.120.run) |
-| 550.127.05 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.127.05/NVIDIA-Linux-x86_64-550.127.05.run) |
-| 550.135 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run) |
-| 555.42.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.42.02/NVIDIA-Linux-x86_64-555.42.02.run) |
-| 555.58 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58/NVIDIA-Linux-x86_64-555.58.run) |
-| 555.58.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58.02/NVIDIA-Linux-x86_64-555.58.02.run) |
-| 560.28.03 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/560.28.03/NVIDIA-Linux-x86_64-560.28.03.run) |
-| 560.35.03 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/560.35.03/NVIDIA-Linux-x86_64-560.35.03.run) |
-| 565.57.01 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/565.57.01/NVIDIA-Linux-x86_64-565.57.01.run) |
+| Version | NVENC patch | NVFBC patch | NV_VK patch | Driver link |
+| :---    |    :---:    |    :---:    |    :---:    |    :---:    |
+| 375.39 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run) |
+| 390.77 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run) |
+| 390.87 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run) |
+| 390.147 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/390.147/NVIDIA-Linux-x86_64-390.147.run) |
+| 396.24 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run) |
+| 396.26 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run) |
+| 396.37 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run) |
+| 396.54 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run) |
+| 410.48 | YES | NO | NO |  |
+| 410.57 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run) |
+| 410.73 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run) |
+| 410.78 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run) |
+| 410.79 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/410.79/NVIDIA-Linux-x86_64-410.79.run) |
+| 410.93 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/410.93/NVIDIA-Linux-x86_64-410.93.run) |
+| 410.104 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/410.104/NVIDIA-Linux-x86_64-410.104.run) |
+| 415.18 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.18/NVIDIA-Linux-x86_64-415.18.run) |
+| 415.25 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.25/NVIDIA-Linux-x86_64-415.25.run) |
+| 415.27 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/415.27/NVIDIA-Linux-x86_64-415.27.run) |
+| 418.30 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.30/NVIDIA-Linux-x86_64-418.30.run) |
+| 418.43 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run) |
+| 418.56 | YES | NO | NO | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run) |
+| 418.67 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/418.67/NVIDIA-Linux-x86_64-418.67.run) |
+| 418.74 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run) |
+| 418.87.00 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.00.run) |
+| 418.87.01 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.01.run) |
+| 418.88 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.88/NVIDIA-Linux-x86_64-418.88.run) |
+| 418.113 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/418.113/NVIDIA-Linux-x86_64-418.113.run) |
+| 430.09 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run) |
+| 430.14 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run) |
+| 430.26 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run) |
+| 430.34 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run) |
+| 430.40 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run) |
+| 430.50 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run) |
+| 430.64 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/430.64/NVIDIA-Linux-x86_64-430.64.run) |
+| 435.17 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.17/NVIDIA-Linux-x86_64-435.17.run) |
+| 435.21 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run) |
+| 440.26 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.26/NVIDIA-Linux-x86_64-440.26.run) |
+| 440.31 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31.run) |
+| 440.33.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/440.33.01/NVIDIA-Linux-x86_64-440.33.01.run) |
+| 440.36 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.36/NVIDIA-Linux-x86_64-440.36.run) |
+| 440.43.01 | YES | YES | NO |  |
+| 440.44 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.44/NVIDIA-Linux-x86_64-440.44.run) |
+| 440.48.02 | YES | YES | NO |  |
+| 440.58.01 | YES | YES | NO |  |
+| 440.58.02 | YES | YES | NO |  |
+| 440.59 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.59/NVIDIA-Linux-x86_64-440.59.run) |
+| 440.64 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.64/NVIDIA-Linux-x86_64-440.64.run) |
+| 440.64.00 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run) |
+| 440.66.02 | YES | YES | NO |  |
+| 440.66.03 | YES | YES | NO |  |
+| 440.66.04 | YES | YES | NO |  |
+| 440.66.08 | YES | YES | NO |  |
+| 440.66.09 | YES | YES | NO |  |
+| 440.66.11 | YES | YES | NO |  |
+| 440.66.12 | YES | YES | NO |  |
+| 440.66.14 | YES | YES | NO |  |
+| 440.66.15 | YES | YES | NO |  |
+| 440.66.17 | YES | YES | NO |  |
+| 440.82 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run) |
+| 440.95.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/440.95.01/NVIDIA-Linux-x86_64-440.95.01.run) |
+| 440.100 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run) |
+| 440.118.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/440.118.02/NVIDIA-Linux-x86_64-440.118.02.run) |
+| 450.36.06 | YES | YES | NO | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run) |
+| 450.51 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.51/NVIDIA-Linux-x86_64-450.51.run) |
+| 450.51.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/450.51.05/NVIDIA-Linux-x86_64-450.51.05.run) |
+| 450.51.06 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run) |
+| 450.56.01 | YES | YES | NO |  |
+| 450.56.02 | YES | YES | NO |  |
+| 450.56.06 | YES | YES | NO |  |
+| 450.56.11 | YES | YES | NO |  |
+| 450.57 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.57/NVIDIA-Linux-x86_64-450.57.run) |
+| 450.66 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.66/NVIDIA-Linux-x86_64-450.66.run) |
+| 450.80.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.80.02/NVIDIA-Linux-x86_64-450.80.02.run) |
+| 450.102.04 | YES | NO | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/450.102.04/NVIDIA-Linux-x86_64-450.102.04.run) |
+| 455.22.04 | YES | NO | NO |  |
+| 455.23.04 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.23.04/NVIDIA-Linux-x86_64-455.23.04.run) |
+| 455.23.05 | YES | YES | NO |  |
+| 455.26.01 | YES | YES | NO |  |
+| 455.26.02 | YES | YES | NO |  |
+| 455.28 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.28/NVIDIA-Linux-x86_64-455.28.run) |
+| 455.32.00 | YES | YES | NO |  |
+| 455.38 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.38/NVIDIA-Linux-x86_64-455.38.run) |
+| 455.45.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run) |
+| 455.46.01 | YES | YES | NO |  |
+| 455.46.02 | YES | YES | NO |  |
+| 455.46.04 | YES | YES | NO |  |
+| 455.50.02 | YES | YES | NO |  |
+| 455.50.03 | NO | YES | NO |  |
+| 455.50.04 | YES | YES | NO |  |
+| 455.50.05 | YES | YES | NO |  |
+| 455.50.07 | YES | YES | NO |  |
+| 455.50.10 | YES | YES | NO |  |
+| 460.27.04 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.27.04/NVIDIA-Linux-x86_64-460.27.04.run) |
+| 460.32.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.32.03/NVIDIA-Linux-x86_64-460.32.03.run) |
+| 460.39 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.39/NVIDIA-Linux-x86_64-460.39.run) |
+| 460.56 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.56/NVIDIA-Linux-x86_64-460.56.run) |
+| 460.67 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.67/NVIDIA-Linux-x86_64-460.67.run) |
+| 460.73.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run) |
+| 460.80 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.80/NVIDIA-Linux-x86_64-460.80.run) |
+| 460.84 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run) |
+| 460.91.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run) |
+| 465.19.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.19.01/NVIDIA-Linux-x86_64-465.19.01.run) |
+| 465.24.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.24.02/NVIDIA-Linux-x86_64-465.24.02.run) |
+| 465.27 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run) |
+| 465.31 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/465.31/NVIDIA-Linux-x86_64-465.31.run) |
+| 470.42.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.42.01/NVIDIA-Linux-x86_64-470.42.01.run) |
+| 470.57.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run) |
+| 470.62.02 | YES | YES | NO |  |
+| 470.62.05 | YES | YES | NO |  |
+| 470.63.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run) |
+| 470.74 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run) |
+| 470.82.00 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.82.00/NVIDIA-Linux-x86_64-470.82.00.run) |
+| 470.82.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/470.82.01/NVIDIA-Linux-x86_64-470.82.01.run) |
+| 470.86 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.86/NVIDIA-Linux-x86_64-470.86.run) |
+| 470.94 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.94/NVIDIA-Linux-x86_64-470.94.run) |
+| 470.103.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.103.01/NVIDIA-Linux-x86_64-470.103.01.run) |
+| 470.129.06 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.129.06/NVIDIA-Linux-x86_64-470.129.06.run) |
+| 470.141.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run) |
+| 470.161.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.161.03/NVIDIA-Linux-x86_64-470.161.03.run) |
+| 470.182.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.182.03/NVIDIA-Linux-x86_64-470.182.03.run) |
+| 470.199.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.199.02/NVIDIA-Linux-x86_64-470.199.02.run) |
+| 470.223.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.223.02/NVIDIA-Linux-x86_64-470.223.02.run) |
+| 470.239.06 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/470.239.06/NVIDIA-Linux-x86_64-470.239.06.run) |
+| 470.256.02 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/470.256.02/NVIDIA-Linux-x86_64-470.256.02.run) |
+| 495.29.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run) |
+| 495.44 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run) |
+| 495.46 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run) |
+| 510.39.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run) |
+| 510.47.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.47.03/NVIDIA-Linux-x86_64-510.47.03.run) |
+| 510.54 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.54/NVIDIA-Linux-x86_64-510.54.run) |
+| 510.60.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.60.02/NVIDIA-Linux-x86_64-510.60.02.run) |
+| 510.68.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.68.02/NVIDIA-Linux-x86_64-510.68.02.run) |
+| 510.73.05 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.05/NVIDIA-Linux-x86_64-510.73.05.run) |
+| 510.73.08 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.08/NVIDIA-Linux-x86_64-510.73.08.run) |
+| 510.85.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.85.02/NVIDIA-Linux-x86_64-510.85.02.run) |
+| 510.108.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/510.108.03/NVIDIA-Linux-x86_64-510.108.03.run) |
+| 515.43.04 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.43.04/NVIDIA-Linux-x86_64-515.43.04.run) |
+| 515.48.07 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run) |
+| 515.57 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.57/NVIDIA-Linux-x86_64-515.57.run) |
+| 515.65.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.65.01/NVIDIA-Linux-x86_64-515.65.01.run) |
+| 515.76 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run) |
+| 515.86.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.86.01/NVIDIA-Linux-x86_64-515.86.01.run) |
+| 515.105.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/515.105.01/NVIDIA-Linux-x86_64-515.105.01.run) |
+| 520.56.06 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/520.56.06/NVIDIA-Linux-x86_64-520.56.06.run) |
+| 520.61.05 | YES | YES | NO | [Driver link](https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run) |
+| 525.60.11 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run) |
+| 525.60.13 | YES | YES | NO |  |
+| 525.78.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.78.01/NVIDIA-Linux-x86_64-525.78.01.run) |
+| 525.85.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.85.05/NVIDIA-Linux-x86_64-525.85.05.run) |
+| 525.85.12 | YES | YES | NO |  |
+| 525.89.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/NVIDIA-Linux-x86_64-525.89.02.run) |
+| 525.105.17 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.105.17/NVIDIA-Linux-x86_64-525.105.17.run) |
+| 525.116.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.03/NVIDIA-Linux-x86_64-525.116.03.run) |
+| 525.116.04 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.04/NVIDIA-Linux-x86_64-525.116.04.run) |
+| 525.125.06 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run) |
+| 525.147.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/525.147.05/NVIDIA-Linux-x86_64-525.147.05.run) |
+| 530.30.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/530.30.02/NVIDIA-Linux-x86_64-530.30.02.run) |
+| 530.41.03 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/530.41.03/NVIDIA-Linux-x86_64-530.41.03.run) |
+| 535.43.02 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/NVIDIA-Linux-x86_64-535.43.02.run) |
+| 535.43.25 | YES | YES | NO | [Driver link](https://developer.nvidia.com/downloads/vulkan-beta-5354325-linux) |
+| 535.54.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.54.03/NVIDIA-Linux-x86_64-535.54.03.run) |
+| 535.86.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.86.05/NVIDIA-Linux-x86_64-535.86.05.run) |
+| 535.86.10 | YES | YES | NO |  |
+| 535.98 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.98/NVIDIA-Linux-x86_64-535.98.run) |
+| 535.104.05 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.104.05/NVIDIA-Linux-x86_64-535.104.05.run) |
+| 535.104.12 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/tesla/535.104.12/NVIDIA-Linux-x86_64-535.104.12.run) |
+| 535.113.01 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run) |
+| 535.129.03 | YES | YES | NO | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run) |
+| 535.146.02 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.146.02/NVIDIA-Linux-x86_64-535.146.02.run) |
+| 535.154.05 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.154.05/NVIDIA-Linux-x86_64-535.154.05.run) |
+| 535.161.07 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.161.07/NVIDIA-Linux-x86_64-535.161.07.run) |
+| 535.161.08 | YES | YES | NO |  |
+| 535.171.04 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.171.04/NVIDIA-Linux-x86_64-535.171.04.run) |
+| 535.183.01 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run) |
+| 535.183.06 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/tesla/535.183.06/NVIDIA-Linux-x86_64-535.183.06.run) |
+| 545.23.06 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run) |
+| 545.23.08 | YES | YES | NO |  |
+| 545.29.02 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run) |
+| 545.29.06 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.06/NVIDIA-Linux-x86_64-545.29.06.run) |
+| 550.40.07 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.40.07/NVIDIA-Linux-x86_64-550.40.07.run) |
+| 550.54.14 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run) |
+| 550.54.15 | YES | YES | NO |  |
+| 550.67 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.67/NVIDIA-Linux-x86_64-550.67.run) |
+| 550.76 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.76/NVIDIA-Linux-x86_64-550.76.run) |
+| 550.78 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.78/NVIDIA-Linux-x86_64-550.78.run) |
+| 550.90.07 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.90.07/NVIDIA-Linux-x86_64-550.90.07.run) |
+| 550.100 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.100/NVIDIA-Linux-x86_64-550.100.run) |
+| 550.107.02 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.107.02/NVIDIA-Linux-x86_64-550.107.02.run) |
+| 550.120 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.120/NVIDIA-Linux-x86_64-550.120.run) |
+| 550.127.05 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.127.05/NVIDIA-Linux-x86_64-550.127.05.run) |
+| 550.135 | YES | YES | NO | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run) |
+| 555.42.02 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.42.02/NVIDIA-Linux-x86_64-555.42.02.run) |
+| 555.58 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58/NVIDIA-Linux-x86_64-555.58.run) |
+| 555.58.02 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58.02/NVIDIA-Linux-x86_64-555.58.02.run) |
+| 560.28.03 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/560.28.03/NVIDIA-Linux-x86_64-560.28.03.run) |
+| 560.35.03 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/560.35.03/NVIDIA-Linux-x86_64-560.35.03.run) |
+| 565.57.01 | YES | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/565.57.01/NVIDIA-Linux-x86_64-565.57.01.run) |
 
 ## Synopsis
 
@@ -266,7 +268,26 @@ DESCRIPTION
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
        -f             Enable support for Flatpak NVIDIA drivers.
+```
 
+```
+# bash ./patch-vk.sh -h
+
+SYNOPSIS
+       patch-vk.sh [-s] [-r|-h|-c VERSION|-l|-f]
+
+DESCRIPTION
+       The patch for Nvidia vulkan drivers to remove NVENC session limit
+
+       -s             Silent mode (No output)
+       -r             Rollback to original (Restore lib from backup)
+       -h             Print this help message
+       -c VERSION     Check if version VERSION supported by this patch.
+                      Returns true exit code (0) if version is supported.
+       -l             List supported driver versions
+       -d VERSION     Use VERSION driver version when looking for libraries
+                      instead of using nvidia-smi to detect it.
+       -j             Output the patch list to stdout as JSON
 ```
 
 ## Step-by-Step guide

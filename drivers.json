@@ -6,1144 +6,1341 @@
                     "version": "375.39",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run"
                 },
                 {
                     "version": "390.77",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/390.77/NVIDIA-Linux-x86_64-390.77.run"
                 },
                 {
                     "version": "390.87",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run"
                 },
                 {
                     "version": "396.24",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/396.24/NVIDIA-Linux-x86_64-396.24.run"
                 },
                 {
                     "version": "396.26",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run"
                 },
                 {
                     "version": "396.37",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run"
                 },
                 {
                     "version": "396.54",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/396.54/NVIDIA-Linux-x86_64-396.54.run"
                 },
                 {
                     "version": "410.48",
                     "nvenc_patch": true,
-                    "nvfbc_patch": false
+                    "nvfbc_patch": false,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "410.57",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.57/NVIDIA-Linux-x86_64-410.57.run"
                 },
                 {
                     "version": "410.73",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.73/NVIDIA-Linux-x86_64-410.73.run"
                 },
                 {
                     "version": "410.78",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.78/NVIDIA-Linux-x86_64-410.78.run"
                 },
                 {
                     "version": "410.79",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/410.79/NVIDIA-Linux-x86_64-410.79.run"
                 },
                 {
                     "version": "410.93",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/410.93/NVIDIA-Linux-x86_64-410.93.run"
                 },
                 {
                     "version": "410.104",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/410.104/NVIDIA-Linux-x86_64-410.104.run"
                 },
                 {
                     "version": "415.18",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.18/NVIDIA-Linux-x86_64-415.18.run"
                 },
                 {
                     "version": "415.25",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.25/NVIDIA-Linux-x86_64-415.25.run"
                 },
                 {
                     "version": "415.27",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/415.27/NVIDIA-Linux-x86_64-415.27.run"
                 },
                 {
                     "version": "418.30",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.30/NVIDIA-Linux-x86_64-418.30.run"
                 },
                 {
                     "version": "418.43",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.43/NVIDIA-Linux-x86_64-418.43.run"
                 },
                 {
                     "version": "418.56",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://download.nvidia.com/XFree86/Linux-x86_64/418.56/NVIDIA-Linux-x86_64-418.56.run"
                 },
                 {
                     "version": "418.67",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/418.67/NVIDIA-Linux-x86_64-418.67.run"
                 },
                 {
                     "version": "418.74",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.74/NVIDIA-Linux-x86_64-418.74.run"
                 },
                 {
                     "version": "418.87.00",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.00.run"
                 },
                 {
                     "version": "418.87.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/418.87/NVIDIA-Linux-x86_64-418.87.01.run"
                 },
                 {
                     "version": "418.88",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.88/NVIDIA-Linux-x86_64-418.88.run"
                 },
                 {
                     "version": "430.09",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.09/NVIDIA-Linux-x86_64-430.09.run"
                 },
                 {
                     "version": "430.14",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.14/NVIDIA-Linux-x86_64-430.14.run"
                 },
                 {
                     "version": "430.26",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.26/NVIDIA-Linux-x86_64-430.26.run"
                 },
                 {
                     "version": "430.34",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.34/NVIDIA-Linux-x86_64-430.34.run"
                 },
                 {
                     "version": "430.40",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.40/NVIDIA-Linux-x86_64-430.40.run"
                 },
                 {
                     "version": "430.50",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.50/NVIDIA-Linux-x86_64-430.50.run"
                 },
                 {
                     "version": "435.17",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/435.17/NVIDIA-Linux-x86_64-435.17.run"
                 },
                 {
                     "version": "435.21",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run"
                 },
                 {
                     "version": "440.26",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.26/NVIDIA-Linux-x86_64-440.26.run"
                 },
                 {
                     "version": "440.31",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31.run"
                 },
                 {
                     "version": "440.33.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/440.33.01/NVIDIA-Linux-x86_64-440.33.01.run"
                 },
                 {
                     "version": "440.36",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.36/NVIDIA-Linux-x86_64-440.36.run"
                 },
                 {
                     "version": "440.44",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.44/NVIDIA-Linux-x86_64-440.44.run"
                 },
                 {
                     "version": "440.43.01",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "430.64",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/430.64/NVIDIA-Linux-x86_64-430.64.run"
                 },
                 {
                     "version": "440.48.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.59",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.59/NVIDIA-Linux-x86_64-440.59.run"
                 },
                 {
                     "version": "440.58.01",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.58.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.64",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.64/NVIDIA-Linux-x86_64-440.64.run"
                 },
                 {
                     "version": "440.64.00",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run"
                 },
                 {
                     "version": "440.66.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.03",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.04",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.08",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.82",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run"
                 },
                 {
                     "version": "440.66.09",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.11",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "418.113",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/418.113/NVIDIA-Linux-x86_64-418.113.run"
                 },
                 {
                     "version": "440.66.12",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.14",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.66.15",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.36.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda_11.0.1_450.36.06_linux.run"
                 },
                 {
                     "version": "440.66.17",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "440.95.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/440.95.01/NVIDIA-Linux-x86_64-440.95.01.run"
                 },
                 {
                     "version": "450.51",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/450.51/NVIDIA-Linux-x86_64-450.51.run"
                 },
                 {
                     "version": "440.100",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run"
                 },
                 {
                     "version": "440.118.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/440.118.02/NVIDIA-Linux-x86_64-440.118.02.run"
                 },
                 {
                     "version": "450.51.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/450.51.05/NVIDIA-Linux-x86_64-450.51.05.run"
                 },
                 {
                     "version": "450.57",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/450.57/NVIDIA-Linux-x86_64-450.57.run"
                 },
                 {
                     "version": "450.56.01",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.56.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.51.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/450.51.06/NVIDIA-Linux-x86_64-450.51.06.run"
                 },
                 {
                     "version": "450.56.06",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.66",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/450.66/NVIDIA-Linux-x86_64-450.66.run"
                 },
                 {
                     "version": "455.23.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/455.23.04/NVIDIA-Linux-x86_64-455.23.04.run"
                 },
                 {
                     "version": "450.56.11",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.23.05",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.80.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/450.80.02/NVIDIA-Linux-x86_64-450.80.02.run"
                 },
                 {
                     "version": "455.22.04",
                     "nvenc_patch": true,
-                    "nvfbc_patch": false
+                    "nvfbc_patch": false,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.28",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/455.28/NVIDIA-Linux-x86_64-455.28.run"
                 },
                 {
                     "version": "455.26.01",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.26.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.38",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/455.38/NVIDIA-Linux-x86_64-455.38.run"
                 },
                 {
                     "version": "455.32.00",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.45.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run"
                 },
                 {
                     "version": "455.46.01",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.46.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.46.04",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "450.102.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/450.102.04/NVIDIA-Linux-x86_64-450.102.04.run"
                 },
                 {
                     "version": "460.27.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.27.04/NVIDIA-Linux-x86_64-460.27.04.run"
                 },
                 {
                     "version": "460.32.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.32.03/NVIDIA-Linux-x86_64-460.32.03.run"
                 },
                 {
                     "version": "460.39",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.39/NVIDIA-Linux-x86_64-460.39.run"
                 },
                 {
                     "version": "455.50.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.50.03",
                     "nvenc_patch": false,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.50.04",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.50.05",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "455.50.07",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "460.56",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.56/NVIDIA-Linux-x86_64-460.56.run"
                 },
                 {
                     "version": "455.50.10",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "460.67",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.67/NVIDIA-Linux-x86_64-460.67.run"
                 },
                 {
                     "version": "465.19.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/465.19.01/NVIDIA-Linux-x86_64-465.19.01.run"
                 },
                 {
                     "version": "465.24.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/465.24.02/NVIDIA-Linux-x86_64-465.24.02.run"
                 },
                 {
                     "version": "460.73.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run"
                 },
                 {
                     "version": "465.27",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run"
                 },
                 {
                     "version": "460.80",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.80/NVIDIA-Linux-x86_64-460.80.run"
                 },
                 {
                     "version": "465.31",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/465.31/NVIDIA-Linux-x86_64-465.31.run"
                 },
                 {
                     "version": "460.84",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run"
                 },
                 {
                     "version": "470.42.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.42.01/NVIDIA-Linux-x86_64-470.42.01.run"
                 },
                 {
                     "version": "470.57.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run"
                 },
                 {
                     "version": "460.91.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run"
                 },
                 {
                     "version": "470.63.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.63.01/NVIDIA-Linux-x86_64-470.63.01.run"
                 },
                 {
                     "version": "470.62.02",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "470.74",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run"
                 },
                 {
                     "version": "470.82.00",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.82.00/NVIDIA-Linux-x86_64-470.82.00.run"
                 },
                 {
                     "version": "470.62.05",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "470.86",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.86/NVIDIA-Linux-x86_64-470.86.run"
                 },
                 {
                     "version": "495.29.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/495.29.05/NVIDIA-Linux-x86_64-495.29.05.run"
                 },
                 {
                     "version": "495.44",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/495.44/NVIDIA-Linux-x86_64-495.44.run"
                 },
                 {
                     "version": "495.46",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/495.46/NVIDIA-Linux-x86_64-495.46.run"
                 },
                 {
                     "version": "470.82.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/470.82.01/NVIDIA-Linux-x86_64-470.82.01.run"
                 },
                 {
                     "version": "470.94",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.94/NVIDIA-Linux-x86_64-470.94.run"
                 },
                 {
                     "version": "470.103.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.103.01/NVIDIA-Linux-x86_64-470.103.01.run"
                 },
                 {
                     "version": "470.129.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.129.06/NVIDIA-Linux-x86_64-470.129.06.run"
                 },
                 {
                     "version": "470.141.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run"
                 },
                 {
                     "version": "470.161.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.161.03/NVIDIA-Linux-x86_64-470.161.03.run"
                 },
                 {
                     "version": "470.182.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.182.03/NVIDIA-Linux-x86_64-470.182.03.run"
                 },
                 {
                     "version": "470.199.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.199.02/NVIDIA-Linux-x86_64-470.199.02.run"
                 },
                 {
                     "version": "470.223.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.223.02/NVIDIA-Linux-x86_64-470.223.02.run"
                 },
                 {
                     "version": "470.239.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/470.239.06/NVIDIA-Linux-x86_64-470.239.06.run"
                 },
                 {
                     "version": "510.39.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run"
                 },
                 {
                     "version": "510.47.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.47.03/NVIDIA-Linux-x86_64-510.47.03.run"
                 },
                 {
                     "version": "510.54",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.54/NVIDIA-Linux-x86_64-510.54.run"
                 },
                 {
                     "version": "390.147",
                     "nvenc_patch": true,
                     "nvfbc_patch": false,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/390.147/NVIDIA-Linux-x86_64-390.147.run"
                 },
                 {
                     "version": "510.60.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.60.02/NVIDIA-Linux-x86_64-510.60.02.run"
                 },
                 {
                     "version": "510.68.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.68.02/NVIDIA-Linux-x86_64-510.68.02.run"
                 },
                 {
                     "version": "515.43.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.43.04/NVIDIA-Linux-x86_64-515.43.04.run"
                 },
                 {
                     "version": "510.73.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.05/NVIDIA-Linux-x86_64-510.73.05.run"
                 },
                 {
                     "version": "515.48.07",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run"
                 },
                 {
                     "version": "510.73.08",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.73.08/NVIDIA-Linux-x86_64-510.73.08.run"
                 },
                 {
                     "version": "510.85.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.85.02/NVIDIA-Linux-x86_64-510.85.02.run"
                 },
                 {
                     "version": "510.108.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/510.108.03/NVIDIA-Linux-x86_64-510.108.03.run"
                 },
                 {
                     "version": "515.57",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.57/NVIDIA-Linux-x86_64-515.57.run"
                 },
                 {
                     "version": "515.65.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.65.01/NVIDIA-Linux-x86_64-515.65.01.run"
                 },
                 {
                     "version": "515.76",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run"
                 },
                 {
                     "version": "515.86.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.86.01/NVIDIA-Linux-x86_64-515.86.01.run"
                 },
                 {
                     "version": "520.56.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/520.56.06/NVIDIA-Linux-x86_64-520.56.06.run"
                 },
                 {
                     "version": "520.61.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run"
                 },
                 {
                     "version": "525.60.11",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run"
                 },
                 {
                     "version": "525.60.13",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "525.78.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.78.01/NVIDIA-Linux-x86_64-525.78.01.run"
                 },
                 {
                     "version": "525.85.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.85.05/NVIDIA-Linux-x86_64-525.85.05.run"
                 },
                 {
                     "version": "525.85.12",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "525.89.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/NVIDIA-Linux-x86_64-525.89.02.run"
                 },
                 {
                     "version": "525.105.17",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.105.17/NVIDIA-Linux-x86_64-525.105.17.run"
                 },
                 {
                     "version": "525.147.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.147.05/NVIDIA-Linux-x86_64-525.147.05.run"
                 },
                 {
                     "version": "530.30.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/530.30.02/NVIDIA-Linux-x86_64-530.30.02.run"
                 },
                 {
                     "version": "530.41.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/530.41.03/NVIDIA-Linux-x86_64-530.41.03.run"
                 },
                 {
                     "version": "515.105.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/515.105.01/NVIDIA-Linux-x86_64-515.105.01.run"
                 },
                 {
                     "version": "525.116.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.03/NVIDIA-Linux-x86_64-525.116.03.run"
                 },
                 {
                     "version": "535.43.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/NVIDIA-Linux-x86_64-535.43.02.run"
                 },
                 {
                     "version": "525.116.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.116.04/NVIDIA-Linux-x86_64-525.116.04.run"
                 },
                 {
                     "version": "535.54.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.54.03/NVIDIA-Linux-x86_64-535.54.03.run"
                 },
                 {
                     "version": "525.125.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run"
                 },
                 {
                     "version": "535.86.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.86.05/NVIDIA-Linux-x86_64-535.86.05.run"
                 },
                 {
                     "version": "535.98",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.98/NVIDIA-Linux-x86_64-535.98.run"
                 },
                 {
                     "version": "535.86.10",
                     "nvenc_patch": true,
-                    "nvfbc_patch": true
+                    "nvfbc_patch": true,
+                    "nvvk_patch": false
                 },
                 {
                     "version": "535.104.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.104.05/NVIDIA-Linux-x86_64-535.104.05.run"
                 },
                 {
                     "version": "535.113.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run"
                 },
                 {
                     "version": "535.104.12",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/tesla/535.104.12/NVIDIA-Linux-x86_64-535.104.12.run"
                 },
                 {
                     "version": "535.129.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run"
                 },
                 {
                     "version": "545.23.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/545.23.06/NVIDIA-Linux-x86_64-545.23.06.run"
                 },
                 {
                     "version": "545.23.08",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": ""
                 },
                 {
                     "version": "545.29.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run"
                 },
                 {
                     "version": "545.29.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/545.29.06/NVIDIA-Linux-x86_64-545.29.06.run"
                 },
                 {
                     "version": "535.146.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.146.02/NVIDIA-Linux-x86_64-535.146.02.run"
                 },
                 {
                     "version": "535.154.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.154.05/NVIDIA-Linux-x86_64-535.154.05.run"
                 },
                 {
                     "version": "550.40.07",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.40.07/NVIDIA-Linux-x86_64-550.40.07.run"
                 },
                 {
                     "version": "535.43.25",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "https://developer.nvidia.com/downloads/vulkan-beta-5354325-linux"
                 },
                 {
                     "version": "550.54.14",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run"
                 },
                 {
                     "version": "550.54.15",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": ""
                 },
                 {
                     "version": "535.161.07",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.161.07/NVIDIA-Linux-x86_64-535.161.07.run"
                 },
                 {
                     "version": "535.161.08",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": ""
                 },
                 {
                     "version": "550.67",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.67/NVIDIA-Linux-x86_64-550.67.run"
                 },
                 {
                     "version": "550.76",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.76/NVIDIA-Linux-x86_64-550.76.run"
                 },
                 {
                     "version": "550.78",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.78/NVIDIA-Linux-x86_64-550.78.run"
                 },
                 {
                     "version": "535.171.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.171.04/NVIDIA-Linux-x86_64-535.171.04.run"
                 },
                 {
                     "version": "555.42.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/555.42.02/NVIDIA-Linux-x86_64-555.42.02.run"
                 },
                 {
                     "version": "470.256.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/470.256.02/NVIDIA-Linux-x86_64-470.256.02.run"
                 },
                 {
                     "version": "550.90.07",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.90.07/NVIDIA-Linux-x86_64-550.90.07.run"
                 },
                 {
                     "version": "535.183.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.183.01/NVIDIA-Linux-x86_64-535.183.01.run"
                 },
                 {
                     "version": "535.183.06",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/tesla/535.183.06/NVIDIA-Linux-x86_64-535.183.06.run"
                 },
                 {
                     "version": "555.58",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58/NVIDIA-Linux-x86_64-555.58.run"
                 },
                 {
                     "version": "555.58.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/555.58.02/NVIDIA-Linux-x86_64-555.58.02.run"
                 },
                 {
                     "version": "550.100",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.100/NVIDIA-Linux-x86_64-550.100.run"
                 },
                 {
                     "version": "550.107.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.107.02/NVIDIA-Linux-x86_64-550.107.02.run"
                 },
                 {
                     "version": "560.28.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/560.28.03/NVIDIA-Linux-x86_64-560.28.03.run"
                 },
                 {
                     "version": "560.35.03",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/560.35.03/NVIDIA-Linux-x86_64-560.35.03.run"
                 },
                 {
                     "version": "550.120",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.120/NVIDIA-Linux-x86_64-550.120.run"
                 },
                 {
                     "version": "565.57.01",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/565.57.01/NVIDIA-Linux-x86_64-565.57.01.run"
                 },
                 {
                     "version": "550.127.05",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.127.05/NVIDIA-Linux-x86_64-550.127.05.run"
                 },
                 {
                     "version": "550.135",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
+                    "nvvk_patch": false,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run"
                 }
             ],
