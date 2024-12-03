@@ -7,6 +7,8 @@ NVENC and NvFBC patches for Nvidia drivers
 
 [NvFBC patch](patch-fbc.sh) allows to use NvFBC on consumer-grade GPUs. It should be applied same way as NVENC `patch.sh`, except you have to use `patch-fbc.sh` instead.
 
+[Vulkan Patch](patch-vk.sh) removes restriction on maximum number of simultaneous Vulkan video encoding sessions imposed by Nvidia to consumer-grade GPUs, this is similar to [NVENC patch](patch.sh) but for Vulkan API.
+
 Main target operating system is **GNU/Linux**, but for **Windows** support see [**win** (clickable)](win).
 
 ---
@@ -25,8 +27,8 @@ If you want to donate, please send it to your favorite open source organizations
 
 ## Version Table
 
-| Version | NVENC patch | NVFBC patch | Driver link |
-| :---    |    :---:    |    :---:    |        ---: |
+| Version | NVENC patch | NVFBC patch | NV_VK patch | Driver link |
+| :---    |    :---:    |    :---:    |    :---:    |    :---:    |
 $version_list
 
 ## Synopsis
@@ -70,7 +72,26 @@ DESCRIPTION
        -d VERSION     Use VERSION driver version when looking for libraries
                       instead of using nvidia-smi to detect it.
        -f             Enable support for Flatpak NVIDIA drivers.
+```
 
+```
+# bash ./patch-vk.sh -h
+
+SYNOPSIS
+       patch-vk.sh [-s] [-r|-h|-c VERSION|-l|-f]
+
+DESCRIPTION
+       The patch for Nvidia vulkan drivers to remove NVENC session limit
+
+       -s             Silent mode (No output)
+       -r             Rollback to original (Restore lib from backup)
+       -h             Print this help message
+       -c VERSION     Check if version VERSION supported by this patch.
+                      Returns true exit code (0) if version is supported.
+       -l             List supported driver versions
+       -d VERSION     Use VERSION driver version when looking for libraries
+                      instead of using nvidia-smi to detect it.
+       -j             Output the patch list to stdout as JSON
 ```
 
 ## Step-by-Step guide

@@ -9,7 +9,7 @@ SYNOPSIS
 DESCRIPTION
     Update the patch for Nvidia NVENC or NVFBC drivers for a new version
 
-    -f PATCH_FILE               The file (patch.sh/patch-fbc.sh) that should be updated
+    -f PATCH_FILE               The file (patch.sh/patch-fbc.sh/patch-vk.sh) that should be updated
     -v VERSION                  Driver version (by default copies latest existing patch)
     -o OLD_VERSION              Copy patch string from this older driver version
     -b PATCHSTR                 Append PATCHSTR to the patch_list
