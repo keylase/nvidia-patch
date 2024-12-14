@@ -289,26 +289,28 @@ patch_common () {
         driver_version="$manual_driver_version"
 
         echo "Using manually entered nvidia driver version: $driver_version"
-     fi
      
-       else
-    NVIDIA_SMI="$(command -v nvidia-smi || true)"
-    if [[ ! "$NVIDIA_SMI" ]] ; then
-        echo 'nvidia-smi utility not found. Probably driver is not installed.'
-        exit 1
     else
-        cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
-        driver_versions_list=$($cmd) || (
-            ret_code=$?
-            echo "Can not detect nvidia driver version."
-            echo "CMD: \"$cmd\""
-            echo "Result: \"$driver_versions_list\""
-            echo "nvidia-smi retcode: $ret_code"
+        # Try to detect nvidia-smi, but don't exit if it's not found
+        NVIDIA_SMI="$(command -v nvidia-smi || true)"
+    
+        if [[ ! "$NVIDIA_SMI" ]] ; then
+            echo 'nvidia-smi utility not found. Probably driver is not installed.'
             exit 1
-        )
-        driver_version=$(echo "$driver_versions_list" | head -n 1)
+        else
+            cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
+            driver_versions_list=$($cmd) || (
+                ret_code=$?
+                echo "Can not detect nvidia driver version."
+                echo "CMD: \"$cmd\""
+                echo "Result: \"$driver_versions_list\""
+                echo "nvidia-smi retcode: $ret_code"
+                exit 1
+            )
+            driver_version=$(echo "$driver_versions_list" | head -n 1)
 
-        echo "Detected nvidia driver version: $driver_version"
+            echo "Detected nvidia driver version: $driver_version"
+        fi
     fi
 
     if ! check_version_supported "$driver_version" ; then
@@ -357,8 +359,8 @@ patch_common () {
     done
 
     [[ "$dir_found" ]] || { echo "ERROR: cannot detect driver directory"; exit 1; }
-
 }
+
 
 ensure_bytes_are_valid () {
     driver_file="$driver_dir/$object.$driver_version"
