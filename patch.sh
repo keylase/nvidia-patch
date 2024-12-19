@@ -285,11 +285,24 @@ get_supported_versions () {
 }
 
 patch_common () {
-    if [[ "$manual_driver_version" ]]; then
+ if [[ "$manual_driver_version" ]]; then
         driver_version="$manual_driver_version"
+<<<<<<< HEAD
 
         echo "Using manually entered nvidia driver version: $driver_version"
      
+=======
+        
+        echo "Using manually entered Nvidia driver version: $driver_version"
+    else
+    
+    NVIDIA_SMI="$(command -v nvidia-smi || true)"
+    
+    if [[ ! "$NVIDIA_SMI" ]] ; then
+        echo 'nvidia-smi utility not found. Probably driver is not installed.'
+        exit 1
+    
+>>>>>>> parent of ff838cf (Update patch.sh)
     else
         # Try to detect nvidia-smi, but don't exit if it's not found
         NVIDIA_SMI="$(command -v nvidia-smi || true)"
@@ -309,9 +322,15 @@ patch_common () {
             )
             driver_version=$(echo "$driver_versions_list" | head -n 1)
 
+<<<<<<< HEAD
             echo "Detected nvidia driver version: $driver_version"
         fi
     fi
+=======
+        echo "Detected nvidia driver version: $driver_version"
+       
+       fi
+>>>>>>> parent of ff838cf (Update patch.sh)
 
     if ! check_version_supported "$driver_version" ; then
         echo "Patch for this ($driver_version) nvidia driver not found."
