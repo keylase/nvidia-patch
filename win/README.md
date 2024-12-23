@@ -42,7 +42,7 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 5. Apply x86 library patch to corresponding file in `%WINDIR%\SysWOW64\` in the same way as previous one.
    - *If patching fails, close all applications using nvencodeapi.dll, such as OBS Studio, Plex or Discord.*
 
-**Example:** for 64bit Windows 10 running driver version 566.14, use `win10_x64/566.36/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/566.36/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
+**Example:** for 64bit Windows 10 running driver version 566.36, use `win10_x64/566.36/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/566.36/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
 If you still get "problem occured when patching" error, refer to the [instructions to change the ownership of the DLLs](https://github.com/keylase/nvidia-patch/issues/795#issuecomment-2225573296) by @VorlonCD
 
