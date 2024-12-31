@@ -4,15 +4,6 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 # even when script is corrupt by CRLF line terminators (issue #75)
 # empty line must follow this comment for immediate fail with CRLF newlines
 
-# root check
-if [ "$(id -u)" -ne 0 ]; then
-  echo
-  echo -e "Please run as root!"
-  echo
-  exit 1
-fi
-
-
 backup_path="/opt/nvidia/libnvidia-fbc-backup"
 silent_flag=''
 manual_driver_version=''
@@ -226,7 +217,9 @@ declare -A patch_list=(
     ["555.58.02"]='s/\x85\xc0\x0f\x85\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
     ["560.28.03"]='s/\x85\xc0\x0f\x84\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
     ["560.35.03"]='s/\x85\xc0\x0f\x84\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
+    ["560.35.05"]='s/\x85\xc0\x0f\x84\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
     ["565.57.01"]='s/\x85\xc0\x0f\x84\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
+    ["565.77"]='s/\x85\xc0\x0f\x84\x9b\x00\x00\x00\x48/\x85\xc0\x90\x90\x90\x90\x90\x90\x48/g'
 )
 
 check_version_supported () {

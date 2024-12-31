@@ -1145,6 +1145,18 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run"
+                },
+                {
+                    "version": "560.35.05",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda_12.6.3_560.35.05_linux.run"
+                },
+                {
+                    "version": "565.77",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run"
                 }
             ],
             "example": {
@@ -4529,6 +4541,15 @@
                     "patch64_url": "win10_x64/566.14/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/566.14/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/566.14/566.14-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "566.36",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/566.36/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/566.36/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/566.36/566.36-desktop-win10-win11-64bit-international-dch-whql.exe"
                 }
             ]
         }
