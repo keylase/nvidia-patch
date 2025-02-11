@@ -1,0 +1,1 @@
+Adding support for driver version 570.86.16
