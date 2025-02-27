@@ -1169,7 +1169,19 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.216.01/NVIDIA-Linux-x86_64-535.216.01.run"
-                }
+                },
+                {
+                    "version": "570.86.16",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/570.86.16/NVIDIA-Linux-x86_64-570.86.16.run"
+                },
+                {
+                    "version": "570.86.15",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/tesla/570.86.15/NVIDIA-Linux-x86_64-570.86.15.run"
+                },
             ],
             "example": {
                 "version": "430.50"
@@ -4571,6 +4583,24 @@
                     "patch64_url": "win10_x64/572.16/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/572.16/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/572.16/572.16-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "572.42",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/572.42/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/572.42/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/572.42/572.42-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "572.47",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/572.47/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/572.47/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/572.47/572.47-desktop-win10-win11-64bit-international-dch-whql.exe"
                 }
             ]
         }
