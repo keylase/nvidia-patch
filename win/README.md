@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Windows Nvidia drivers
 ==================================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-572.47-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-536.25-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-572.60-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-536.25-blue.svg)
 
 NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -33,7 +33,7 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 
 1. Download and install the latest Nvidia driver supported by this patch.
 2. Download the latest patching tool:
-   - You can use the updated fork of the Win\_1337\_Apply\_Patch tool from [Win\_1337\_Apply\_Patch](https://github.com/ramhaidar/Win_1337_Apply_Patch/releases/latest) \([pCloud Mirror](https://u.pcloud.link/publink/show?code=KS2rtalK)\).
+   - You can use the updated fork of the Win\_1337\_Apply\_Patch tool from [Win\_1337\_Apply\_Patch](https://github.com/ramhaidar/Win_1337_Apply_Patch/releases/latest) \([pCloud Mirror](https://u.pcloud.link/publink/show?code=XZYDF45Z47oHOsxTe0jgLKIN3DfG3f4oaUcV)\).
    - Alternatively, you can use the PowerShell script version available at [Win\_1337\_Apply\_Patch\_Powershell](https://raw.githubusercontent.com/ramhaidar/Win_1337_Apply_Patch_Powershell/refs/heads/main/Win_1337_Apply.ps1) \([pCloud Mirror](https://u.pcloud.link/publink/show?code=B62)\). For instructions on how to use it, see the [README.md](https://github.com/ramhaidar/Win_1337_Apply_Patch_Powershell/blob/main/README.md) file.
 3. Save patch(es) corresponding to your system, driver and product version from [Version Table](#version-table) using direct link to the patch (Right Click -> "Save as\.\.\.")
    - *Alternatively you may checkout repo using git or download it as ZIP archive and then locate corresponding .1337 patch file in `win` directory.*
@@ -42,7 +42,7 @@ If you like this project, best way to contribute is by sending PRs and fixing do
 5. Apply x86 library patch to corresponding file in `%WINDIR%\SysWOW64\` in the same way as previous one.
    - *If patching fails, close all applications using nvencodeapi.dll, such as OBS Studio, Plex or Discord.*
 
-**Example:** for 64bit Windows 10 running driver version 572.47, use `win10_x64/572.47/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/572.47/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
+**Example:** for 64bit Windows 10 running driver version 572.60, use `win10_x64/572.60/nvencodeapi64.1337` against `C:\WINDOWS\system32\nvencodeapi64.dll` **and** `win10_x64/572.60/nvencodeapi.1337` against `C:\WINDOWS\SysWOW64\nvencodeapi.dll`.
 
 If you still get "problem occured when patching" error, refer to the [instructions to change the ownership of the DLLs](https://github.com/keylase/nvidia-patch/issues/795#issuecomment-2225573296) by @VorlonCD
 
@@ -263,6 +263,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 572.16 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.16/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.16/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/572.16/572.16-desktop-win10-win11-64bit-international-dch-whql.exe) |
 | GeForce | 572.42 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.42/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.42/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/572.42/572.42-desktop-win10-win11-64bit-international-dch-whql.exe) |
 | GeForce | 572.47 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.47/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.47/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/572.47/572.47-desktop-win10-win11-64bit-international-dch-whql.exe) |
+| GeForce | 572.60 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.60/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/572.60/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/572.60/572.60-desktop-win10-win11-64bit-international-dch-whql.exe) |
 
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
