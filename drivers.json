@@ -1181,7 +1181,7 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/tesla/570.86.15/NVIDIA-Linux-x86_64-570.86.15.run"
-                },
+                }
             ],
             "example": {
                 "version": "430.50"
