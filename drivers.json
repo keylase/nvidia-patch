@@ -1193,6 +1193,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.124.06-1_amd64.deb"
+                },
+                {
+                    "version": "570.133.07",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run"
                 }
             ],
             "example": {
@@ -4641,7 +4647,7 @@
                     "patch32_url": "win10_x64/572.75/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/572.75hf/572.75-desktop-notebook-win10-win11-64bit-international-dch.hf.exe"
                 },
-				{
+                {
                     "os": "win10",
                     "product": "GeForce",
                     "version": "572.83",
