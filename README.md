@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-570.133.07-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-570.133.20-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -233,6 +233,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 570.124.04 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.124.04/NVIDIA-Linux-x86_64-570.124.04.run) |
 | 570.124.06 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.124.06-1_amd64.deb) |
 | 570.133.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run) |
+| 570.133.20 | YES | YES | [Driver link](https://international.download.nvidia.com/tesla/570.133.20/NVIDIA-Linux-x86_64-570.133.20.run) |
 
 ## Synopsis
 
