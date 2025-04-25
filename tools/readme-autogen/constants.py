@@ -42,7 +42,7 @@ DRIVER_URL_TEMPLATE = {
     (OSKind.Windows, Product.GeForce, WinSeries.win10, ''):                 "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-win11-64bit-international-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win10, 'DCH'):              ["https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-win11-64bit-international-dch-whql.exe",
                                                                              "https://international.download.nvidia.com/tesla/$version/$version-data-center-tesla-desktop-win10-win11-64bit-dch-international.exe"],
-    (OSKind.Windows, Product.GeForce, WinSeries.win10, 'DCH (Hotfix)'):     "https://international.download.nvidia.com/Windows/${version}hf/$version-desktop-notebook-win10-win11-64bit-international-dch.hf.exe",
+    (OSKind.Windows, Product.GeForce, WinSeries.win10, 'DCH (Hotfix)'):     "https://international.download.nvidia.com/Windows/${version}hf/$version-desktop-win10-win11-64bit-international-dch-hf.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win10, 'Studio Driver'):    "https://international.download.nvidia.com/Windows/$version/$version-desktop-win10-win11-64bit-international-nsd-dch-whql.exe",
     (OSKind.Windows, Product.GeForce, WinSeries.win10, 'Vulkan Beta'):      "",
     (OSKind.Windows, Product.GeForce, WinSeries.ws2016, 'DCH'):             "https://international.download.nvidia.com/tesla/$version/$version-data-center-tesla-desktop-winserver-2016-2019-2022-dch-international.exe",
