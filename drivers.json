@@ -1235,6 +1235,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/535.230.02/NVIDIA-Linux-x86_64-535.230.02.run"
+                },
+                {
+                    "version": "570.153.02",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/570.153.02/NVIDIA-Linux-x86_64-570.153.02.run"
                 }
             ],
             "example": {
