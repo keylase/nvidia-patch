@@ -1240,7 +1240,7 @@
                     "version": "570.148.08",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
-                    "driver_url": ""
+                    "driver_url": "https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.148.08-1_amd64.deb"
                 }
                 {
                     "version": "570.153.02",
