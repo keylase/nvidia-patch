@@ -15,6 +15,7 @@ on:
           - DCH
           - Studio Driver
           - DCH (Hotfix)
+          - DCH (Notebook Hotfix)
       description:
         description: 'Commit description'
         required: false
@@ -81,6 +82,8 @@ jobs:
             python autopatch.py https://international.download.nvidia.com/Windows/${{ env.VERSION }}/${{ env.VERSION }}-desktop-win10-win11-64bit-international-nsd-dch-whql.exe
           elif [ "${{ env.VARIANT }}" == "DCH (Hotfix)" ]; then
             python autopatch.py https://international.download.nvidia.com/Windows/${{ env.VERSION }}hf/${{ env.VERSION }}-desktop-win10-win11-64bit-international-dch-hf.exe
+          elif [ "${{ env.VARIANT }}" == "DCH (Notebook Hotfix)" ]; then
+            python autopatch.py https://international.download.nvidia.com/Windows/${{ env.VERSION }}hf/${{ env.VERSION }}-desktop-notebook-win10-win11-64bit-international-dch.hf.exe
           fi
 
           echo "autopatch.py executed successfully"
