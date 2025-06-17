@@ -4758,7 +4758,7 @@
                     "patch32_url": "win10_x64/576.66/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/576.66hf/576.66-desktop-notebook-win10-win11-64bit-international-dch.hf.exe"
                 },
-				{
+                {
                     "os": "win10",
                     "product": "GeForce",
                     "version": "576.80",
