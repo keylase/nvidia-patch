@@ -1247,6 +1247,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "http://international.download.nvidia.com/XFree86/Linux-x86_64/570.153.02/NVIDIA-Linux-x86_64-570.153.02.run"
+                },
+                {
+                    "version": "575.57.08",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://in.download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.57.08.run"
                 }
             ],
             "example": {
@@ -4766,7 +4772,7 @@
                     "patch64_url": "win10_x64/576.80/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/576.80/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/576.80/576.80-desktop-win10-win11-64bit-international-dch-whql.exe"
-                },
+                }
             ]
         }
     }
