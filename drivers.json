@@ -1219,6 +1219,12 @@
                     "driver_url": "https://international.download.nvidia.com/XFree86/Linux-x86_64/570.144/NVIDIA-Linux-x86_64-570.144.run"
                 },
                 {
+                    "version": "570.158.01",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.158.01-1_amd64.deb"
+                },
+                {
                     "version": "575.51.02",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
