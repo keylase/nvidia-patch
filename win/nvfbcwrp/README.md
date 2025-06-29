@@ -38,5 +38,3 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm" /v NVFBC
 ```
 
 (reboot / driver restart required to take effect)
-
-To quickly reset graphics driver press `Windows key` + `Ctrl` + `Shift` + `B`
