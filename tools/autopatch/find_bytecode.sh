@@ -7,7 +7,7 @@ set -euo pipefail
     exit 2
 }
 
-MATCH_STR=feff85c04189c4
+MATCH_STR=feff4189c685c0
 driver_version=$1
 driver_url=$2
 driver_file=NVIDIA-Linux-x86_64-$driver_version.run
@@ -34,7 +34,7 @@ search_bytecode() {
 
 get_patch_str() {
     bytecode=$1
-    fixed=${bytecode:0:10}29${bytecode:(-8):8}
+    fixed=${bytecode:0:10}29c0${bytecode:(-10):6}
     bytecode=$(echo "$bytecode" | sed 's/../\\x&/g')
     fixed=$(echo "$fixed" | sed 's/../\\x&/g')
     echo "[\"$driver_version\"]='s/$bytecode/$fixed/g'"
