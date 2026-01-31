@@ -1,5 +1,4 @@
-NVENC and NvFBC patches for Windows Nvidia drivers
-==================================================
+# NVENC and NvFBC patches for Windows Nvidia drivers
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-591.86-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-582.16-blue.svg)
 
@@ -26,7 +25,7 @@ If you like this project, best way to contribute is by sending PRs and fixing do
   - Windows Server 2012 R2
   - Windows Server 2016
   - Windows Server 2019
-- NVENC-compatible GPU (https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
+- NVENC-compatible GPU (<https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder>)
 - Nvidia driver. Patch available for versions in [table below](#version-table).
 
 ## NVENC Patch Step-by-Step Guide
@@ -61,7 +60,6 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 ## Version Table
 
 ### Windows 10, Windows 11 drivers
-
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
@@ -292,7 +290,6 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 591.74 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/591.74/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/591.74/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/591.74/591.74-desktop-win10-win11-64bit-international-dch-whql.exe) |
 | GeForce | 591.86 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/591.86/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/591.86/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/591.86/591.86-desktop-win10-win11-64bit-international-dch-whql.exe) |
 
-
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
 | Quadro | 416.78 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_416.78/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_416.78/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/416.78/416.78-quadro-desktop-notebook-win10-64bit-international-whql.exe) |
@@ -341,9 +338,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 536.25 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_536.25/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_536.25/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/536.25/536.25-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe) |
 | Quadro | 582.16 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_582.16/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/quadro_582.16/nvencodeapi.1337) | [Driver link]("https://international.download.nvidia.com/Windows/Quadro_Certified/582.16/582.16-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe) |
 
-
 ### Windows 7, Windows 8, Windows 8.1 drivers
-
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
@@ -414,7 +409,6 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 471.96 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/471.96/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/471.96/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/471.96/471.96-desktop-win8-win7-64bit-international-whql.exe) |
 | GeForce | 472.12 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/472.12/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/472.12/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/472.12/472.12-desktop-win8-win7-64bit-international-whql.exe) |
 
-
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
 | Quadro | 431.02 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_431.02/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/431.02/431.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
@@ -428,9 +422,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 441.28 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.28/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.28/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/441.28/441.28-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 | Quadro | 441.66 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.66/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win7_x64/quadro_441.66/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/441.66/441.66-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe) |
 
-
 ### Windows Server 2008R2, 2012, 2012R2 drivers
-
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
@@ -466,9 +458,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 472.12 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_472.12/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_472.12/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/472.12/472.12-quadro-rtx-winserv-2012r2-64bit-international-whql.exe) |
 | Quadro | 472.84 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_472.84/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2012_x64/quadro_472.84/nvencodeapi.1337) | [Driver link](http://international.download.nvidia.com/Windows/Quadro_Certified/472.84/472.84-quadro-rtx-winserv-2012r2-64bit-international-whql.exe) |
 
-
 ### Windows Server 2016, 2019 drivers
-
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
 |----------------|---------|-------------------|-------------------|-------------|
@@ -503,7 +493,6 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | Quadro | 472.12 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_472.12/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_472.12/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/Quadro_Certified/472.12/472.12-quadro-rtx-winserv-2016-2019-64bit-international-whql.exe) |
 | Quadro | 472.84 | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_472.84/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/ws2016_x64/quadro_472.84/nvencodeapi.1337) | [Driver link](http://international.download.nvidia.com/Windows/Quadro_Certified/472.84/472.84-quadro-rtx-winserv-2016-2019-64bit-international-whql.exe) |
 
-
 ## Benchmarks
 
-* [Plex Media Server: nVidia Hardware Transcoding Calculator for Plex Estimates](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding) - useful benchmark of achieved simultaneous transcodes with various stream quality and hardware with patched drivers.
+- [Plex Media Server: nVidia Hardware Transcoding Calculator for Plex Estimates](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding) - useful benchmark of achieved simultaneous transcodes with various stream quality and hardware with patched drivers.
