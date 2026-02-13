@@ -246,6 +246,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 570.169 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run) |
 | 570.172.08 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-570_570.172.08-1_amd64.deb) |
 | 570.195.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/570.195.03/NVIDIA-Linux-x86_64-570.195.03.run) |
+| 570.211.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/570.211.01/NVIDIA-Linux-x86_64-570.211.01.run) |
 | 575.51.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/575.51.02/NVIDIA-Linux-x86_64-575.51.02.run) |
 | 575.57.08 | YES | YES | [Driver link](https://in.download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.57.08.run) |
 | 575.64 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/575.64/NVIDIA-Linux-x86_64-575.64.run) |
