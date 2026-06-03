@@ -1393,6 +1393,12 @@
                     "driver_url": "https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.159.03-1_amd64.deb"
                 },
                 {
+                    "version": "580.159.04",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.159.04-1_amd64.deb"
+                },
+                {
                     "version": "595.45.04",
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
