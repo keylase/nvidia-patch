@@ -1,5 +1,4 @@
-nvfbcwrp
-========
+# nvfbcwrp
 
 Wrapper for `NvFBC64.dll` library which injects private keys into `NvFBC_CreateEx` calls in order to enable NvFBC on customer-grade hardware (like GeForce cards) for all NvFBC-targeted applications. It should work at least with applications built with Nvidia Capture SDK versions 5.0 to 7.1.
 
@@ -14,6 +13,8 @@ Wrapper for `NvFBC64.dll` library which injects private keys into `NvFBC_CreateE
 7. Restart any applications using this library. That's it.
 
 This procedure has to be repeated after any driver reinstall/update, so keep your copies of `nvfbcwrp64.dll` and `nvfbcwrp32.dll` files.
+
+You can use the [PowerShell script](Patch.ps1) and [Patch Launcher](RunPatch.bat) to quickly apply patch.
 
 ## Advanced Usage
 
@@ -31,7 +32,9 @@ Hence, if default magic baked into nvfbcwrp doesn't work for you, you have to:
 ## 3rd-party software
 
 For some software (e.g Steam) it is also needed to add registry value to use NvFBC, which you can do by running:
+
 ```batch
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm" /v NVFBCEnable /d 1 /t REG_DWORD /f
 ```
+
 (reboot / driver restart required to take effect)
