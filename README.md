@@ -273,6 +273,7 @@ If you want to donate, please send it to your favorite open source organizations
 | 595.80 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.80/NVIDIA-Linux-x86_64-595.80.run) |
 | 595.84 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.84/NVIDIA-Linux-x86_64-595.84.run) |
 | 610.43.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/610.43.02/NVIDIA-Linux-x86_64-610.43.02.run) |
+| 610.43.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/610.43.03/NVIDIA-Linux-x86_64-610.43.03.run) |
 
 ## Synopsis
 
