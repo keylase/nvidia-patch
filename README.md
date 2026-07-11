@@ -383,7 +383,7 @@ bash ./patch.sh -f
 bash ./patch-fbc.sh -f
 ```
 
-In case something goes wrong, you can restore the original Flatpak drivers by adding the `-r` paramater:
+In case something goes wrong, you can restore the original Flatpak drivers by adding the `-r` parameter:
 
 ```
 bash ./patch.sh -f -r
