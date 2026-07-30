@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Windows Nvidia drivers
 ==================================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-610.52-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-582.16-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest GeForce version](https://img.shields.io/badge/latest%20GeForce%20version-610.88-brightgreen.svg) ![Latest Quadro version](https://img.shields.io/badge/latest%20Quadro%20version-582.16-blue.svg)
 
 NVENC patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -301,6 +301,7 @@ Credits to [TroubleChute channel](https://www.youtube.com/channel/UCkih2oVTbXPEp
 | GeForce | 596.49 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/596.49/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/596.49/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/596.49/596.49-desktop-win10-win11-64bit-international-dch-whql.exe) |
 | GeForce | 610.47 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.47/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.47/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/610.47/610.47-desktop-win10-win11-64bit-international-dch-whql.exe) |
 | GeForce | 610.52 DCH (Hotfix) | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.52/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.52/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/610.52hf/610.52-desktop-notebook-win10-win11-64bit-international-dch.hf.exe) |
+| GeForce | 610.88 DCH | [x64 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.88/nvencodeapi64.1337) | [x86 library patch](https://raw.githubusercontent.com/keylase/nvidia-patch/master/win/win10_x64/610.88/nvencodeapi.1337) | [Driver link](https://international.download.nvidia.com/Windows/610.88/610.88-desktop-win10-win11-64bit-international-dch-whql.exe) |
 
 
 | Product series | Version | x64 library patch | x86 library patch | Driver link |
