@@ -5085,6 +5085,24 @@
                 {
                     "os": "win10",
                     "product": "GeForce",
+                    "version": "582.53",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/582.53/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/582.53/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/582.53/582.53-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "582.66",
+                    "variant": "DCH (Notebook)",
+                    "patch64_url": "win10_x64/582.66/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/582.66/nvencodeapi.1337",
+                    "driver_url": "https://us.download.nvidia.com/Windows/582.66/582.66-notebook-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
                     "version": "591.44",
                     "variant": "DCH",
                     "patch64_url": "win10_x64/591.44/nvencodeapi64.1337",
@@ -5135,6 +5153,33 @@
                     "patch64_url": "win10_x64/quadro_582.16/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/quadro_582.16/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/582.16/582.16-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "Quadro",
+                    "version": "537.70",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/quadro_537.70/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/quadro_537.70/nvencodeapi.1337",
+                    "driver_url": "https://cn.download.nvidia.com/tesla/537.70/537.70-data-center-tesla-desktop-win10-win11-64bit-dch-international.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "Quadro",
+                    "version": "552.22",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/quadro_552.22/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/quadro_552.22/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/Quadro_Certified/552.22/552.22-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "Quadro",
+                    "version": "553.35",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/quadro_553.35/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/quadro_553.35/nvencodeapi.1337",
+                    "driver_url": "https://us.download.nvidia.com/Windows/Quadro_Certified/553.35/553.35-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe"
                 },
                 {
                     "os": "win10",
@@ -5216,6 +5261,24 @@
                     "patch64_url": "win10_x64/610.52/nvencodeapi64.1337",
                     "patch32_url": "win10_x64/610.52/nvencodeapi.1337",
                     "driver_url": "https://international.download.nvidia.com/Windows/610.52hf/610.52-desktop-notebook-win10-win11-64bit-international-dch.hf.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "610.62",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/610.62/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/610.62/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/610.62/610.62-desktop-win10-win11-64bit-international-dch-whql.exe"
+                },
+                {
+                    "os": "win10",
+                    "product": "GeForce",
+                    "version": "610.74",
+                    "variant": "DCH",
+                    "patch64_url": "win10_x64/610.74/nvencodeapi64.1337",
+                    "patch32_url": "win10_x64/610.74/nvencodeapi.1337",
+                    "driver_url": "https://international.download.nvidia.com/Windows/610.74/610.74-desktop-win10-win11-64bit-international-dch-whql.exe"
                 },
                 {
                     "os": "win10",
