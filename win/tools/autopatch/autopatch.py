@@ -17,6 +17,47 @@ LINE_FORMAT = CRLF + b"%016X:%02X->%02X"
 OFFSET_ADJUSTMENT = 0xC00  # shift specific to x64dbg .1337 format
 
 
+# NVENC libraries ship exactly one of a handful of bytecode generations,
+# depending on the driver family. Historically the newest generation was
+# hardcoded as the default and bumped by hand whenever a new driver changed the
+# code, which silently broke every older driver. Listing the known generations
+# here (newest first) and auto-selecting the one that matches lets a single
+# build of this tool handle every driver without editing the defaults.
+# Each entry is a (search, replacement) pair of equal-length hex strings; both
+# the 64-bit and 32-bit libraries follow the same table because their patterns
+# are disjoint. Values are taken from this file's own history.
+BYTECODE_GENERATIONS = (
+    # 591.xx and newer
+    ("8BF04533FF85C0", "33C08BF04533FF"),
+    ("8985ECFBFFFF85C08B85DCFBFFFF7504",
+     "31C08985ECFBFFFF8B85DCFBFFFF7504"),
+    # ~2022-06 variant (x64)
+    ("8BF085C0750549892FEB", "33C08BF0750549892FEB"),
+    # ~2022-02 era (x64)
+    ("8BE885C0750548893EEB", "33C08BE8750548893EEB"),
+    # ~2022 era (x86)
+    ("89450885C08B450C75048938EB", "33C08945088B450C75048938EB"),
+    # ~2019-11 (x86)
+    ("89450885C075048937EB", "33C089450875048937EB"),
+    # ~2019-10
+    ("FF909800000084C075", "FF90980000000C0175"),
+    ("8B404CFFD084C075", "8B404CFFD00C0175"),
+)
+
+
+def select_bytecode(data):
+    """Return the ``(search, replacement)`` pair matching ``data`` exactly once.
+
+    Returns ``None`` when no known generation matches unambiguously, so the
+    caller can report a clear error instead of guessing.
+    """
+    for search_hex, replacement_hex in BYTECODE_GENERATIONS:
+        search = unhexlify(search_hex)
+        if data.count(search) == 1:
+            return search, unhexlify(replacement_hex)
+    return None
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Generates .1337 patch for Nvidia drivers for Windows",
@@ -52,18 +93,15 @@ def parse_args():
                         help="relative filename(s) of generated patch(es)")
     parser.add_argument("-S", "--search",
                         nargs="+",
-                        default=[
-                            "8BF04533FF85C0",
-                            "8985ECFBFFFF85C08B85DCFBFFFF7504",
-                        ],
-                        help="representation of search pattern(s) binary string")
+                        default=None,
+                        help="representation of search pattern(s) binary "
+                             "string (default: auto-detect from the target "
+                             "library)")
     parser.add_argument("-R", "--replacement",
                         nargs="+",
-                        default=[
-                            "33C08BF04533FF",
-                            "31C08985ECFBFFFF8B85DCFBFFFF7504",
-                        ],
-                        help="representation of replacement(s) binary string")
+                        default=None,
+                        help="representation of replacement(s) binary string "
+                             "(default: auto-detect from the target library)")
     parser.add_argument("-o", "--stdout",
                         action="store_true",
                         help="output into stdout")
@@ -93,6 +131,28 @@ class UnknownPlatformException(Exception):
 class InstallerNotFoundException(Exception):
     pass
 
+
+def _alternate_target_names(arch_tgt):
+    """Return ``arch_tgt`` plus its ``.dll``/``.dl_`` spelling variant.
+
+    NVENC libraries are stored either raw (``nvencodeapi64.dll``) or
+    LZMA-compressed (``nvencodeapi64.dl_``) depending on the driver
+    generation, and the caller may request either spelling. Both are tried so
+    that a target present under the other name is still picked up.
+    """
+    names = [arch_tgt]
+    basename = os.path.basename(arch_tgt)
+    if basename.endswith(".dll"):
+        alternate = basename[:-len(".dll")] + ".dl_"
+    elif basename.endswith(".dl_"):
+        alternate = basename[:-len(".dl_")] + ".dll"
+    else:
+        alternate = None
+    if alternate is not None:
+        names.append(os.path.join(os.path.dirname(arch_tgt), alternate))
+    return names
+
+
 class ExtractedTarget:
     name = None
 
@@ -103,20 +163,29 @@ class ExtractedTarget:
         self._arch_tgt = arch_tgt
 
     def __enter__(self):
-        ret = subprocess.call([self._sevenzip,
-                               "e",
-                               "-o" + self._dst_dir,
-                               self._archive,
-                               self._arch_tgt],
-                              stdout=sys.stderr)
-        if ret != 0:
-            raise ExtractException("Subprocess returned non-zero exit code.")
-        name = os.path.join(self._dst_dir, os.path.basename(self._arch_tgt))
-        self.name = name
-        return name
+        # 7z exits 0 with "No files to process" when the requested member is
+        # absent, so a successful return code is not enough: verify a file
+        # actually appeared and fall back to the .dll/.dl_ spelling variant.
+        for arch_tgt in _alternate_target_names(self._arch_tgt):
+            ret = subprocess.call([self._sevenzip,
+                                   "e",
+                                   "-o" + self._dst_dir,
+                                   self._archive,
+                                   arch_tgt],
+                                  stdout=sys.stderr)
+            if ret != 0:
+                raise ExtractException(
+                    "Subprocess returned non-zero exit code.")
+            name = os.path.join(self._dst_dir, os.path.basename(arch_tgt))
+            if os.path.isfile(name):
+                self.name = name
+                return name
+        raise ExtractException(
+            "Target %r not found in archive %r (also tried the .dll/.dl_ "
+            "variant)." % (self._arch_tgt, self._archive))
 
     def __exit__(self, exc_type, exc_value, traceback):
-        if self.name is not None:
+        if self.name is not None and os.path.isfile(self.name):
             os.remove(self.name)
 
 
@@ -163,6 +232,13 @@ def make_patch(archive, *,
                     f = fo.read()
             else:
                 f = expand(tgt, sevenzip=sevenzip)
+    if search is None or replacement is None:
+        selected = select_bytecode(f)
+        if selected is None:
+            raise PatternNotFoundException(
+                "No known NVENC bytecode generation matched exactly once in "
+                "%r; pass -S/-R explicitly." % (arch_tgt,))
+        search, replacement = selected
     offset = f.find(search)
     if offset == -1:
         raise PatternNotFoundException("Pattern not found.")
@@ -197,9 +273,14 @@ def format_patch(diff, filename):
 
 def patch_flow(installer_file, search, replacement, target, target_name, patch_name, *,
                tempdir, direct=False, stdout=False, sevenzip="7z"):
-    search = unhexlify(search)
-    replacement = unhexlify(replacement)
-    assert len(search) == len(replacement), "len() of search and replacement is not equal"
+    if (search is None) != (replacement is None):
+        raise ValueError(
+            "Both -S/--search and -R/--replacement must be given together, "
+            "or neither (to auto-detect).")
+    if search is not None:
+        search = unhexlify(search)
+        replacement = unhexlify(replacement)
+        assert len(search) == len(replacement), "len() of search and replacement is not equal"
 
     # Check if installer file exists or try to download
 
@@ -283,11 +364,24 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
 def main():
     args = parse_args()
 
+    if args.search is None:
+        # No explicit patterns: auto-detect per target library.
+        count = len(args.installer_file) if args.direct else len(args.target)
+        search = [None] * count
+        replacement = [None] * count
+    else:
+        if args.replacement is None:
+            raise ValueError(
+                "Both -S/--search and -R/--replacement must be given together, "
+                "or neither (to auto-detect).")
+        search = args.search
+        replacement = args.replacement
+
     if args.direct:
-        combinations = zip(args.installer_file, args.search, args.replacement,
+        combinations = zip(args.installer_file, search, replacement,
                            args.target, args.target_name, args.patch_name)
     else:
-        base_params = zip(args.search, args.replacement, args.target, args.target_name, args.patch_name)
+        base_params = zip(search, replacement, args.target, args.target_name, args.patch_name)
         combinations = ((l,) + r for l, r in itertools.product(args.installer_file, base_params))
 
     with tempfile.TemporaryDirectory() as tempdir:
