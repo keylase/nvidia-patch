@@ -121,7 +121,9 @@ bash ./patch.sh -r
 
 ## Docker support
 
-It is possible to use this patch with nvidia-docker containers, even if host machine hasn't patched drivers. See `Dockerfile` for example.
+If you are unable to install this patch on a host machine, it is possible to use this patch within nvidia-docker containers instead. See `Dockerfile` for example.
+
+This is an **alternative** to patching the host, not an extra requirement on top of it: the container patches the driver libraries it has mounted, so the host driver does not need to be patched for the patch to take effect inside the container.
 
 Essentially all you need to do during build is:
 
