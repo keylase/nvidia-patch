@@ -1,4 +1,4 @@
-FROM nvidia/cuda:13.4.3-cudnn-runtime-rockylinux9
+FROM nvidia/cuda:latest
 
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,video,utility
