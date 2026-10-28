@@ -1493,6 +1493,12 @@
                     "nvenc_patch": true,
                     "nvfbc_patch": true,
                     "driver_url": "https://us.download.nvidia.com/XFree86/Linux-x86_64/615.78.08/NVIDIA-Linux-x86_64-615.78.08.run"
+                },
+                {
+                    "version": "580.196.07",
+                    "nvenc_patch": true,
+                    "nvfbc_patch": true,
+                    "driver_url": "https://us.download.nvidia.com/XFree86/Linux-x86_64/580.196.07/NVIDIA-Linux-x86_64-580.196.07.run"
                 }
             ],
             "example": {
