@@ -346,15 +346,19 @@ Function Test-WrapperPe {
 }
 
 # Moves the genuine DLL to its backup name. Never overwrites an existing backup.
-# Known limit (F-7): an interrupt (Ctrl+C) after taking ownership in Unlock-DLL and before
-# Restore-Owner has finished (the window is between the unlock and the end of the restore) can
-# leave NvFBC64_.dll / NvFBC_.dll owned by Administrators, possibly with an Administrators
-# FullControl entry. The DLL contents are intact. A re-run does not restore owner/ACL, because the
-# move then succeeds without UnauthorizedAccess. Fix by hand if desired (see README.md).
-# Order: move, verify the move, restore owner/ACL on the moved backup, then verify the hash, so the
-# unrestored window is as short as possible. Rollback records are kept correct at each step.
+# Owner/ACL: when Move-Item is refused (UnauthorizedAccess), Unlock-DLL takes ownership of the
+# ORIGINAL file and grants Administrators FullControl, and the move is retried. The owner restore of
+# the BACKUP is deliberately NOT done here. It is recorded in $Deferred and runs in
+# Invoke-FinalizeOwner only after every target was applied. Until then the backup keeps the
+# Administrators grant, so a rollback can always move it back. A rollback restores owner/DACL on the
+# ORIGINAL path, after the move back (see Undo-Changes, 'Acl').
+# Known limit (F-7): an interrupt (Ctrl+C) after the unlock and before Invoke-FinalizeOwner has
+# finished can leave NvFBC64_.dll / NvFBC_.dll owned by Administrators, possibly with an
+# Administrators FullControl entry. The DLL contents are intact. A re-run does not restore owner/ACL,
+# because the move then succeeds without UnauthorizedAccess. Fix by hand if desired (see README.md).
+# Order: move, verify the move, verify the hash, then record the finalize step.
 Function Move-Genuine {
-    param($Target, $Undo)
+    param($Target, $Undo, $Deferred)
     $from = $Target.Original
     $to = $Target.Backup
     $aclEntry = $null
@@ -363,19 +367,21 @@ Function Move-Genuine {
     }
     catch [System.UnauthorizedAccessException] {
         Write-Host "[$($Target.Name)] Access denied; taking ownership of $from ..."
-        # Everything needed to revert is recorded BEFORE the unlock. Rollback runs Restore-Owner on
-        # the original path after the file has been moved back, so a half-done unlock is undone too.
+        # Everything needed to revert is recorded BEFORE the unlock. AddedAdminGrant starts as $false and
+        # is set only after Unlock-DLL has succeeded, so a failed takeown or grant is never "undone" as a grant.
         $ownerSid = Get-OwnerSid -Path $from
         $hadAdminAce = Test-ExplicitAdminAce -Path $from
         $aclEntry = [pscustomobject]@{
             Kind            = 'Acl'
-            Path            = $from
+            Path            = $from                 # original path: rollback runs Restore-Owner here, after the move back
+            Backup          = $to                   # finalize runs Restore-Owner here, after all targets were applied
             OwnerSid        = $ownerSid
-            AddedAdminGrant = (-not $hadAdminAce)   # never remove an Administrators ACE that was already there
+            AddedAdminGrant = $false
             Done            = $false
         }
         $Undo.Add($aclEntry)
         Unlock-DLL -Path $from
+        $aclEntry.AddedAdminGrant = (-not $hadAdminAce)   # never remove an Administrators ACE that was already there
         Move-Item -LiteralPath $from -Destination $to
     }
     # Recorded right after the move, so rollback moves the backup back even if a later step fails.
@@ -384,17 +390,10 @@ Function Move-Genuine {
     if ((Test-Path -LiteralPath $from) -or -not (Test-Path -LiteralPath $to -PathType Leaf)) {
         throw "Move verification failed: $from -> $to"
     }
-    if ($aclEntry) {
-        # Owner/ACL go back on the moved BACKUP, not on the original path. Runs before the hash check
-        # so the window with the Administrators ownership is as short as possible.
-        $r = Restore-Owner -Path $to -OwnerSid $aclEntry.OwnerSid -RemoveAdminGrant $aclEntry.AddedAdminGrant
-        if ($r -eq 'failed') { throw "Could not remove the Administrators grant from the backup $to" }
-        if ($r -eq 'full') { $aclEntry.Done = $true }
-        else { $aclEntry.AddedAdminGrant = $false }   # partial: the grant is already gone; rollback retries only the owner
-    }
     if ((Get-Sha256 -Path $to) -ne $Target.OriginalHash) {
         throw "Hash mismatch after moving the genuine DLL to $to"
     }
+    if ($aclEntry) { $Deferred.Add($aclEntry) }   # restored by Invoke-FinalizeOwner, success path only
     Write-Host "[$($Target.Name)] OK: moved $from -> $to (SHA-256 verified)"
 }
 
@@ -480,6 +479,28 @@ Function Show-AclNotes {
     foreach ($n in $script:AclNotes) { Write-Host "  $n" -ForegroundColor Yellow }
 }
 
+# Final phase. Runs ONLY after every target was applied successfully, so no rollback can follow it.
+# Restores the owner and DACL of each backup that Move-Genuine took ownership of, using the saved
+# owner SID and the grant flag recorded there. Statuses from Restore-Owner:
+#   'full' / 'partial'  normal. 'partial' (owner not set back, typically TrustedInstaller) is a NOTE.
+#   'failed'            the Administrators grant could not be removed. A red WARNING is shown and
+#                       the run still exits 0: rolling back a completed install would be worse. The
+#                       backup keeps an extra Administrators FullControl entry until fixed by hand.
+# Never throws, never rolls back.
+Function Invoke-FinalizeOwner {
+    param($Deferred)
+    foreach ($entry in $Deferred) {
+        $r = Restore-Owner -Path $entry.Backup -OwnerSid $entry.OwnerSid -RemoveAdminGrant $entry.AddedAdminGrant
+        if ($r -eq 'full') { $entry.Done = $true }
+        elseif ($r -eq 'partial') { $entry.AddedAdminGrant = $false }   # the grant is already gone
+        elseif ($r -eq 'failed') {
+            $msg = "WARNING: $($entry.Backup) still has an Administrators entry. The install is complete and the exit code stays 0. Remove the Administrators entry from that file by hand."
+            Write-Host $msg -ForegroundColor Red
+            $script:AclNotes.Add($msg)
+        }
+    }
+}
+
 Function Invoke-Patch {
     $scriptDir = $PSScriptRoot
     Write-Host 'Starting NVFBC DLL patch...'
@@ -507,6 +528,7 @@ Function Invoke-Patch {
 
     # Apply. Any failure rolls back everything done in this run, for both architectures.
     $undo = New-Object -TypeName System.Collections.Generic.List[object]
+    $deferred = New-Object -TypeName System.Collections.Generic.List[object]   # owner/DACL restores for the finalize step
     try {
         foreach ($t in $targets) {
             switch ($t.Action) {
@@ -514,7 +536,7 @@ Function Invoke-Patch {
                     Write-Host "[$($t.Name)] OK: already patched ($($t.Original) is the wrapper, $($t.Backup) kept). Skipped."
                 }
                 'Install' {
-                    Move-Genuine -Target $t -Undo $undo
+                    Move-Genuine -Target $t -Undo $undo -Deferred $deferred
                     Install-Wrapper -Target $t -Undo $undo
                 }
                 'ResumeInstall' {
@@ -538,6 +560,8 @@ Function Invoke-Patch {
         return 1
     }
 
+    # Every target is applied. Only now are the backups' owner/DACL restored (success path only).
+    Invoke-FinalizeOwner -Deferred $deferred
     Show-AclNotes
     Write-Host 'NVFBC patch complete.'
     return 0
