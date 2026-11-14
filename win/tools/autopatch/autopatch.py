@@ -315,7 +315,8 @@ def main():
     with tempfile.TemporaryDirectory() as tempdir:
         print(f"Using tempdir `{tempdir}`")
         for params in combinations:
-            patch_flow(*params, tempdir=tempdir, direct=args.direct, stdout=args.stdout)
+            patch_flow(*params, tempdir=tempdir, direct=args.direct, stdout=args.stdout,
+                       sevenzip=args.sevenzip)
 
 
 if __name__ == '__main__':
