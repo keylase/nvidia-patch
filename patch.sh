@@ -345,17 +345,17 @@ get_supported_versions () {
 }
 
 patch_common () {
-    NVIDIA_SMI="$(command -v nvidia-smi || true)"
-    if [[ ! "$NVIDIA_SMI" ]] ; then
-        echo 'nvidia-smi utility not found. Probably driver is not installed.'
-        exit 1
-    fi
-
     if [[ "$manual_driver_version" ]]; then
         driver_version="$manual_driver_version"
 
         echo "Using manually entered nvidia driver version: $driver_version"
     else
+        NVIDIA_SMI="$(command -v nvidia-smi || true)"
+        if [[ ! "$NVIDIA_SMI" ]] ; then
+            echo 'nvidia-smi utility not found. Probably driver is not installed.'
+            exit 1
+        fi
+
         cmd="$NVIDIA_SMI --query-gpu=driver_version --format=csv,noheader,nounits"
         driver_versions_list=$($cmd) || (
             ret_code=$?
