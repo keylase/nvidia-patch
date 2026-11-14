@@ -7,6 +7,7 @@ import os.path
 import subprocess
 import sys
 import tempfile
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from binascii import unhexlify
@@ -53,17 +54,20 @@ def parse_args():
     parser.add_argument("-S", "--search",
                         nargs="+",
                         default=[
-                            "8BF04533FF85C0",
-                            "8985ECFBFFFF85C08B85DCFBFFFF7504",
+                            "8BF04533FF85C0,8BF085C0750549892FEB",
+                            "8985ECFBFFFF85C08B85DCFBFFFF7504,89450885C08B450C7504",
                         ],
-                        help="representation of search pattern(s) binary string")
+                        help="representation of search pattern(s) binary string. "
+                             "Separate fallback alternatives with commas; "
+                             "alternatives are tried in order and the first one found is used")
     parser.add_argument("-R", "--replacement",
                         nargs="+",
                         default=[
-                            "33C08BF04533FF",
-                            "31C08985ECFBFFFF8B85DCFBFFFF7504",
+                            "33C08BF04533FF,33C08BF0750549892FEB",
+                            "31C08985ECFBFFFF8B85DCFBFFFF7504,33C08945088B450C7504",
                         ],
-                        help="representation of replacement(s) binary string")
+                        help="representation of replacement(s) binary string. "
+                             "Fallback alternatives must match search order")
     parser.add_argument("-o", "--stdout",
                         action="store_true",
                         help="output into stdout")
@@ -143,6 +147,13 @@ def extract_single_file(archive, filename, *, sevenzip="7z"):
     return result
 
 
+def parse_binary_alternatives(value):
+    items = value.split(',')
+    if any(not item for item in items):
+        raise ValueError(f"Empty alternative in '{value}': check for leading, trailing or doubled commas")
+    return [unhexlify(item) for item in items]
+
+
 def make_patch(archive, *,
                arch_tgt,
                search,
@@ -163,16 +174,23 @@ def make_patch(archive, *,
                     f = fo.read()
             else:
                 f = expand(tgt, sevenzip=sevenzip)
-    offset = f.find(search)
-    if offset == -1:
+    selected = None
+    for pattern, patched_pattern in zip(search, replacement):
+        offset = f.find(pattern)
+        if offset == -1:
+            continue
+        if f[offset + len(pattern):].find(pattern) != -1:
+            raise MultipleOccurencesException("Multiple occurences of pattern found!")
+        selected = (offset, pattern, patched_pattern)
+        break
+    if selected is None:
         raise PatternNotFoundException("Pattern not found.")
-    if f[offset + len(search):].find(search) != -1:
-        raise MultipleOccurencesException("Multiple occurences of pattern found!")
+    offset, matched_search, matched_replacement = selected
     del f
     print("Pattern found @ %016X" % (offset,), file=sys.stderr)
 
     res = []
-    for (i, (left, right)) in enumerate(zip(search, replacement)):
+    for (i, (left, right)) in enumerate(zip(matched_search, matched_replacement)):
         if left != right:
             res.append((offset + i, left, right))
     return res
@@ -183,8 +201,10 @@ def identify_driver(archive, *, sevenzip="7z"):
     manifest = extract_single_file(archive, "setup.cfg", sevenzip=sevenzip)
     root = ET.fromstring(manifest)
     version = root.attrib['version']
-    product_type = root.find('./properties/string[@name="ProductType"]') \
-        .attrib['value']
+    product_type_element = root.find('./properties/string[@name="ProductType"]')
+    if product_type_element is None:
+        raise UnknownPlatformException("Can't find ProductType in setup.cfg")
+    product_type = product_type_element.attrib['value']
     return version, product_type
 
 
@@ -197,9 +217,11 @@ def format_patch(diff, filename):
 
 def patch_flow(installer_file, search, replacement, target, target_name, patch_name, *,
                tempdir, direct=False, stdout=False, sevenzip="7z"):
-    search = unhexlify(search)
-    replacement = unhexlify(replacement)
-    assert len(search) == len(replacement), "len() of search and replacement is not equal"
+    search = parse_binary_alternatives(search)
+    replacement = parse_binary_alternatives(replacement)
+    assert len(search) == len(replacement), "count of search and replacement alternatives is not equal"
+    for search_item, replacement_item in zip(search, replacement):
+        assert len(search_item) == len(replacement_item), "len() of search and replacement is not equal"
 
     # Check if installer file exists or try to download
 
@@ -230,7 +252,7 @@ def patch_flow(installer_file, search, replacement, target, target_name, patch_n
                 else:
                     print(f"Using downloaded file in '{file_path}'")
                     installer_file = file_path
-            except (urllib.error.URLError, Exception) as e:
+            except urllib.error.URLError as e:
                 raise InstallerNotFoundException(f"Failed to download the file: {e}")
             except Exception as e:
                 raise InstallerNotFoundException(f"An error occurred during download: {str(e)}")
