@@ -44,9 +44,9 @@ optional arguments:
   -P PATCH_NAME [PATCH_NAME ...], --patch-name PATCH_NAME [PATCH_NAME ...]
                         relative filename(s) of generated patch(es) (default: ['nvencodeapi64.1337', 'nvencodeapi.1337'])
   -S SEARCH [SEARCH ...], --search SEARCH [SEARCH ...]
-                        representation of search pattern(s) binary string (default: ['8BF085C0750549892FEB', '89450885C075048937EB'])
+                        representation of search pattern(s) binary string (default: auto-detect from the target library). Separate fallback alternatives with commas; alternatives are tried in order and the first one found is used
   -R REPLACEMENT [REPLACEMENT ...], --replacement REPLACEMENT [REPLACEMENT ...]
-                        representation of replacement(s) binary string (default: ['33C08BF0750549892FEB', '33C089450875048937EB'])
+                        representation of replacement(s) binary string (default: auto-detect from the target library). Fallback alternatives must match search order
   -o, --stdout          output into stdout (default: False)
   -D, --direct          supply patched library directly instead of installer file (default: False)
 ```
