@@ -58,7 +58,8 @@ def parse_args():
                             "8985ECFBFFFF85C08B85DCFBFFFF7504,89450885C08B450C7504",
                         ],
                         help="representation of search pattern(s) binary string. "
-                             "Separate fallback alternatives with commas")
+                             "Separate fallback alternatives with commas; "
+                             "alternatives are tried in order and the first one found is used")
     parser.add_argument("-R", "--replacement",
                         nargs="+",
                         default=[
@@ -147,7 +148,10 @@ def extract_single_file(archive, filename, *, sevenzip="7z"):
 
 
 def parse_binary_alternatives(value):
-    return [unhexlify(item) for item in value.split(',')]
+    items = value.split(',')
+    if any(not item for item in items):
+        raise ValueError(f"Empty alternative in '{value}': check for leading, trailing or doubled commas")
+    return [unhexlify(item) for item in items]
 
 
 def make_patch(archive, *,
@@ -170,24 +174,23 @@ def make_patch(archive, *,
                     f = fo.read()
             else:
                 f = expand(tgt, sevenzip=sevenzip)
-    matches = []
+    selected = None
     for pattern, patched_pattern in zip(search, replacement):
         offset = f.find(pattern)
         if offset == -1:
             continue
         if f[offset + len(pattern):].find(pattern) != -1:
             raise MultipleOccurencesException("Multiple occurences of pattern found!")
-        matches.append((offset, pattern, patched_pattern))
-    if not matches:
+        selected = (offset, pattern, patched_pattern)
+        break
+    if selected is None:
         raise PatternNotFoundException("Pattern not found.")
-    if len(matches) > 1:
-        raise MultipleOccurencesException("Multiple fallback patterns found!")
-    offset, search, replacement = matches[0]
+    offset, matched_search, matched_replacement = selected
     del f
     print("Pattern found @ %016X" % (offset,), file=sys.stderr)
 
     res = []
-    for (i, (left, right)) in enumerate(zip(search, replacement)):
+    for (i, (left, right)) in enumerate(zip(matched_search, matched_replacement)):
         if left != right:
             res.append((offset + i, left, right))
     return res
