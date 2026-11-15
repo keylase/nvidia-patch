@@ -45,6 +45,7 @@ The `Detect new drivers` workflow pushes the result to the branch `bot/new-drive
 * If the issue lookup fails, the driver is skipped for that run (it is never assumed to have no issue), and the bot pull request is left untouched in that run, so it is not rebuilt without that driver.
 * **Closing the pull request is a decision**: it is not recreated while the set of generated drivers stays the same (the pull request body carries a hidden `<!-- drivers: ... -->` list). A new driver changes the set and opens a new pull request.
 * When a run generates nothing and no driver failed (everything merged, aged out, or left out by a closed issue), the open bot pull request is closed with a comment. If a driver only failed to generate, or if a source could not be read completely, the pull request is left alone. The reasons are in the run summary.
+* Known limit: when a run generates nothing but some other driver failed or is undecided, the open pull request is left alone, so a driver you just left out by closing its issue stays in it until the next clean run (no commit can express a removal). Do not merge such a pull request before checking its list of drivers.
 * A driver is a candidate for 21 days after its release.
 * The branch `bot/new-drivers` is force-pushed on every run that produces commits. Do not push to it.
 * Installers are cached per set of candidates (`actions/cache`), so a pending driver is not downloaded again every 3 hours.

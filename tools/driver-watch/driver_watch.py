@@ -82,6 +82,9 @@ def linux_candidates(max_age_days, now):
 
     _, body = http_retry(LINUX_INDEX)
     versions = set(INDEX_VERSION_RE.findall(body.decode("utf-8", "replace")))
+    if not versions:
+        # A real index lists hundreds of versions: an empty answer is a broken page, not "nothing new".
+        raise RuntimeError("the Linux index contains no driver versions")
     unpatched = sorted(
         (v for v in versions if v not in patched and version_key(v)[0] >= LINUX_MIN_MAJOR),
         key=version_key,
@@ -170,7 +173,12 @@ def windows_candidates(max_age_days, now):
             problems += 1
             log(f"windows: query failed ({exc})")
             continue
-        for entry in result.get("IDS", []):
+        if not isinstance(result, dict) or not isinstance(result.get("IDS"), list):
+            # Success responses carry an "IDS" list; an error body must not read as "no new driver".
+            problems += 1
+            log(f"windows: unexpected response ({str(result)[:100]})")
+            continue
+        for entry in result["IDS"]:
             info = entry.get("downloadInfo", {})
             version = info.get("Version")
             if not version or version in known or version in seen:
