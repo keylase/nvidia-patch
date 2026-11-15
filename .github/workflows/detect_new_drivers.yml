@@ -90,7 +90,7 @@ jobs:
             echo "Nothing to generate"
             echo "commits=0" >> "$GITHUB_OUTPUT"
             echo "failed=0" >> "$GITHUB_OUTPUT"
-            echo "undecided=0" >> "$GITHUB_OUTPUT"
+            echo "transient=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           # No issue data means closed issues cannot be honoured: do not generate blindly.
@@ -105,7 +105,7 @@ jobs:
           cat pr_body.md >> "$GITHUB_STEP_SUMMARY"
           echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
           echo "failed=$(python3 -c 'import json; print(sum(r["status"] in ("failed", "error", "undecided") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
-          echo "undecided=$(python3 -c 'import json; print(sum(r["status"] == "undecided" for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
+          echo "transient=$(python3 -c 'import json; print(sum(r["status"] in ("error", "undecided") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
 
       - name: Update the pull request
         # Only after a complete detection: with a source down, an empty or short list says nothing.
@@ -114,7 +114,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           COMMITS: ${{ steps.generate.outputs.commits }}
           FAILED: ${{ steps.generate.outputs.failed }}
-          UNDECIDED: ${{ steps.generate.outputs.undecided }}
+          TRANSIENT: ${{ steps.generate.outputs.transient }}
         run: |
           gh auth setup-git
           number=$(gh pr list --head "$BOT_BRANCH" --state open --json number --jq '.[0].number // empty')
@@ -130,9 +130,10 @@ jobs:
             exit 0
           fi
 
-          if [ "$UNDECIDED" != "0" ]; then
-            # The pull request would be rebuilt without the driver whose issue state is unknown.
-            echo "The issue state of $UNDECIDED driver(s) is unknown; leaving the pull request alone this run"
+          if [ "$TRANSIENT" != "0" ]; then
+            # A driver hit an error that may not repeat (download, tool error) or has an unknown issue
+            # state: rebuilding now would drop it from the pull request, or reopen a closed one for a subset.
+            echo "$TRANSIENT driver(s) could not be processed this run (error or unknown issue state); leaving the pull request alone"
             exit 0
           fi
 

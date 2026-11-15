@@ -234,7 +234,12 @@ def generate_windows(candidate, cache_dir):
     download(url, installer)
 
     started = time.time() - 2  # file timestamps can be coarser than the clock
-    run([sys.executable, "-B", str(WIN_AUTOPATCH), str(installer)], cwd=WIN_AUTOPATCH.parent, capture=True)
+    try:
+        run([sys.executable, "-B", str(WIN_AUTOPATCH), str(installer)], cwd=WIN_AUTOPATCH.parent, capture=True)
+    except subprocess.CalledProcessError as exc:
+        # autopatch exits non-zero when it finds no usable pattern: that will repeat, it is not transient.
+        last = (exc.stderr or "").strip().splitlines()[-1:] or ["no output"]
+        raise GenerationFailed(f"autopatch failed (exit {exc.returncode}): {last[0][:150]}")
 
     # autopatch picks the directory itself (<version>, or nsd_<version> for a Studio installer
     # of the old product type), so use the one it just wrote instead of guessing from the API name.
