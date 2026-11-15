@@ -266,8 +266,9 @@ def pr_body(results, issues):
         "**Nothing here has been tested on a GPU.** Each driver needs the 13-session test "
         "(`tools/patch-tester/patch-tester.sh` for Linux, `win/tools/patch-tester` for Windows) before merging.",
         "",
-        "This branch is rebuilt from `master` on every run: do not push to it. Closing this pull request does "
-        "not stop the workflow from opening it again; close the issue of a driver to leave it out.",
+        "This branch is rebuilt from `master` on every run: do not push to it. Closing this pull request stops it "
+        "from being reopened while the set of drivers below stays the same; close the issue of a driver to "
+        "leave that driver out.",
         "",
     ]
     done = [r for r in results if r["status"] == "ok"]
@@ -316,9 +317,10 @@ def main():
     for candidate in candidates:
         entry = {"platform": candidate["platform"], "version": candidate["version"]}
         issue = issues.get(f"{candidate['platform']}:{candidate['version']}", {})
-        if issue.get("state") == "CLOSED":
-            entry.update(status="skipped", message=f"its issue #{issue.get('number')} is closed")
-            log(f"{entry['platform']} {entry['version']}: skipped - {entry['message']}")
+        if issue.get("state") in ("CLOSED", "UNKNOWN"):
+            why = "its issue could not be looked up" if issue["state"] == "UNKNOWN" else f"its issue #{issue.get('number')} is closed"
+            entry.update(status="skipped", message=why)
+            log(f"{entry['platform']} {entry['version']}: skipped - {why}")
             results.append(entry)
             continue
         try:

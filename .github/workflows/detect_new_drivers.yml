@@ -90,6 +90,7 @@ jobs:
           if [ "$count" = "0" ]; then
             echo "Nothing to generate"
             echo "commits=0" >> "$GITHUB_OUTPUT"
+            echo "failed=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -101,31 +102,36 @@ jobs:
           cat report.json
           cat pr_body.md >> "$GITHUB_STEP_SUMMARY"
           echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
+          echo "failed=$(python3 -c 'import json; print(sum(r["status"] in ("failed", "error") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
 
       - name: Update the pull request
-        if: env.DRY_RUN != 'true' && steps.generate.outcome == 'success'
+        # Only after a complete detection: with a source down, an empty or short list says nothing.
+        if: env.DRY_RUN != 'true' && env.DETECT_RC == '0' && steps.generate.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
           COMMITS: ${{ steps.generate.outputs.commits }}
+          FAILED: ${{ steps.generate.outputs.failed }}
         run: |
           gh auth setup-git
           number=$(gh pr list --head "$BOT_BRANCH" --state open --json number --jq '.[0].number // empty')
 
           if [ "$COMMITS" = "0" ]; then
-            # Nothing to add any more (merged, aged out, issue closed, or not generable): an open
-            # pull request would still carry drivers that no longer belong in it.
-            if [ -n "$number" ]; then
+            # No driver left to add (merged, aged out, or its issue was closed). A driver that only
+            # failed to generate is not a decision: leave the pull request alone then.
+            if [ -n "$number" ] && [ "$FAILED" = "0" ]; then
               gh pr edit "$number" --body "Closed automatically: no driver is waiting for a patch any more."
-              gh pr close "$number" --delete-branch                 --comment "No driver is waiting for a patch any more (merged, aged out, its issue was closed, or it could not be generated). A new pull request is opened when there is something to add."
+              gh pr close "$number" \
+                --comment "No driver is waiting for a patch any more (merged, aged out, or its issue was closed). A new pull request is opened when there is something to add."
             fi
             exit 0
           fi
 
           marker=$(grep -o '<!-- drivers: [^>]*-->' pr_body.md || true)
-          if [ -z "$number" ]; then
+          if [ -z "$number" ] && [ -n "$marker" ]; then
             # A pull request closed unmerged for exactly this set of drivers is a decision: do not reopen it.
-            closed=$(gh pr list --head "$BOT_BRANCH" --state closed --limit 1 --json body,mergedAt               --jq '.[0] | select(.mergedAt == null) | .body // empty')
-            if [ -n "$closed" ] && [ -n "$marker" ] && grep -qF -- "$marker" <<<"$closed"; then
+            closed=$(gh pr list --head "$BOT_BRANCH" --state closed --limit 30 --json body,mergedAt \
+              --jq '.[] | select(.mergedAt == null) | .body')
+            if grep -qF -- "$marker" <<<"$closed"; then
               echo "A pull request for exactly these drivers was closed unmerged; not opening it again"
               exit 0
             fi
@@ -136,7 +142,8 @@ jobs:
           if [ -n "$number" ]; then
             gh pr edit "$number" --title "$title" --body-file pr_body.md
           else
-            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title"               --body-file pr_body.md --label "need testing"
+            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title" \
+              --body-file pr_body.md --label "need testing"
           fi
 
       - name: Fail if something could not be done completely
