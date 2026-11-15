@@ -137,6 +137,11 @@ def main():
     issues = {}
     try:
         failures = process(candidates, args.dry_run, issues)
+    except Exception:
+        # Whatever went wrong, no driver may end up looking like "has no issue".
+        for candidate in candidates:
+            issues.setdefault(f"{candidate.get('platform')}:{candidate.get('version')}", {"state": "UNKNOWN"})
+        raise
     finally:
         # Always written, even after an unexpected error: a missing file must never be read as "no issues".
         if args.issues_out:
