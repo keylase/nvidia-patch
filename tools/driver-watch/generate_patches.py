@@ -105,6 +105,13 @@ def download(url, dest):
     tmp.replace(dest)
 
 
+def add_driver(args, version):
+    """add_driver.py exits 0 when its URL or uniqueness check fails and writes nothing: check that it wrote."""
+    run([sys.executable, "add_driver.py", *args], cwd=README_AUTOGEN)
+    if not git("status", "--porcelain", "--", "drivers.json", capture=True).strip():
+        raise RuntimeError(f"add_driver.py did not add {version} to drivers.json (see its message above)")
+
+
 def commit(message, paths):
     git("add", "--", *paths)
     if not git("status", "--porcelain", "--", *paths, capture=True).strip():
@@ -219,13 +226,13 @@ def generate_linux(candidate, cache_dir):
 
     paths = ["patch.sh", "drivers.json", "README.md"]
     insert_patch("patch.sh", patch_string(version, *enc))
-    add = [sys.executable, "add_driver.py", "-L", "-U", url, version]
+    add = ["-L", "-U", url, version]
     if fbc is not None:
         insert_patch("patch-fbc.sh", patch_string(version, *fbc))
         paths.append("patch-fbc.sh")
     else:
         add.append("--no-fbc")
-    run(add, cwd=README_AUTOGEN)
+    add_driver(add, version)
     run([sys.executable, "readme_autogen.py"], cwd=README_AUTOGEN)
     note = "" if fbc is not None else " (NVENC only)"
     commit(f"linux: add support for driver {version}{note}", paths)
@@ -262,9 +269,8 @@ def generate_windows(candidate, cache_dir):
     prefix, patch_dir = written[0]
     variant = "Studio Driver" if prefix == "nsd_" else "DCH"
 
-    add = [sys.executable, "add_driver.py", "-W", "-P", "GeForce", "--variant", variant, "-w", "win10",
-           "--skip-patch-check", "-U", url, version]
-    run(add, cwd=README_AUTOGEN)
+    add_driver(["-W", "-P", "GeForce", "--variant", variant, "-w", "win10", "--skip-patch-check", "-U", url, version],
+               version)
     run([sys.executable, "readme_autogen.py"], cwd=README_AUTOGEN)
     commit(f"win: add support for {variant} driver {version}", [str(patch_dir), "drivers.json", "win/README.md"])
     return variant

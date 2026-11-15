@@ -181,7 +181,12 @@ def windows_candidates(max_age_days, now):
         for entry in result["IDS"]:
             info = entry.get("downloadInfo", {})
             version = info.get("Version")
-            if not version or version in known or version in seen:
+            if not version:
+                # A real entry always has a version; "DriverDownloadIDNotFound" and the like do not.
+                problems += 1
+                log(f"windows: entry without a version ({str(info)[:100]})")
+                continue
+            if version in known or version in seen:
                 continue
             if not VERSION_RE.match(version):
                 log(f"windows: unexpected version string {version!r}; skipped")
