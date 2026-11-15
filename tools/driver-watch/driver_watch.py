@@ -6,9 +6,10 @@ Linux:   versions from NVIDIA's official directory index that are in neither
 Windows: versions returned by NVIDIA's driver lookup API that are not in
          drivers.json and were released within --max-age-days.
 
-Prints a JSON list of candidates (see Candidate) to stdout. Progress and errors
-go to stderr. Exit code 1 only if every source failed. Uses the standard
-library only.
+Prints a JSON list of candidates to stdout (always, even on failure). Progress
+and errors go to stderr. Exit code 1 if any source failed or could only be
+read partially, so a blind spot does not look like "nothing new". Uses the
+standard library only.
 """
 
 import argparse
@@ -42,6 +43,7 @@ WIN_RESULTS = 10  # the API times out with large values
 
 VERSION_KEY_RE = re.compile(r'\["(\d[\d.]*)"\]=')
 INDEX_VERSION_RE = re.compile(r"href='(\d+\.\d+(?:\.\d+)?)/'")
+VERSION_RE = re.compile(r"^\d+(\.\d+)*$")
 
 
 def log(msg):
@@ -86,18 +88,26 @@ def linux_candidates(max_age_days, now):
     )
     log(f"linux: {len(versions)} versions in the index, {len(unpatched)} unpatched with major >= {LINUX_MIN_MAJOR}")
 
-    found = []
+    found, problems = [], 0
     for version in unpatched:
         url = LINUX_RUN.format(v=version)
         try:
             headers, _ = http_retry(url, method="HEAD")
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             log(f"linux: {version}: HEAD failed ({exc}); skipped")
+            # The index lists a few directories without a .run file (404): not a problem.
+            if not (isinstance(exc, urllib.error.HTTPError) and exc.code == 404):
+                problems += 1
             continue
         modified = headers.get("Last-Modified")
-        if not modified:
+        try:
+            uploaded = email.utils.parsedate_to_datetime(modified)
+        except (TypeError, ValueError):
+            log(f"linux: {version}: unusable Last-Modified {modified!r}; skipped")
+            problems += 1
             continue
-        uploaded = email.utils.parsedate_to_datetime(modified)
+        if uploaded.tzinfo is None:
+            uploaded = uploaded.replace(tzinfo=datetime.timezone.utc)
         if age_days(uploaded, now) > max_age_days:
             continue
         found.append(
@@ -109,7 +119,7 @@ def linux_candidates(max_age_days, now):
                 "url": url,
             }
         )
-    return found
+    return found, problems
 
 
 def known_windows_versions():
@@ -145,14 +155,14 @@ def windows_queries():
 def windows_candidates(max_age_days, now):
     known = known_windows_versions()
     seen = {}
-    failures = 0
+    problems = 0
     queries = list(windows_queries())
     for url in queries:
         try:
             _, body = http_retry(url)
             result = json.loads(body.decode("utf-8", "replace"))
         except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
-            failures += 1
+            problems += 1
             log(f"windows: query failed ({exc})")
             continue
         for entry in result.get("IDS", []):
@@ -160,24 +170,29 @@ def windows_candidates(max_age_days, now):
             version = info.get("Version")
             if not version or version in known or version in seen:
                 continue
+            if not VERSION_RE.match(version):
+                log(f"windows: unexpected version string {version!r}; skipped")
+                problems += 1
+                continue
             released = urllib.parse.unquote(info.get("ReleaseDateTime", ""))
             try:
                 date = datetime.datetime.strptime(released, "%a %b %d, %Y").replace(tzinfo=datetime.timezone.utc)
             except ValueError:
-                date = None
-            if date is not None and age_days(date, now) > max_age_days:
+                # Fail closed: without a date the age window cannot be applied.
+                log(f"windows: {version}: unparseable ReleaseDateTime {released!r}; skipped")
+                problems += 1
+                continue
+            if age_days(date, now) > max_age_days:
                 continue
             seen[version] = {
                 "platform": "windows",
                 "version": version,
                 "name": urllib.parse.unquote(info.get("Name", "")),
-                "date": date.date().isoformat() if date else released,
+                "date": date.date().isoformat(),
                 "url": urllib.parse.unquote(info.get("DownloadURL", "")),
             }
-    log(f"windows: {len(queries) - failures}/{len(queries)} queries ok, {len(seen)} new versions")
-    if failures == len(queries):
-        raise RuntimeError("all Windows queries failed")
-    return sorted(seen.values(), key=lambda c: version_key(c["version"]))
+    log(f"windows: {len(queries) - problems}/{len(queries)} queries ok, {len(seen)} new versions")
+    return sorted(seen.values(), key=lambda c: version_key(c["version"])), problems
 
 
 def main():
@@ -194,14 +209,19 @@ def main():
     candidates, errors = [], 0
     for name, source in sources.items():
         try:
-            candidates.extend(source(args.max_age_days, now))
-        except (urllib.error.URLError, TimeoutError, OSError, RuntimeError) as exc:
+            found, problems = source(args.max_age_days, now)
+        except Exception as exc:  # keep the other platform running whatever went wrong here
             errors += 1
-            log(f"{name}: failed ({exc})")
+            log(f"{name}: failed ({type(exc).__name__}: {exc})")
+            continue
+        candidates.extend(found)
+        if problems:
+            errors += 1
+            log(f"{name}: {problems} problem(s), the result may be incomplete")
 
     json.dump(candidates, sys.stdout, indent=2)
     sys.stdout.write("\n")
-    return 1 if errors == len(sources) else 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

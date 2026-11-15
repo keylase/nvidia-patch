@@ -23,7 +23,9 @@ def gh(*args):
 
 def issue_exists(version):
     out = gh("issue", "list", "--state", "all", "--search", f'"{version}" in:title', "--json", "title")
-    return any(version in issue["title"] for issue in json.loads(out))
+    # Whole version only: "535.86" must not match "535.86.05" or "1535.86".
+    whole = re.compile(r"(?<!\d)(?<!\d\.)" + re.escape(version) + r"(?!\.?\d)")
+    return any(whole.search(issue["title"]) for issue in json.loads(out))
 
 
 def render(candidate):
