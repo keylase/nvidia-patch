@@ -1,0 +1,165 @@
+name: Detect new drivers
+
+# Finds recent NVIDIA drivers that have no patch yet, then
+#   1. opens one issue per driver, and
+#   2. tries to generate the patches and collects them in ONE draft pull request
+#      (branch bot/new-drivers, rebuilt from master on every run).
+# Nothing is merged automatically and nothing is tested on a GPU: a maintainer
+# has to run the 13-session test and merge.
+#
+# Needs "Allow GitHub Actions to create and approve pull requests" in
+# Settings > Actions > General, otherwise only the pull request step fails.
+
+on:
+  schedule:
+    # Every 3 hours. NVIDIA publishes at all hours, so the minute is arbitrary
+    # (off the hour to avoid the busiest GitHub scheduler slots).
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Do not create issues, push or open a pull request (patches are still generated and logged)'
+        required: false
+        type: boolean
+        default: true
+      max_age_days:
+        description: 'Ignore drivers released more than this many days ago'
+        required: false
+        type: string
+        default: '21'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: detect-new-drivers
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    # Scheduled workflows are not wanted in forks.
+    if: github.repository == 'keylase/nvidia-patch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_REPO: ${{ github.repository }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      MAX_AGE_DAYS: ${{ inputs.max_age_days || '21' }}
+      BOT_BRANCH: bot/new-drivers
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          # The token is handed only to the steps that need it (issues, pull request).
+          persist-credentials: false
+
+      - name: Find drivers without a patch
+        run: |
+          rc=0
+          python3 tools/driver-watch/driver_watch.py --max-age-days "$MAX_AGE_DAYS" > candidates.json || rc=$?
+          [ -s candidates.json ] || echo '[]' > candidates.json
+          echo "DETECT_RC=$rc" >> "$GITHUB_ENV"
+          cat candidates.json
+
+      - name: Open issues
+        id: issues
+        # A failure here must not skip patch generation: the final step turns it into a red run.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          args=(candidates.json --issues-out issues.json)
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python3 tools/driver-watch/open_issues.py "${args[@]}"
+
+      - name: Cache downloaded installers
+        # Same set of candidates -> same key, so a pending driver is not downloaded every 3 hours.
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/drivers
+          key: drivers-${{ hashFiles('candidates.json') }}
+
+      - name: Generate patches
+        id: generate
+        run: |
+          count=$(python3 -c 'import json; print(len(json.load(open("candidates.json"))))')
+          if [ "$count" = "0" ]; then
+            echo "Nothing to generate"
+            echo "commits=0" >> "$GITHUB_OUTPUT"
+            echo "failed=0" >> "$GITHUB_OUTPUT"
+            echo "transient=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # No issue data means closed issues cannot be honoured: do not generate blindly.
+          [ -f issues.json ] || { echo "issues.json is missing, refusing to generate patches"; exit 1; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          base=$(git rev-parse HEAD)
+          python3 tools/driver-watch/generate_patches.py candidates.json \
+            --report report.json --pr-body pr_body.md --issues issues.json \
+            --cache-dir "$RUNNER_TEMP/drivers" --allow-reset
+          cat report.json
+          cat pr_body.md >> "$GITHUB_STEP_SUMMARY"
+          echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
+          echo "failed=$(python3 -c 'import json; print(sum(r["status"] in ("failed", "error", "undecided") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
+          echo "transient=$(python3 -c 'import json; print(sum(r["status"] in ("error", "undecided") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
+
+      - name: Update the pull request
+        # Only after a complete detection: with a source down, an empty or short list says nothing.
+        if: env.DRY_RUN != 'true' && env.DETECT_RC == '0' && steps.generate.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMITS: ${{ steps.generate.outputs.commits }}
+          FAILED: ${{ steps.generate.outputs.failed }}
+          TRANSIENT: ${{ steps.generate.outputs.transient }}
+        run: |
+          gh auth setup-git
+          number=$(gh pr list --head "$BOT_BRANCH" --state open --json number --jq '.[0].number // empty')
+
+          if [ "$COMMITS" = "0" ]; then
+            # No driver left to add (merged, aged out, or its issue was closed). A driver that only
+            # failed to generate is not a decision: leave the pull request alone then.
+            if [ -n "$number" ] && [ "$FAILED" = "0" ]; then
+              gh pr edit "$number" --body "Closed automatically: no driver is waiting for a patch any more."
+              gh pr close "$number" \
+                --comment "No driver is waiting for a patch any more (merged, aged out, or its issue was closed). A new pull request is opened when there is something to add."
+            fi
+            exit 0
+          fi
+
+          if [ "$TRANSIENT" != "0" ]; then
+            # A driver hit an error that may not repeat (download, tool error) or has an unknown issue
+            # state: rebuilding now would drop it from the pull request, or reopen a closed one for a subset.
+            echo "$TRANSIENT driver(s) could not be processed this run (error or unknown issue state); leaving the pull request alone"
+            exit 0
+          fi
+
+          marker=$(grep -o '<!-- drivers: [^>]*-->' pr_body.md || true)
+          if [ -z "$number" ] && [ -n "$marker" ]; then
+            # A pull request closed unmerged for exactly this set of drivers is a decision: do not reopen it.
+            closed=$(gh pr list --head "$BOT_BRANCH" --state closed --limit 30 --json body,mergedAt \
+              --jq '.[] | select(.mergedAt == null) | .body')
+            if grep -qF -- "$marker" <<<"$closed"; then
+              echo "A pull request for exactly these drivers was closed unmerged; not opening it again"
+              exit 0
+            fi
+          fi
+
+          git push --force origin "HEAD:refs/heads/$BOT_BRANCH"
+          title="Add patches for new NVIDIA drivers (automatic)"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --title "$title" --body-file pr_body.md
+          else
+            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title" \
+              --body-file pr_body.md --label "need testing"
+          fi
+
+      - name: Fail if something could not be done completely
+        if: always() && (env.DETECT_RC != '0' || steps.issues.outcome == 'failure')
+        run: |
+          echo "driver_watch.py exit code: $DETECT_RC (non-zero: a source could not be read completely)"
+          echo "Open issues outcome: ${{ steps.issues.outcome }}"
+          exit 1
