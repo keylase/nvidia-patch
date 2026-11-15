@@ -1,0 +1,59 @@
+name: Detect new drivers
+
+# Opens one issue per new NVIDIA driver that has no patch yet. It only opens
+# issues: generating and merging the patches stays a manual step (see the
+# "Generate Linux patches" and "Generate Windows patches" workflows).
+
+on:
+  schedule:
+    # Every 3 hours. NVIDIA publishes at all hours, so the minute is arbitrary
+    # (off the hour to avoid the busiest GitHub scheduler slots).
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only print what would be opened, do not create issues'
+        required: false
+        type: boolean
+        default: true
+      max_age_days:
+        description: 'Ignore drivers released more than this many days ago'
+        required: false
+        type: string
+        default: '21'
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: detect-new-drivers
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    # Scheduled workflows are not wanted in forks.
+    if: github.repository == 'keylase/nvidia-patch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      MAX_AGE_DAYS: ${{ inputs.max_age_days || '21' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Find drivers without a patch
+        run: python3 tools/driver-watch/driver_watch.py --max-age-days "$MAX_AGE_DAYS" > candidates.json
+
+      - name: Open issues
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 tools/driver-watch/open_issues.py candidates.json --dry-run
+          else
+            python3 tools/driver-watch/open_issues.py candidates.json
+          fi
