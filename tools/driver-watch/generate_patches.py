@@ -29,6 +29,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -90,7 +91,14 @@ def download(url, dest):
     log(f"downloading {url}")
     tmp = dest.with_suffix(dest.suffix + ".part")
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=120) as response:
+    try:
+        response = urllib.request.urlopen(request, timeout=120)
+    except urllib.error.HTTPError as exc:
+        if exc.code in (404, 410):
+            # Repeats on every run, so it is a lasting failure, not a transient one.
+            raise GenerationFailed(f"installer not found on NVIDIA's server (HTTP {exc.code})")
+        raise
+    with response:
         check_nvidia_url(response.geturl())  # urlopen follows redirects: check where it ended up
         with open(tmp, "wb") as out:
             shutil.copyfileobj(response, out, 1 << 20)
