@@ -2,9 +2,9 @@
 """Open one GitHub issue per candidate printed by driver_watch.py.
 
 Reads the candidate list (JSON) from the file given as argument, skips every
-driver that already has an issue (open or closed, by anyone: the whole version
-must appear in the title, and a title that starts with the other platform's
-tag does not count) and creates the rest with the `gh` CLI. Needs GH_TOKEN and
+driver that already has an issue (open or closed) with exactly the title this
+script uses, and creates the rest with the `gh` CLI. A user report that merely
+mentions a version does not count. Needs GH_TOKEN and
 GH_REPO (or a git remote) in the environment. With --dry-run nothing is
 created.
 
@@ -34,25 +34,29 @@ def gh(*args):
 def find_issue(platform, version):
     """(number, state) of the issue that already covers this driver, or None."""
     out = gh("issue", "list", "--state", "all", "--search", f'"{version}" in:title', "--json", "number,title,state")
-    # Whole version only: "535.86" must not match "535.86.05" or "1535.86".
-    whole = re.compile(r"(?<!\d)(?<!\d\.)" + re.escape(version) + r"(?!\.?\d)")
-    other_tags = [tag for name, tag in PLATFORM_TAG.items() if name != platform]
+    # Only the bot's own title counts. A user report that merely mentions the version must neither
+    # hide the driver from the bot nor be closed by "Fixes #N", and the version must match whole
+    # ("535.86" is not "535.86.05").
+    ours = re.compile(rf"^{re.escape(title_for(platform, version))}$")
     for issue in json.loads(out):
-        title = issue["title"]
-        if whole.search(title) and not any(title.lower().startswith(tag) for tag in other_tags):
+        if ours.match(issue["title"].strip()):
             return issue["number"], issue["state"]
     return None
+
+
+def title_for(platform, version):
+    return f"{PLATFORM_TAG[platform]} new driver {version} needs a patch"
 
 
 def render(candidate):
     version, name, date, url = (candidate[k] for k in ("version", "name", "date", "url"))
     if candidate["platform"] == "linux":
-        title = f"linux: new driver {version} needs a patch"
+        title = title_for("linux", version)
         manual = f"the **Generate Linux patches** workflow with version `{version}` and mode `search`"
         test = "`tools/patch-tester/patch-tester.sh`"
     else:
         variant = "Studio Driver" if "Studio" in name else "DCH"
-        title = f"win: new driver {version} needs a patch"
+        title = title_for("windows", version)
         manual = f"the **Generate Windows patches** workflow with version `{version}` and variant `{variant}`"
         test = "`win/tools/patch-tester`"
     body = (

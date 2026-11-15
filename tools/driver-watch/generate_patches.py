@@ -28,6 +28,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -73,7 +74,11 @@ def validate_candidate(candidate):
         raise GenerationFailed("unknown platform")
     if not VERSION_RE.match(str(candidate.get("version", ""))):
         raise GenerationFailed("unexpected version string")
-    parsed = urllib.parse.urlparse(str(candidate.get("url", "")))
+    check_nvidia_url(str(candidate.get("url", "")))
+
+
+def check_nvidia_url(url):
+    parsed = urllib.parse.urlparse(url)
     if parsed.scheme != "https" or parsed.hostname not in ALLOWED_HOSTS:
         raise GenerationFailed("download URL is not on an NVIDIA download host")
 
@@ -85,8 +90,10 @@ def download(url, dest):
     log(f"downloading {url}")
     tmp = dest.with_suffix(dest.suffix + ".part")
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=120) as response, open(tmp, "wb") as out:
-        shutil.copyfileobj(response, out, 1 << 20)
+    with urllib.request.urlopen(request, timeout=120) as response:
+        check_nvidia_url(response.geturl())  # urlopen follows redirects: check where it ended up
+        with open(tmp, "wb") as out:
+            shutil.copyfileobj(response, out, 1 << 20)
     tmp.replace(dest)
 
 
@@ -222,18 +229,25 @@ def generate_linux(candidate, cache_dir):
 
 def generate_windows(candidate, cache_dir):
     version = candidate["version"]
-    studio = "Studio" in candidate["name"]
-    variant = "Studio Driver" if studio else "DCH"
     url = candidate["url"].replace("//us.download.nvidia.com/", "//international.download.nvidia.com/")
     installer = cache_dir / Path(url).name
     download(url, installer)
 
+    started = time.time() - 2  # file timestamps can be coarser than the clock
     run([sys.executable, "-B", str(WIN_AUTOPATCH), str(installer)], cwd=WIN_AUTOPATCH.parent, capture=True)
-    patch_dir = REPO / "win" / "win10_x64" / (("nsd_" if studio else "") + version)
-    for name in ("nvencodeapi64.1337", "nvencodeapi.1337"):
-        patch = patch_dir / name
-        if not patch.exists() or patch.stat().st_size == 0:
-            raise GenerationFailed(f"autopatch did not produce {name}")
+
+    # autopatch picks the directory itself (<version>, or nsd_<version> for a Studio installer
+    # of the old product type), so use the one it just wrote instead of guessing from the API name.
+    written = []
+    for prefix in ("", "nsd_"):
+        patch_dir = REPO / "win" / "win10_x64" / (prefix + version)
+        files = [patch_dir / "nvencodeapi64.1337", patch_dir / "nvencodeapi.1337"]
+        if all(f.exists() and f.stat().st_size > 0 and f.stat().st_mtime >= started for f in files):
+            written.append((prefix, patch_dir))
+    if len(written) != 1:
+        raise GenerationFailed(f"autopatch wrote {len(written)} patch directories for {version}, expected 1")
+    prefix, patch_dir = written[0]
+    variant = "Studio Driver" if prefix == "nsd_" else "DCH"
 
     add = [sys.executable, "add_driver.py", "-W", "-P", "GeForce", "--variant", variant, "-w", "win10",
            "--skip-patch-check", "-U", url, version]
