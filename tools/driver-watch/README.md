@@ -38,3 +38,11 @@ python3 tools/driver-watch/open_issues.py candidates.json --dry-run
 The working tree must be disposable, hence `--allow-reset`: a failed driver is rolled back with `git reset --hard` and `git clean -fd`. On a Windows developer machine set `BASH_EXE` to Git Bash, because `bash` may be the WSL stub.
 
 The `Detect new drivers` workflow pushes the result to the branch `bot/new-drivers` (rebuilt from `master` each run) and keeps one draft pull request for it. This needs *Allow GitHub Actions to create and approve pull requests* in the repository settings. Nothing is merged automatically and no patch is tested on a GPU.
+
+## Operating notes
+
+* **Closing the pull request does not stop the bot**: the next run recreates it. Close the *issue* of a driver to leave that driver out (the report then lists it as skipped).
+* A driver is a candidate for 21 days after its release. If a run produces no commit (everything aged out or failed), the existing pull request is left as it is, and the reasons are in the run summary.
+* The branch `bot/new-drivers` is force-pushed on every run that produces commits. Do not push to it.
+* Installers are cached per set of candidates (`actions/cache`), so a pending driver is not downloaded again every 3 hours.
+* Game Ready and Studio drivers often share a version number; one candidate per version is created (Game Ready preferred).

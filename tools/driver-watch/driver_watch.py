@@ -141,6 +141,10 @@ def known_windows_versions():
     return known
 
 
+# Game Ready (upCRD=0) is queried before Studio (upCRD=1) and the first hit per version wins. NVIDIA
+# usually ships the same version number for both, and this repository only maintains the DCH patches
+# for recent drivers (the Studio patch of the same version is identical), so one candidate per version
+# is intended. A version that exists only as Studio is still found and is labelled "Studio Driver".
 def windows_queries():
     for psid, pfid in WIN_PRODUCTS:
         for os_id in WIN_OS_IDS:

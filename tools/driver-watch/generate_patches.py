@@ -252,21 +252,26 @@ def pr_body(results, issues):
         "**Nothing here has been tested on a GPU.** Each driver needs the 13-session test "
         "(`tools/patch-tester/patch-tester.sh` for Linux, `win/tools/patch-tester` for Windows) before merging.",
         "",
-        "This branch is rebuilt from `master` on every run: do not push to it.",
+        "This branch is rebuilt from `master` on every run: do not push to it. Closing this pull request does "
+        "not stop the workflow from opening it again; close the issue of a driver to leave it out.",
         "",
     ]
     done = [r for r in results if r["status"] == "ok"]
-    failed = [r for r in results if r["status"] != "ok"]
+    failed = [r for r in results if r["status"] in ("failed", "error")]
+    skipped = [r for r in results if r["status"] == "skipped"]
     if done:
         lines.append("## Generated")
         for r in done:
-            ref = issues.get(r["version"])
-            lines.append(f"- {r['platform']} {r['version']}: {r['message']}" + (f" (Fixes #{ref})" if ref else ""))
+            number = issues.get(f"{r['platform']}:{r['version']}", {}).get("number")
+            lines.append(f"- {r['platform']} {r['version']}: {r['message']}" + (f" (Fixes #{number})" if number else ""))
         lines.append("")
     if failed:
         lines.append("## Could not be generated automatically")
-        for r in failed:
-            lines.append(f"- {r['platform']} {r['version']}: {r['message']}")
+        lines.extend(f"- {r['platform']} {r['version']}: {r['message']}" for r in failed)
+        lines.append("")
+    if skipped:
+        lines.append("## Skipped")
+        lines.extend(f"- {r['platform']} {r['version']}: {r['message']}" for r in skipped)
         lines.append("")
     return "\n".join(lines)
 
@@ -276,7 +281,7 @@ def main():
     parser.add_argument("candidates", help="JSON file written by driver_watch.py")
     parser.add_argument("--report", required=True, help="write the JSON report here")
     parser.add_argument("--pr-body", help="write the pull request body (Markdown) here")
-    parser.add_argument("--issues", help="JSON file {version: issue number} written by open_issues.py")
+    parser.add_argument("--issues", help="JSON file written by open_issues.py (issue number and state per driver)")
     parser.add_argument("--cache-dir", default=None, help="directory for downloaded installers")
     parser.add_argument("--allow-reset", action="store_true", help="confirm that the working tree is disposable")
     args = parser.parse_args()
@@ -292,6 +297,12 @@ def main():
     results = []
     for candidate in candidates:
         entry = {"platform": candidate["platform"], "version": candidate["version"]}
+        issue = issues.get(f"{candidate['platform']}:{candidate['version']}", {})
+        if issue.get("state") == "CLOSED":
+            entry.update(status="skipped", message=f"its issue #{issue.get('number')} is closed")
+            log(f"{entry['platform']} {entry['version']}: skipped - {entry['message']}")
+            results.append(entry)
+            continue
         try:
             validate_candidate(candidate)
             entry["message"] = generators[candidate["platform"]](candidate, cache_dir)
