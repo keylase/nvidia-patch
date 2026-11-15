@@ -42,7 +42,7 @@ The `Detect new drivers` workflow pushes the result to the branch `bot/new-drive
 ## Operating notes
 
 * **Issues**: a driver counts as having an issue if one exists (open or closed) with the exact title this tool creates (`linux: new driver X needs a patch`, `win: new driver X needs a patch`), or one made from the repository's request template (`New driver support (version X)`). A request only means "already covered": no second issue is opened, but it is never linked with `Fixes #N` and its state does not matter, because it carries no platform. A free-form report that merely mentions the version does not count. **Close the bot's own issue to leave that driver out for good.**
-* If the issue lookup fails, the driver is skipped for that run (it is never assumed to have no issue).
+* If the issue lookup fails, the driver is skipped for that run (it is never assumed to have no issue), and the bot pull request is left untouched in that run, so it is not rebuilt without that driver.
 * **Closing the pull request is a decision**: it is not recreated while the set of generated drivers stays the same (the pull request body carries a hidden `<!-- drivers: ... -->` list). A new driver changes the set and opens a new pull request.
 * When a run generates nothing and no driver failed (everything merged, aged out, or left out by a closed issue), the open bot pull request is closed with a comment. If a driver only failed to generate, or if a source could not be read completely, the pull request is left alone. The reasons are in the run summary.
 * A driver is a candidate for 21 days after its release.
