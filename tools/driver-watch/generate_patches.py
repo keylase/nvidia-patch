@@ -276,7 +276,7 @@ def pr_body(results, issues):
     # pull request that was closed unmerged for exactly this list.
     lines.append("<!-- drivers: " + ",".join(sorted(f"{r['platform']}:{r['version']}" for r in done)) + " -->")
     lines.append("")
-    failed = [r for r in results if r["status"] in ("failed", "error")]
+    failed = [r for r in results if r["status"] in ("failed", "error", "undecided")]
     skipped = [r for r in results if r["status"] == "skipped"]
     if done:
         lines.append("## Generated")
@@ -318,8 +318,10 @@ def main():
         entry = {"platform": candidate["platform"], "version": candidate["version"]}
         issue = issues.get(f"{candidate['platform']}:{candidate['version']}", {})
         if issue.get("state") in ("CLOSED", "UNKNOWN"):
-            why = "its issue could not be looked up" if issue["state"] == "UNKNOWN" else f"its issue #{issue.get('number')} is closed"
-            entry.update(status="skipped", message=why)
+            unknown = issue["state"] == "UNKNOWN"
+            why = "its issue could not be looked up" if unknown else f"its issue #{issue.get('number')} is closed"
+            # An unknown state is not a decision: "undecided" counts as not done, "skipped" as done.
+            entry.update(status="undecided" if unknown else "skipped", message=why)
             log(f"{entry['platform']} {entry['version']}: skipped - {why}")
             results.append(entry)
             continue

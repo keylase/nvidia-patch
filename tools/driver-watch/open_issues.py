@@ -42,7 +42,8 @@ def find_issue(platform, version):
     own title is preferred. A request carries no platform, so it only means "already
     covered": it never selects a "Fixes #N" link or a closed-issue skip.
     """
-    out = gh("issue", "list", "--state", "all", "--search", f'"{version}" in:title', "--json", "number,title,state")
+    out = gh("issue", "list", "--state", "all", "--limit", "500", "--search", f'"{version}" in:title',
+              "--json", "number,title,state")
     ours = re.compile(rf"^{re.escape(title_for(platform, version))}$")
     request = re.compile(rf"^New driver support \(version {re.escape(version)}\)\.?$", re.IGNORECASE)
     issues = json.loads(out)
@@ -81,18 +82,9 @@ def render(candidate):
     return title, body
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("candidates", help="JSON file written by driver_watch.py")
-    parser.add_argument("--dry-run", action="store_true", help="print what would be opened")
-    parser.add_argument("--issues-out", help="write the issue number and state of every driver here")
-    args = parser.parse_args()
-
-    with open(args.candidates, encoding="utf-8") as handle:
-        candidates = json.load(handle)
-    print(f"{len(candidates)} candidate(s)")
-
-    issues, failures = {}, 0
+def process(candidates, dry_run, issues):
+    """Open the missing issues and fill `issues`. Returns the number of failures."""
+    failures = 0
     for candidate in candidates:
         platform, version = candidate["platform"], candidate["version"]
         if platform not in PLATFORM_TAG or not VERSION_RE.match(version):
@@ -115,7 +107,7 @@ def main():
                 print(f"{key}: covered by the request #{number} ({state}), not opening another issue")
             continue
         title, body = render(candidate)
-        if args.dry_run:
+        if dry_run:
             print(f"DRY RUN, would open: {title}")
             continue
         try:
@@ -128,10 +120,28 @@ def main():
         match = re.search(r"/issues/(\d+)$", url)
         if match:
             issues[key] = {"number": int(match.group(1)), "state": "OPEN"}
+    return failures
 
-    if args.issues_out:
-        with open(args.issues_out, "w", encoding="utf-8") as handle:
-            json.dump(issues, handle)
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser.add_argument("candidates", help="JSON file written by driver_watch.py")
+    parser.add_argument("--dry-run", action="store_true", help="print what would be opened")
+    parser.add_argument("--issues-out", help="write the issue number and state of every driver here")
+    args = parser.parse_args()
+
+    with open(args.candidates, encoding="utf-8") as handle:
+        candidates = json.load(handle)
+    print(f"{len(candidates)} candidate(s)")
+
+    issues = {}
+    try:
+        failures = process(candidates, args.dry_run, issues)
+    finally:
+        # Always written, even after an unexpected error: a missing file must never be read as "no issues".
+        if args.issues_out:
+            with open(args.issues_out, "w", encoding="utf-8") as handle:
+                json.dump(issues, handle)
     return 1 if failures else 0
 
 

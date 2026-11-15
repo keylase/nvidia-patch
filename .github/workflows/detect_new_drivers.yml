@@ -74,7 +74,6 @@ jobs:
           args=(candidates.json --issues-out issues.json)
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           python3 tools/driver-watch/open_issues.py "${args[@]}"
-          [ -f issues.json ] || echo '{}' > issues.json
 
       - name: Cache downloaded installers
         # Same set of candidates -> same key, so a pending driver is not downloaded every 3 hours.
@@ -93,6 +92,8 @@ jobs:
             echo "failed=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          # No issue data means closed issues cannot be honoured: do not generate blindly.
+          [ -f issues.json ] || { echo "issues.json is missing, refusing to generate patches"; exit 1; }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           base=$(git rev-parse HEAD)
@@ -102,7 +103,7 @@ jobs:
           cat report.json
           cat pr_body.md >> "$GITHUB_STEP_SUMMARY"
           echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
-          echo "failed=$(python3 -c 'import json; print(sum(r["status"] in ("failed", "error") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
+          echo "failed=$(python3 -c 'import json; print(sum(r["status"] in ("failed", "error", "undecided") for r in json.load(open("report.json"))))')" >> "$GITHUB_OUTPUT"
 
       - name: Update the pull request
         # Only after a complete detection: with a source down, an empty or short list says nothing.
