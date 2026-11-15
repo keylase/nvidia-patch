@@ -3,7 +3,8 @@
 
 Reads the candidate list (JSON) from the file given as argument, skips every
 driver that already has an issue (open or closed) with exactly the title this
-script uses, and creates the rest with the `gh` CLI. A user report that merely
+script uses or the repository's request template title ("New driver support
+(version X)"), and creates the rest with the `gh` CLI. A user report that merely
 mentions a version does not count. Needs GH_TOKEN and
 GH_REPO (or a git remote) in the environment. With --dry-run nothing is
 created.
@@ -34,13 +35,17 @@ def gh(*args):
 def find_issue(platform, version):
     """(number, state) of the issue that already covers this driver, or None."""
     out = gh("issue", "list", "--state", "all", "--search", f'"{version}" in:title', "--json", "number,title,state")
-    # Only the bot's own title counts. A user report that merely mentions the version must neither
-    # hide the driver from the bot nor be closed by "Fixes #N", and the version must match whole
-    # ("535.86" is not "535.86.05").
+    # Only two kinds of title count: the bot's own, and the repository's request template
+    # ("New driver support (version X)"). A user report that merely mentions the version must
+    # neither hide the driver from the bot nor be closed by "Fixes #N", and the version must
+    # match whole ("535.86" is not "535.86.05"). The bot's own title is preferred.
     ours = re.compile(rf"^{re.escape(title_for(platform, version))}$")
-    for issue in json.loads(out):
-        if ours.match(issue["title"].strip()):
-            return issue["number"], issue["state"]
+    request = re.compile(rf"^New driver support \(version {re.escape(version)}\)\.?$", re.IGNORECASE)
+    issues = json.loads(out)
+    for pattern in (ours, request):
+        for issue in issues:
+            if pattern.match(issue["title"].strip()):
+                return issue["number"], issue["state"]
     return None
 
 

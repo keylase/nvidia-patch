@@ -103,19 +103,40 @@ jobs:
           echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Update the pull request
-        if: steps.generate.outputs.commits != '0' && env.DRY_RUN != 'true'
+        if: env.DRY_RUN != 'true' && steps.generate.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMITS: ${{ steps.generate.outputs.commits }}
         run: |
           gh auth setup-git
-          git push --force origin "HEAD:refs/heads/$BOT_BRANCH"
           number=$(gh pr list --head "$BOT_BRANCH" --state open --json number --jq '.[0].number // empty')
+
+          if [ "$COMMITS" = "0" ]; then
+            # Nothing to add any more (merged, aged out, issue closed, or not generable): an open
+            # pull request would still carry drivers that no longer belong in it.
+            if [ -n "$number" ]; then
+              gh pr edit "$number" --body "Closed automatically: no driver is waiting for a patch any more."
+              gh pr close "$number" --delete-branch                 --comment "No driver is waiting for a patch any more (merged, aged out, its issue was closed, or it could not be generated). A new pull request is opened when there is something to add."
+            fi
+            exit 0
+          fi
+
+          marker=$(grep -o '<!-- drivers: [^>]*-->' pr_body.md || true)
+          if [ -z "$number" ]; then
+            # A pull request closed unmerged for exactly this set of drivers is a decision: do not reopen it.
+            closed=$(gh pr list --head "$BOT_BRANCH" --state closed --limit 1 --json body,mergedAt               --jq '.[0] | select(.mergedAt == null) | .body // empty')
+            if [ -n "$closed" ] && [ -n "$marker" ] && grep -qF -- "$marker" <<<"$closed"; then
+              echo "A pull request for exactly these drivers was closed unmerged; not opening it again"
+              exit 0
+            fi
+          fi
+
+          git push --force origin "HEAD:refs/heads/$BOT_BRANCH"
           title="Add patches for new NVIDIA drivers (automatic)"
           if [ -n "$number" ]; then
             gh pr edit "$number" --title "$title" --body-file pr_body.md
           else
-            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title" \
-              --body-file pr_body.md --label "need testing"
+            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title"               --body-file pr_body.md --label "need testing"
           fi
 
       - name: Fail if something could not be done completely

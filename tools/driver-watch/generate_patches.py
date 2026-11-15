@@ -271,6 +271,10 @@ def pr_body(results, issues):
         "",
     ]
     done = [r for r in results if r["status"] == "ok"]
+    # Machine-readable list of the drivers in this pull request: the workflow does not recreate a
+    # pull request that was closed unmerged for exactly this list.
+    lines.append("<!-- drivers: " + ",".join(sorted(f"{r['platform']}:{r['version']}" for r in done)) + " -->")
+    lines.append("")
     failed = [r for r in results if r["status"] in ("failed", "error")]
     skipped = [r for r in results if r["status"] == "skipped"]
     if done:
