@@ -1,8 +1,14 @@
 name: Detect new drivers
 
-# Opens one issue per new NVIDIA driver that has no patch yet. It only opens
-# issues: generating and merging the patches stays a manual step (see the
-# "Generate Linux patches" and "Generate Windows patches" workflows).
+# Finds recent NVIDIA drivers that have no patch yet, then
+#   1. opens one issue per driver, and
+#   2. tries to generate the patches and collects them in ONE draft pull request
+#      (branch bot/new-drivers, rebuilt from master on every run).
+# Nothing is merged automatically and nothing is tested on a GPU: a maintainer
+# has to run the 13-session test and merge.
+#
+# Needs "Allow GitHub Actions to create and approve pull requests" in
+# Settings > Actions > General, otherwise only the pull request step fails.
 
 on:
   schedule:
@@ -12,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Only print what would be opened, do not create issues'
+        description: 'Do not create issues, push or open a pull request (patches are still generated and logged)'
         required: false
         type: boolean
         default: true
@@ -23,8 +29,9 @@ on:
         default: '21'
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+  pull-requests: write
 
 concurrency:
   group: detect-new-drivers
@@ -35,12 +42,13 @@ jobs:
     # Scheduled workflows are not wanted in forks.
     if: github.repository == 'keylase/nvidia-patch'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 60
     env:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
       DRY_RUN: ${{ inputs.dry_run }}
       MAX_AGE_DAYS: ${{ inputs.max_age_days || '21' }}
+      BOT_BRANCH: bot/new-drivers
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -48,12 +56,53 @@ jobs:
           ref: master
 
       - name: Find drivers without a patch
-        run: python3 tools/driver-watch/driver_watch.py --max-age-days "$MAX_AGE_DAYS" > candidates.json
+        run: |
+          rc=0
+          python3 tools/driver-watch/driver_watch.py --max-age-days "$MAX_AGE_DAYS" > candidates.json || rc=$?
+          [ -s candidates.json ] || echo '[]' > candidates.json
+          echo "DETECT_RC=$rc" >> "$GITHUB_ENV"
+          cat candidates.json
 
       - name: Open issues
         run: |
-          if [ "$DRY_RUN" = "true" ]; then
-            python3 tools/driver-watch/open_issues.py candidates.json --dry-run
-          else
-            python3 tools/driver-watch/open_issues.py candidates.json
+          args=(candidates.json --issues-out issues.json)
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python3 tools/driver-watch/open_issues.py "${args[@]}"
+          [ -f issues.json ] || echo '{}' > issues.json
+
+      - name: Generate patches
+        id: generate
+        run: |
+          count=$(python3 -c 'import json; print(len(json.load(open("candidates.json"))))')
+          if [ "$count" = "0" ]; then
+            echo "Nothing to generate"
+            echo "commits=0" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          base=$(git rev-parse HEAD)
+          python3 tools/driver-watch/generate_patches.py candidates.json \
+            --report report.json --pr-body pr_body.md --issues issues.json \
+            --cache-dir "$RUNNER_TEMP/drivers" --allow-reset
+          cat report.json
+          echo "commits=$(git rev-list --count "$base"..HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Update the pull request
+        if: steps.generate.outputs.commits != '0' && env.DRY_RUN != 'true'
+        run: |
+          git push --force origin "HEAD:refs/heads/$BOT_BRANCH"
+          number=$(gh pr list --head "$BOT_BRANCH" --state open --json number --jq '.[0].number // empty')
+          title="Add patches for new NVIDIA drivers (automatic)"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --title "$title" --body-file pr_body.md
+          else
+            gh pr create --draft --base master --head "$BOT_BRANCH" --title "$title" \
+              --body-file pr_body.md --label "need testing"
+          fi
+
+      - name: Fail if a source could not be read completely
+        if: env.DETECT_RC != '0'
+        run: |
+          echo "driver_watch.py could not read every source completely (exit code $DETECT_RC), see the first step"
+          exit 1
